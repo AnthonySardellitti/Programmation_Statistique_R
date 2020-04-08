@@ -1,6 +1,8 @@
 ---
 title: "Programmation Statistique avec R"
 author: "Anthony SARDELLITTI"
+date: "`r Sys.Date()`"
+description: "Programmation Statistique avec R"
 site: bookdown::bookdown_site
 documentclass: book
 output:
@@ -8,9 +10,7 @@ output:
 bookdown::pdf_book: default
 ---
 
-# Hello World
+# Préface
 
-Hi.
-
-Bye.
+Ce livre permet de mettre un pied dans le monde de la programmation statistique avec le langage R. Il présente les concepts fondamentaux. Certaines parties sont extraites d'autres sources qui seront renseignées. Il n'y a pas de pré-requis pour suivre ce livre. Seulement une apétence pour la programmation et les analyses statistiques.
 
