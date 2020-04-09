@@ -1,4 +1,4 @@
-# Importer des données externes
+# Importer des données externes {#first_import}
 
 Ce document est extrait du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
 
@@ -146,7 +146,7 @@ Les objets `d`devrait alors apparaître dans votre environnement.
 **Attention**, quand on utilise `load`, les objets chargés sont importés directement dans l'environnement en cours avec leur nom d'origine. Si d'autres objets du même nom existaient déjà, ils sont écrasés sans avertissement.
 
 
-\newpage
+
 
 ## Exercices
 
@@ -240,7 +240,7 @@ colnames(x = flights) #fonctionne aussi avec names(flights)
 
 d. Affichez les 10 premières lignes dans une vue
 
-```{r}
+```{r, eval=FALSE}
 View(head(x = flights, n = 10))
 ```
 

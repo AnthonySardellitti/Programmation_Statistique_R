@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Importer des données externes | Programmation Statistique avec R</title>
+  <meta name="description" content="4 Importer des données externes | Programmation Statistique avec R" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Importer des données externes | Programmation Statistique avec R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="4 Importer des données externes | Programmation Statistique avec R" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Importer des données externes | Programmation Statistique avec R" />
+  
+  <meta name="twitter:description" content="4 Importer des données externes | Programmation Statistique avec R" />
+  
+
+<meta name="author" content="Anthony SARDELLITTI" />
+
+
+<meta name="date" content="2020-04-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="first-dataset.html"/>
+<link rel="next" href="rmarkdown.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Préface</a></li>
+<li class="chapter" data-level="2" data-path="presentation.html"><a href="presentation.html"><i class="fa fa-check"></i><b>2</b> Présentation</a><ul>
+<li class="chapter" data-level="2.1" data-path="presentation.html"><a href="presentation.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="presentation.html"><a href="presentation.html#à-propos-de-r"><i class="fa fa-check"></i><b>2.1.1</b> À propos de R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="presentation.html"><a href="presentation.html#à-propos-de-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> À propos de RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="presentation.html"><a href="presentation.html#à-propos-du-tidyverse"><i class="fa fa-check"></i><b>2.1.3</b> À propos du <em>tidyverse</em></a></li>
+<li class="chapter" data-level="2.1.4" data-path="presentation.html"><a href="presentation.html#structure-du-document"><i class="fa fa-check"></i><b>2.1.4</b> Structure du document</a></li>
+<li class="chapter" data-level="2.1.5" data-path="presentation.html"><a href="presentation.html#prérequis"><i class="fa fa-check"></i><b>2.1.5</b> Prérequis</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="presentation.html"><a href="presentation.html#prise-en-main"><i class="fa fa-check"></i><b>2.2</b> Prise en main</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="presentation.html"><a href="presentation.html#la-console"><i class="fa fa-check"></i><b>2.2.1</b> La console</a></li>
+<li class="chapter" data-level="2.2.2" data-path="presentation.html"><a href="presentation.html#objets"><i class="fa fa-check"></i><b>2.2.2</b> Objets</a></li>
+<li class="chapter" data-level="2.2.3" data-path="presentation.html"><a href="presentation.html#fonctions"><i class="fa fa-check"></i><b>2.2.3</b> Fonctions</a></li>
+<li class="chapter" data-level="2.2.4" data-path="presentation.html"><a href="presentation.html#regrouper-ses-commandes-dans-des-scripts"><i class="fa fa-check"></i><b>2.2.4</b> Regrouper ses commandes dans des scripts</a></li>
+<li class="chapter" data-level="2.2.5" data-path="presentation.html"><a href="presentation.html#installer-et-charger-des-extensions-packages"><i class="fa fa-check"></i><b>2.2.5</b> Installer et charger des extensions (<em>packages</em>)</a></li>
+<li class="chapter" data-level="2.2.6" data-path="presentation.html"><a href="presentation.html#exercices"><i class="fa fa-check"></i><b>2.2.6</b> Exercices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="first-dataset.html"><a href="first-dataset.html"><i class="fa fa-check"></i><b>3</b> Premier travail avec des données</a><ul>
+<li class="chapter" data-level="3.1" data-path="first-dataset.html"><a href="first-dataset.html#jeu-de-données-dexemple"><i class="fa fa-check"></i><b>3.1</b> Jeu de données d’exemple</a></li>
+<li class="chapter" data-level="3.2" data-path="first-dataset.html"><a href="first-dataset.html#tableau-de-données-data-frame"><i class="fa fa-check"></i><b>3.2</b> Tableau de données (<em>data frame</em>)</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="first-dataset.html"><a href="first-dataset.html#structure-du-tableau"><i class="fa fa-check"></i><b>3.2.1</b> Structure du tableau</a></li>
+<li class="chapter" data-level="3.2.2" data-path="first-dataset.html"><a href="first-dataset.html#accéder-aux-variables-dun-tableau"><i class="fa fa-check"></i><b>3.2.2</b> Accéder aux variables d’un tableau</a></li>
+<li class="chapter" data-level="3.2.3" data-path="first-dataset.html"><a href="first-dataset.html#créer-une-nouvelle-variable"><i class="fa fa-check"></i><b>3.2.3</b> Créer une nouvelle variable</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="first-dataset.html"><a href="first-dataset.html#analyse-univariée"><i class="fa fa-check"></i><b>3.3</b> Analyse univariée</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="first-dataset.html"><a href="first-dataset.html#analyser-une-variable-quantitative"><i class="fa fa-check"></i><b>3.3.1</b> Analyser une variable quantitative</a></li>
+<li class="chapter" data-level="3.3.2" data-path="first-dataset.html"><a href="first-dataset.html#analyser-une-variable-qualitative"><i class="fa fa-check"></i><b>3.3.2</b> Analyser une variable qualitative</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="first-dataset.html"><a href="first-dataset.html#exercices-1"><i class="fa fa-check"></i><b>3.4</b> Exercices</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="first-dataset.html"><a href="first-dataset.html#sujet-1"><i class="fa fa-check"></i><b>3.4.1</b> Sujet</a></li>
+<li class="chapter" data-level="3.4.2" data-path="first-dataset.html"><a href="first-dataset.html#correction-1"><i class="fa fa-check"></i><b>3.4.2</b> Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="first-import.html"><a href="first-import.html"><i class="fa fa-check"></i><b>4</b> Importer des données externes</a><ul>
+<li class="chapter" data-level="4.1" data-path="first-import.html"><a href="first-import.html#modifier-le-répertoire-actif"><i class="fa fa-check"></i><b>4.1</b> Modifier le répertoire actif</a></li>
+<li class="chapter" data-level="4.2" data-path="first-import.html"><a href="first-import.html#import-de-fichiers-textes"><i class="fa fa-check"></i><b>4.2</b> Import de fichiers textes</a></li>
+<li class="chapter" data-level="4.3" data-path="first-import.html"><a href="first-import.html#interface-interactive-dimport-de-fichiers"><i class="fa fa-check"></i><b>4.3</b> Interface interactive d’import de fichiers</a></li>
+<li class="chapter" data-level="4.4" data-path="first-import.html"><a href="first-import.html#import-depuis-un-fichier-excel"><i class="fa fa-check"></i><b>4.4</b> Import depuis un fichier Excel</a></li>
+<li class="chapter" data-level="4.5" data-path="first-import.html"><a href="first-import.html#export-de-données"><i class="fa fa-check"></i><b>4.5</b> Export de données</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="first-import.html"><a href="first-import.html#export-de-tableaux-de-données"><i class="fa fa-check"></i><b>4.5.1</b> Export de tableaux de données</a></li>
+<li class="chapter" data-level="4.5.2" data-path="first-import.html"><a href="first-import.html#sauvegarder-des-objets"><i class="fa fa-check"></i><b>4.5.2</b> Sauvegarder des objets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="first-import.html"><a href="first-import.html#exercices-2"><i class="fa fa-check"></i><b>4.6</b> Exercices</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="first-import.html"><a href="first-import.html#sujet-2"><i class="fa fa-check"></i><b>4.6.1</b> Sujet</a></li>
+<li class="chapter" data-level="4.6.2" data-path="first-import.html"><a href="first-import.html#correction-2"><i class="fa fa-check"></i><b>4.6.2</b> Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Diffuser et publier des rapports automatisés avec <code>rmarkdown</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#créer-un-nouveau-document"><i class="fa fa-check"></i><b>5.1</b> Créer un nouveau document</a></li>
+<li class="chapter" data-level="5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#éléments-dun-document-r-markdown"><i class="fa fa-check"></i><b>5.2</b> Éléments d’un document R Markdown</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="rmarkdown.html"><a href="rmarkdown.html#en-tête-préambule"><i class="fa fa-check"></i><b>5.2.1</b> En-tête (préambule)</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rmarkdown.html"><a href="rmarkdown.html#texte-du-document"><i class="fa fa-check"></i><b>5.2.2</b> Texte du document</a></li>
+<li class="chapter" data-level="5.2.3" data-path="rmarkdown.html"><a href="rmarkdown.html#blocs-de-code-r"><i class="fa fa-check"></i><b>5.2.3</b> Blocs de code R</a></li>
+<li class="chapter" data-level="5.2.4" data-path="rmarkdown.html"><a href="rmarkdown.html#compiler-un-document-knit"><i class="fa fa-check"></i><b>5.2.4</b> Compiler un document (<em>Knit</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#personnaliser-le-document-généré"><i class="fa fa-check"></i><b>5.3</b> Personnaliser le document généré</a></li>
+<li class="chapter" data-level="5.4" data-path="rmarkdown.html"><a href="rmarkdown.html#options-des-blocs-de-code-r"><i class="fa fa-check"></i><b>5.4</b> Options des blocs de code R</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="rmarkdown.html"><a href="rmarkdown.html#nom-du-bloc"><i class="fa fa-check"></i><b>5.4.1</b> Nom du bloc</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rmarkdown.html"><a href="rmarkdown.html#options"><i class="fa fa-check"></i><b>5.4.2</b> Options</a></li>
+<li class="chapter" data-level="5.4.3" data-path="rmarkdown.html"><a href="rmarkdown.html#modifier-les-options"><i class="fa fa-check"></i><b>5.4.3</b> Modifier les options</a></li>
+<li class="chapter" data-level="5.4.4" data-path="rmarkdown.html"><a href="rmarkdown.html#options-globales"><i class="fa fa-check"></i><b>5.4.4</b> Options globales</a></li>
+<li class="chapter" data-level="5.4.5" data-path="rmarkdown.html"><a href="rmarkdown.html#mise-en-cache-des-résultats"><i class="fa fa-check"></i><b>5.4.5</b> Mise en cache des résultats</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="rmarkdown.html"><a href="rmarkdown.html#rendu-des-tableaux"><i class="fa fa-check"></i><b>5.5</b> Rendu des tableaux</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#tableaux-croisés"><i class="fa fa-check"></i><b>5.5.1</b> Tableaux croisés</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Programmation Statistique avec R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="first_import" class="section level1">
+<h1><span class="header-section-number">4</span> Importer des données externes</h1>
+<p>Ce document est extrait du cours de Julien Barnier “Introduction à R et au tidyverse” (<a href="https://juba.github.io/tidyverse" class="uri">https://juba.github.io/tidyverse</a>)</p>
+<p>R n’est pas prévu pour la saisie de données, mais il bénéficie de nombreuses fonctions et packages permettant l’import de données depuis un grand nombre de formats. Seuls les plus courants seront abordés ici.</p>
+<div id="modifier-le-répertoire-actif" class="section level2">
+<h2><span class="header-section-number">4.1</span> Modifier le répertoire actif</h2>
+<p>La fonction <code>getwd</code> permet d’afficher le répertoire actif.</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R&quot;</code></pre>
+<p>Renseigner un répertoire actif permet notamment d’éviter de saisir le chemin complet d’un fichier de données tel que <em>C:/Document/dataset/mon_fichier.txt</em></p>
+<p>Pour modifier le répertoire courant, on utilise la fonction <code>setwd</code>tel que <em>setwd(“C:/Users/anthony/Formations”)</em>
+On peut également faire la même opération en cliquant sur <strong>Session</strong>, puis <strong>Set Working Directory</strong> et <strong>Choose Directory</strong>.</p>
+</div>
+<div id="import-de-fichiers-textes" class="section level2">
+<h2><span class="header-section-number">4.2</span> Import de fichiers textes</h2>
+<p>Si votre fichier CSV suit un format CSV standard (c’est le cas s’il a été exporté depuis LibreOffice par exemple), avec des champs séparés par des virgules, vous pouvez utiliser la fonction <code>read.csv</code> en lui passant en argument le nom du fichier :</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" title="1">d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/Titanic.csv&quot;</span>)</a></code></pre></div>
+<p>Il existe plusieurs variantes à la fonction <code>read.csv</code>, la différence réside dans les arguments par défaut.
+Dans la même famille de fonction, chaque fonction dispose de plusieurs arguments, parmi lesquels :</p>
+<ul>
+<li><code>file</code> indique le chemin d’accès au fichier</li>
+<li><code>header</code> permet de spécifier si la première ligne correspond aux noms des colonnes</li>
+<li><code>sep</code> indique par quel caractère sont séparées les colonnes (“\t” pour les tabulations)</li>
+<li><code>dec</code> indique par quel caractère joue le rôle de la décimale (. ou ,)</li>
+<li><code>row.names</code> permet de spécifier quel numéro de colonne peut être considéré comme le numéro d’index des lignes</li>
+<li><code>na.strings</code> est un vecteur de chaînes de caractères indiquant les valeurs devant être considérées comme manquantes. Ce vecteur vaut <code>c("", "NA")</code> par défaut</li>
+<li>`encoding’ permet de gérer l’encodage
+Il peut arriver, notamment sous Windows, que l’encodage des caractères accentués ne soit pas correct au moment de l’importation. On peut alors spécifier manuellement l’encodage avec cet argument</li>
+</ul>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb273-1" title="1">d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/Titanic.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb273-2" title="2">              <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>,</a>
+<a class="sourceLine" id="cb273-3" title="3">              <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">na.strings =</span> <span class="kw">c</span>(<span class="ot">NA</span>,<span class="st">&quot;NULL&quot;</span>,<span class="st">&quot;None&quot;</span>),</a>
+<a class="sourceLine" id="cb273-4" title="4">              <span class="dt">encoding =</span> <span class="st">&quot;Latin-1&quot;</span>)</a></code></pre></div>
+</div>
+<div id="interface-interactive-dimport-de-fichiers" class="section level2">
+<h2><span class="header-section-number">4.3</span> Interface interactive d’import de fichiers</h2>
+<p>RStudio propose une interface permettant d’importer un fichier de données de manière interactive. Pour y accéder, dans l’onglet <em>Environment</em>, cliquez sur le bouton <em>Import Dataset</em> :
+L’extension <code>readr</code>, qui fait partie du <em>tidyverse</em>, permet l’importation de fichiers txt, csv, excel mais le nom des fonctions et des arguments sont différents.</p>
+<p>
+<img src="img/import_dataset.png" title="fig:" alt="Menu Import Dataset" />
+</p>
+<p>Sélectionnez <em>From Text (readr)…</em>. Une nouvelle fenêtre s’affiche :</p>
+<p>
+<img src="img/import_dialog.png" title="fig:" alt="Dialogue d’importation" />
+</p>
+<p>Il vous suffit d’indiquer le fichier à importer dans le champ <em>File/URL</em> tout en haut (vous pouvez même indiquer un lien vers un fichier distant via HTTP). Un aperçu s’ouvre dans la partie <em>Data Preview</em> et vous permet de vérifier si l’import est correct :</p>
+<p>
+<img src="img/import_dialog_example.png" title="fig:" alt="Exemple de dialogue d’importation" />
+</p>
+<p>Vous pouvez modifier les options d’importation, changer le type des colonnes, etc. et l’aperçu se met à jour. De même, le code correspondant à l’importation du fichier avec les options sélectionnées est affiché dans la partie <em>Code Preview</em>.</p>
+<p><strong>Important</strong> : une fois que l’import semble correct, ne cliquez pas sur le bouton <em>Import</em>. À la place, sélectionnez le code généré et copiez-le (ou cliquez sur l’icône en forme de presse papier) et choisissez <em>Cancel</em>. Ensuite, collez le code dans votre script et exécutez-le (vous pouvez supprimer la ligne commençant par <code>View</code>).
+Cette manière de faire permet “d’automatiser” l’importation des données, puisqu’à la prochaine ouverture du script vous aurez juste à exécuter le code en question, sans repasser par l’interface d’import.</p>
+</div>
+<div id="import-depuis-un-fichier-excel" class="section level2">
+<h2><span class="header-section-number">4.4</span> Import depuis un fichier Excel</h2>
+<p>L’extension <code>readxl</code>, qui fait également partie du <em>tidyverse</em>, permet d’importer des données directement depuis un fichier au format <code>xls</code>ou <code>xlsx</code>.</p>
+<p>Elle ne fait pas partie du “coeur” du <em>tidyverse</em>, il faut donc la charger explicitement avec :</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb274-1" title="1"><span class="kw">library</span>(readxl)</a></code></pre></div>
+<p>On peut alors utiliser la fonction <code>read_excel</code> en lui spécifiant le nom du fichier :</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb275-1" title="1">d &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path  =</span> <span class="st">&quot;./dataset/Titanic.xlsx&quot;</span>)</a></code></pre></div>
+<p>Il est possible de spécifier la feuille et la plage de cellules que l’on souhaite importer avec les arguments <code>sheet</code> et <code>range</code> :</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" title="1">d &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path  =</span> <span class="st">&quot;./dataset/Titanic.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;Feuil1&quot;</span>, <span class="dt">range =</span> <span class="st">&quot;A1:G1314&quot;</span>)</a></code></pre></div>
+<p>Comme pour l’import de fichiers texte, une interface interactive d’import de fichiers Excel est disponible dans RStudio dans l’onglet <em>Environment</em>. Pour y accéder, cliquez sur <em>Import Dataset</em> puis <em>From Excel…</em>.</p>
+<p>
+<img src="img/import_excel.png" title="fig:" alt="Dialogue d’importation d’un fichier Excel" />
+</p>
+<p>Spécifiez le chemin ou l’URL du fichier dans le premier champ, vérifiez l’import dans la partie <em>Data Preview</em>, modifiez si besoin les options d’importation, copiez le code d’importation généré dans la partie <em>Code Preview</em> et collez le dans votre script.</p>
+<p>Pour plus d’informations, voir <a href="http://readxl.tidyverse.org/">le site de l’extension <code>readxl</code></a>.</p>
+</div>
+<div id="export-de-données" class="section level2">
+<h2><span class="header-section-number">4.5</span> Export de données</h2>
+<div id="export-de-tableaux-de-données" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Export de tableaux de données</h3>
+<p>On peut avoir besoin d’exporter un tableau de données dans R vers un fichier dans différents formats. La plupart des fonctions d’import disposent d’un équivalent permettant l’export de données. On citera notamment :</p>
+<ul>
+<li><code>write.csv</code>, permet d’enregistrer un <em>data frame</em> dans un fichier au format texte délimité</li>
+</ul>
+<p>Il n’existe par contre pas de fonctions permettant d’enregistrer directement au format <code>xls</code> ou <code>xlsx</code>. On peut dans ce cas passer par un fichier CSV.</p>
+<p>Ces fonctions sont utiles si on souhaite diffuser des données à quelqu’un d’autre, ou entre deux logiciels.</p>
+<p>Si vous travaillez sur des données de grandes dimensions, les formats texte peuvent être lents à exporter et importer. Dans ce cas, l’extension <code>feather</code> peut être utile : elle permet d’enregistrer un <em>data frame</em> au format feather, qui n’est pas le plus compact mais qui est extrêmement rapide à lire et écrire <a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+<p>Les fonctions <code>read_feather</code> et <code>write_feather</code> permettent d’importer et exporter des tableaux de données dans ce format.</p>
+</div>
+<div id="sauvegarder-des-objets" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Sauvegarder des objets</h3>
+<p>Une autre manière de sauvegarder des données est de les enregistrer au format <code>RData</code>. Ce format propre à R est compact, rapide, et permet d’enregistrer plusieurs objets R, quel que soit leur type, dans un même fichier.</p>
+<p>Pour enregistrer des objets, il suffit d’utiliser la fonction <code>save</code> et de lui fournir la liste des objets à sauvegarder et le nom du fichier :</p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb277-1" title="1"><span class="kw">save</span>(<span class="dt">... =</span> d, <span class="dt">file =</span> <span class="st">&quot;fichier.RData&quot;</span>)</a></code></pre></div>
+<p>Pour charger des objets préalablement enregistrés, utiliser <code>load</code> :</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb278-1" title="1"><span class="kw">load</span>(<span class="dt">file =</span> <span class="st">&quot;fichier.RData&quot;</span>)</a></code></pre></div>
+<p>Les objets <code>d</code>devrait alors apparaître dans votre environnement.</p>
+<p><strong>Attention</strong>, quand on utilise <code>load</code>, les objets chargés sont importés directement dans l’environnement en cours avec leur nom d’origine. Si d’autres objets du même nom existaient déjà, ils sont écrasés sans avertissement.</p>
+</div>
+</div>
+<div id="exercices-2" class="section level2">
+<h2><span class="header-section-number">4.6</span> Exercices</h2>
+<div id="sujet-2" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Sujet</h3>
+<p>Dans ce qui suit on va utiliser des jeux de données correspondant aux données de tous les vols au départ d’un des trois aéroports de New-York en 2013. La base de données est répartie en plusieurs tables. Nous allons utiliser une d’entres elles pour le moment à savoir le fichier <code>flights.csv</code> qui présente 336 776 vols sur 19 variables
+Voici une description de cette table :</p>
+<ul>
+<li><code>year</code>, <code>month</code>, <code>day</code> : date du vol.</li>
+<li><code>dep_time</code>, <code>arr_time</code> : Heures de départ et d’arrivée réelles (format HHMM ou HMM).</li>
+<li><code>sched_dep_time</code>,<code>sched_arr_time</code> : Heures de départ et d’arrivée prévues (format HHMM ou HMM).</li>
+<li><code>dep_delay</code>, <code>arr_delay</code> : Retards de départ et d’arrivée, en minutes. Les temps négatifs représentent des départs / arrivées précoces.</li>
+<li><code>carrier</code> : Abréviation à deux lettres des compagnies aériennes.</li>
+<li><code>flights</code> : Numéro de vol</li>
+<li><code>tailnum</code> : Immatriculation de l’avion</li>
+<li><code>origine</code>, <code>dest</code> : Aéroport de départ et destination.</li>
+<li><code>air_time</code> : Durée du vol en minutes.</li>
+<li><code>distance</code> : Distance entre les aéroports, en miles.</li>
+<li><code>hour</code> , <code>minute</code> : Heure de départ prévue divisée en heures et minutes.</li>
+<li><code>time_hour</code> : Date et heure prévues du vol</li>
+</ul>
+<p>
+<img src="img/flight.png" title="fig:" alt="Extrait de la table flights" />
+</p>
+<p><strong>Exercice 1</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Importez le jeu de données <code>fligths.csv</code></p></li>
+<li><p>Combien de lignes, colonnes sont présentes dans cette table ?</p></li>
+<li><p>Affichez le nom des colonnes</p></li>
+<li><p>Affichez les 10 premières lignes dans une vue</p></li>
+</ol>
+<p><strong>Exercice 2</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Affichez un résumé des données</p></li>
+<li><p>Affichez le type des colonnes</p></li>
+<li><p>Transformer la variable <code>flight</code>en caractère</p></li>
+<li><p>Affichez les quartiles de la distribution de la variable <code>arr_delay</code></p></li>
+<li><p>Affichez les déciles de la distribution de la variable <code>distance</code></p></li>
+</ol>
+<p><strong>Exercice 3</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Quel est l’aéroport avec le plus de départ en 2013 ?</p></li>
+<li><p>Avec la fonction <code>unique</code>, affichez le nombre de destinations différentes</p></li>
+<li><p>Proposez une représentation graphique adaptée pour la variable <code>arr_delay</code></p></li>
+<li><p>Proposez une représentation graphique adaptée pour la variable <code>origin</code></p></li>
+<li><p>Proposez une représentation graphique adaptée pour la variable <code>dest</code></p></li>
+<li><p>Même question, mais en affichant uniquement un top 10</p></li>
+</ol>
+</div>
+<div id="correction-2" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> Correction</h3>
+<p><strong>Exercice 1</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>Importez le jeu de données <code>fligths.csv</code></li>
+</ol>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb279-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/flights.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</a></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Combien de lignes, colonnes sont présentes dans cette table ?</li>
+</ol>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb280-1" title="1"><span class="kw">dim</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<pre><code>## [1] 336776     19</code></pre>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb282-1" title="1"><span class="co">#ou</span></a>
+<a class="sourceLine" id="cb282-2" title="2"></a>
+<a class="sourceLine" id="cb282-3" title="3"><span class="kw">ncol</span>(<span class="dt">x =</span> flights) ; <span class="kw">nrow</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<pre><code>## [1] 19</code></pre>
+<pre><code>## [1] 336776</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Affichez le nom des colonnes</li>
+</ol>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb285-1" title="1"><span class="kw">colnames</span>(<span class="dt">x =</span> flights) <span class="co">#fonctionne aussi avec names(flights)</span></a></code></pre></div>
+<pre><code>##  [1] &quot;year&quot;           &quot;month&quot;          &quot;day&quot;            &quot;dep_time&quot;      
+##  [5] &quot;sched_dep_time&quot; &quot;dep_delay&quot;      &quot;arr_time&quot;       &quot;sched_arr_time&quot;
+##  [9] &quot;arr_delay&quot;      &quot;carrier&quot;        &quot;flight&quot;         &quot;tailnum&quot;       
+## [13] &quot;origin&quot;         &quot;dest&quot;           &quot;air_time&quot;       &quot;distance&quot;      
+## [17] &quot;hour&quot;           &quot;minute&quot;         &quot;time_hour&quot;</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Affichez les 10 premières lignes dans une vue</li>
+</ol>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb287-1" title="1"><span class="kw">View</span>(<span class="kw">head</span>(<span class="dt">x =</span> flights, <span class="dt">n =</span> <span class="dv">10</span>))</a></code></pre></div>
+<p><strong>Exercice 2</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>Affichez un résumé des données</li>
+</ol>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" title="1"><span class="kw">summary</span>(<span class="dt">object =</span> flights)</a></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Affichez le type des colonnes</li>
+</ol>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb289-1" title="1"><span class="kw">str</span>(flights)</a></code></pre></div>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Transformer la variable <code>flight</code>en caractère</li>
+</ol>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb290-1" title="1">flights<span class="op">$</span>flight &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="dt">x =</span> flights<span class="op">$</span>flight)</a>
+<a class="sourceLine" id="cb290-2" title="2"><span class="kw">class</span>(<span class="dt">x =</span> flights<span class="op">$</span>flight )</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Affichez les quartiles de la distribution de la variable <code>arr_delay</code></li>
+</ol>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb292-1" title="1"><span class="co">#Attention aux valeurs manquantes</span></a>
+<a class="sourceLine" id="cb292-2" title="2"><span class="kw">quantile</span>(<span class="dt">x =</span> flights<span class="op">$</span>arr_delay, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+##  -86  -17   -5   14 1272</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Affichez les déciles de la distribution de la variable <code>distance</code></li>
+</ol>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb294-1" title="1"><span class="kw">quantile</span>(<span class="dt">x =</span> flights<span class="op">$</span>distance, <span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.1</span>))</a></code></pre></div>
+<pre><code>##   0%  10%  20%  30%  40%  50%  60%  70%  80%  90% 100% 
+##   17  214  427  544  733  872 1023 1096 1598 2446 4983</code></pre>
+<p><strong>Exercice 3</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>Quel est l’aéroport avec le plus de départ en 2013 ?</li>
+</ol>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb296-1" title="1"><span class="kw">table</span>(<span class="dt">x =</span> flights<span class="op">$</span>origin)</a></code></pre></div>
+<pre><code>## x
+##    EWR    JFK    LGA 
+## 120835 111279 104662</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Avec la fonction <code>unique</code>, affichez le nombre de destinations différentes</li>
+</ol>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb298-1" title="1"><span class="kw">length</span>(<span class="dt">x =</span> <span class="kw">unique</span>(<span class="dt">x =</span> flights<span class="op">$</span>dest))</a></code></pre></div>
+<pre><code>## [1] 105</code></pre>
+<p>Si la variable <code>dest</code> est de type <code>factor</code>, on peut simplement compter le nombre de <code>levels</code></p>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb300-1" title="1"><span class="kw">is.factor</span>(flights<span class="op">$</span>dest) </a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb302-1" title="1"><span class="kw">length</span>(<span class="kw">levels</span>(flights<span class="op">$</span>dest))</a></code></pre></div>
+<pre><code>## [1] 105</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Proposez une représentation graphique adaptée pour la variable <code>arr_delay</code></li>
+</ol>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb304-1" title="1"><span class="kw">boxplot</span>(<span class="dt">x =</span> flights<span class="op">$</span>arr_delay, <span class="dt">horizontal =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb304-2" title="2">        <span class="dt">main =</span> <span class="st">&quot;Répartition des retards (en minutes)&quot;</span>)</a></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-165-1.png" width="1152" /></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Proposez une représentation graphique adaptée pour la variable <code>origin</code></li>
+</ol>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb305-1" title="1">count &lt;-<span class="st"> </span><span class="kw">table</span>(flights<span class="op">$</span>origin)</a>
+<a class="sourceLine" id="cb305-2" title="2"><span class="kw">pie</span>(<span class="dt">x =</span> count, <span class="dt">main =</span> <span class="st">&quot;Répartition des vols depuis l&#39;aéroport de départ&quot;</span>,</a>
+<a class="sourceLine" id="cb305-3" title="3">    <span class="dt">labels =</span> <span class="kw">paste</span>(<span class="kw">row.names</span>(count),<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>,count),<span class="dt">col =</span> <span class="kw">colors</span>())</a></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-166-1.png" width="1152" /></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Proposez une représentation graphique adaptée pour la variable <code>dest</code></li>
+</ol>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb306-1" title="1">count &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="dt">x =</span> <span class="kw">table</span>(flights<span class="op">$</span>dest),<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb306-2" title="2"><span class="kw">barplot</span>(<span class="dt">height =</span> count, <span class="dt">main =</span> <span class="st">&quot;Nombre de vols pour chaque destination&quot;</span>,</a>
+<a class="sourceLine" id="cb306-3" title="3">        <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">cex.names =</span> <span class="fl">0.4</span>)</a></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-167-1.png" width="1152" /></p>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>Même question, mais en affichant uniquement un top 10</li>
+</ol>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb307-1" title="1">count &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="dt">x =</span> <span class="kw">table</span>(flights<span class="op">$</span>dest),<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb307-2" title="2"><span class="kw">barplot</span>(<span class="dt">height =</span> count, <span class="dt">main =</span> <span class="st">&quot;Nombre de vols pour chaque destination </span><span class="ch">\n</span><span class="st"> TOP 10&quot;</span>,</a>
+<a class="sourceLine" id="cb307-3" title="3">        <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20000</span>), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-168-1.png" width="1152" /></p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p><code>feather</code> est un format compatible avec Python, R et Julia. Pour plus d’informations, voir <a href="https://github.com/wesm/feather" class="uri">https://github.com/wesm/feather</a><a href="first-import.html#fnref7" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="first-dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rmarkdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

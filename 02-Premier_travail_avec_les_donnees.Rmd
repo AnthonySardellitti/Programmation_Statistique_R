@@ -1,4 +1,4 @@
-# Premier travail avec des données
+# Premier travail avec des données {#first_dataset}
 
 Ce document est extrait du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
 
@@ -37,7 +37,7 @@ Cette commande ne renvoie aucun résultat particulier (sauf en cas d'erreur), ma
 
 Cet objet est d'un type nouveau : il s'agit d'un tableau de données.
 
-\newpage
+
 ## Tableau de données (*data frame*)
 
 
@@ -207,7 +207,7 @@ d$temp <- NULL
 ncol(x = d)
 ```
 
-\newpage
+
 
 
 ## Analyse univariée
@@ -427,7 +427,7 @@ tab <- table(x = d$sexe)
 pie(x = tab)
 ```
 
-\newpage
+
 
 ## Exercices
 

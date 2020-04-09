@@ -1,4 +1,4 @@
-# Diffuser et publier des rapports automatisés avec `rmarkdown`
+# Diffuser et publier des rapports automatisés avec  `rmarkdown` {#rmarkdown}
 
 Ce chapitre est extrait du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
 
@@ -13,20 +13,20 @@ Voici un exemple de document R Markdown minimal :
 
 Ce document peut être "compilé" sous différents formats. Lors de cette étape, le texte est mis en forme, les blocs de code sont exécutés, leur résultat ajouté au document, et le tout est transformé dans un des différents formats possibles.
 
-\newpage
+
 Voici le rendu du document précédent au format HTML :
 
 <p>
 ![Rendu HTML](./img/rmd_minimal_html.png)
 </p>
 
-\newpage
+
 Le rendu du même document au format PDF :
 <p>
 ![Rendu PDF](./img/rmd_minimal_pdf.png)
 </p> 
 
-\newpage
+
 Et le rendu au format `docx` :
 <p>
 ![Rendu docx](./img/rmd_minimal_word.png)
