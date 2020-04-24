@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 # Importer des données externes {#first_import}
 
@@ -238,9 +238,14 @@ Voici une description de cette table :
 - `hour` , `minute` : Heure de départ prévue divisée en heures et minutes.
 - `time_hour` : Date et heure prévues du vol
 
-<p>
-![Extrait de la table flights](./img/flight.png)
-</p>
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(dplyr)
+library(kableExtra)
+library(nycflights13)
+taille <- 12
+kable(head(flights,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
 
 **Exercice 1**
 
