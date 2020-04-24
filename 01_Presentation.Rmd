@@ -1,13 +1,12 @@
 # Présentation {#presentation}
 
-Ce chapitre est extrait du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
+Certaines parties de ce chapitre sont extraites du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
 
 ## Introduction
 
 ### À propos de R
 
 R est un langage orienté vers le traitement et l'analyse quantitative des données, dérivé du langage. Il est développé depuis les années 90 par un groupe de volontaires de différents pays et par une grande communauté d'utilisateurs. C'est un logiciel libre, publié sous licence GNU GPL.
-
 
 Utilisation de R présente plusieurs avantages:
 
@@ -573,7 +572,85 @@ imc <- function(taille = 1.70, poids = 60) {
 imc()
 ```
 
-### Regrouper ses commandes dans des scripts
+## Fonctions de tests et comparaisons
+
+Dans R, il est possible d’effectuer des comparaisons ou des tests qui vont retourner la valeur `TRUE` si vrai et `FALSE` si faux
+
+### Opérateurs de comparaisons
+
+Voici les différents opérateurs de comparaisons que l’on peut utiliser :
+
+<p>
+![Opérateurs de comparaison](./img/comparaison.png)
+</p>
+
+```{r}
+a <- c(1,3,5,9)
+b <- c(1,2,6,9)
+```
+```{r}
+a > b
+a == b
+a != b
+```
+
+### Opérateurs logiques
+
+Ces opérateurs permettent de tester l'effet de plusieurs tests logiques.
+
+<p>
+![Opérateurs logiques](./img/logique.png)
+</p>
+
+```{r}
+a <- c(1,3,5,9)
+b <- c(1,2,6,9)
+```
+```{r}
+(a > b) & ( a > 4)
+(a == b) | (a > 4)
+```
+
+```{r}
+xor(a > b, a > 4)
+```
+
+```{r}
+a > b
+! a > b
+```
+
+### Fonctions logiques
+
+Il existe des fonctions pour effectuer des tests logiques. Elles ont toutes le même préfixe et s'écrivent `is.mon_test`. On peut par exemple tester la classe d'un **objet** avec les fonctions `is.classe_a_tester`. Ces fonctions sont des tests logiques donc elles renvoient toujours des booléens (rappel TD1).
+
+
+```{r}
+numeric_vec <- c(10,55,49,4)
+class(numeric_vec)
+character_vec <- c("Jaune", "Vert", "Bleu", "Rouge")
+class(character_vec)
+```
+
+```{r}
+is.numeric(numeric_vec)
+is.numeric(character_vec)
+```
+
+```{r}
+is.character(numeric_vec)
+is.character(character_vec)
+```
+
+On peut aussi tester la présence `FALSE`/ `TRUE` de valeurs manquantes `NA` avec la fonction `is.na`.
+
+```{r}
+a <- c(1,NA,6,9)
+is.na(a)
+```
+
+
+## Regrouper ses commandes dans des scripts
 
 Jusqu'ici on a utilisé R de manière "interactive", en saisissant des commandes directement dans la console. Ça n'est cependant pas la manière dont on va utiliser R au quotidien, pour une raison simple : lorsque R redémarre, tout ce qui a été effectué dans la console est perdu.
 
@@ -598,7 +675,7 @@ max(imc)
 ```
 
 
-#### Commentaires
+### Commentaires
 
 Les commentaires sont un élément très important d'un script. Il s'agit de texte libre, ignoré par R, et qui permet de décrire les étapes du script, sa logique, les raisons pour lesquelles on a procédé de telle ou telle manière... Il est primordial de documenter ses scripts à l'aide de commentaires, car il est très facile de ne plus se retrouver dans un programme qu'on a produit soi-même, même après une courte interruption.
 
@@ -621,7 +698,7 @@ max(imc)
 ```
 
 
-### Installer et charger des extensions (*packages*)
+## Installer et charger des extensions (*packages*)
 
 R étant un logiciel libre, il bénéficie d'un développement communautaire riche et dynamique. L'installation de base de R permet de faire énormément de choses, mais le langage dispose en plus d'un système d'extensions permettant d'ajouter facilement de nouvelles fonctionnalités. La plupart des extensions sont développées et maintenues par la communauté des utilisateurs de R, et diffusées via un réseau de serveurs nommé CRAN (*Comprehensive R Archive Network*).
 
@@ -663,20 +740,20 @@ Si vous essayez d'exécuter une fonction d'une extension et que vous obtenez le 
 
 
 
-### Exercices
+## Exercices
 
-#### Sujet
+### Sujet
 
 **Exercice 1**
 
-Construire le vecteur `x` suivant :
+a. Construire le vecteur `x` suivant :
 
 ```{r echo=FALSE}
 x <- c(120, 134, 256, 12)
 x
 ```
 
-Utiliser ce vecteur `x` pour générer les deux vecteurs suivants :
+b. Utiliser ce vecteur `x` pour générer les deux vecteurs suivants :
 
 ```{r echo=FALSE}
 x + 100
@@ -697,13 +774,13 @@ Calculer le revenu total de chaque ménage, puis diviser par le nombre de person
 
 **Exercice 3**
 
-Dans l'exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint. 
+a. Dans l'exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint. 
 
 ```{r eval=FALSE}
 conjoint1 <- c(1200, 1180, 1750, 2100)
 ```
 
-Recommencer avec les revenus suivants, parmi lesquels l'un des enquêtés n'a pas voulu répondre :
+b. Recommencer avec les revenus suivants, parmi lesquels l'un des enquêtés n'a pas voulu répondre :
 
 ```{r eval=FALSE}
 conjoint1 <- c(1200, 1180, 1750, NA)
@@ -718,17 +795,17 @@ temperature <- c(3.4, 4.8, 8.4, 11.4, 15.8, 19.4, 22.2, 21.6, 17.6, 13.4, 7.6, 4
 precipitations <- c(47.2, 44.1, 50.4, 74.9, 90.8, 75.6, 63.7, 62, 87.5, 98.6, 81.9, 55.2)
 ```
 
-Calculer la température moyenne sur l'année.
+a. Calculer la température moyenne sur l'année.
 
-Calculer la quantité totale de précipitations sur l'année.
+b. Calculer la quantité totale de précipitations sur l'année.
 
-À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d'aide de la fonction si nécessaire.
+c. À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d'aide de la fonction si nécessaire.
 
 ```{r}
 cumsum(precipitations)
 ```
 
-Même question pour :
+d. Même question pour :
 
 ```{r}
 diff(temperature)
@@ -744,11 +821,11 @@ anglais <- c(14, 9, 13, 15, 17, 11)
 sport <- c(18, 11, 14, 10, 8, 12)
 ```
 
-Calculer la moyenne des élèves de la classe en anglais.
+a. Calculer la moyenne des élèves de la classe en anglais.
 
-Calculer la moyenne générale de chaque élève.
+b. Calculer la moyenne générale de chaque élève.
 
-Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d'aide de ces fonctions) :
+c. Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d'aide de ces fonctions) :
 
 ```{r}
 pmin(maths, anglais, sport)
@@ -759,12 +836,11 @@ pmax(maths, anglais, sport)
 ```
 
 
-
-#### Correction
+### Correction
 
 **Exercice 1**
 
-Construire le vecteur `x` suivant :
+a. Construire le vecteur `x` suivant :
 
 ```{r echo=FALSE}
 x <- c(120, 134, 256, 12)
@@ -775,7 +851,7 @@ x
 x <- c(120, 134, 256, 12)
 ```
 
-Utiliser ce vecteur `x` pour générer les deux vecteurs suivants :
+b. Utiliser ce vecteur `x` pour générer les deux vecteurs suivants :
 
 ```{r echo=FALSE}
 x + 100
@@ -806,7 +882,7 @@ revenu_total / nb_personnes
 
 **Exercice 3**
 
-Dans l'exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint. 
+a. Dans l'exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint. 
 
 ```{r eval=FALSE}
 conjoint1 <- c(1200, 1180, 1750, 2100)
@@ -816,7 +892,7 @@ conjoint1 <- c(1200, 1180, 1750, 2100)
 range(conjoint1)
 ```
 
-Recommencer avec les revenus suivants, parmi lesquels l'un des enquêtés n'a pas voulu répondre :
+b. Recommencer avec les revenus suivants, parmi lesquels l'un des enquêtés n'a pas voulu répondre :
 
 ```{r eval=FALSE}
 conjoint1 <- c(1200, 1180, 1750, NA)
@@ -835,22 +911,25 @@ temperature <- c(3.4, 4.8, 8.4, 11.4, 15.8, 19.4, 22.2, 21.6, 17.6, 13.4, 7.6, 4
 precipitations <- c(47.2, 44.1, 50.4, 74.9, 90.8, 75.6, 63.7, 62, 87.5, 98.6, 81.9, 55.2)
 ```
 
-Calculer la température moyenne sur l'année.
-
-Calculer la quantité totale de précipitations sur l'année.
+a. Calculer la température moyenne sur l'année.
 
 ```{r eval=FALSE}
 mean(temperature)
+```
+
+b. Calculer la quantité totale de précipitations sur l'année.
+
+```{r eval=FALSE}
 sum(precipitations)
 ```
 
-À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d'aide de la fonction si nécessaire.
+c. À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d'aide de la fonction si nécessaire.
 
 ```{r}
 cumsum(precipitations)
 ```
 
-Même question pour :
+d. Même question pour :
 
 ```{r}
 diff(temperature)
@@ -870,16 +949,19 @@ anglais <- c(14, 9, 13, 15, 17, 11)
 sport <- c(18, 11, 14, 10, 8, 12)
 ```
 
-Calculer la moyenne des élèves de la classe en anglais.
-
-Calculer la moyenne générale de chaque élève.
+a. Calculer la moyenne des élèves de la classe en anglais.
 
 ```{r eval=FALSE}
 mean(anglais)
+```
+
+b. Calculer la moyenne générale de chaque élève.
+
+```{r eval=FALSE}
 (maths + anglais + sport) / 3
 ```
 
-Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d'aide de ces fonctions) :
+c. Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d'aide de ces fonctions) :
 
 ```{r}
 pmin(maths, anglais, sport)

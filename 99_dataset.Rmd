@@ -1,0 +1,234 @@
+# Jeux de données utilisés {#all_dataset}
+
+Ce chapitre présente les différents jeux de données utilisés dans ce livre.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+taille <- 12
+```
+
+
+## Iris
+
+Le jeu de données présente les caractéristiques de 3 espèces de fleurs. Il est intégré au package *datasets* déjà chargé à chaque ouverture de session dans RStudio.
+
+
+```{r}
+dim(iris)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(iris,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+## Histoire de vie (hdv2003)
+
+Le jeu de données est un extrait de l'enquête *Histoire de vie* réalisée par l'INSEE en 2003. Il contient 2000 individus et 20 variables.
+
+Pour pouvoir utiliser ces données, il faut d'abord charger l'extension `questionr` (après l'avoir installée, bien entendu) :
+
+```{r, warning=FALSE}
+library(questionr)
+```
+
+Nous devons ensuite indiquer à R que nous souhaitons accéder au jeu de données à l'aide de la commande `data` :
+
+```{r}
+data(hdv2003)
+```
+
+Cette commande ne renvoie aucun résultat particulier (sauf en cas d'erreur), mais vous devriez voir apparaître dans l'onglet *Environment* de RStudio un nouvel objet nommé `hdv2003` :
+
+On utilise la fonction `dim` pour connaître la taille du dataset
+
+```{r}
+dim(hdv2003)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(hdv2003,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+## NYC Flights 2013
+
+Le package `nycflights13` propose plusieurs `data.frame`. Ceux-ci correspondent aux données de tous les vols au départ d'un des trois aéroports de New-York en 2013.
+
+```{r, message=FALSE, warning=FALSE}
+library(nycflights13)
+ls("package:nycflights13")
+```
+
+### Flights
+
+Cette table présente les informations qui caractérisent un vol, Voici la présentation du jeu de données :
+
+- `year`, `month`, `day` : date du vol.
+- `dep_time`, `arr_time` : Heures de départ et d'arrivée réelles (format HHMM ou HMM).
+- `sched_dep_time`,`sched_arr_time` : Heures de départ et d'arrivée prévues (format HHMM ou HMM).
+- `dep_delay`, `arr_delay` : Retards de départ et d'arrivée, en minutes. Les temps négatifs représentent des départs / arrivées précoces.
+- `carrier` : Abréviation à deux lettres des compagnies aériennes.
+- `flights` : Numéro de vol
+- `tailnum` : Immatriculation de l'avion
+- `origine`, `dest` : Aéroport de départ et destination.
+- `air_time` : Durée du vol en minutes.
+- `distance` : Distance entre les aéroports, en miles.
+- `hour` , `minute` : Heure de départ prévue divisée en heures et minutes.
+- `time_hour` : Date et heure prévues du vol
+
+```{r}
+dim(flights)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(flights,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+### Airlines
+
+La table `airlines` contient des données sur les compagnies aériennes
+
+```{r}
+dim(airlines)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(airlines,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+### Airports
+
+La table `airports` contient des informations sur les aéroports
+
+```{r}
+dim(airports)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(airports,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+### Weather
+
+La table `weather` contient des informations sur les conditions météorologiques
+
+```{r}
+dim(weather)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(weather,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+### Planes
+
+La table `planes` contient des informations sur les appareil
+
+```{r}
+dim(planes)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(planes,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+## Google
+
+Le dataset `google.csv` décrit des applications du store google.
+Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/lava18/google-play-store-apps). Il a été adapté dans ce livre.
+
+Voici la présentation du jeu de données :
+
+- `App` : Nom de l'application
+- `Category` : Catégorie de l'application
+- `Rating` : Note moyenne des utilisateurs
+- `Reviews` : Nombre d'avis d'utilisateurs
+- `Installs` :  Nombre d'installation
+- `Type` : Application gratuite / payante
+- `Price` : Prix de l'application
+- `Content.Rating` : Public concerné
+- `Last.Updated` : Date de la dernière version
+- `Size_recode` : Taille de l'application (en Mo)
+
+```{r}
+google <- read.csv(file = "./dataset/google.csv", sep = '\t')
+```
+
+```{r}
+dim(google)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(google,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+## Pokemon
+
+Le dataset `pokemon.xlsx` décrit les statistiques des pokemon des deux premières générations.
+Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/rounakbanik/pokemon). Il a été adapté dans ce livre
+
+Voici la présentation du jeu de données :
+
+- `pokedex_number` : numéro du pokemon
+- `nom` : nom du pokemon
+- `generation` : le numéro de génération dont est issu le pokemon
+- `is_legendary` : Oui / Non si le pokemon est légendaire
+- `type` : le type du pokemon
+- `weight_kg` : le poids du pokemon en kg
+- `height_m` : la taille du pokemon en mètre
+- `attack` : la puissance d'attaque du pokemon
+- `defense` : la puissance de défense du pokemon
+- `speed` : la vitesse du pokemon
+
+
+```{r, warning=FALSE, message=FALSE}
+library(readxl)
+pokemon <- read_excel(path = "./dataset/pokemon.xlsx", sheet = "pokemon")
+```
+
+
+```{r}
+dim(pokemon)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(pokemon,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+
+## Star Wars
+
+Le dataset `starwars.csv`  décrit les caractéristiques des personnages principaux de la saga.
+
+
+```{r}
+starWars <- read.csv("./dataset/starwars.csv", sep = "\t")
+```
+
+
+```{r}
+dim(starWars)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(starWars,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```

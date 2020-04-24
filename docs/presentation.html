@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Présentation | Programmation Statistique avec R</title>
-  <meta name="description" content="2 Présentation | Programmation Statistique avec R" />
+  <title>Chapitre 2 Présentation | Programmation Statistique avec R</title>
+  <meta name="description" content="Chapitre 2 Présentation | Programmation Statistique avec R" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Présentation | Programmation Statistique avec R" />
+  <meta property="og:title" content="Chapitre 2 Présentation | Programmation Statistique avec R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="2 Présentation | Programmation Statistique avec R" />
+  <meta property="og:description" content="Chapitre 2 Présentation | Programmation Statistique avec R" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Présentation | Programmation Statistique avec R" />
+  <meta name="twitter:title" content="Chapitre 2 Présentation | Programmation Statistique avec R" />
   
-  <meta name="twitter:description" content="2 Présentation | Programmation Statistique avec R" />
+  <meta name="twitter:description" content="Chapitre 2 Présentation | Programmation Statistique avec R" />
   
 
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2020-04-09" />
+<meta name="date" content="2020-04-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -140,9 +141,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.1" data-path="presentation.html"><a href="presentation.html#la-console"><i class="fa fa-check"></i><b>2.2.1</b> La console</a></li>
 <li class="chapter" data-level="2.2.2" data-path="presentation.html"><a href="presentation.html#objets"><i class="fa fa-check"></i><b>2.2.2</b> Objets</a></li>
 <li class="chapter" data-level="2.2.3" data-path="presentation.html"><a href="presentation.html#fonctions"><i class="fa fa-check"></i><b>2.2.3</b> Fonctions</a></li>
-<li class="chapter" data-level="2.2.4" data-path="presentation.html"><a href="presentation.html#regrouper-ses-commandes-dans-des-scripts"><i class="fa fa-check"></i><b>2.2.4</b> Regrouper ses commandes dans des scripts</a></li>
-<li class="chapter" data-level="2.2.5" data-path="presentation.html"><a href="presentation.html#installer-et-charger-des-extensions-packages"><i class="fa fa-check"></i><b>2.2.5</b> Installer et charger des extensions (<em>packages</em>)</a></li>
-<li class="chapter" data-level="2.2.6" data-path="presentation.html"><a href="presentation.html#exercices"><i class="fa fa-check"></i><b>2.2.6</b> Exercices</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="presentation.html"><a href="presentation.html#fonctions-de-tests-et-comparaisons"><i class="fa fa-check"></i><b>2.3</b> Fonctions de tests et comparaisons</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="presentation.html"><a href="presentation.html#opérateurs-de-comparaisons"><i class="fa fa-check"></i><b>2.3.1</b> Opérateurs de comparaisons</a></li>
+<li class="chapter" data-level="2.3.2" data-path="presentation.html"><a href="presentation.html#opérateurs-logiques"><i class="fa fa-check"></i><b>2.3.2</b> Opérateurs logiques</a></li>
+<li class="chapter" data-level="2.3.3" data-path="presentation.html"><a href="presentation.html#fonctions-logiques"><i class="fa fa-check"></i><b>2.3.3</b> Fonctions logiques</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="presentation.html"><a href="presentation.html#regrouper-ses-commandes-dans-des-scripts"><i class="fa fa-check"></i><b>2.4</b> Regrouper ses commandes dans des scripts</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="presentation.html"><a href="presentation.html#commentaires"><i class="fa fa-check"></i><b>2.4.1</b> Commentaires</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="presentation.html"><a href="presentation.html#installer-et-charger-des-extensions-packages"><i class="fa fa-check"></i><b>2.5</b> Installer et charger des extensions (<em>packages</em>)</a></li>
+<li class="chapter" data-level="2.6" data-path="presentation.html"><a href="presentation.html#exercices"><i class="fa fa-check"></i><b>2.6</b> Exercices</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="presentation.html"><a href="presentation.html#sujet"><i class="fa fa-check"></i><b>2.6.1</b> Sujet</a></li>
+<li class="chapter" data-level="2.6.2" data-path="presentation.html"><a href="presentation.html#correction"><i class="fa fa-check"></i><b>2.6.2</b> Correction</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="first-dataset.html"><a href="first-dataset.html"><i class="fa fa-check"></i><b>3</b> Premier travail avec des données</a><ul>
@@ -156,15 +167,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="first-dataset.html"><a href="first-dataset.html#analyser-une-variable-quantitative"><i class="fa fa-check"></i><b>3.3.1</b> Analyser une variable quantitative</a></li>
 <li class="chapter" data-level="3.3.2" data-path="first-dataset.html"><a href="first-dataset.html#analyser-une-variable-qualitative"><i class="fa fa-check"></i><b>3.3.2</b> Analyser une variable qualitative</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="first-dataset.html"><a href="first-dataset.html#exercices-1"><i class="fa fa-check"></i><b>3.4</b> Exercices</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="first-dataset.html"><a href="first-dataset.html#sujet-1"><i class="fa fa-check"></i><b>3.4.1</b> Sujet</a></li>
-<li class="chapter" data-level="3.4.2" data-path="first-dataset.html"><a href="first-dataset.html#correction-1"><i class="fa fa-check"></i><b>3.4.2</b> Correction</a></li>
+<li class="chapter" data-level="3.4" data-path="first-dataset.html"><a href="first-dataset.html#combiner-plusieurs-variables"><i class="fa fa-check"></i><b>3.4</b> Combiner plusieurs variables</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="first-dataset.html"><a href="first-dataset.html#créer-une-nouvelle-variable-1"><i class="fa fa-check"></i><b>3.4.1</b> Créer une nouvelle variable</a></li>
+<li class="chapter" data-level="3.4.2" data-path="first-dataset.html"><a href="first-dataset.html#créer-des-regroupements-de-modalités"><i class="fa fa-check"></i><b>3.4.2</b> Créer des regroupements de modalités</a></li>
+<li class="chapter" data-level="3.4.3" data-path="first-dataset.html"><a href="first-dataset.html#découper-une-variable-numérique-en-classes"><i class="fa fa-check"></i><b>3.4.3</b> Découper une variable numérique en classes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="first-dataset.html"><a href="first-dataset.html#exercices-1"><i class="fa fa-check"></i><b>3.5</b> Exercices</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="first-dataset.html"><a href="first-dataset.html#sujet-1"><i class="fa fa-check"></i><b>3.5.1</b> Sujet</a></li>
+<li class="chapter" data-level="3.5.2" data-path="first-dataset.html"><a href="first-dataset.html#correction-1"><i class="fa fa-check"></i><b>3.5.2</b> Correction</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="first-import.html"><a href="first-import.html"><i class="fa fa-check"></i><b>4</b> Importer des données externes</a><ul>
-<li class="chapter" data-level="4.1" data-path="first-import.html"><a href="first-import.html#modifier-le-répertoire-actif"><i class="fa fa-check"></i><b>4.1</b> Modifier le répertoire actif</a></li>
-<li class="chapter" data-level="4.2" data-path="first-import.html"><a href="first-import.html#import-de-fichiers-textes"><i class="fa fa-check"></i><b>4.2</b> Import de fichiers textes</a></li>
-<li class="chapter" data-level="4.3" data-path="first-import.html"><a href="first-import.html#interface-interactive-dimport-de-fichiers"><i class="fa fa-check"></i><b>4.3</b> Interface interactive d’import de fichiers</a></li>
+<li class="chapter" data-level="4.1" data-path="first-import.html"><a href="first-import.html#import-de-fichiers-csv"><i class="fa fa-check"></i><b>4.1</b> Import de fichiers csv</a></li>
+<li class="chapter" data-level="4.2" data-path="first-import.html"><a href="first-import.html#interface-interactive-dimport-de-fichiers"><i class="fa fa-check"></i><b>4.2</b> Interface interactive d’import de fichiers</a></li>
+<li class="chapter" data-level="4.3" data-path="first-import.html"><a href="first-import.html#modifier-le-répertoire-actif"><i class="fa fa-check"></i><b>4.3</b> Modifier le répertoire actif</a></li>
 <li class="chapter" data-level="4.4" data-path="first-import.html"><a href="first-import.html#import-depuis-un-fichier-excel"><i class="fa fa-check"></i><b>4.4</b> Import depuis un fichier Excel</a></li>
 <li class="chapter" data-level="4.5" data-path="first-import.html"><a href="first-import.html#export-de-données"><i class="fa fa-check"></i><b>4.5</b> Export de données</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="first-import.html"><a href="first-import.html#export-de-tableaux-de-données"><i class="fa fa-check"></i><b>4.5.1</b> Export de tableaux de données</a></li>
@@ -175,26 +191,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.2" data-path="first-import.html"><a href="first-import.html#correction-2"><i class="fa fa-check"></i><b>4.6.2</b> Correction</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Diffuser et publier des rapports automatisés avec <code>rmarkdown</code></a><ul>
-<li class="chapter" data-level="5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#créer-un-nouveau-document"><i class="fa fa-check"></i><b>5.1</b> Créer un nouveau document</a></li>
-<li class="chapter" data-level="5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#éléments-dun-document-r-markdown"><i class="fa fa-check"></i><b>5.2</b> Éléments d’un document R Markdown</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="rmarkdown.html"><a href="rmarkdown.html#en-tête-préambule"><i class="fa fa-check"></i><b>5.2.1</b> En-tête (préambule)</a></li>
-<li class="chapter" data-level="5.2.2" data-path="rmarkdown.html"><a href="rmarkdown.html#texte-du-document"><i class="fa fa-check"></i><b>5.2.2</b> Texte du document</a></li>
-<li class="chapter" data-level="5.2.3" data-path="rmarkdown.html"><a href="rmarkdown.html#blocs-de-code-r"><i class="fa fa-check"></i><b>5.2.3</b> Blocs de code R</a></li>
-<li class="chapter" data-level="5.2.4" data-path="rmarkdown.html"><a href="rmarkdown.html#compiler-un-document-knit"><i class="fa fa-check"></i><b>5.2.4</b> Compiler un document (<em>Knit</em>)</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#personnaliser-le-document-généré"><i class="fa fa-check"></i><b>5.3</b> Personnaliser le document généré</a></li>
-<li class="chapter" data-level="5.4" data-path="rmarkdown.html"><a href="rmarkdown.html#options-des-blocs-de-code-r"><i class="fa fa-check"></i><b>5.4</b> Options des blocs de code R</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="rmarkdown.html"><a href="rmarkdown.html#nom-du-bloc"><i class="fa fa-check"></i><b>5.4.1</b> Nom du bloc</a></li>
-<li class="chapter" data-level="5.4.2" data-path="rmarkdown.html"><a href="rmarkdown.html#options"><i class="fa fa-check"></i><b>5.4.2</b> Options</a></li>
-<li class="chapter" data-level="5.4.3" data-path="rmarkdown.html"><a href="rmarkdown.html#modifier-les-options"><i class="fa fa-check"></i><b>5.4.3</b> Modifier les options</a></li>
-<li class="chapter" data-level="5.4.4" data-path="rmarkdown.html"><a href="rmarkdown.html#options-globales"><i class="fa fa-check"></i><b>5.4.4</b> Options globales</a></li>
-<li class="chapter" data-level="5.4.5" data-path="rmarkdown.html"><a href="rmarkdown.html#mise-en-cache-des-résultats"><i class="fa fa-check"></i><b>5.4.5</b> Mise en cache des résultats</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="rmarkdown.html"><a href="rmarkdown.html#rendu-des-tableaux"><i class="fa fa-check"></i><b>5.5</b> Rendu des tableaux</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#tableaux-croisés"><i class="fa fa-check"></i><b>5.5.1</b> Tableaux croisés</a></li>
+<li class="chapter" data-level="5" data-path="manipulation-objet.html"><a href="manipulation-objet.html"><i class="fa fa-check"></i><b>5</b> Manipulation des objets</a><ul>
+<li class="chapter" data-level="5.1" data-path="manipulation-objet.html"><a href="manipulation-objet.html#liste"><i class="fa fa-check"></i><b>5.1</b> Liste</a></li>
+<li class="chapter" data-level="5.2" data-path="manipulation-objet.html"><a href="manipulation-objet.html#matrice"><i class="fa fa-check"></i><b>5.2</b> Matrice</a></li>
+<li class="chapter" data-level="5.3" data-path="manipulation-objet.html"><a href="manipulation-objet.html#data-frame"><i class="fa fa-check"></i><b>5.3</b> Data frame</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="manipulation-objet.html"><a href="manipulation-objet.html#indexations-simples"><i class="fa fa-check"></i><b>5.3.1</b> Indexations simples</a></li>
+<li class="chapter" data-level="5.3.2" data-path="manipulation-objet.html"><a href="manipulation-objet.html#indexations-avec-des-booléens"><i class="fa fa-check"></i><b>5.3.2</b> Indexations avec des booléens</a></li>
+<li class="chapter" data-level="5.3.3" data-path="manipulation-objet.html"><a href="manipulation-objet.html#filtre-et-sélection-dans-un-data-frame"><i class="fa fa-check"></i><b>5.3.3</b> Filtre et sélection dans un data frame</a></li>
+<li class="chapter" data-level="5.3.4" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercices-3"><i class="fa fa-check"></i><b>5.3.4</b> Exercices</a></li>
+<li class="chapter" data-level="5.3.5" data-path="manipulation-objet.html"><a href="manipulation-objet.html#trier-un-data-frame"><i class="fa fa-check"></i><b>5.3.5</b> Trier un data frame</a></li>
+<li class="chapter" data-level="5.3.6" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercice"><i class="fa fa-check"></i><b>5.3.6</b> Exercice</a></li>
+<li class="chapter" data-level="5.3.7" data-path="manipulation-objet.html"><a href="manipulation-objet.html#agréger-des-données"><i class="fa fa-check"></i><b>5.3.7</b> Agréger des données</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="graphique.html"><a href="graphique.html"><i class="fa fa-check"></i><b>6</b> Représentation Graphique</a><ul>
+<li class="chapter" data-level="6.1" data-path="graphique.html"><a href="graphique.html#les-fenêtres-graphiques"><i class="fa fa-check"></i><b>6.1</b> Les fenêtres graphiques</a></li>
+<li class="chapter" data-level="6.2" data-path="graphique.html"><a href="graphique.html#les-fonctions-de-tracé-de-bas-niveau"><i class="fa fa-check"></i><b>6.2</b> Les fonctions de tracé de bas niveau</a></li>
+<li class="chapter" data-level="6.3" data-path="graphique.html"><a href="graphique.html#personnaliser-des-éléments-graphiques"><i class="fa fa-check"></i><b>6.3</b> Personnaliser des éléments graphiques</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="graphique.html"><a href="graphique.html#mise-en-forme"><i class="fa fa-check"></i><b>6.3.1</b> Mise en forme</a></li>
+<li class="chapter" data-level="6.3.2" data-path="graphique.html"><a href="graphique.html#gestion-des-couleurs"><i class="fa fa-check"></i><b>6.3.2</b> Gestion des couleurs</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="graphique.html"><a href="graphique.html#type-de-graphique"><i class="fa fa-check"></i><b>6.4</b> Type de graphique</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="graphique.html"><a href="graphique.html#boxplot"><i class="fa fa-check"></i><b>6.4.1</b> Boxplot</a></li>
+<li class="chapter" data-level="6.4.2" data-path="graphique.html"><a href="graphique.html#histogramme"><i class="fa fa-check"></i><b>6.4.2</b> Histogramme</a></li>
+<li class="chapter" data-level="6.4.3" data-path="graphique.html"><a href="graphique.html#diagramme-en-circulaire"><i class="fa fa-check"></i><b>6.4.3</b> Diagramme en circulaire</a></li>
+<li class="chapter" data-level="6.4.4" data-path="graphique.html"><a href="graphique.html#diagramme-en-barre"><i class="fa fa-check"></i><b>6.4.4</b> Diagramme en barre</a></li>
+<li class="chapter" data-level="6.4.5" data-path="graphique.html"><a href="graphique.html#nuage-de-points"><i class="fa fa-check"></i><b>6.4.5</b> Nuage de points</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="graphique.html"><a href="graphique.html#exercice-2"><i class="fa fa-check"></i><b>6.5</b> Exercice</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="graphique.html"><a href="graphique.html#sujet-6"><i class="fa fa-check"></i><b>6.5.1</b> Sujet</a></li>
+<li class="chapter" data-level="6.5.2" data-path="graphique.html"><a href="graphique.html#correction-6"><i class="fa fa-check"></i><b>6.5.2</b> Correction</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="graphique.html"><a href="graphique.html#aller-plus-loin"><i class="fa fa-check"></i><b>6.6</b> Aller plus loin</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="algo.html"><a href="algo.html"><i class="fa fa-check"></i><b>7</b> Algorithme</a><ul>
+<li class="chapter" data-level="7.1" data-path="algo.html"><a href="algo.html#construire-une-fonction"><i class="fa fa-check"></i><b>7.1</b> Construire une fonction</a></li>
+<li class="chapter" data-level="7.2" data-path="algo.html"><a href="algo.html#construire-une-structure-conditionnelle"><i class="fa fa-check"></i><b>7.2</b> Construire une structure conditionnelle</a></li>
+<li class="chapter" data-level="7.3" data-path="algo.html"><a href="algo.html#construire-une-boucle"><i class="fa fa-check"></i><b>7.3</b> Construire une boucle</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="algo.html"><a href="algo.html#la-boucle-for"><i class="fa fa-check"></i><b>7.3.1</b> La boucle <code>for</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="algo.html"><a href="algo.html#la-boucle-while"><i class="fa fa-check"></i><b>7.3.2</b> La boucle <code>while</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="algo.html"><a href="algo.html#exercice-3"><i class="fa fa-check"></i><b>7.4</b> Exercice</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="algo.html"><a href="algo.html#sujet-7"><i class="fa fa-check"></i><b>7.4.1</b> Sujet</a></li>
+<li class="chapter" data-level="7.4.2" data-path="algo.html"><a href="algo.html#correction-7"><i class="fa fa-check"></i><b>7.4.2</b> Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="apply.html"><a href="apply.html"><i class="fa fa-check"></i><b>8</b> Les fonctions apply</a><ul>
+<li class="chapter" data-level="8.1" data-path="apply.html"><a href="apply.html#fonction-apply"><i class="fa fa-check"></i><b>8.1</b> Fonction apply</a></li>
+<li class="chapter" data-level="8.2" data-path="apply.html"><a href="apply.html#fonction-lapply"><i class="fa fa-check"></i><b>8.2</b> Fonction lapply</a></li>
+<li class="chapter" data-level="8.3" data-path="apply.html"><a href="apply.html#fonction-sapply"><i class="fa fa-check"></i><b>8.3</b> Fonction sapply</a></li>
+<li class="chapter" data-level="8.4" data-path="apply.html"><a href="apply.html#fonction-tapply"><i class="fa fa-check"></i><b>8.4</b> Fonction tapply</a></li>
+<li class="chapter" data-level="8.5" data-path="apply.html"><a href="apply.html#exercice-4"><i class="fa fa-check"></i><b>8.5</b> Exercice</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="apply.html"><a href="apply.html#sujet-8"><i class="fa fa-check"></i><b>8.5.1</b> Sujet</a></li>
+<li class="chapter" data-level="8.5.2" data-path="apply.html"><a href="apply.html#correction-8"><i class="fa fa-check"></i><b>8.5.2</b> Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>9</b> Manipuler les données avec dplyr</a><ul>
+<li class="chapter" data-level="9.1" data-path="dplyr.html"><a href="dplyr.html#la-fonction-slice"><i class="fa fa-check"></i><b>9.1</b> La fonction <code>slice</code></a></li>
+<li class="chapter" data-level="9.2" data-path="dplyr.html"><a href="dplyr.html#la-fonction-filter"><i class="fa fa-check"></i><b>9.2</b> La fonction <code>filter</code></a></li>
+<li class="chapter" data-level="9.3" data-path="dplyr.html"><a href="dplyr.html#la-fonction-select"><i class="fa fa-check"></i><b>9.3</b> La fonction <code>select</code></a></li>
+<li class="chapter" data-level="9.4" data-path="dplyr.html"><a href="dplyr.html#la-fonction-arrange"><i class="fa fa-check"></i><b>9.4</b> La fonction <code>arrange</code></a></li>
+<li class="chapter" data-level="9.5" data-path="dplyr.html"><a href="dplyr.html#enchaîner-les-fonctions-avec-le-pipe"><i class="fa fa-check"></i><b>9.5</b> Enchaîner les fonctions avec le <em>pipe</em></a></li>
+<li class="chapter" data-level="9.6" data-path="dplyr.html"><a href="dplyr.html#la-fonction-group_by"><i class="fa fa-check"></i><b>9.6</b> La fonction <code>group_by</code></a></li>
+<li class="chapter" data-level="9.7" data-path="dplyr.html"><a href="dplyr.html#la-fonction-summarise"><i class="fa fa-check"></i><b>9.7</b> La fonction <code>summarise</code></a></li>
+<li class="chapter" data-level="9.8" data-path="dplyr.html"><a href="dplyr.html#autres-fonctions-utiles-de-dplyr"><i class="fa fa-check"></i><b>9.8</b> Autres fonctions utiles de dplyr</a><ul>
+<li class="chapter" data-level="9.8.1" data-path="dplyr.html"><a href="dplyr.html#la-fonction-rename"><i class="fa fa-check"></i><b>9.8.1</b> La fonction <code>rename</code></a></li>
+<li class="chapter" data-level="9.8.2" data-path="dplyr.html"><a href="dplyr.html#la-fonction-mutate"><i class="fa fa-check"></i><b>9.8.2</b> La fonction <code>mutate</code></a></li>
+<li class="chapter" data-level="9.8.3" data-path="dplyr.html"><a href="dplyr.html#la-fonction-distinct"><i class="fa fa-check"></i><b>9.8.3</b> La fonction <code>distinct</code></a></li>
+<li class="chapter" data-level="9.8.4" data-path="dplyr.html"><a href="dplyr.html#la-fonction-case_when"><i class="fa fa-check"></i><b>9.8.4</b> La fonction <code>case_when</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="jointures.html"><a href="jointures.html"><i class="fa fa-check"></i><b>10</b> Jointures</a><ul>
+<li class="chapter" data-level="10.1" data-path="jointures.html"><a href="jointures.html#principe-1"><i class="fa fa-check"></i><b>10.1</b> Principe</a></li>
+<li class="chapter" data-level="10.2" data-path="jointures.html"><a href="jointures.html#types-de-jointures"><i class="fa fa-check"></i><b>10.2</b> Types de jointures</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="jointures.html"><a href="jointures.html#left-join"><i class="fa fa-check"></i><b>10.2.1</b> Left Join</a></li>
+<li class="chapter" data-level="10.2.2" data-path="jointures.html"><a href="jointures.html#right-join"><i class="fa fa-check"></i><b>10.2.2</b> Right Join</a></li>
+<li class="chapter" data-level="10.2.3" data-path="jointures.html"><a href="jointures.html#inner-join"><i class="fa fa-check"></i><b>10.2.3</b> Inner Join</a></li>
+<li class="chapter" data-level="10.2.4" data-path="jointures.html"><a href="jointures.html#full-join"><i class="fa fa-check"></i><b>10.2.4</b> Full Join</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="jointures.html"><a href="jointures.html#exercice-5"><i class="fa fa-check"></i><b>10.3</b> Exercice</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="jointures.html"><a href="jointures.html#sujet-9"><i class="fa fa-check"></i><b>10.3.1</b> Sujet</a></li>
+<li class="chapter" data-level="10.3.2" data-path="jointures.html"><a href="jointures.html#correction-9"><i class="fa fa-check"></i><b>10.3.2</b> Correction</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>11</b> Jeux de données utilisés</a><ul>
+<li class="chapter" data-level="11.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>11.1</b> Iris</a></li>
+<li class="chapter" data-level="11.2" data-path="all-dataset.html"><a href="all-dataset.html#histoire-de-vie-hdv2003"><i class="fa fa-check"></i><b>11.2</b> Histoire de vie (hdv2003)</a></li>
+<li class="chapter" data-level="11.3" data-path="all-dataset.html"><a href="all-dataset.html#nyc-flights-2013"><i class="fa fa-check"></i><b>11.3</b> NYC Flights 2013</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="all-dataset.html"><a href="all-dataset.html#flights"><i class="fa fa-check"></i><b>11.3.1</b> Flights</a></li>
+<li class="chapter" data-level="11.3.2" data-path="all-dataset.html"><a href="all-dataset.html#airlines"><i class="fa fa-check"></i><b>11.3.2</b> Airlines</a></li>
+<li class="chapter" data-level="11.3.3" data-path="all-dataset.html"><a href="all-dataset.html#airports"><i class="fa fa-check"></i><b>11.3.3</b> Airports</a></li>
+<li class="chapter" data-level="11.3.4" data-path="all-dataset.html"><a href="all-dataset.html#weather"><i class="fa fa-check"></i><b>11.3.4</b> Weather</a></li>
+<li class="chapter" data-level="11.3.5" data-path="all-dataset.html"><a href="all-dataset.html#planes"><i class="fa fa-check"></i><b>11.3.5</b> Planes</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>11.4</b> Google</a></li>
+<li class="chapter" data-level="11.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>11.5</b> Pokemon</a></li>
+<li class="chapter" data-level="11.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>11.6</b> Star Wars</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>12</b> Bibliographie</a></li>
 </ul>
 
       </nav>
@@ -213,8 +307,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="presentation" class="section level1">
-<h1><span class="header-section-number">2</span> Présentation</h1>
-<p>Ce chapitre est extrait du cours de Julien Barnier “Introduction à R et au tidyverse” (<a href="https://juba.github.io/tidyverse" class="uri">https://juba.github.io/tidyverse</a>)</p>
+<h1><span class="header-section-number">Chapitre 2</span> Présentation</h1>
+<p>Certaines parties de ce chapitre sont extraites du cours de Julien Barnier “Introduction à R et au tidyverse” (<a href="https://juba.github.io/tidyverse" class="uri">https://juba.github.io/tidyverse</a>)</p>
 <div id="introduction" class="section level2">
 <h2><span class="header-section-number">2.1</span> Introduction</h2>
 <div id="à-propos-de-r" class="section level3">
@@ -597,41 +691,102 @@ sous l’onglet <em>Help</em>. Un clic sur l’icône en forme de maison vous af
 <pre><code>## [1] 20.76125</code></pre>
 </div>
 </div>
-<div id="regrouper-ses-commandes-dans-des-scripts" class="section level3">
-<h3><span class="header-section-number">2.2.4</span> Regrouper ses commandes dans des scripts</h3>
+</div>
+<div id="fonctions-de-tests-et-comparaisons" class="section level2">
+<h2><span class="header-section-number">2.3</span> Fonctions de tests et comparaisons</h2>
+<p>Dans R, il est possible d’effectuer des comparaisons ou des tests qui vont retourner la valeur <code>TRUE</code> si vrai et <code>FALSE</code> si faux</p>
+<div id="opérateurs-de-comparaisons" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Opérateurs de comparaisons</h3>
+<p>Voici les différents opérateurs de comparaisons que l’on peut utiliser :</p>
+<p>
+<img src="img/comparaison.png" title="fig:" alt="Opérateurs de comparaison" />
+</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb135-2" title="2">b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">9</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1">a <span class="op">&gt;</span><span class="st"> </span>b</a></code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1">a <span class="op">==</span><span class="st"> </span>b</a></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE  TRUE</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" title="1">a <span class="op">!=</span><span class="st"> </span>b</a></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE FALSE</code></pre>
+</div>
+<div id="opérateurs-logiques" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Opérateurs logiques</h3>
+<p>Ces opérateurs permettent de tester l’effet de plusieurs tests logiques.</p>
+<p>
+<img src="img/logique.png" title="fig:" alt="Opérateurs logiques" />
+</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb142-2" title="2">b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">9</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" title="1">(a <span class="op">&gt;</span><span class="st"> </span>b) <span class="op">&amp;</span><span class="st"> </span>( a <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>)</a></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" title="1">(a <span class="op">==</span><span class="st"> </span>b) <span class="op">|</span><span class="st"> </span>(a <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>)</a></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" title="1"><span class="kw">xor</span>(a <span class="op">&gt;</span><span class="st"> </span>b, a <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>)</a></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" title="1">a <span class="op">&gt;</span><span class="st"> </span>b</a></code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" title="1"><span class="op">!</span><span class="st"> </span>a <span class="op">&gt;</span><span class="st"> </span>b</a></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE</code></pre>
+</div>
+<div id="fonctions-logiques" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Fonctions logiques</h3>
+<p>Il existe des fonctions pour effectuer des tests logiques. Elles ont toutes le même préfixe et s’écrivent <code>is.mon_test</code>. On peut par exemple tester la classe d’un <strong>objet</strong> avec les fonctions <code>is.classe_a_tester</code>. Ces fonctions sont des tests logiques donc elles renvoient toujours des booléens (rappel TD1).</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" title="1">numeric_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">55</span>,<span class="dv">49</span>,<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb153-2" title="2"><span class="kw">class</span>(numeric_vec)</a></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" title="1">character_vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Jaune&quot;</span>, <span class="st">&quot;Vert&quot;</span>, <span class="st">&quot;Bleu&quot;</span>, <span class="st">&quot;Rouge&quot;</span>)</a>
+<a class="sourceLine" id="cb155-2" title="2"><span class="kw">class</span>(character_vec)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" title="1"><span class="kw">is.numeric</span>(numeric_vec)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" title="1"><span class="kw">is.numeric</span>(character_vec)</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" title="1"><span class="kw">is.character</span>(numeric_vec)</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" title="1"><span class="kw">is.character</span>(character_vec)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>On peut aussi tester la présence <code>FALSE</code>/ <code>TRUE</code> de valeurs manquantes <code>NA</code> avec la fonction <code>is.na</code>.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="ot">NA</span>,<span class="dv">6</span>,<span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb165-2" title="2"><span class="kw">is.na</span>(a)</a></code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE FALSE</code></pre>
+</div>
+</div>
+<div id="regrouper-ses-commandes-dans-des-scripts" class="section level2">
+<h2><span class="header-section-number">2.4</span> Regrouper ses commandes dans des scripts</h2>
 <p>Jusqu’ici on a utilisé R de manière “interactive”, en saisissant des commandes directement dans la console. Ça n’est cependant pas la manière dont on va utiliser R au quotidien, pour une raison simple : lorsque R redémarre, tout ce qui a été effectué dans la console est perdu.</p>
 <p>Plutôt que de saisir nos commandes dans la console, on va donc les regrouper dans des scripts (de simples fichiers texte), qui vont garder une trace de toutes les opérations effectuées, et ce sont ces scripts, sauvegardés régulièrement, qui seront le “coeur” de notre travail. C’est en rouvrant les scripts et en réexécutant les commandes qu’ils contiennent qu’on pourra “reproduire” les données, leur traitement, les analyses et leurs résultats.</p>
 <p>Pour créer un script, il suffit de sélectionner le menu <em>File</em>, puis <em>New file</em> et <em>R script</em>. Une quatrième zone apparaît alors en haut à gauche de l’interface de RStudio. On peut enregistrer notre script à tout moment dans un fichier avec l’extension <code>.R</code>, en cliquant sur l’icône de disquette ou en choisissant <em>File</em> puis <em>Save</em>.</p>
 <p>Un script est un fichier texte brut, qui s’édite de la manière habituelle. À la différence de la console, quand on appuie sur <code>Entrée</code>, cela n’exécute pas la commande en cours mais insère un saut de ligne (comme on pouvait s’y attendre).</p>
 <p>Pour exécuter une commande saisie dans un script, il suffit de positionner le curseur sur la ligne de la commande en question, et de cliquer sur le bouton <em>Run</em> dans la barre d’outils juste au-dessus de la zone d’édition du script. On peut aussi utiliser le raccourci clavier <code>Ctrl + Entrée</code> (<code>Cmd + Entrée</code> sous Mac). On peut enfin sélectionner plusieurs lignes avec la souris ou le clavier et cliquer sur <em>Run</em> (ou utiliser le raccourci clavier), et l’ensemble des lignes est exécuté d’un coup.</p>
 <p>Finalement, un script pourra ressembler à quelque chose comme ça :</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1">tailles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</a>
-<a class="sourceLine" id="cb135-2" title="2">poids &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</a>
-<a class="sourceLine" id="cb135-3" title="3"><span class="kw">mean</span>(tailles)</a>
-<a class="sourceLine" id="cb135-4" title="4"><span class="kw">mean</span>(poids)</a>
-<a class="sourceLine" id="cb135-5" title="5">imc &lt;-<span class="st"> </span>poids <span class="op">/</span><span class="st"> </span>(tailles <span class="op">/</span><span class="st"> </span><span class="dv">100</span>) <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb135-6" title="6"><span class="kw">min</span>(imc)</a>
-<a class="sourceLine" id="cb135-7" title="7"><span class="kw">max</span>(imc)</a></code></pre></div>
-<div id="commentaires" class="section level4">
-<h4><span class="header-section-number">2.2.4.1</span> Commentaires</h4>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" title="1">tailles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</a>
+<a class="sourceLine" id="cb167-2" title="2">poids &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</a>
+<a class="sourceLine" id="cb167-3" title="3"><span class="kw">mean</span>(tailles)</a>
+<a class="sourceLine" id="cb167-4" title="4"><span class="kw">mean</span>(poids)</a>
+<a class="sourceLine" id="cb167-5" title="5">imc &lt;-<span class="st"> </span>poids <span class="op">/</span><span class="st"> </span>(tailles <span class="op">/</span><span class="st"> </span><span class="dv">100</span>) <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb167-6" title="6"><span class="kw">min</span>(imc)</a>
+<a class="sourceLine" id="cb167-7" title="7"><span class="kw">max</span>(imc)</a></code></pre></div>
+<div id="commentaires" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Commentaires</h3>
 <p>Les commentaires sont un élément très important d’un script. Il s’agit de texte libre, ignoré par R, et qui permet de décrire les étapes du script, sa logique, les raisons pour lesquelles on a procédé de telle ou telle manière… Il est primordial de documenter ses scripts à l’aide de commentaires, car il est très facile de ne plus se retrouver dans un programme qu’on a produit soi-même, même après une courte interruption.</p>
 <p>Pour ajouter un commentaire, il suffit de le faire précéder d’un ou plusieurs symboles <code>#</code>. En effet, dès que R rencontre ce caractère, il ignore tout ce qui se trouve derrière, jusqu’à la fin de la ligne.</p>
 <p>On peut donc documenter le script précédent :</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1"><span class="co"># Saisie des tailles et poids des enquêtés</span></a>
-<a class="sourceLine" id="cb136-2" title="2">tailles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</a>
-<a class="sourceLine" id="cb136-3" title="3">poids &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</a>
-<a class="sourceLine" id="cb136-4" title="4"><span class="co"># Calcul des tailles et poids moyens</span></a>
-<a class="sourceLine" id="cb136-5" title="5"><span class="kw">mean</span>(tailles)</a>
-<a class="sourceLine" id="cb136-6" title="6"><span class="kw">mean</span>(poids)</a>
-<a class="sourceLine" id="cb136-7" title="7"><span class="co"># Calcul de l&#39;IMC (poids en kilo divisé par les tailles en mètre au carré)</span></a>
-<a class="sourceLine" id="cb136-8" title="8">imc &lt;-<span class="st"> </span>poids <span class="op">/</span><span class="st"> </span>(tailles <span class="op">/</span><span class="st"> </span><span class="dv">100</span>) <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb136-9" title="9"><span class="co"># Valeurs extrêmes de l&#39;IMC</span></a>
-<a class="sourceLine" id="cb136-10" title="10"><span class="kw">min</span>(imc)</a>
-<a class="sourceLine" id="cb136-11" title="11"><span class="kw">max</span>(imc)</a></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" title="1"><span class="co"># Saisie des tailles et poids des enquêtés</span></a>
+<a class="sourceLine" id="cb168-2" title="2">tailles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</a>
+<a class="sourceLine" id="cb168-3" title="3">poids &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</a>
+<a class="sourceLine" id="cb168-4" title="4"><span class="co"># Calcul des tailles et poids moyens</span></a>
+<a class="sourceLine" id="cb168-5" title="5"><span class="kw">mean</span>(tailles)</a>
+<a class="sourceLine" id="cb168-6" title="6"><span class="kw">mean</span>(poids)</a>
+<a class="sourceLine" id="cb168-7" title="7"><span class="co"># Calcul de l&#39;IMC (poids en kilo divisé par les tailles en mètre au carré)</span></a>
+<a class="sourceLine" id="cb168-8" title="8">imc &lt;-<span class="st"> </span>poids <span class="op">/</span><span class="st"> </span>(tailles <span class="op">/</span><span class="st"> </span><span class="dv">100</span>) <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb168-9" title="9"><span class="co"># Valeurs extrêmes de l&#39;IMC</span></a>
+<a class="sourceLine" id="cb168-10" title="10"><span class="kw">min</span>(imc)</a>
+<a class="sourceLine" id="cb168-11" title="11"><span class="kw">max</span>(imc)</a></code></pre></div>
 </div>
 </div>
-<div id="installer-et-charger-des-extensions-packages" class="section level3">
-<h3><span class="header-section-number">2.2.5</span> Installer et charger des extensions (<em>packages</em>)</h3>
+<div id="installer-et-charger-des-extensions-packages" class="section level2">
+<h2><span class="header-section-number">2.5</span> Installer et charger des extensions (<em>packages</em>)</h2>
 <p>R étant un logiciel libre, il bénéficie d’un développement communautaire riche et dynamique. L’installation de base de R permet de faire énormément de choses, mais le langage dispose en plus d’un système d’extensions permettant d’ajouter facilement de nouvelles fonctionnalités. La plupart des extensions sont développées et maintenues par la communauté des utilisateurs de R, et diffusées via un réseau de serveurs nommé CRAN (<em>Comprehensive R Archive Network</em>).</p>
 Pour installer une extension, si on dispose d’une connexion Internet, on peut utiliser le bouton <em>Install</em> de l’onglet <em>Packages</em> de RStudio.
 <p>
@@ -642,124 +797,159 @@ Pour installer une extension, si on dispose d’une connexion Internet, on peut 
 <img src="img/rstudio_package_install2.png" title="fig:" alt="Installation d’une extension" />
 </p>
 <p>On peut aussi installer des extensions en utilisant la fonction <code>install.packages()</code> directement dans la console. Par exemple, pour installer le <em>package</em> <code>questionr</code> on peut exécuter la commande :</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;questionr&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;questionr&quot;</span>)</a></code></pre></div>
 <p>Installer une extension via l’une des deux méthodes précédentes va télécharger l’ensemble des fichiers nécessaires depuis l’une des machines du CRAN, puis installer tout ça sur le disque dur de votre ordinateur. Vous n’avez besoin de le faire qu’une fois, comme vous le faites pour installer un programme sur votre Mac ou PC.
 Cela suppose que vous disposez d’une connexion internet. Cependant, il est possible d’installer des packages en local sans connexion internet sous réserve d’être en possession des packages en fichiers zippés.</p>
 <p>Une fois l’extension installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction <code>library</code>. Par exemple, pour pouvoir utiliser les fonctions de <code>questionr</code>, vous devrez exécuter la commande suivante :</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1"><span class="kw">library</span>(questionr)</a></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" title="1"><span class="kw">library</span>(questionr)</a></code></pre></div>
 <p>Ainsi, bien souvent, on regroupe en début de script toute une série d’appels à <code>library</code> qui permettent de charger tous les packages utilisés dans le script. Quelque chose comme :</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" title="1"><span class="kw">library</span>(readxl)</a>
-<a class="sourceLine" id="cb139-2" title="2"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb139-3" title="3"><span class="kw">library</span>(questionr)</a></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" title="1"><span class="kw">library</span>(readxl)</a>
+<a class="sourceLine" id="cb171-2" title="2"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb171-3" title="3"><span class="kw">library</span>(questionr)</a></code></pre></div>
 <p>Si vous essayez d’exécuter une fonction d’une extension et que vous obtenez le message d’erreur <code>impossible de trouver la fonction</code>, c’est certainement parce que vous n’avez pas exécuté la commande <code>library</code> correspondante.</p>
 </div>
-<div id="exercices" class="section level3">
-<h3><span class="header-section-number">2.2.6</span> Exercices</h3>
-<div id="sujet" class="section level4">
-<h4><span class="header-section-number">2.2.6.1</span> Sujet</h4>
+<div id="exercices" class="section level2">
+<h2><span class="header-section-number">2.6</span> Exercices</h2>
+<div id="sujet" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Sujet</h3>
 <p><strong>Exercice 1</strong></p>
-<p>Construire le vecteur <code>x</code> suivant :</p>
+<ol style="list-style-type: lower-alpha">
+<li>Construire le vecteur <code>x</code> suivant :</li>
+</ol>
 <pre><code>## [1] 120 134 256  12</code></pre>
-<p>Utiliser ce vecteur <code>x</code> pour générer les deux vecteurs suivants :</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Utiliser ce vecteur <code>x</code> pour générer les deux vecteurs suivants :</li>
+</ol>
 <pre><code>## [1] 220 234 356 112</code></pre>
 <pre><code>## [1] 240 268 512  24</code></pre>
 <p><strong>Exercice 2</strong></p>
 <p>On a demandé à 4 ménages le revenu des deux conjoints, et le nombre de personnes du ménage :</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a>
-<a class="sourceLine" id="cb143-2" title="2">conjoint2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1450</span>, <span class="dv">1870</span>, <span class="dv">1690</span>, <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb143-3" title="3">nb_personnes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a>
+<a class="sourceLine" id="cb175-2" title="2">conjoint2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1450</span>, <span class="dv">1870</span>, <span class="dv">1690</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb175-3" title="3">nb_personnes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>)</a></code></pre></div>
 <p>Calculer le revenu total de chaque ménage, puis diviser par le nombre de personnes pour obtenir le revenu par personne de chaque ménage.</p>
 <p><strong>Exercice 3</strong></p>
-<p>Dans l’exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint.</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a></code></pre></div>
-<p>Recommencer avec les revenus suivants, parmi lesquels l’un des enquêtés n’a pas voulu répondre :</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="ot">NA</span>)</a></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Dans l’exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint.</li>
+</ol>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Recommencer avec les revenus suivants, parmi lesquels l’un des enquêtés n’a pas voulu répondre :</li>
+</ol>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="ot">NA</span>)</a></code></pre></div>
 <p><strong>Exercice 4</strong></p>
 <p>Les deux vecteurs suivants représentent les précipitations (en mm) et la température (en °C) moyennes sur la ville de Lyon, pour chaque mois de l’année, entre 1981 et 2010 :</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1">temperature &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.4</span>, <span class="fl">4.8</span>, <span class="fl">8.4</span>, <span class="fl">11.4</span>, <span class="fl">15.8</span>, <span class="fl">19.4</span>, <span class="fl">22.2</span>, <span class="fl">21.6</span>, <span class="fl">17.6</span>, <span class="fl">13.4</span>, <span class="fl">7.6</span>, <span class="fl">4.4</span>)</a>
-<a class="sourceLine" id="cb146-2" title="2">precipitations &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">47.2</span>, <span class="fl">44.1</span>, <span class="fl">50.4</span>, <span class="fl">74.9</span>, <span class="fl">90.8</span>, <span class="fl">75.6</span>, <span class="fl">63.7</span>, <span class="dv">62</span>, <span class="fl">87.5</span>, <span class="fl">98.6</span>, <span class="fl">81.9</span>, <span class="fl">55.2</span>)</a></code></pre></div>
-<p>Calculer la température moyenne sur l’année.</p>
-<p>Calculer la quantité totale de précipitations sur l’année.</p>
-<p>À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d’aide de la fonction si nécessaire.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" title="1"><span class="kw">cumsum</span>(precipitations)</a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1">temperature &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.4</span>, <span class="fl">4.8</span>, <span class="fl">8.4</span>, <span class="fl">11.4</span>, <span class="fl">15.8</span>, <span class="fl">19.4</span>, <span class="fl">22.2</span>, <span class="fl">21.6</span>, <span class="fl">17.6</span>, <span class="fl">13.4</span>, <span class="fl">7.6</span>, <span class="fl">4.4</span>)</a>
+<a class="sourceLine" id="cb178-2" title="2">precipitations &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">47.2</span>, <span class="fl">44.1</span>, <span class="fl">50.4</span>, <span class="fl">74.9</span>, <span class="fl">90.8</span>, <span class="fl">75.6</span>, <span class="fl">63.7</span>, <span class="dv">62</span>, <span class="fl">87.5</span>, <span class="fl">98.6</span>, <span class="fl">81.9</span>, <span class="fl">55.2</span>)</a></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Calculer la température moyenne sur l’année.</p></li>
+<li><p>Calculer la quantité totale de précipitations sur l’année.</p></li>
+<li><p>À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d’aide de la fonction si nécessaire.</p></li>
+</ol>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" title="1"><span class="kw">cumsum</span>(precipitations)</a></code></pre></div>
 <pre><code>##  [1]  47.2  91.3 141.7 216.6 307.4 383.0 446.7 508.7 596.2 694.8 776.7
 ## [12] 831.9</code></pre>
-<p>Même question pour :</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" title="1"><span class="kw">diff</span>(temperature)</a></code></pre></div>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Même question pour :</li>
+</ol>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1"><span class="kw">diff</span>(temperature)</a></code></pre></div>
 <pre><code>##  [1]  1.4  3.6  3.0  4.4  3.6  2.8 -0.6 -4.0 -4.2 -5.8 -3.2</code></pre>
 <p><strong>Exercice 5</strong></p>
 <p>On a relevé les notes en maths, anglais et sport d’une classe de 6 élèves et on a stocké ces données dans trois vecteurs :</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" title="1">maths &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">8</span>, <span class="dv">18</span>, <span class="dv">6</span>, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb151-2" title="2">anglais &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">11</span>)</a>
-<a class="sourceLine" id="cb151-3" title="3">sport &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>)</a></code></pre></div>
-<p>Calculer la moyenne des élèves de la classe en anglais.</p>
-<p>Calculer la moyenne générale de chaque élève.</p>
-<p>Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d’aide de ces fonctions) :</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" title="1"><span class="kw">pmin</span>(maths, anglais, sport)</a></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1">maths &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">8</span>, <span class="dv">18</span>, <span class="dv">6</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb183-2" title="2">anglais &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">11</span>)</a>
+<a class="sourceLine" id="cb183-3" title="3">sport &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>)</a></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Calculer la moyenne des élèves de la classe en anglais.</p></li>
+<li><p>Calculer la moyenne générale de chaque élève.</p></li>
+<li><p>Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d’aide de ces fonctions) :</p></li>
+</ol>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1"><span class="kw">pmin</span>(maths, anglais, sport)</a></code></pre></div>
 <pre><code>## [1] 12  9  8 10  6 10</code></pre>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" title="1"><span class="kw">pmax</span>(maths, anglais, sport)</a></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" title="1"><span class="kw">pmax</span>(maths, anglais, sport)</a></code></pre></div>
 <pre><code>## [1] 18 16 14 18 17 12</code></pre>
 </div>
-<div id="correction" class="section level4">
-<h4><span class="header-section-number">2.2.6.2</span> Correction</h4>
+<div id="correction" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Correction</h3>
 <p><strong>Exercice 1</strong></p>
-<p>Construire le vecteur <code>x</code> suivant :</p>
+<ol style="list-style-type: lower-alpha">
+<li>Construire le vecteur <code>x</code> suivant :</li>
+</ol>
 <pre><code>## [1] 120 134 256  12</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">120</span>, <span class="dv">134</span>, <span class="dv">256</span>, <span class="dv">12</span>)</a></code></pre></div>
-<p>Utiliser ce vecteur <code>x</code> pour générer les deux vecteurs suivants :</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">120</span>, <span class="dv">134</span>, <span class="dv">256</span>, <span class="dv">12</span>)</a></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Utiliser ce vecteur <code>x</code> pour générer les deux vecteurs suivants :</li>
+</ol>
 <pre><code>## [1] 220 234 356 112</code></pre>
 <pre><code>## [1] 240 268 512  24</code></pre>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" title="1">x <span class="op">+</span><span class="st"> </span><span class="dv">100</span></a>
-<a class="sourceLine" id="cb160-2" title="2">x <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" title="1">x <span class="op">+</span><span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb192-2" title="2">x <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
 <p><strong>Exercice 2</strong></p>
 <p>On a demandé à 4 ménages le revenu des deux conjoints, et le nombre de personnes du ménage :</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a>
-<a class="sourceLine" id="cb161-2" title="2">conjoint2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1450</span>, <span class="dv">1870</span>, <span class="dv">1690</span>, <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb161-3" title="3">nb_personnes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a>
+<a class="sourceLine" id="cb193-2" title="2">conjoint2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1450</span>, <span class="dv">1870</span>, <span class="dv">1690</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb193-3" title="3">nb_personnes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>)</a></code></pre></div>
 <p>Calculer le revenu total de chaque ménage, puis diviser par le nombre de personnes pour obtenir le revenu par personne de chaque ménage.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" title="1">revenu_total &lt;-<span class="st"> </span>conjoint1 <span class="op">+</span><span class="st"> </span>conjoint2</a>
-<a class="sourceLine" id="cb162-2" title="2">revenu_total <span class="op">/</span><span class="st"> </span>nb_personnes</a></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" title="1">revenu_total &lt;-<span class="st"> </span>conjoint1 <span class="op">+</span><span class="st"> </span>conjoint2</a>
+<a class="sourceLine" id="cb194-2" title="2">revenu_total <span class="op">/</span><span class="st"> </span>nb_personnes</a></code></pre></div>
 <p><strong>Exercice 3</strong></p>
-<p>Dans l’exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" title="1"><span class="kw">range</span>(conjoint1)</a></code></pre></div>
-<p>Recommencer avec les revenus suivants, parmi lesquels l’un des enquêtés n’a pas voulu répondre :</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="ot">NA</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" title="1"><span class="kw">range</span>(conjoint1, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Dans l’exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint.</li>
+</ol>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="dv">2100</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" title="1"><span class="kw">range</span>(conjoint1)</a></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Recommencer avec les revenus suivants, parmi lesquels l’un des enquêtés n’a pas voulu répondre :</li>
+</ol>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" title="1">conjoint1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1200</span>, <span class="dv">1180</span>, <span class="dv">1750</span>, <span class="ot">NA</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" title="1"><span class="kw">range</span>(conjoint1, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><strong>Exercice 4</strong></p>
 <p>Les deux vecteurs suivants représentent les précipitations (en mm) et la température (en °C) moyennes sur la ville de Lyon, pour chaque mois de l’année, entre 1981 et 2010 :</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" title="1">temperature &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.4</span>, <span class="fl">4.8</span>, <span class="fl">8.4</span>, <span class="fl">11.4</span>, <span class="fl">15.8</span>, <span class="fl">19.4</span>, <span class="fl">22.2</span>, <span class="fl">21.6</span>, <span class="fl">17.6</span>, <span class="fl">13.4</span>, <span class="fl">7.6</span>, <span class="fl">4.4</span>)</a>
-<a class="sourceLine" id="cb167-2" title="2">precipitations &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">47.2</span>, <span class="fl">44.1</span>, <span class="fl">50.4</span>, <span class="fl">74.9</span>, <span class="fl">90.8</span>, <span class="fl">75.6</span>, <span class="fl">63.7</span>, <span class="dv">62</span>, <span class="fl">87.5</span>, <span class="fl">98.6</span>, <span class="fl">81.9</span>, <span class="fl">55.2</span>)</a></code></pre></div>
-<p>Calculer la température moyenne sur l’année.</p>
-<p>Calculer la quantité totale de précipitations sur l’année.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" title="1"><span class="kw">mean</span>(temperature)</a>
-<a class="sourceLine" id="cb168-2" title="2"><span class="kw">sum</span>(precipitations)</a></code></pre></div>
-<p>À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d’aide de la fonction si nécessaire.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" title="1"><span class="kw">cumsum</span>(precipitations)</a></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" title="1">temperature &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.4</span>, <span class="fl">4.8</span>, <span class="fl">8.4</span>, <span class="fl">11.4</span>, <span class="fl">15.8</span>, <span class="fl">19.4</span>, <span class="fl">22.2</span>, <span class="fl">21.6</span>, <span class="fl">17.6</span>, <span class="fl">13.4</span>, <span class="fl">7.6</span>, <span class="fl">4.4</span>)</a>
+<a class="sourceLine" id="cb199-2" title="2">precipitations &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">47.2</span>, <span class="fl">44.1</span>, <span class="fl">50.4</span>, <span class="fl">74.9</span>, <span class="fl">90.8</span>, <span class="fl">75.6</span>, <span class="fl">63.7</span>, <span class="dv">62</span>, <span class="fl">87.5</span>, <span class="fl">98.6</span>, <span class="fl">81.9</span>, <span class="fl">55.2</span>)</a></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Calculer la température moyenne sur l’année.</li>
+</ol>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" title="1"><span class="kw">mean</span>(temperature)</a></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Calculer la quantité totale de précipitations sur l’année.</li>
+</ol>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" title="1"><span class="kw">sum</span>(precipitations)</a></code></pre></div>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d’aide de la fonction si nécessaire.</li>
+</ol>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" title="1"><span class="kw">cumsum</span>(precipitations)</a></code></pre></div>
 <pre><code>##  [1]  47.2  91.3 141.7 216.6 307.4 383.0 446.7 508.7 596.2 694.8 776.7
 ## [12] 831.9</code></pre>
-<p>Même question pour :</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" title="1"><span class="kw">diff</span>(temperature)</a></code></pre></div>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Même question pour :</li>
+</ol>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" title="1"><span class="kw">diff</span>(temperature)</a></code></pre></div>
 <pre><code>##  [1]  1.4  3.6  3.0  4.4  3.6  2.8 -0.6 -4.0 -4.2 -5.8 -3.2</code></pre>
 <p><code>cumsum(precipitations)</code> correspond à la somme cumulée des précipitations sur l’année. Par exemple, la 6e valeur du vecteur résultat correspond au total de précipitations de janvier à juin.</p>
 <p><code>diff(temperature)</code> correspond à la différence de température d’un mois sur l’autre. Par exemple, la 2e valeur de ce vecteur correspond à l’écart de température entre le mois de février et le mois de janvier.</p>
 <p><strong>Exercice 5</strong></p>
 <p>On a relevé les notes en maths, anglais et sport d’une classe de 6 élèves et on a stocké ces données dans trois vecteurs :</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" title="1">maths &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">8</span>, <span class="dv">18</span>, <span class="dv">6</span>, <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb173-2" title="2">anglais &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">11</span>)</a>
-<a class="sourceLine" id="cb173-3" title="3">sport &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>)</a></code></pre></div>
-<p>Calculer la moyenne des élèves de la classe en anglais.</p>
-<p>Calculer la moyenne générale de chaque élève.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1"><span class="kw">mean</span>(anglais)</a>
-<a class="sourceLine" id="cb174-2" title="2">(maths <span class="op">+</span><span class="st"> </span>anglais <span class="op">+</span><span class="st"> </span>sport) <span class="op">/</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
-<p>Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d’aide de ces fonctions) :</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1"><span class="kw">pmin</span>(maths, anglais, sport)</a></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" title="1">maths &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">8</span>, <span class="dv">18</span>, <span class="dv">6</span>, <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb206-2" title="2">anglais &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">11</span>)</a>
+<a class="sourceLine" id="cb206-3" title="3">sport &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>)</a></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Calculer la moyenne des élèves de la classe en anglais.</li>
+</ol>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" title="1"><span class="kw">mean</span>(anglais)</a></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Calculer la moyenne générale de chaque élève.</li>
+</ol>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" title="1">(maths <span class="op">+</span><span class="st"> </span>anglais <span class="op">+</span><span class="st"> </span>sport) <span class="op">/</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d’aide de ces fonctions) :</li>
+</ol>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" title="1"><span class="kw">pmin</span>(maths, anglais, sport)</a></code></pre></div>
 <pre><code>## [1] 12  9  8 10  6 10</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1"><span class="kw">pmax</span>(maths, anglais, sport)</a></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" title="1"><span class="kw">pmax</span>(maths, anglais, sport)</a></code></pre></div>
 <pre><code>## [1] 18 16 14 18 17 12</code></pre>
 <p><code>pmin</code> et <code>pmax</code> renvoient les minimum et maximum “parallèles” des trois vecteurs passés en argument. Ainsi, <code>pmin</code> renvoie pour chaque élève la note minimale dans les trois matières, et <code>pmax</code> la note maximale.</p>
 
-</div>
 </div>
 </div>
 </div>

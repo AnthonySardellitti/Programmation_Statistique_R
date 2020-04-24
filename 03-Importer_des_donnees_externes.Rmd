@@ -1,35 +1,31 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Importer des données externes {#first_import}
 
-Ce document est extrait du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
+Certaines parties de ce chapitre sont extraites du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
+
+## Import de fichiers csv
 
 R n'est pas prévu pour la saisie de données, mais il bénéficie de nombreuses fonctions et packages permettant l'import de données depuis un grand nombre de formats. Seuls les plus courants seront abordés ici.
 
+<br>
 
-## Modifier le répertoire actif
-
-La fonction `getwd` permet d'afficher le répertoire actif.
-
-```{r}
-getwd()
-```
-
-Renseigner un répertoire actif permet notamment d'éviter de saisir le chemin complet d'un fichier de données tel que *C:/Document/dataset/mon_fichier.txt*
-
-Pour modifier le répertoire courant, on utilise la fonction `setwd`tel que *setwd("C:/Users/anthony/Formations")*
-On peut également faire la même opération en cliquant sur **Session**, puis **Set Working Directory** et **Choose Directory**.
-
-
-## Import de fichiers textes
-
-
-Si votre fichier CSV suit un format CSV standard (c'est le cas s'il a été exporté depuis LibreOffice par exemple), avec des champs séparés par des virgules, vous pouvez utiliser la fonction `read.csv` en lui passant en argument le nom du fichier :
+Si votre fichier CSV suit un format CSV standard (c'est le cas s'il a été exporté depuis LibreOffice par exemple), avec des champs séparés par des virgules, vous pouvez utiliser la fonction `read.csv` en lui passant en argument le chemin et le nom du fichier. Cette fonction est issue du package *utils* chargé par défaut à chaque ouverture d'une session RStudio.
 
 ```{r, eval=FALSE}
-d <- read.csv(file = "./dataset/Titanic.csv")
+dataset <- read.csv(file = "C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv")
 ```
 
-Il existe plusieurs variantes à la fonction `read.csv`, la différence réside dans les arguments par défaut.
-Dans la même famille de fonction, chaque fonction dispose de plusieurs arguments, parmi lesquels :
+Il existe plusieurs variantes à la fonction `read.csv`, la différence réside dans les arguments par défaut. Voir l'aide pour plus d'information :
+
+```{r, eval=FALSE}
+help("read.csv")
+```
+
+Dans le package *utils*, chaque fonction dispose de plusieurs arguments, parmi lesquels :
 
 - `file` indique le chemin d'accès au fichier
 - `header` permet de spécifier si la première ligne correspond aux noms des colonnes
@@ -38,20 +34,26 @@ Dans la même famille de fonction, chaque fonction dispose de plusieurs argument
 - `row.names` permet de spécifier quel numéro de colonne peut être considéré comme le numéro d'index des lignes
 - `na.strings` est un vecteur de chaînes de caractères indiquant les valeurs devant être considérées comme manquantes. Ce vecteur vaut `c("", "NA")` par défaut
 - `encoding' permet de gérer l'encodage
+
+<br>
+
 Il peut arriver, notamment sous Windows, que l'encodage des caractères accentués ne soit pas correct au moment de l'importation. On peut alors spécifier manuellement l'encodage avec cet argument
 
 ```{r, eval=FALSE}
-d <- read.csv(file = "./dataset/Titanic.csv",
+dataset <- read.csv(file = "C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv",
               header = TRUE, sep = ",", dec = ".",
               row.names = 1, na.strings = c(NA,"NULL","None"),
               encoding = "Latin-1")
 ```
 
-
 ## Interface interactive d'import de fichiers
 
-RStudio propose une interface permettant d'importer un fichier de données de manière interactive. Pour y accéder, dans l'onglet *Environment*, cliquez sur le bouton *Import Dataset* :
-L'extension `readr`, qui fait partie du *tidyverse*, permet l'importation de fichiers txt, csv, excel mais le nom des fonctions et des arguments sont différents.
+RStudio propose une interface permettant d'importer un fichier de données de manière interactive. Pour y accéder, dans l'onglet *Environment*, cliquez sur le bouton *Import Dataset*. On a ensuite le choix du format de fichier qu'on souhaite importer. 
+
+<br>
+
+Attention, selon le format (Excel ou SAS notamment), l'installation de packages pourront être nécessaire. Dans notre exemple, nous importons un fichier CSV, nous avons donc le choix de l'importer avec les fonctions de base que propose le package *utils* où alors avec le package *readr*
+L'extension `readr fait partie du *tidyverse* et permet l'importation de fichiers txt, csv, excel mais le nom des fonctions et des arguments sont différents.
 
 <p>
 ![Menu *Import Dataset*](./img/import_dataset.png)
@@ -75,6 +77,74 @@ Vous pouvez modifier les options d'importation, changer le type des colonnes, et
 Cette manière de faire permet "d'automatiser" l'importation des données, puisqu'à la prochaine ouverture du script vous aurez juste à exécuter le code en question, sans repasser par l'interface d'import.
 
 
+## Modifier le répertoire actif
+
+<!-- Etant dans un R Project, les fonctions getwd() et setwd() ne fonctionnent pas. Ainsi pour illustrer les exemples, j'utilise quelques pirouettes -->
+
+La fonction `getwd()` permet d'afficher le répertoire actif. En général, le chemin proposé est similaire à celui ci :
+
+```{r, eval=FALSE}
+getwd()
+```
+```{r, echo=TRUE}
+"C:/Users/anthony.sardellitti/Documents"
+```
+
+Il est possible de modifier ce chemin. Cela permet notamment d'éviter de saisir le chemin complet d'un fichier de données à l'importation : 
+
+```{r, eval=FALSE}
+dataset <- read.csv(file = "C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv")
+```
+
+Pour modifier le répertoire courant, on utilise la fonction `setwd()`tel que :
+
+```{r, eval=FALSE}
+setwd("C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset")
+```
+
+On observe que le chemin a été modifié :
+
+```{r, eval=FALSE}
+getwd()
+```
+```{r, echo=FALSE}
+"C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset"
+```
+
+On peut également faire la même opération en cliquant sur **Session**, puis **Set Working Directory** et **Choose Directory**.
+
+<p>
+![](./img/setwd.png)
+</p>
+
+Une fois le répertoire actif modifié, on peut aperçevoir que l'onglet *Files* renseigne l'ensemble des fichiers présents dans le répertoire actif :
+
+<p>
+![](./img/setwd_files.png)
+</p>
+
+On peut donc importer les fichiers présents dans ce répertoire sans préciser leur chemin.
+
+```{r, eval=FALSE}
+dataset <- read.csv(file = "Titanic.csv")
+```
+
+Dans la suite de ce livre, le répertoire actif sera :
+
+```{r}
+getwd()
+```
+
+<p>
+![](./img/setwd_files_2.png)
+</p>
+
+Cela modifiera quelques peu la définition des chemins des fichiers que nous importerons tels que :
+
+```{r, eval=FALSE}
+dataset <- read.csv(file = "./dataset/Titanic.csv")
+```
+
 ## Import depuis un fichier Excel
 
 L'extension `readxl`, qui fait également partie du *tidyverse*, permet d'importer des données directement depuis un fichier au format `xls`ou `xlsx`.
@@ -88,7 +158,7 @@ library(readxl)
 On peut alors utiliser la fonction `read_excel` en lui spécifiant le nom du fichier :
 
 ```{r, eval = FALSE}
-d <- read_excel(path  = "./dataset/Titanic.xlsx")
+dataset <- read_excel(path  = "./dataset/Titanic.xlsx")
 ```
 
 Il est possible de spécifier la feuille et la plage de cellules que l'on souhaite importer avec les arguments `sheet` et `range` :
@@ -168,7 +238,6 @@ Voici une description de cette table :
 - `hour` , `minute` : Heure de départ prévue divisée en heures et minutes.
 - `time_hour` : Date et heure prévues du vol
 
-
 <p>
 ![Extrait de la table flights](./img/flight.png)
 </p>
@@ -215,7 +284,7 @@ f. Même question, mais en affichant uniquement un top 10
 
 **Exercice 1**
 
-a. Importez le jeu de données `fligths.csv`
+a. Importez le jeu de données `fligths.csv`. Attention, en réalité ce jeu de données est issu du package *nycflights13*
 
 ```{r}
 flights <- read.csv(file = "./dataset/flights.csv", sep = "\t")

@@ -1,6 +1,6 @@
 # Premier travail avec des données {#first_dataset}
 
-Ce document est extrait du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
+Certaines parties de ce chapitre sont extraites du cours de Julien Barnier "Introduction à R et au tidyverse" (https://juba.github.io/tidyverse)
 
 ## Jeu de données d'exemple
 
@@ -207,9 +207,6 @@ d$temp <- NULL
 ncol(x = d)
 ```
 
-
-
-
 ## Analyse univariée
 
 On a donc désormais accès à un tableau de données `d`, dont les lignes sont des observations (des individus enquêtés), et les colonnes des variables (des caractéristiques de chacun de ces individus), et on sait accéder à ces variables grâce à l'opérateur `$`. 
@@ -221,7 +218,7 @@ Si on souhaite analyser ces variables, les méthodes et fonctions utilisées ser
 Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. On en a plusieurs dans notre jeu de données, notamment l'âge (variable `age`) ou le nombre d'heures passées devant la télé (`heures.tv`).
 
 
-#### Indicateurs de centralité
+#### Indicateurs de position
 
 Caractériser une variable quantitative, c'est essayer de décrire la manière dont ses valeurs se répartissent, ou se distribuent.
 
@@ -233,7 +230,7 @@ max(x = d$age)
 range(x = d$age)
 ```
 
-On peut aussi calculer des indicateurs de *centralité* : ceux-ci indiquent autour de quel nombre se répartissent les valeurs de la variable. Il y en a plusieurs, le plus connu étant la moyenne, qu'on peut calculer avec la fonction `mean` :
+On peut aussi calculer des indicateurs de *position* : ceux-ci indiquent autour de quel nombre se répartissent les valeurs de la variable. Il y en a plusieurs, le plus connu étant la moyenne, qu'on peut calculer avec la fonction `mean` :
 
 ```{r}
 mean(x = d$age)
@@ -295,7 +292,7 @@ quantile(x = d$age)
 ```
 
 Attention ! 
-L'ensemble des fonctions statistiques sont sensibles à la présence de valeurs manquantes `NA`. On utilisera l'argument `na.rm = TRUE` pour éviter les erreurs.
+L'ensemble les fonctions statistiques sont sensibles à la présence de valeurs manquantes `NA`. On utilisera l'argument `na.rm = TRUE` pour éviter les erreurs.
 
 Notons enfin que la fonction `summary` permet d'obtenir d'un coup plusieurs indicateurs classiques :
 
@@ -427,6 +424,90 @@ tab <- table(x = d$sexe)
 pie(x = tab)
 ```
 
+## Combiner plusieurs variables
+
+
+### Créer une nouvelle variable
+
+On peut aussi utiliser l'opérateur `$` pour créer une nouvelle variable dans un data frame : pour cela, il suffit de lui assigner une valeur.
+
+Par exemple dans le jeu de données `hdv2003`, la variable `heures.tv` contient le nombre d'heures passées quotidiennement devant la télé. On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée mais en minutes. On va donc créer une nouvelle variable `minutes.tv` de la manière suivante :
+
+```{r}
+#par convention on ne modifie jamais le fichier source
+d <- hdv2003
+d$minutes.tv <- d$heures.tv * 60
+```
+
+### Créer des regroupements de modalités
+
+Parfois, on veut créer une nouvelle variable en partant des valeurs d’une ou plusieurs autres variables. La fonction `ifelse` permet de construire des regroupements simples. Elle se construit comme la fonction `si` d'excel.
+
+```{r, eval = FALSE}
+help("ifelse")
+```
+
+Toujours dans le jeu de données `hdv2003`, on souhaite créer une variable *actif* / *inactif* basée sur la variable `occup` telle que :
+
+occup | Regroupement
+------------ | ------------
+Exerce une profession | actif
+Etudiant, eleve  | inactif
+Chomeur | inactif
+Retraite | inactif
+Retire des affaires | inactif
+Au foyer | inactif 
+Autre inactif | inactif
+
+```{r}
+d$occupGroup <- ifelse(test = (d$occup == "Exerce une profession"),
+                       yes = "actif",
+                       no = "inactif")
+
+table(d$occupGroup)
+```
+
+Cependant, la population active regroupe la population active occupée (appelée aussi « population active ayant un emploi ») et les chômeurs.
+
+On opère donc un nouveau regroupement en plaçant cette fois-ci les chômeurs avec les actifs :
+
+```{r}
+d$occupGroup <- ifelse(test = (d$occup == "Exerce une profession" | d$occup == "Chomeur"),
+                       yes = "actif",
+                       no = "inactif")
+
+table(d$occupGroup)
+```
+
+Lorsqu'on travaille sur la même variable et pour éviter l'utilisation de "OU"  répétés, on utilise le mot clé `%in%`. 
+
+```{r}
+d$occupGroup <- ifelse(test = (d$occup %in% c("Exerce une profession","Chomeur")),
+                       yes = "actif",
+                       no = "inactif")
+
+table(d$occupGroup)
+```
+
+### Découper une variable numérique en classes
+
+Une autre opération relativement courante consiste à découper une variable numérique en classes. Par exemple, on voudra transformer la variable âge avec des catégories : Moins de 30 euros, 30-50 ans, plus de 50 ans, etc.
+Pour cela, on utilise la fonction `cut`.
+
+```{r, eval = FALSE}
+help("cut")
+```
+
+Si on donne un nombre entier à l’argument breaks, un nombre correspondant de classes d’amplitudes égales sont automatiquement calculées. Il est souvent préférable cependant d’avoir des limites “rondes”, on peut alors spécifier ces dernières manuellement en passant un vecteur à breaks :
+
+```{r}
+d$ageGroup <- cut(x = d$age, breaks = c(min(d$age),30,50,max(d$age)) ,
+                  include.lowest =  TRUE)
+
+table(d$ageGroup)
+```
+
+Ici on a été obligé d’ajouter l’argument `include.lowest = TRUE` car sinon la valeur 18 n’aurait pas été incluse, et on aurait eu des valeurs manquantes.
 
 
 ## Exercices
