@@ -513,14 +513,10 @@ La fonction <code>list</code> permet de créer une liste.</p>
 <h4><span class="header-section-number">5.3.4.1</span> Sujet</h4>
 <p>Pour illustrer ces notions, on utilise la base de données correspondant aux informations de tous les vols au départ d’un des trois aéroports de New-York en 2013. La base de données est répartie en 5 tables et disponible à partir du package <em>nycflights13</em>.</p>
 <div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb431-1" title="1"><span class="co">#on charge le package</span></a>
-<a class="sourceLine" id="cb431-2" title="2"><span class="kw">library</span>(nycflights13)</a></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;nycflights13&#39;</code></pre>
-<pre><code>## The following object is masked _by_ &#39;.GlobalEnv&#39;:
-## 
-##     flights</code></pre>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb434-1" title="1"><span class="co">#on affiche les objets disponibles du package</span></a>
-<a class="sourceLine" id="cb434-2" title="2"><span class="kw">ls</span>(<span class="st">&quot;package:nycflights13&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb431-2" title="2"><span class="kw">library</span>(nycflights13)</a>
+<a class="sourceLine" id="cb431-3" title="3"></a>
+<a class="sourceLine" id="cb431-4" title="4"><span class="co">#on affiche les objets disponibles du package</span></a>
+<a class="sourceLine" id="cb431-5" title="5"><span class="kw">ls</span>(<span class="st">&quot;package:nycflights13&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;airlines&quot; &quot;airports&quot; &quot;flights&quot;  &quot;planes&quot;   &quot;weather&quot;</code></pre>
 <p>Nous allons utiliser la table <code>flights</code> qui présente 336 776 vols sur 19 variables
 Voici une description de cette table :</p>
@@ -570,127 +566,127 @@ Voici une description de cette table :</p>
 <ol style="list-style-type: lower-alpha">
 <li>Installez, puis chargez le package <em>nycflights13</em></li>
 </ol>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb436-1" title="1"><span class="kw">library</span>(nycflights13)</a></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb433-1" title="1"><span class="kw">library</span>(nycflights13)</a></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Combien de lignes, colonnes sont présentes dans cette table ?</li>
 </ol>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb437-1" title="1"><span class="kw">dim</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb434-1" title="1"><span class="kw">dim</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
 <pre><code>## [1] 336776     19</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Affichez le nom des colonnes</li>
 </ol>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb439-1" title="1"><span class="kw">colnames</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb436-1" title="1"><span class="kw">colnames</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Affichez un résumé des données</li>
 </ol>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb440-1" title="1"><span class="kw">summary</span>(<span class="dt">object =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb437-1" title="1"><span class="kw">summary</span>(<span class="dt">object =</span> flights)</a></code></pre></div>
 <p><strong>Exercice 2</strong></p>
 <p>Pour répondre aux questions, utilisez des tests logiques <strong>sans</strong> passer par la fonction <code>subset</code>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Filtrez la table en sélectionnant les vols du mois de janvier.</li>
 </ol>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb441-1" title="1">requeteA &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span> , ]</a>
-<a class="sourceLine" id="cb441-2" title="2"><span class="kw">dim</span>(requeteA)</a></code></pre></div>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb438-1" title="1">requeteA &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span> , ]</a>
+<a class="sourceLine" id="cb438-2" title="2"><span class="kw">dim</span>(requeteA)</a></code></pre></div>
 <pre><code>## [1] 27004    19</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Filtrez la table en sélectionnant les vols en provenance de <code>LGA</code> et <code>JFK</code>.</li>
 </ol>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb443-1" title="1">requeteB &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>origin <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;JFK&quot;</span>,<span class="st">&quot;LGA&quot;</span>) , ]</a>
-<a class="sourceLine" id="cb443-2" title="2"><span class="kw">dim</span>(requeteB)</a></code></pre></div>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb440-1" title="1">requeteB &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>origin <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;JFK&quot;</span>,<span class="st">&quot;LGA&quot;</span>) , ]</a>
+<a class="sourceLine" id="cb440-2" title="2"><span class="kw">dim</span>(requeteB)</a></code></pre></div>
 <pre><code>## [1] 215941     19</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retards à l’arrivée.</li>
 </ol>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb445-1" title="1">requeteC &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) , ]</a>
-<a class="sourceLine" id="cb445-2" title="2"><span class="kw">dim</span>(requeteC)</a></code></pre></div>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb442-1" title="1">requeteC &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) , ]</a>
+<a class="sourceLine" id="cb442-2" title="2"><span class="kw">dim</span>(requeteC)</a></code></pre></div>
 <pre><code>## [1] 48249    19</code></pre>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retard à l’arrivée du mois de janvier.</li>
 </ol>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb447-1" title="1">requeteD &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">&amp;</span></a>
-<a class="sourceLine" id="cb447-2" title="2"><span class="st">                       </span>(flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) , ]</a>
-<a class="sourceLine" id="cb447-3" title="3"><span class="kw">dim</span>(requeteD)</a></code></pre></div>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb444-1" title="1">requeteD &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">&amp;</span></a>
+<a class="sourceLine" id="cb444-2" title="2"><span class="st">                       </span>(flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) , ]</a>
+<a class="sourceLine" id="cb444-3" title="3"><span class="kw">dim</span>(requeteD)</a></code></pre></div>
 <pre><code>## [1] 4016   19</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Filtrez la table en sélectionnant les vols avec du retard au départ ou l’arrivée</li>
 </ol>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb449-1" title="1">requeteE &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">|</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) , ]</a>
-<a class="sourceLine" id="cb449-2" title="2"><span class="kw">dim</span>(requeteE)</a></code></pre></div>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb446-1" title="1">requeteE &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">|</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) , ]</a>
+<a class="sourceLine" id="cb446-2" title="2"><span class="kw">dim</span>(requeteE)</a></code></pre></div>
 <pre><code>## [1] 177876     19</code></pre>
 <p><strong>Exercice 3</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li>Sélectionnez uniquement les colonnes <code>year</code>, <code>month</code>, <code>day</code>.</li>
 </ol>
-<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb451-1" title="1">requeteA &lt;-<span class="st"> </span>flights[ , <span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;day&quot;</span>) ]</a>
-<a class="sourceLine" id="cb451-2" title="2"><span class="kw">dim</span>(requeteA)</a></code></pre></div>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb448-1" title="1">requeteA &lt;-<span class="st"> </span>flights[ , <span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;day&quot;</span>) ]</a>
+<a class="sourceLine" id="cb448-2" title="2"><span class="kw">dim</span>(requeteA)</a></code></pre></div>
 <pre><code>## [1] 336776      3</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Sélectionnez uniquement les colonnes 13 à 19.</li>
 </ol>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb453-1" title="1">requeteB &lt;-<span class="st"> </span>flights[ , <span class="dv">13</span><span class="op">:</span><span class="dv">19</span> ]</a>
-<a class="sourceLine" id="cb453-2" title="2"><span class="kw">dim</span>(requeteB)</a></code></pre></div>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb450-1" title="1">requeteB &lt;-<span class="st"> </span>flights[ , <span class="dv">13</span><span class="op">:</span><span class="dv">19</span> ]</a>
+<a class="sourceLine" id="cb450-2" title="2"><span class="kw">dim</span>(requeteB)</a></code></pre></div>
 <pre><code>## [1] 336776      7</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Sélectionnez toutes colonnes sauf <code>dep_delay</code> et <code>arr_delay</code>.</li>
 </ol>
 <p>On utilise un test logique sur le nom des colonnes</p>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb455-1" title="1"><span class="kw">colnames</span>(flights)</a></code></pre></div>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb452-1" title="1"><span class="kw">colnames</span>(flights)</a></code></pre></div>
 <pre><code>##  [1] &quot;year&quot;           &quot;month&quot;          &quot;day&quot;            &quot;dep_time&quot;      
 ##  [5] &quot;sched_dep_time&quot; &quot;dep_delay&quot;      &quot;arr_time&quot;       &quot;sched_arr_time&quot;
 ##  [9] &quot;arr_delay&quot;      &quot;carrier&quot;        &quot;flight&quot;         &quot;tailnum&quot;       
 ## [13] &quot;origin&quot;         &quot;dest&quot;           &quot;air_time&quot;       &quot;distance&quot;      
 ## [17] &quot;hour&quot;           &quot;minute&quot;         &quot;time_hour&quot;</code></pre>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb457-1" title="1"><span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb454-1" title="1"><span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>)</a></code></pre></div>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE
 ## [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb459-1" title="1">requeteC &lt;-<span class="st"> </span>flights[ , <span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>) ]</a>
-<a class="sourceLine" id="cb459-2" title="2"><span class="kw">dim</span>(requeteC)</a></code></pre></div>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb456-1" title="1">requeteC &lt;-<span class="st"> </span>flights[ , <span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>) ]</a>
+<a class="sourceLine" id="cb456-2" title="2"><span class="kw">dim</span>(requeteC)</a></code></pre></div>
 <pre><code>## [1] 336776      2</code></pre>
 </div>
 </div>
 <div id="trier-un-data-frame" class="section level3">
 <h3><span class="header-section-number">5.3.5</span> Trier un data frame</h3>
 <p>On sait que la fonction <code>sort</code> permet de trier un vecteur.</p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb461-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb461-2" title="2"><span class="kw">sort</span>(<span class="dt">x =</span> a, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb458-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb458-2" title="2"><span class="kw">sort</span>(<span class="dt">x =</span> a, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 9 6 4 1</code></pre>
 <p>La fonction <code>order</code> permet de trier un vecteur à partir des rangs.</p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb463-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb463-2" title="2"><span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb460-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb460-2" title="2"><span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 2 4 3 1</code></pre>
 <p>On utilise ensuite le vecteur avec les rangs pour trier le vecteur</p>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb465-1" title="1">a[ <span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb462-1" title="1">a[ <span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>) ]</a></code></pre></div>
 <pre><code>## [1] 9 6 4 1</code></pre>
 <p>Pour trier un data frame ou une matrice, on utilise le même procédé avec la fonction <code>order</code>.</p>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb467-1" title="1">a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb467-2" title="2">            <span class="dt">dimnames =</span>  <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>,<span class="st">&quot;ligne2&quot;</span>,<span class="st">&quot;ligne3&quot;</span>),</a>
-<a class="sourceLine" id="cb467-3" title="3">                            <span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col3&quot;</span>)))</a>
-<a class="sourceLine" id="cb467-4" title="4">a</a></code></pre></div>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb464-1" title="1">a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>,</a>
+<a class="sourceLine" id="cb464-2" title="2">            <span class="dt">dimnames =</span>  <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>,<span class="st">&quot;ligne2&quot;</span>,<span class="st">&quot;ligne3&quot;</span>),</a>
+<a class="sourceLine" id="cb464-3" title="3">                            <span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col3&quot;</span>)))</a>
+<a class="sourceLine" id="cb464-4" title="4">a</a></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    0    2
 ## ligne2    4    7    5
 ## ligne3    4    9    6</code></pre>
 <p>Ici, on souhaiter trier la matrice selon la deuxième colonne avec un tri décroissant. Seule, la fonction <code>order</code> renvoie les rangs dans lesquels il faudrait trier le tableau.</p>
-<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb469-1" title="1"><span class="kw">order</span>(a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb466-1" title="1"><span class="kw">order</span>(a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 3 2 1</code></pre>
 <p>Il faut utiliser ce vecteur de rang dans l’indexation de la matrice pour la trier.</p>
-<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb471-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>( a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span> )</a>
-<a class="sourceLine" id="cb471-2" title="2">a[ rang , ]</a></code></pre></div>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb468-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>( a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span> )</a>
+<a class="sourceLine" id="cb468-2" title="2">a[ rang , ]</a></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne3    4    9    6
 ## ligne2    4    7    5
 ## ligne1    1    0    2</code></pre>
 <p>On peut aussi utiliser le ‘-’ devant le vecteur à trier pour effectuer un tri décroissant.</p>
-<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb473-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>( <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</a>
-<a class="sourceLine" id="cb473-2" title="2">a[ rang , ]</a></code></pre></div>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb470-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>( <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</a>
+<a class="sourceLine" id="cb470-2" title="2">a[ rang , ]</a></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne3    4    9    6
 ## ligne2    4    7    5
 ## ligne1    1    0    2</code></pre>
 <p>C’est cette syntaxe qu’on retrouve pour réaliser des tris successifs, on utilise toujours la fonction <code>order</code> avec chaque vecteur comme argument.
 On souhaite trier la première colonne par ordre croissant puis la deuxième colonne par ordre décroissant :</p>
-<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb475-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(a[,<span class="dv">1</span>] , <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</a>
-<a class="sourceLine" id="cb475-2" title="2">a[ rang , ]</a></code></pre></div>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb472-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(a[,<span class="dv">1</span>] , <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</a>
+<a class="sourceLine" id="cb472-2" title="2">a[ rang , ]</a></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    0    2
 ## ligne3    4    9    6
@@ -718,143 +714,285 @@ On souhaite trier la première colonne par ordre croissant puis la deuxième col
 <ol style="list-style-type: lower-alpha">
 <li>Trier la table selon le mois du vol</li>
 </ol>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb477-1" title="1"><span class="co">#On charge la librairie knitr pour utiliser la fonction kable pour les tableaux en sortie</span></a>
-<a class="sourceLine" id="cb477-2" title="2"><span class="kw">library</span>(knitr)</a></code></pre></div>
-<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb478-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>month)</a>
-<a class="sourceLine" id="cb478-2" title="2">requeteA &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;month&quot;</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb474-1" title="1"><span class="co">#On charge la librairie knitr pour utiliser la fonction kable pour les tableaux en sortie</span></a>
+<a class="sourceLine" id="cb474-2" title="2"><span class="kw">library</span>(knitr)</a></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb475-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>month)</a>
+<a class="sourceLine" id="cb475-2" title="2">requeteA &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;month&quot;</span>) ]</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="left">flight</th>
-<th align="left">tailnum</th>
-<th align="right">month</th>
+<tr>
+<th style="text-align:left;">
+flight
+</th>
+<th style="text-align:left;">
+tailnum
+</th>
+<th style="text-align:right;">
+month
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">1545</td>
-<td align="left">N14228</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1545
+</td>
+<td style="text-align:left;">
+N14228
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">1714</td>
-<td align="left">N24211</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1714
+</td>
+<td style="text-align:left;">
+N24211
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1141</td>
-<td align="left">N619AA</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1141
+</td>
+<td style="text-align:left;">
+N619AA
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">725</td>
-<td align="left">N804JB</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+725
+</td>
+<td style="text-align:left;">
+N804JB
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">461</td>
-<td align="left">N668DN</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+461
+</td>
+<td style="text-align:left;">
+N668DN
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
 </tbody>
 </table>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Trier la table selon les vols avec le plus de retard à l’arrivée</li>
 </ol>
-<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb479-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(<span class="op">-</span>flights<span class="op">$</span>arr_delay)</a>
-<a class="sourceLine" id="cb479-2" title="2">requeteB &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb476-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(<span class="op">-</span>flights<span class="op">$</span>arr_delay)</a>
+<a class="sourceLine" id="cb476-2" title="2">requeteB &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>) ]</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th></th>
-<th align="left">flight</th>
-<th align="left">tailnum</th>
-<th align="right">arr_delay</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+flight
+</th>
+<th style="text-align:left;">
+tailnum
+</th>
+<th style="text-align:right;">
+arr_delay
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>7073</td>
-<td align="left">51</td>
-<td align="left">N384HA</td>
-<td align="right">1272</td>
+<tr>
+<td style="text-align:left;">
+7073
+</td>
+<td style="text-align:left;">
+51
+</td>
+<td style="text-align:left;">
+N384HA
+</td>
+<td style="text-align:right;">
+1272
+</td>
 </tr>
-<tr class="even">
-<td>235779</td>
-<td align="left">3535</td>
-<td align="left">N504MQ</td>
-<td align="right">1127</td>
+<tr>
+<td style="text-align:left;">
+235779
+</td>
+<td style="text-align:left;">
+3535
+</td>
+<td style="text-align:left;">
+N504MQ
+</td>
+<td style="text-align:right;">
+1127
+</td>
 </tr>
-<tr class="odd">
-<td>8240</td>
-<td align="left">3695</td>
-<td align="left">N517MQ</td>
-<td align="right">1109</td>
+<tr>
+<td style="text-align:left;">
+8240
+</td>
+<td style="text-align:left;">
+3695
+</td>
+<td style="text-align:left;">
+N517MQ
+</td>
+<td style="text-align:right;">
+1109
+</td>
 </tr>
-<tr class="even">
-<td>327044</td>
-<td align="left">177</td>
-<td align="left">N338AA</td>
-<td align="right">1007</td>
+<tr>
+<td style="text-align:left;">
+327044
+</td>
+<td style="text-align:left;">
+177
+</td>
+<td style="text-align:left;">
+N338AA
+</td>
+<td style="text-align:right;">
+1007
+</td>
 </tr>
-<tr class="odd">
-<td>270377</td>
-<td align="left">3075</td>
-<td align="left">N665MQ</td>
-<td align="right">989</td>
+<tr>
+<td style="text-align:left;">
+270377
+</td>
+<td style="text-align:left;">
+3075
+</td>
+<td style="text-align:left;">
+N665MQ
+</td>
+<td style="text-align:right;">
+989
+</td>
 </tr>
 </tbody>
 </table>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Trier la table par vols de provenance, puis de destination</li>
 </ol>
-<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb480-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>origin, flights<span class="op">$</span>dest)</a>
-<a class="sourceLine" id="cb480-2" title="2">requeteC &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;origin&quot;</span>, <span class="st">&quot;dest&quot;</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb477-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>origin, flights<span class="op">$</span>dest)</a>
+<a class="sourceLine" id="cb477-2" title="2">requeteC &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;origin&quot;</span>, <span class="st">&quot;dest&quot;</span>) ]</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th></th>
-<th align="left">flight</th>
-<th align="left">tailnum</th>
-<th align="left">origin</th>
-<th align="left">dest</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+flight
+</th>
+<th style="text-align:left;">
+tailnum
+</th>
+<th style="text-align:left;">
+origin
+</th>
+<th style="text-align:left;">
+dest
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>361</td>
-<td align="left">4112</td>
-<td align="left">N13538</td>
-<td align="left">EWR</td>
-<td align="left">ALB</td>
+<tr>
+<td style="text-align:left;">
+361
+</td>
+<td style="text-align:left;">
+4112
+</td>
+<td style="text-align:left;">
+N13538
+</td>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:left;">
+ALB
+</td>
 </tr>
-<tr class="even">
-<td>570</td>
-<td align="left">3260</td>
-<td align="left">N19554</td>
-<td align="left">EWR</td>
-<td align="left">ALB</td>
+<tr>
+<td style="text-align:left;">
+570
+</td>
+<td style="text-align:left;">
+3260
+</td>
+<td style="text-align:left;">
+N19554
+</td>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:left;">
+ALB
+</td>
 </tr>
-<tr class="odd">
-<td>785</td>
-<td align="left">4170</td>
-<td align="left">N12540</td>
-<td align="left">EWR</td>
-<td align="left">ALB</td>
+<tr>
+<td style="text-align:left;">
+785
+</td>
+<td style="text-align:left;">
+4170
+</td>
+<td style="text-align:left;">
+N12540
+</td>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:left;">
+ALB
+</td>
 </tr>
-<tr class="even">
-<td>1280</td>
-<td align="left">4316</td>
-<td align="left">N14153</td>
-<td align="left">EWR</td>
-<td align="left">ALB</td>
+<tr>
+<td style="text-align:left;">
+1280
+</td>
+<td style="text-align:left;">
+4316
+</td>
+<td style="text-align:left;">
+N14153
+</td>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:left;">
+ALB
+</td>
 </tr>
-<tr class="odd">
-<td>1537</td>
-<td align="left">3260</td>
-<td align="left">N14153</td>
-<td align="left">EWR</td>
-<td align="left">ALB</td>
+<tr>
+<td style="text-align:left;">
+1537
+</td>
+<td style="text-align:left;">
+3260
+</td>
+<td style="text-align:left;">
+N14153
+</td>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:left;">
+ALB
+</td>
 </tr>
 </tbody>
 </table>
@@ -866,105 +1004,195 @@ On souhaite trier la première colonne par ordre croissant puis la deuxième col
 Pour cela on utilise la fonction <code>aggregate</code>.
 Il faut préciser dans la fonction le champ avec lequel on souhaite grouper les données, puis la fonction d’agrégation à utiliser.</p>
 <p>Ici, on calcule le retard moyen au départ pour chaque aéroport d’origine :</p>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb481-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb478-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="left">origin</th>
-<th align="right">dep_delay</th>
+<tr>
+<th style="text-align:left;">
+origin
+</th>
+<th style="text-align:right;">
+dep_delay
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">EWR</td>
-<td align="right">15.10795</td>
+<tr>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:right;">
+15.10795
+</td>
 </tr>
-<tr class="even">
-<td align="left">JFK</td>
-<td align="right">12.11216</td>
+<tr>
+<td style="text-align:left;">
+JFK
+</td>
+<td style="text-align:right;">
+12.11216
+</td>
 </tr>
-<tr class="odd">
-<td align="left">LGA</td>
-<td align="right">10.34688</td>
+<tr>
+<td style="text-align:left;">
+LGA
+</td>
+<td style="text-align:right;">
+10.34688
+</td>
 </tr>
 </tbody>
 </table>
 <p>On peut également grouper les données selon plusieurs champs qu’on renseigne avec le ‘+’ dans l’argument <code>formula.</code>
 Ici on calcule le retard moyen au départ pour chaque aéroport d’origine et chaque mois :</p>
-<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb482-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin <span class="op">+</span><span class="st"> </span>month, </a>
-<a class="sourceLine" id="cb482-2" title="2">                         <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb479-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin <span class="op">+</span><span class="st"> </span>month, </a>
+<a class="sourceLine" id="cb479-2" title="2">                         <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="left">origin</th>
-<th align="right">month</th>
-<th align="right">dep_delay</th>
+<tr>
+<th style="text-align:left;">
+origin
+</th>
+<th style="text-align:right;">
+month
+</th>
+<th style="text-align:right;">
+dep_delay
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">EWR</td>
-<td align="right">1</td>
-<td align="right">14.905748</td>
+<tr>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+14.905748
+</td>
 </tr>
-<tr class="even">
-<td align="left">JFK</td>
-<td align="right">1</td>
-<td align="right">8.615826</td>
+<tr>
+<td style="text-align:left;">
+JFK
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8.615826
+</td>
 </tr>
-<tr class="odd">
-<td align="left">LGA</td>
-<td align="right">1</td>
-<td align="right">5.641560</td>
+<tr>
+<td style="text-align:left;">
+LGA
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5.641560
+</td>
 </tr>
-<tr class="even">
-<td align="left">EWR</td>
-<td align="right">2</td>
-<td align="right">13.067263</td>
+<tr>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+13.067263
+</td>
 </tr>
-<tr class="odd">
-<td align="left">JFK</td>
-<td align="right">2</td>
-<td align="right">11.791355</td>
+<tr>
+<td style="text-align:left;">
+JFK
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+11.791355
+</td>
 </tr>
-<tr class="even">
-<td align="left">LGA</td>
-<td align="right">2</td>
-<td align="right">6.961582</td>
+<tr>
+<td style="text-align:left;">
+LGA
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6.961582
+</td>
 </tr>
 </tbody>
 </table>
 <p>Le raccourci ‘<strong>.</strong>’ dans l’argument <code>formula</code> permet d’agréger toutes les colonnes en fonction ‘<strong>~</strong>’ d’une ou plusieurs.</p>
-<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb483-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </a>
-<a class="sourceLine" id="cb483-2" title="2">                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>,<span class="st">&quot;arr_delay&quot;</span>,<span class="st">&quot;distance&quot;</span>)],</a>
-<a class="sourceLine" id="cb483-3" title="3">                         <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb480-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </a>
+<a class="sourceLine" id="cb480-2" title="2">                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>,<span class="st">&quot;arr_delay&quot;</span>,<span class="st">&quot;distance&quot;</span>)],</a>
+<a class="sourceLine" id="cb480-3" title="3">                         <span class="dt">FUN =</span> mean)</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="left">origin</th>
-<th align="right">dep_delay</th>
-<th align="right">arr_delay</th>
-<th align="right">distance</th>
+<tr>
+<th style="text-align:left;">
+origin
+</th>
+<th style="text-align:right;">
+dep_delay
+</th>
+<th style="text-align:right;">
+arr_delay
+</th>
+<th style="text-align:right;">
+distance
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">EWR</td>
-<td align="right">15.00911</td>
-<td align="right">9.107055</td>
-<td align="right">1064.7522</td>
+<tr>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:right;">
+15.00911
+</td>
+<td style="text-align:right;">
+9.107055
+</td>
+<td style="text-align:right;">
+1064.7522
+</td>
 </tr>
-<tr class="even">
-<td align="left">JFK</td>
-<td align="right">12.02361</td>
-<td align="right">5.551481</td>
-<td align="right">1275.2106</td>
+<tr>
+<td style="text-align:left;">
+JFK
+</td>
+<td style="text-align:right;">
+12.02361
+</td>
+<td style="text-align:right;">
+5.551481
+</td>
+<td style="text-align:right;">
+1275.2106
+</td>
 </tr>
-<tr class="odd">
-<td align="left">LGA</td>
-<td align="right">10.28658</td>
-<td align="right">5.783488</td>
-<td align="right">784.7561</td>
+<tr>
+<td style="text-align:left;">
+LGA
+</td>
+<td style="text-align:right;">
+10.28658
+</td>
+<td style="text-align:right;">
+5.783488
+</td>
+<td style="text-align:right;">
+784.7561
+</td>
 </tr>
 </tbody>
 </table>
@@ -984,86 +1212,142 @@ Ici on calcule le retard moyen au départ pour chaque aéroport d’origine et c
 <ol style="list-style-type: lower-alpha">
 <li>Calculez le retard maximum au départ de chaque aéroport</li>
 </ol>
-<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb484-1" title="1">agregationA &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights, <span class="dt">FUN =</span> max)</a></code></pre></div>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb481-1" title="1">agregationA &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights, <span class="dt">FUN =</span> max)</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="left">origin</th>
-<th align="right">dep_delay</th>
+<tr>
+<th style="text-align:left;">
+origin
+</th>
+<th style="text-align:right;">
+dep_delay
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">EWR</td>
-<td align="right">1126</td>
+<tr>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:right;">
+1126
+</td>
 </tr>
-<tr class="even">
-<td align="left">JFK</td>
-<td align="right">1301</td>
+<tr>
+<td style="text-align:left;">
+JFK
+</td>
+<td style="text-align:right;">
+1301
+</td>
 </tr>
-<tr class="odd">
-<td align="left">LGA</td>
-<td align="right">911</td>
+<tr>
+<td style="text-align:left;">
+LGA
+</td>
+<td style="text-align:right;">
+911
+</td>
 </tr>
 </tbody>
 </table>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Calculez l’écart-type sur les retards au départ et l’arrivée pour chaque aéroport d’origine</li>
 </ol>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb485-1" title="1">agregationB &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </a>
-<a class="sourceLine" id="cb485-2" title="2">                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>)],</a>
-<a class="sourceLine" id="cb485-3" title="3">                         <span class="dt">FUN =</span> sd)</a></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb482-1" title="1">agregationB &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </a>
+<a class="sourceLine" id="cb482-2" title="2">                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>)],</a>
+<a class="sourceLine" id="cb482-3" title="3">                         <span class="dt">FUN =</span> sd)</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="left">origin</th>
-<th align="right">dep_delay</th>
-<th align="right">arr_delay</th>
+<tr>
+<th style="text-align:left;">
+origin
+</th>
+<th style="text-align:right;">
+dep_delay
+</th>
+<th style="text-align:right;">
+arr_delay
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">EWR</td>
-<td align="right">41.18521</td>
-<td align="right">45.52918</td>
+<tr>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:right;">
+41.18521
+</td>
+<td style="text-align:right;">
+45.52918
+</td>
 </tr>
-<tr class="even">
-<td align="left">JFK</td>
-<td align="right">38.82710</td>
-<td align="right">44.27745</td>
+<tr>
+<td style="text-align:left;">
+JFK
+</td>
+<td style="text-align:right;">
+38.82710
+</td>
+<td style="text-align:right;">
+44.27745
+</td>
 </tr>
-<tr class="odd">
-<td align="left">LGA</td>
-<td align="right">39.91130</td>
-<td align="right">43.86227</td>
+<tr>
+<td style="text-align:left;">
+LGA
+</td>
+<td style="text-align:right;">
+39.91130
+</td>
+<td style="text-align:right;">
+43.86227
+</td>
 </tr>
 </tbody>
 </table>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Calculez le nombre de vols par aéroport d’origine</li>
 </ol>
-<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb486-1" title="1">agregationC &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> tailnum <span class="op">~</span><span class="st"> </span>origin, </a>
-<a class="sourceLine" id="cb486-2" title="2">                         <span class="dt">data =</span> flights,</a>
-<a class="sourceLine" id="cb486-3" title="3">                         <span class="dt">FUN =</span> length)</a></code></pre></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb483-1" title="1">agregationC &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> tailnum <span class="op">~</span><span class="st"> </span>origin, </a>
+<a class="sourceLine" id="cb483-2" title="2">                         <span class="dt">data =</span> flights,</a>
+<a class="sourceLine" id="cb483-3" title="3">                         <span class="dt">FUN =</span> length)</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="left">origin</th>
-<th align="right">tailnum</th>
+<tr>
+<th style="text-align:left;">
+origin
+</th>
+<th style="text-align:right;">
+tailnum
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">EWR</td>
-<td align="right">120229</td>
+<tr>
+<td style="text-align:left;">
+EWR
+</td>
+<td style="text-align:right;">
+120229
+</td>
 </tr>
-<tr class="even">
-<td align="left">JFK</td>
-<td align="right">110370</td>
+<tr>
+<td style="text-align:left;">
+JFK
+</td>
+<td style="text-align:right;">
+110370
+</td>
 </tr>
-<tr class="odd">
-<td align="left">LGA</td>
-<td align="right">103665</td>
+<tr>
+<td style="text-align:left;">
+LGA
+</td>
+<td style="text-align:right;">
+103665
+</td>
 </tr>
 </tbody>
 </table>

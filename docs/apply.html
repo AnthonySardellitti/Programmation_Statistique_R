@@ -316,10 +316,10 @@ Dans ce TP, nous aborderons uniquement les fonctions <code>apply</code>, <code>l
 <p>La fonction <code>apply</code> est la fonction de base des fonctions de cette famille.
 Elle est utile pour appliquer une fonction sur chaque colonne d’une matrice. L’argument <code>MARGIN</code> permet de préciser si on veut appliquer la fonction <code>mean</code> pour chaque ligne ou chaque colonne.</p>
 <p>Ici l’objet X convertit le data frame en matrice, c’est pourquoi la fonction <code>apply</code> renvoie que des vecteurs de type <code>character</code>.</p>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb576-1" title="1"><span class="kw">apply</span>(<span class="dt">X =</span> iris, <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> class)</a></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb573-1" title="1"><span class="kw">apply</span>(<span class="dt">X =</span> iris, <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> class)</a></code></pre></div>
 <pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width      Species 
 ##  &quot;character&quot;  &quot;character&quot;  &quot;character&quot;  &quot;character&quot;  &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb578-1" title="1"><span class="kw">apply</span>(<span class="dt">X =</span> iris[, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb575-1" title="1"><span class="kw">apply</span>(<span class="dt">X =</span> iris[, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> mean)</a></code></pre></div>
 <pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
 ##     5.843333     3.057333     3.758000     1.199333</code></pre>
 </div>
@@ -327,7 +327,7 @@ Elle est utile pour appliquer une fonction sur chaque colonne d’une matrice. L
 <h2><span class="header-section-number">8.2</span> Fonction lapply</h2>
 <p>La fonction <code>lapply</code> se construit de la même façon que la fonction <code>apply</code> à l’exception que le résultat renvoyé est une liste
 La fonction <code>lapply</code> prend en entrée une liste, un vecteur ou un data frame / matrice contrairement à la fonction <code>apply</code>.</p>
-<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb580-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> iris , <span class="cf">function</span>(x) <span class="kw">class</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb577-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> iris , <span class="cf">function</span>(x) <span class="kw">class</span>(x))</a></code></pre></div>
 <pre><code>## $Sepal.Length
 ## [1] &quot;numeric&quot;
 ## 
@@ -342,7 +342,7 @@ La fonction <code>lapply</code> prend en entrée une liste, un vecteur ou un dat
 ## 
 ## $Species
 ## [1] &quot;factor&quot;</code></pre>
-<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb582-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> <span class="kw">colnames</span>(iris) , <span class="cf">function</span>(x) <span class="kw">summary</span>(iris[,x]))</a></code></pre></div>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb579-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> <span class="kw">colnames</span>(iris) , <span class="cf">function</span>(x) <span class="kw">summary</span>(iris[,x]))</a></code></pre></div>
 <pre><code>## [[1]]
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   4.300   5.100   5.800   5.843   6.400   7.900 
@@ -363,7 +363,7 @@ La fonction <code>lapply</code> prend en entrée une liste, un vecteur ou un dat
 ##     setosa versicolor  virginica 
 ##         50         50         50</code></pre>
 <p>Quand on regarde de plus près, on se rend compte, que ces fonctions peuvent jouer le même rôle qu’une boucle.</p>
-<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb584-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> <span class="kw">colnames</span>(iris) , <span class="cf">function</span>(x) x)</a></code></pre></div>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb581-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> <span class="kw">colnames</span>(iris) , <span class="cf">function</span>(x) x)</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Sepal.Length&quot;
 ## 
@@ -382,14 +382,14 @@ La fonction <code>lapply</code> prend en entrée une liste, un vecteur ou un dat
 <div id="fonction-sapply" class="section level2">
 <h2><span class="header-section-number">8.3</span> Fonction sapply</h2>
 <p>La fonction sapply est similaire à la fonction lapply sauf qu’elle ne retourne pas de liste mais un vecteur ou une <strong>matrice</strong>.</p>
-<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb586-1" title="1"><span class="kw">sapply</span>(<span class="dt">X =</span> iris , <span class="cf">function</span>(x) <span class="kw">class</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb583-1" title="1"><span class="kw">sapply</span>(<span class="dt">X =</span> iris , <span class="cf">function</span>(x) <span class="kw">class</span>(x))</a></code></pre></div>
 <pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width      Species 
 ##    &quot;numeric&quot;    &quot;numeric&quot;    &quot;numeric&quot;    &quot;numeric&quot;     &quot;factor&quot;</code></pre>
 </div>
 <div id="fonction-tapply" class="section level2">
 <h2><span class="header-section-number">8.4</span> Fonction tapply</h2>
 <p>La fonction <code>tapply</code> adopte la même approche que la fonction <code>aggregate</code>. Elle permet d’agréger des données. Les arguments de la fonction d’agrégation sont renseignés dans la fonction <code>tapply</code> et non dans la fonction d’agrégation.</p>
-<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb588-1" title="1"><span class="kw">tapply</span>(<span class="dt">X =</span> iris<span class="op">$</span>Sepal.Length, <span class="dt">INDEX =</span> iris<span class="op">$</span>Species, <span class="dt">FUN =</span> mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb585-1" title="1"><span class="kw">tapply</span>(<span class="dt">X =</span> iris<span class="op">$</span>Sepal.Length, <span class="dt">INDEX =</span> iris<span class="op">$</span>Species, <span class="dt">FUN =</span> mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>##     setosa versicolor  virginica 
 ##      5.006      5.936      6.588</code></pre>
 </div>
@@ -408,16 +408,16 @@ La fonction <code>lapply</code> prend en entrée une liste, un vecteur ou un dat
 <ol style="list-style-type: lower-alpha">
 <li>Calculez le taille moyenne pour chaque race de personnage Star Wars (<code>species</code>)</li>
 </ol>
-<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb590-1" title="1"><span class="kw">tapply</span>(<span class="dt">X =</span> starWars<span class="op">$</span>height, <span class="dt">INDEX =</span> starWars<span class="op">$</span>species, <span class="dt">FUN =</span> mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb587-1" title="1"><span class="kw">tapply</span>(<span class="dt">X =</span> starWars<span class="op">$</span>height, <span class="dt">INDEX =</span> starWars<span class="op">$</span>species, <span class="dt">FUN =</span> mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Appliquez la fonction <code>build_plot</code> sur le data frame Star Wars en utilisant la fonction lapply.</li>
 </ol>
-<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb591-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> starWars, <span class="cf">function</span>(x) <span class="kw">build_plot</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb588-1" title="1"><span class="kw">lapply</span>(<span class="dt">X =</span> starWars, <span class="cf">function</span>(x) <span class="kw">build_plot</span>(x))</a></code></pre></div>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Calculer la moyenne de chaque variable numérique en utilisant la fonction <code>sapply</code> et <code>lapply</code>.</li>
 </ol>
-<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb592-1" title="1">col_numeric &lt;-<span class="st">  </span><span class="kw">sapply</span>(<span class="dt">X =</span> starWars, <span class="cf">function</span>(x) <span class="kw">is.numeric</span>(x))</a>
-<a class="sourceLine" id="cb592-2" title="2"><span class="kw">lapply</span>(<span class="dt">X =</span> starWars[ ,col_numeric], <span class="cf">function</span>(x) <span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb589-1" title="1">col_numeric &lt;-<span class="st">  </span><span class="kw">sapply</span>(<span class="dt">X =</span> starWars, <span class="cf">function</span>(x) <span class="kw">is.numeric</span>(x))</a>
+<a class="sourceLine" id="cb589-2" title="2"><span class="kw">lapply</span>(<span class="dt">X =</span> starWars[ ,col_numeric], <span class="cf">function</span>(x) <span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
 
 </div>
 </div>

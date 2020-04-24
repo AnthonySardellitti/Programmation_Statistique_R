@@ -461,7 +461,7 @@ Share
 <p>Le package <strong>dplyr</strong> permet également de réaliser des jointures avec les fonctions <em>left_join</em>, <em>right_join</em>, <em>full_join</em>, <em>inner_join</em> et d’aller plus loin. Les fonctions de jointure de <em>dplyr</em> ont un temps de traitement plus rapide que celles proposées par la fonction <code>merge</code>. Nous comparerons les deux méthodes dans la correction de l’exercice.</p>
 <div id="left-join" class="section level3">
 <h3><span class="header-section-number">10.2.1</span> Left Join</h3>
-<div class="sourceCode" id="cb627"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb627-1" title="1">left &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>, <span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb624"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb624-1" title="1">left &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>, <span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -562,7 +562,7 @@ François
 </div>
 <div id="right-join" class="section level3">
 <h3><span class="header-section-number">10.2.2</span> Right Join</h3>
-<div class="sourceCode" id="cb628"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb628-1" title="1">right &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>, <span class="dt">all.y =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb625"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb625-1" title="1">right &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>, <span class="dt">all.y =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -663,7 +663,7 @@ NA
 </div>
 <div id="inner-join" class="section level3">
 <h3><span class="header-section-number">10.2.3</span> Inner Join</h3>
-<div class="sourceCode" id="cb629"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb629-1" title="1">inner &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb626"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb626-1" title="1">inner &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>)</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -746,7 +746,7 @@ François
 </div>
 <div id="full-join" class="section level3">
 <h3><span class="header-section-number">10.2.4</span> Full Join</h3>
-<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb630-1" title="1">full &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>, <span class="dt">all =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb627"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb627-1" title="1">full &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> Utilisateur, <span class="dt">y =</span> Abonnement, <span class="dt">by =</span> <span class="st">&quot;Id_utilisateur&quot;</span>, <span class="dt">all =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1048,24 +1048,24 @@ LGA
 <ol style="list-style-type: lower-alpha">
 <li>Affichez le nom des 3 compagnies avec le plus de vols.</li>
 </ol>
-<div class="sourceCode" id="cb631"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb631-1" title="1"><span class="co">#jointure sans dplyr</span></a>
-<a class="sourceLine" id="cb631-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
-<a class="sourceLine" id="cb631-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> flights,<span class="dt">y =</span> airlines, <span class="dt">by =</span> <span class="st">&quot;carrier&quot;</span>,<span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb631-4" title="4"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
-<pre><code>## Time difference of 2.2181 secs</code></pre>
-<div class="sourceCode" id="cb633"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb633-1" title="1"><span class="co">#jointure avec dplyr</span></a>
-<a class="sourceLine" id="cb633-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
-<a class="sourceLine" id="cb633-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">left_join</span>(<span class="dt">x =</span> flights, <span class="dt">y =</span> airlines, <span class="dt">by =</span> <span class="st">&quot;carrier&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb628"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb628-1" title="1"><span class="co">#jointure sans dplyr</span></a>
+<a class="sourceLine" id="cb628-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb628-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> flights,<span class="dt">y =</span> airlines, <span class="dt">by =</span> <span class="st">&quot;carrier&quot;</span>,<span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb628-4" title="4"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
+<pre><code>## Time difference of 2.258971 secs</code></pre>
+<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb630-1" title="1"><span class="co">#jointure avec dplyr</span></a>
+<a class="sourceLine" id="cb630-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb630-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">left_join</span>(<span class="dt">x =</span> flights, <span class="dt">y =</span> airlines, <span class="dt">by =</span> <span class="st">&quot;carrier&quot;</span>)</a></code></pre></div>
 <pre><code>## Warning: Column `carrier` joining factor and character vector, coercing
 ## into character vector</code></pre>
-<div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb635-1" title="1"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
-<pre><code>## Time difference of 0.06679606 secs</code></pre>
-<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb637-1" title="1">requete <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb637-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(name) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb637-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nb_vols =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb637-4" title="4"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(nb_vols)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb637-5" title="5"><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb637-6" title="6"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb632-1" title="1"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
+<pre><code>## Time difference of 0.06682086 secs</code></pre>
+<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb634-1" title="1">requete <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb634-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(name) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb634-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nb_vols =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb634-4" title="4"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(nb_vols)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb634-5" title="5"><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb634-6" title="6"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1107,26 +1107,26 @@ ExpressJet Airlines Inc. 
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Affichez le nombre de vols à destination de chaque <code>tzone</code> (table <code>airports</code>).</li>
 </ol>
-<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb638-1" title="1"><span class="co">#jointure sans dplyr</span></a>
-<a class="sourceLine" id="cb638-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
-<a class="sourceLine" id="cb638-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> flights,<span class="dt">y =</span> airports[,<span class="kw">c</span>(<span class="st">&quot;faa&quot;</span>,<span class="st">&quot;tzone&quot;</span>)], </a>
-<a class="sourceLine" id="cb638-4" title="4">                 <span class="dt">by.x =</span> <span class="st">&quot;dest&quot;</span>, <span class="dt">by.y =</span> <span class="st">&quot;faa&quot;</span>, <span class="dt">all.x =</span>  <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb638-5" title="5"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
-<pre><code>## Time difference of 0.905566 secs</code></pre>
-<div class="sourceCode" id="cb640"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb640-1" title="1"><span class="co">#jointure avec dplyr</span></a>
-<a class="sourceLine" id="cb640-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
-<a class="sourceLine" id="cb640-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">left_join</span>(<span class="dt">x =</span> flights, </a>
-<a class="sourceLine" id="cb640-4" title="4">                     <span class="dt">y =</span> <span class="kw">select</span>(airports, <span class="kw">c</span>(<span class="st">&quot;faa&quot;</span>,<span class="st">&quot;tzone&quot;</span>)),</a>
-<a class="sourceLine" id="cb640-5" title="5">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;dest&quot;</span> =<span class="st"> &quot;faa&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb635-1" title="1"><span class="co">#jointure sans dplyr</span></a>
+<a class="sourceLine" id="cb635-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb635-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> flights,<span class="dt">y =</span> airports[,<span class="kw">c</span>(<span class="st">&quot;faa&quot;</span>,<span class="st">&quot;tzone&quot;</span>)], </a>
+<a class="sourceLine" id="cb635-4" title="4">                 <span class="dt">by.x =</span> <span class="st">&quot;dest&quot;</span>, <span class="dt">by.y =</span> <span class="st">&quot;faa&quot;</span>, <span class="dt">all.x =</span>  <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb635-5" title="5"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
+<pre><code>## Time difference of 1.099068 secs</code></pre>
+<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb637-1" title="1"><span class="co">#jointure avec dplyr</span></a>
+<a class="sourceLine" id="cb637-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb637-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">left_join</span>(<span class="dt">x =</span> flights, </a>
+<a class="sourceLine" id="cb637-4" title="4">                     <span class="dt">y =</span> <span class="kw">select</span>(airports, <span class="kw">c</span>(<span class="st">&quot;faa&quot;</span>,<span class="st">&quot;tzone&quot;</span>)),</a>
+<a class="sourceLine" id="cb637-5" title="5">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;dest&quot;</span> =<span class="st"> &quot;faa&quot;</span>))</a></code></pre></div>
 <pre><code>## Warning: Column `dest`/`faa` joining factor and character vector, coercing
 ## into character vector</code></pre>
-<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb642-1" title="1"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
-<pre><code>## Time difference of 0.3041809 secs</code></pre>
-<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb644-1" title="1">requete <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb644-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(tzone) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb644-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nb_vols =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb644-4" title="4"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(nb_vols)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb644-5" title="5"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb639"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb639-1" title="1"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
+<pre><code>## Time difference of 0.06981301 secs</code></pre>
+<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb641-1" title="1">requete <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb641-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(tzone) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb641-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nb_vols =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb641-4" title="4"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(nb_vols)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb641-5" title="5"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1209,28 +1209,28 @@ America/Anchorage
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Dans quel aéroport y a-t-il le plus de précipitations ?</li>
 </ol>
-<div class="sourceCode" id="cb645"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb645-1" title="1"><span class="co">#jointure sans dplyr</span></a>
-<a class="sourceLine" id="cb645-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
-<a class="sourceLine" id="cb645-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> flights, <span class="dt">y =</span> weather,</a>
-<a class="sourceLine" id="cb645-4" title="4">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;year&quot;</span> =<span class="st"> &quot;year&quot;</span>, <span class="st">&quot;month&quot;</span> =<span class="st"> &quot;month&quot;</span>, <span class="st">&quot;day&quot;</span> =<span class="st"> &quot;day&quot;</span>,</a>
-<a class="sourceLine" id="cb645-5" title="5">                            <span class="st">&quot;hour&quot;</span> =<span class="st"> &quot;hour&quot;</span> , <span class="st">&quot;origin&quot;</span> =<span class="st"> &quot;origin&quot;</span>), <span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb645-6" title="6"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
-<pre><code>## Time difference of 1.215777 secs</code></pre>
-<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb647-1" title="1"><span class="co">#jointure avec dplyr</span></a>
-<a class="sourceLine" id="cb647-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
-<a class="sourceLine" id="cb647-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">left_join</span>(<span class="dt">x =</span> flights, <span class="dt">y =</span> weather,</a>
-<a class="sourceLine" id="cb647-4" title="4">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;year&quot;</span> =<span class="st"> &quot;year&quot;</span>, <span class="st">&quot;month&quot;</span> =<span class="st"> &quot;month&quot;</span>, <span class="st">&quot;day&quot;</span> =<span class="st"> &quot;day&quot;</span>,</a>
-<a class="sourceLine" id="cb647-5" title="5">                            <span class="st">&quot;hour&quot;</span> =<span class="st"> &quot;hour&quot;</span> , <span class="st">&quot;origin&quot;</span> =<span class="st"> &quot;origin&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb642-1" title="1"><span class="co">#jointure sans dplyr</span></a>
+<a class="sourceLine" id="cb642-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb642-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> flights, <span class="dt">y =</span> weather,</a>
+<a class="sourceLine" id="cb642-4" title="4">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;year&quot;</span> =<span class="st"> &quot;year&quot;</span>, <span class="st">&quot;month&quot;</span> =<span class="st"> &quot;month&quot;</span>, <span class="st">&quot;day&quot;</span> =<span class="st"> &quot;day&quot;</span>,</a>
+<a class="sourceLine" id="cb642-5" title="5">                            <span class="st">&quot;hour&quot;</span> =<span class="st"> &quot;hour&quot;</span> , <span class="st">&quot;origin&quot;</span> =<span class="st"> &quot;origin&quot;</span>), <span class="dt">all.x =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb642-6" title="6"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
+<pre><code>## Time difference of 1.494013 secs</code></pre>
+<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb644-1" title="1"><span class="co">#jointure avec dplyr</span></a>
+<a class="sourceLine" id="cb644-2" title="2">start.time &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb644-3" title="3">requete &lt;-<span class="st"> </span><span class="kw">left_join</span>(<span class="dt">x =</span> flights, <span class="dt">y =</span> weather,</a>
+<a class="sourceLine" id="cb644-4" title="4">                     <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;year&quot;</span> =<span class="st"> &quot;year&quot;</span>, <span class="st">&quot;month&quot;</span> =<span class="st"> &quot;month&quot;</span>, <span class="st">&quot;day&quot;</span> =<span class="st"> &quot;day&quot;</span>,</a>
+<a class="sourceLine" id="cb644-5" title="5">                            <span class="st">&quot;hour&quot;</span> =<span class="st"> &quot;hour&quot;</span> , <span class="st">&quot;origin&quot;</span> =<span class="st"> &quot;origin&quot;</span>))</a></code></pre></div>
 <pre><code>## Warning: Column `origin` joining factor and character vector, coercing into
 ## character vector</code></pre>
-<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb649-1" title="1"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
-<pre><code>## Time difference of 0.2213812 secs</code></pre>
-<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb651-1" title="1">requete <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb651-2" title="2"><span class="st">  </span><span class="kw">select</span>(year, month, day, hour, origin, origin, precip) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb651-3" title="3"><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb651-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(origin) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb651-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">precip_moy =</span> <span class="kw">mean</span>(precip,<span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb651-6" title="6"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb646-1" title="1"><span class="kw">Sys.time</span>() <span class="op">-</span><span class="st"> </span>start.time</a></code></pre></div>
+<pre><code>## Time difference of 0.144619 secs</code></pre>
+<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb648-1" title="1">requete <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb648-2" title="2"><span class="st">  </span><span class="kw">select</span>(year, month, day, hour, origin, origin, precip) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb648-3" title="3"><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb648-4" title="4"><span class="st">  </span><span class="kw">group_by</span>(origin) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb648-5" title="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">precip_moy =</span> <span class="kw">mean</span>(precip,<span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb648-6" title="6"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
 <table>
 <thead>
 <tr>

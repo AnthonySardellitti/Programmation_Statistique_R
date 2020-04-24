@@ -2267,53 +2267,53 @@ Mesa Airlines Inc. 
 </table>
 </div>
 <p>On va charger les trois tables du jeu de données :</p>
-<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb593-1" title="1"><span class="kw">library</span>(nycflights13)</a></code></pre></div>
+<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb590-1" title="1"><span class="kw">library</span>(nycflights13)</a></code></pre></div>
 <p>Trois objets correspondant aux trois tables ont dû apparaître dans votre environnement.</p>
 <p>On charge le package <code>dplyr</code> :</p>
-<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb594-1" title="1"><span class="kw">library</span>(dplyr)</a></code></pre></div>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb591-1" title="1"><span class="kw">library</span>(dplyr)</a></code></pre></div>
 <div id="la-fonction-slice" class="section level2">
 <h2><span class="header-section-number">9.1</span> La fonction <code>slice</code></h2>
 <p>La fonction <code>slice</code> sélectionne des lignes du tableau selon leur position. On lui passe un chiffre ou un vecteur de chiffres.</p>
 <p>Si on souhaite sélectionner la 345e ligne du tableau <code>airports</code> :</p>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb595-1" title="1"><span class="kw">slice</span>(airports, <span class="dv">345</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb592-1" title="1"><span class="kw">slice</span>(airports, <span class="dv">345</span>)</a></code></pre></div>
 <p>Si on veut sélectionner les 5 premières lignes :</p>
-<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb596-1" title="1"><span class="kw">slice</span>(airports, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb593-1" title="1"><span class="kw">slice</span>(airports, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</a></code></pre></div>
 </div>
 <div id="la-fonction-filter" class="section level2">
 <h2><span class="header-section-number">9.2</span> La fonction <code>filter</code></h2>
 <p>La fonction <code>filter</code> sélectionne des lignes d’une table selon une condition. On lui passe en paramètre un test, et seules les lignes pour lesquelles ce test renvoie <code>TRUE</code> sont conservées.</p>
 <p>Par exemple, si on veut sélectionner les vols du mois de janvier, on peut filtrer sur la variable <code>month</code> de la manière suivante :</p>
-<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb597-1" title="1"><span class="kw">filter</span>(flights, month <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb594-1" title="1"><span class="kw">filter</span>(flights, month <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
 <p>Si on veut uniquement les vols avec un retard au départ (variable <code>dep_delay</code>) compris entre 10 et 15 minutes :</p>
-<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb598-1" title="1"><span class="kw">filter</span>(flights, dep_delay <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span> <span class="op">&amp;</span><span class="st"> </span>dep_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">15</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb595-1" title="1"><span class="kw">filter</span>(flights, dep_delay <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span> <span class="op">&amp;</span><span class="st"> </span>dep_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">15</span>)</a></code></pre></div>
 <p>On peut également placer des fonctions dans les tests, qui nous permettent par exemple de sélectionner les vols avec la plus grande distance :</p>
-<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb599-1" title="1"><span class="kw">filter</span>(flights, distance <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(distance))</a></code></pre></div>
+<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb596-1" title="1"><span class="kw">filter</span>(flights, distance <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(distance))</a></code></pre></div>
 </div>
 <div id="la-fonction-select" class="section level2">
 <h2><span class="header-section-number">9.3</span> La fonction <code>select</code></h2>
 <p>La fonction <code>select</code> permet de sélectionner des colonnes d’un tableau de données. Ainsi, si on veut extraire les colonnes <code>lat</code> et <code>lon</code> du tableau airports :</p>
-<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb600-1" title="1"><span class="kw">select</span>(airports, lat, lon)</a></code></pre></div>
+<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb597-1" title="1"><span class="kw">select</span>(airports, lat, lon)</a></code></pre></div>
 <p>Si on fait précéder le nom d’un <code>-</code>, la colonne est éliminée plutôt que sélectionnée :</p>
-<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb601-1" title="1"><span class="kw">select</span>(airports, <span class="op">-</span>lat, <span class="op">-</span>lon)</a></code></pre></div>
+<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb598-1" title="1"><span class="kw">select</span>(airports, <span class="op">-</span>lat, <span class="op">-</span>lon)</a></code></pre></div>
 <p>La syntaxe <code>colonne1:colonne2</code> permet de sélectionner toutes les colonnes situées entre <code>colonne1</code> et <code>colonne2</code> incluses :</p>
-<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb602-1" title="1"><span class="kw">select</span>(flights, year<span class="op">:</span>day)</a></code></pre></div>
+<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb599-1" title="1"><span class="kw">select</span>(flights, year<span class="op">:</span>day)</a></code></pre></div>
 <p><code>select</code> peut être utilisée pour réordonner les colonnes d’une table en utilisant la fonction <code>everything()</code>, qui sélectionne l’ensemble des colonnes non encore sélectionnées. Ainsi, si on souhaite faire passer la colonne <code>name</code> en première position de la table <code>airports</code>, on peut faire :</p>
-<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb603-1" title="1"><span class="kw">select</span>(airports, name, <span class="kw">everything</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb600-1" title="1"><span class="kw">select</span>(airports, name, <span class="kw">everything</span>())</a></code></pre></div>
 </div>
 <div id="la-fonction-arrange" class="section level2">
 <h2><span class="header-section-number">9.4</span> La fonction <code>arrange</code></h2>
 <p>La fonction <code>arrange</code> réordonne les lignes d’un tableau selon une ou plusieurs colonnes. Ainsi, si on veut trier le tableau <code>flights</code> selon le retard au départ croissant :</p>
-<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb604-1" title="1"><span class="kw">arrange</span>(flights, dep_delay)</a></code></pre></div>
+<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb601-1" title="1"><span class="kw">arrange</span>(flights, dep_delay)</a></code></pre></div>
 <p>On peut trier selon plusieurs colonnes. Par exemple selon le mois, puis selon le retard au départ :</p>
-<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb605-1" title="1"><span class="kw">arrange</span>(flights, month, dep_delay)</a></code></pre></div>
+<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb602-1" title="1"><span class="kw">arrange</span>(flights, month, dep_delay)</a></code></pre></div>
 <p>Si on veut trier selon une colonne par ordre décroissant, on lui applique la fonction <code>desc()</code> :</p>
-<div class="sourceCode" id="cb606"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb606-1" title="1"><span class="kw">arrange</span>(flights, <span class="kw">desc</span>(dep_delay))</a></code></pre></div>
+<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb603-1" title="1"><span class="kw">arrange</span>(flights, <span class="kw">desc</span>(dep_delay))</a></code></pre></div>
 </div>
 <div id="enchaîner-les-fonctions-avec-le-pipe" class="section level2">
 <h2><span class="header-section-number">9.5</span> Enchaîner les fonctions avec le <em>pipe</em></h2>
 <p>Quand on manipule un tableau de données, il est très fréquent d’enchaîner plusieurs opérations. On va par exemple extraire une sous-population avec <code>filter</code>, sélectionner des colonnes avec <code>select</code> puis trier selon une variable avec <code>arrange</code>, etc.</p>
 <p>Quand on veut enchaîner des opérations, on peut le faire de différentes manières. La première est d’effectuer toutes les opérations en une fois en les “emboîtant” :</p>
-<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb607-1" title="1"><span class="kw">arrange</span>(<span class="kw">select</span>(<span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>), dep_delay, arr_delay), dep_delay)</a></code></pre></div>
+<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb604-1" title="1"><span class="kw">arrange</span>(<span class="kw">select</span>(<span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>), dep_delay, arr_delay), dep_delay)</a></code></pre></div>
 <p>Cette notation a plusieurs inconvénients :</p>
 <ul>
 <li>elle est peu lisible</li>
@@ -2321,20 +2321,20 @@ Mesa Airlines Inc. 
 <li>Il est difficile de voir quel paramètre se rapporte à quelle fonction</li>
 </ul>
 <p>Une autre manière de faire est d’effectuer les opérations les unes après les autres, en stockant les résultats intermédiaires dans un objet temporaire :</p>
-<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb608-1" title="1">tmp &lt;-<span class="st"> </span><span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>)</a>
-<a class="sourceLine" id="cb608-2" title="2">tmp &lt;-<span class="st"> </span><span class="kw">select</span>(tmp, dep_delay, arr_delay)</a>
-<a class="sourceLine" id="cb608-3" title="3"><span class="kw">arrange</span>(tmp, dep_delay)</a></code></pre></div>
+<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb605-1" title="1">tmp &lt;-<span class="st"> </span><span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>)</a>
+<a class="sourceLine" id="cb605-2" title="2">tmp &lt;-<span class="st"> </span><span class="kw">select</span>(tmp, dep_delay, arr_delay)</a>
+<a class="sourceLine" id="cb605-3" title="3"><span class="kw">arrange</span>(tmp, dep_delay)</a></code></pre></div>
 <p>C’est nettement plus lisible, l’ordre des opérations est le bon, et les paramètres sont bien rattachés à leur fonction. Par contre, ça reste un peu “verbeux”, et on crée un objet temporaire <code>tmp</code> dont on n’a pas réellement besoin.</p>
 <p>Pour simplifier et améliorer encore la lisibilité du code, on va utiliser un nouvel opérateur, baptisé <em>pipe</em><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. Le <em>pipe</em> se note <code>%&gt;%</code>, et son fonctionnement est le suivant : si j’exécute <code>expr %&gt;% f</code>, alors le résultat de l’expression <code>expr</code>, à gauche du <em>pipe</em>, sera passé comme premier argument à la fonction <code>f</code>, à droite du <em>pipe</em>, ce qui revient à exécuter <code>f(expr)</code>.</p>
 <p>Ainsi les deux expressions suivantes sont rigoureusement équivalentes :</p>
-<div class="sourceCode" id="cb609"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb609-1" title="1"><span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb610-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb606"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb606-1" title="1"><span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb607-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>)</a></code></pre></div>
 <p>Ce qui est intéressant dans cette histoire, c’est qu’on va pouvoir enchaîner les <em>pipes</em>. Plutôt que d’écrire :</p>
-<div class="sourceCode" id="cb611"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb611-1" title="1"><span class="kw">select</span>(<span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>), dep_delay, arr_delay)</a></code></pre></div>
+<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb608-1" title="1"><span class="kw">select</span>(<span class="kw">filter</span>(flights, dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>), dep_delay, arr_delay)</a></code></pre></div>
 <p>On va pouvoir faire :</p>
-<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb612-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb612-2" title="2"><span class="st">  </span><span class="kw">filter</span>(dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb612-3" title="3"><span class="st">  </span><span class="kw">select</span>(dep_delay, arr_delay)</a></code></pre></div>
+<div class="sourceCode" id="cb609"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb609-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb609-2" title="2"><span class="st">  </span><span class="kw">filter</span>(dest <span class="op">==</span><span class="st"> &quot;LAX&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb609-3" title="3"><span class="st">  </span><span class="kw">select</span>(dep_delay, arr_delay)</a></code></pre></div>
 <p>Si la liste des fonctions enchaînées est longue, on peut les répartir sur plusieurs lignes à condition que l’opérateur <code>%&gt;%</code> soit en fin de ligne.</p>
 <p>À chaque fois, le résultat de ce qui se trouve à gauche du <em>pipe</em> est passé comme premier argument à ce qui se trouve à droite : on part de l’objet <code>flights</code>, qu’on passe comme premier argument à la fonction <code>filter</code>, puis on passe le résultat de ce <code>filter</code> comme premier argument du <code>select</code>.</p>
 <p>Le résultat final est le même avec les deux syntaxes, mais avec le <em>pipe</em> l’ordre des opérations correspond à l’ordre naturel de leur exécution, et on n’a pas eu besoin de créer d’objet intermédiaire.
@@ -2344,83 +2344,83 @@ L’utilisation du <em>pipe</em> n’est pas obligatoire, mais elle rend les scr
 <div id="la-fonction-group_by" class="section level2">
 <h2><span class="header-section-number">9.6</span> La fonction <code>group_by</code></h2>
 <p>Un élément très important de <code>dplyr</code> est la fonction <code>group_by</code>. Elle permet de définir des groupes de lignes à partir des valeurs d’une ou plusieurs colonnes. Par exemple, on peut grouper les vols selon leur mois :</p>
-<div class="sourceCode" id="cb613"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb613-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(month)</a></code></pre></div>
+<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb610-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(month)</a></code></pre></div>
 <p>Par défaut ceci ne fait rien de visible, à part l’apparition d’une mention <code>Groups</code> dans l’affichage du résultat. Mais à partir du moment où des groupes ont été définis, les fonctions comme <code>slice</code>, <code>mutate</code> ou <code>summarise</code> vont en tenir compte lors de leurs opérations.</p>
 <p>Par exemple, si on applique <code>slice</code> à un tableau préalablement groupé, il va sélectionner les lignes aux positions indiquées <em>pour chaque groupe</em>. Ainsi la commande suivante affiche le premier vol de chaque mois, selon leur ordre d’apparition dans le tableau :</p>
-<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb614-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(month) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">slice</span>(<span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb611"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb611-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(month) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">slice</span>(<span class="dv">1</span>)</a></code></pre></div>
 <p>On peut grouper selon plusieurs variables à la fois, il suffit de les indiquer dans la clause du <code>group_by</code>.</p>
-<div class="sourceCode" id="cb615"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb615-1" title="1">flights <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb615-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(month, dest)</a></code></pre></div>
+<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb612-1" title="1">flights <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb612-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(month, dest)</a></code></pre></div>
 </div>
 <div id="la-fonction-summarise" class="section level2">
 <h2><span class="header-section-number">9.7</span> La fonction <code>summarise</code></h2>
 <p>La fonction <code>summarise</code> permet d’agréger les lignes du tableau en effectuant une opération “résumée” sur une ou plusieurs colonnes. Par exemple, si on souhaite connaître les retards moyens au départ et à l’arrivée pour l’ensemble des vols du tableau <code>flights</code> :</p>
-<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb616-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb616-2" title="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">retard_dep =</span> <span class="kw">mean</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb616-3" title="3">            <span class="dt">retard_arr =</span> <span class="kw">mean</span>(arr_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb613"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb613-1" title="1">flights <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb613-2" title="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">retard_dep =</span> <span class="kw">mean</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb613-3" title="3">            <span class="dt">retard_arr =</span> <span class="kw">mean</span>(arr_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>))</a></code></pre></div>
 <p>Cette fonction est en général utilisée avec <code>group_by</code>, puisqu’elle permet du coup d’agréger et résumer les lignes du tableau groupe par groupe. Si on souhaite calculer le délai maximum, le délai minimum et le délai moyen au départ pour chaque mois, on pourra faire :</p>
-<div class="sourceCode" id="cb617"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb617-1" title="1">flights <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb617-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(month) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb617-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">max_delay =</span> <span class="kw">max</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb617-4" title="4">            <span class="dt">min_delay =</span> <span class="kw">min</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb617-5" title="5">            <span class="dt">mean_delay =</span> <span class="kw">mean</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb617-6" title="6">            <span class="dt">nb =</span> <span class="kw">n</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb614-1" title="1">flights <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb614-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(month) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb614-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">max_delay =</span> <span class="kw">max</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb614-4" title="4">            <span class="dt">min_delay =</span> <span class="kw">min</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb614-5" title="5">            <span class="dt">mean_delay =</span> <span class="kw">mean</span>(dep_delay, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb614-6" title="6">            <span class="dt">nb =</span> <span class="kw">n</span>())</a></code></pre></div>
 <p><code>summarise</code> dispose d’un opérateur spécial, <code>n()</code>, qui retourne le nombre de lignes du groupe.</p>
-<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb618-1" title="1"><span class="kw">help</span>(summarise)</a></code></pre></div>
+<div class="sourceCode" id="cb615"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb615-1" title="1"><span class="kw">help</span>(summarise)</a></code></pre></div>
 </div>
 <div id="autres-fonctions-utiles-de-dplyr" class="section level2">
 <h2><span class="header-section-number">9.8</span> Autres fonctions utiles de dplyr</h2>
 <div id="la-fonction-rename" class="section level3">
 <h3><span class="header-section-number">9.8.1</span> La fonction <code>rename</code></h3>
 <p>La fonction <code>rename</code> permet de renommer des colonnes. On l’utilise en lui passant des paramètres de la forme <code>nouveau_nom = ancien_nom</code>. Ainsi, si on veut renommer les colonnes <code>lon</code> et <code>lat</code> de <code>airports</code> en <code>longitude</code> et <code>latitude</code> :</p>
-<div class="sourceCode" id="cb619"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb619-1" title="1"><span class="kw">rename</span>(airports, <span class="dt">longitude =</span> lon, <span class="dt">latitude =</span> lat)</a></code></pre></div>
+<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb616-1" title="1"><span class="kw">rename</span>(airports, <span class="dt">longitude =</span> lon, <span class="dt">latitude =</span> lat)</a></code></pre></div>
 <p>Même si cela est déconseillé, si les noms de colonnes comportent des espaces ou des caractères spéciaux, on peut les entourer de guillemets (<code>"</code>) ou de quotes inverses (<code>`</code>) :</p>
-<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb620-1" title="1">tmp &lt;-<span class="st"> </span><span class="kw">rename</span>(flights, </a>
-<a class="sourceLine" id="cb620-2" title="2">              <span class="st">&quot;retard départ&quot;</span> =<span class="st"> </span>dep_delay,</a>
-<a class="sourceLine" id="cb620-3" title="3">              <span class="st">&quot;retard arrivée&quot;</span> =<span class="st"> </span>arr_delay)</a>
-<a class="sourceLine" id="cb620-4" title="4"><span class="kw">select</span>(tmp, <span class="st">`</span><span class="dt">retard départ</span><span class="st">`</span>, <span class="st">`</span><span class="dt">retard arrivée</span><span class="st">`</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb617"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb617-1" title="1">tmp &lt;-<span class="st"> </span><span class="kw">rename</span>(flights, </a>
+<a class="sourceLine" id="cb617-2" title="2">              <span class="st">&quot;retard départ&quot;</span> =<span class="st"> </span>dep_delay,</a>
+<a class="sourceLine" id="cb617-3" title="3">              <span class="st">&quot;retard arrivée&quot;</span> =<span class="st"> </span>arr_delay)</a>
+<a class="sourceLine" id="cb617-4" title="4"><span class="kw">select</span>(tmp, <span class="st">`</span><span class="dt">retard départ</span><span class="st">`</span>, <span class="st">`</span><span class="dt">retard arrivée</span><span class="st">`</span>)</a></code></pre></div>
 </div>
 <div id="la-fonction-mutate" class="section level3">
 <h3><span class="header-section-number">9.8.2</span> La fonction <code>mutate</code></h3>
 <p>La fonction <code>mutate</code> permet de créer de nouvelles colonnes dans le tableau de données, en général à partir de variables existantes.</p>
 <p>Par exemple, la table <code>flights</code> contient la durée du vol en minutes. Si on veut créer une nouvelle variable <code>duree_h</code> avec cette durée en heures, on peut faire :</p>
-<div class="sourceCode" id="cb621"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb621-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">mutate</span>(flights, <span class="dt">duree_h =</span> air_time <span class="op">/</span><span class="st"> </span><span class="dv">60</span>)</a>
-<a class="sourceLine" id="cb621-2" title="2"><span class="kw">select</span>(flights, air_time, duree_h)</a></code></pre></div>
+<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb618-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">mutate</span>(flights, <span class="dt">duree_h =</span> air_time <span class="op">/</span><span class="st"> </span><span class="dv">60</span>)</a>
+<a class="sourceLine" id="cb618-2" title="2"><span class="kw">select</span>(flights, air_time, duree_h)</a></code></pre></div>
 <p>On peut créer plusieurs nouvelles colonnes en une seule commande, et les expressions successives peuvent prendre en compte les résultats des calculs précédents. L’exemple suivant convertit d’abord la durée en heures dans une variable <code>duree_h</code> et la distance en kilomètres dans une variable <code>distance_km</code>, puis utilise ces nouvelles colonnes pour calculer la vitesse en km/h.</p>
-<div class="sourceCode" id="cb622"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb622-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">mutate</span>(flights, </a>
-<a class="sourceLine" id="cb622-2" title="2">                  <span class="dt">duree_h =</span> air_time <span class="op">/</span><span class="st"> </span><span class="dv">60</span>,</a>
-<a class="sourceLine" id="cb622-3" title="3">                  <span class="dt">distance_km =</span> distance <span class="op">/</span><span class="st"> </span><span class="fl">0.62137</span>,</a>
-<a class="sourceLine" id="cb622-4" title="4">                  <span class="dt">vitesse =</span> distance_km <span class="op">/</span><span class="st"> </span>duree_h)</a>
-<a class="sourceLine" id="cb622-5" title="5"><span class="kw">select</span>(flights, air_time, duree_h, distance, distance_km, vitesse)</a></code></pre></div>
+<div class="sourceCode" id="cb619"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb619-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">mutate</span>(flights, </a>
+<a class="sourceLine" id="cb619-2" title="2">                  <span class="dt">duree_h =</span> air_time <span class="op">/</span><span class="st"> </span><span class="dv">60</span>,</a>
+<a class="sourceLine" id="cb619-3" title="3">                  <span class="dt">distance_km =</span> distance <span class="op">/</span><span class="st"> </span><span class="fl">0.62137</span>,</a>
+<a class="sourceLine" id="cb619-4" title="4">                  <span class="dt">vitesse =</span> distance_km <span class="op">/</span><span class="st"> </span>duree_h)</a>
+<a class="sourceLine" id="cb619-5" title="5"><span class="kw">select</span>(flights, air_time, duree_h, distance, distance_km, vitesse)</a></code></pre></div>
 <p>À noter que <code>mutate</code> est évidemment parfaitement compatible avec les fonctions de recodages comme <code>case_when</code>.</p>
+<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb620-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">mutate</span>(flights,</a>
+<a class="sourceLine" id="cb620-2" title="2">                  <span class="dt">type_retard =</span> <span class="kw">case_when</span>(</a>
+<a class="sourceLine" id="cb620-3" title="3">                    dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard départ et arrivée&quot;</span>,</a>
+<a class="sourceLine" id="cb620-4" title="4">                    dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard départ&quot;</span>,</a>
+<a class="sourceLine" id="cb620-5" title="5">                    dep_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard arrivée&quot;</span>,</a>
+<a class="sourceLine" id="cb620-6" title="6">                    <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;Aucun retard&quot;</span>))</a></code></pre></div>
+</div>
+<div id="la-fonction-distinct" class="section level3">
+<h3><span class="header-section-number">9.8.3</span> La fonction <code>distinct</code></h3>
+<p>La fonction <code>distinct</code> filtre les lignes du tableau pour ne conserver que les lignes distinctes, en supprimant toutes les lignes en double.</p>
+<div class="sourceCode" id="cb621"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb621-1" title="1">flights <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb621-2" title="2"><span class="st">  </span><span class="kw">select</span>(day, month) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb621-3" title="3"><span class="st">  </span>distinct</a></code></pre></div>
+<p>On peut lui spécifier une liste de variables : dans ce cas, pour toutes les observations ayant des valeurs identiques pour les variables en question, <code>distinct</code> ne conservera que la première d’entre elles.</p>
+<div class="sourceCode" id="cb622"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb622-1" title="1">flights <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb622-2" title="2"><span class="st">  </span><span class="kw">distinct</span>(month, day)</a></code></pre></div>
+</div>
+<div id="la-fonction-case_when" class="section level3">
+<h3><span class="header-section-number">9.8.4</span> La fonction <code>case_when</code></h3>
+<p>La fonction <code>case_when</code> est une généralisation de la fonction <code>if_else</code>(du package <code>dplyr</code>) ou <code>ifelse</code> (du package de <code>base</code>) qui permet d’indiquer plusieurs tests et leurs valeurs associées.</p>
 <div class="sourceCode" id="cb623"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb623-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">mutate</span>(flights,</a>
 <a class="sourceLine" id="cb623-2" title="2">                  <span class="dt">type_retard =</span> <span class="kw">case_when</span>(</a>
 <a class="sourceLine" id="cb623-3" title="3">                    dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard départ et arrivée&quot;</span>,</a>
 <a class="sourceLine" id="cb623-4" title="4">                    dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard départ&quot;</span>,</a>
 <a class="sourceLine" id="cb623-5" title="5">                    dep_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard arrivée&quot;</span>,</a>
-<a class="sourceLine" id="cb623-6" title="6">                    <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;Aucun retard&quot;</span>))</a></code></pre></div>
-</div>
-<div id="la-fonction-distinct" class="section level3">
-<h3><span class="header-section-number">9.8.3</span> La fonction <code>distinct</code></h3>
-<p>La fonction <code>distinct</code> filtre les lignes du tableau pour ne conserver que les lignes distinctes, en supprimant toutes les lignes en double.</p>
-<div class="sourceCode" id="cb624"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb624-1" title="1">flights <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb624-2" title="2"><span class="st">  </span><span class="kw">select</span>(day, month) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb624-3" title="3"><span class="st">  </span>distinct</a></code></pre></div>
-<p>On peut lui spécifier une liste de variables : dans ce cas, pour toutes les observations ayant des valeurs identiques pour les variables en question, <code>distinct</code> ne conservera que la première d’entre elles.</p>
-<div class="sourceCode" id="cb625"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb625-1" title="1">flights <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb625-2" title="2"><span class="st">  </span><span class="kw">distinct</span>(month, day)</a></code></pre></div>
-</div>
-<div id="la-fonction-case_when" class="section level3">
-<h3><span class="header-section-number">9.8.4</span> La fonction <code>case_when</code></h3>
-<p>La fonction <code>case_when</code> est une généralisation de la fonction <code>if_else</code>(du package <code>dplyr</code>) ou <code>ifelse</code> (du package de <code>base</code>) qui permet d’indiquer plusieurs tests et leurs valeurs associées.</p>
-<div class="sourceCode" id="cb626"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb626-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">mutate</span>(flights,</a>
-<a class="sourceLine" id="cb626-2" title="2">                  <span class="dt">type_retard =</span> <span class="kw">case_when</span>(</a>
-<a class="sourceLine" id="cb626-3" title="3">                    dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard départ et arrivée&quot;</span>,</a>
-<a class="sourceLine" id="cb626-4" title="4">                    dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard départ&quot;</span>,</a>
-<a class="sourceLine" id="cb626-5" title="5">                    dep_delay <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;Retard arrivée&quot;</span>,</a>
-<a class="sourceLine" id="cb626-6" title="6">                    <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;Aucun retard&quot;</span>))</a>
-<a class="sourceLine" id="cb626-7" title="7"></a>
-<a class="sourceLine" id="cb626-8" title="8"><span class="kw">select</span>(flights, dep_delay, arr_delay , type_retard)</a></code></pre></div>
+<a class="sourceLine" id="cb623-6" title="6">                    <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;Aucun retard&quot;</span>))</a>
+<a class="sourceLine" id="cb623-7" title="7"></a>
+<a class="sourceLine" id="cb623-8" title="8"><span class="kw">select</span>(flights, dep_delay, arr_delay , type_retard)</a></code></pre></div>
 
 </div>
 </div>

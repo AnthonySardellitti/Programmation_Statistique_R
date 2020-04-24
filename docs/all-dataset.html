@@ -312,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="iris" class="section level2">
 <h2><span class="header-section-number">11.1</span> Iris</h2>
 <p>Le jeu de données présente les caractéristiques de 3 espèces de fleurs. Il est intégré au package <em>datasets</em> déjà chargé à chaque ouverture de session dans RStudio.</p>
-<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb652-1" title="1"><span class="kw">dim</span>(iris)</a></code></pre></div>
+<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb649-1" title="1"><span class="kw">dim</span>(iris)</a></code></pre></div>
 <pre><code>## [1] 150   5</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -685,12 +685,12 @@ setosa
 <h2><span class="header-section-number">11.2</span> Histoire de vie (hdv2003)</h2>
 <p>Le jeu de données est un extrait de l’enquête <em>Histoire de vie</em> réalisée par l’INSEE en 2003. Il contient 2000 individus et 20 variables.</p>
 <p>Pour pouvoir utiliser ces données, il faut d’abord charger l’extension <code>questionr</code> (après l’avoir installée, bien entendu) :</p>
-<div class="sourceCode" id="cb654"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb654-1" title="1"><span class="kw">library</span>(questionr)</a></code></pre></div>
+<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb651-1" title="1"><span class="kw">library</span>(questionr)</a></code></pre></div>
 <p>Nous devons ensuite indiquer à R que nous souhaitons accéder au jeu de données à l’aide de la commande <code>data</code> :</p>
-<div class="sourceCode" id="cb655"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb655-1" title="1"><span class="kw">data</span>(hdv2003)</a></code></pre></div>
+<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb652-1" title="1"><span class="kw">data</span>(hdv2003)</a></code></pre></div>
 <p>Cette commande ne renvoie aucun résultat particulier (sauf en cas d’erreur), mais vous devriez voir apparaître dans l’onglet <em>Environment</em> de RStudio un nouvel objet nommé <code>hdv2003</code> :</p>
 <p>On utilise la fonction <code>dim</code> pour connaître la taille du dataset</p>
-<div class="sourceCode" id="cb656"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb656-1" title="1"><span class="kw">dim</span>(hdv2003)</a></code></pre></div>
+<div class="sourceCode" id="cb653"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb653-1" title="1"><span class="kw">dim</span>(hdv2003)</a></code></pre></div>
 <pre><code>## [1] 2000   20</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -2007,8 +2007,8 @@ Oui
 <div id="nyc-flights-2013" class="section level2">
 <h2><span class="header-section-number">11.3</span> NYC Flights 2013</h2>
 <p>Le package <code>nycflights13</code> propose plusieurs <code>data.frame</code>. Ceux-ci correspondent aux données de tous les vols au départ d’un des trois aéroports de New-York en 2013.</p>
-<div class="sourceCode" id="cb658"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb658-1" title="1"><span class="kw">library</span>(nycflights13)</a>
-<a class="sourceLine" id="cb658-2" title="2"><span class="kw">ls</span>(<span class="st">&quot;package:nycflights13&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb655"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb655-1" title="1"><span class="kw">library</span>(nycflights13)</a>
+<a class="sourceLine" id="cb655-2" title="2"><span class="kw">ls</span>(<span class="st">&quot;package:nycflights13&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;airlines&quot; &quot;airports&quot; &quot;flights&quot;  &quot;planes&quot;   &quot;weather&quot;</code></pre>
 <div id="flights" class="section level3">
 <h3><span class="header-section-number">11.3.1</span> Flights</h3>
@@ -2027,7 +2027,7 @@ Oui
 <li><code>hour</code> , <code>minute</code> : Heure de départ prévue divisée en heures et minutes.</li>
 <li><code>time_hour</code> : Date et heure prévues du vol</li>
 </ul>
-<div class="sourceCode" id="cb660"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb660-1" title="1"><span class="kw">dim</span>(flights)</a></code></pre></div>
+<div class="sourceCode" id="cb657"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb657-1" title="1"><span class="kw">dim</span>(flights)</a></code></pre></div>
 <pre><code>## [1] 336776     19</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -3281,7 +3281,7 @@ PBI
 <div id="airlines" class="section level3">
 <h3><span class="header-section-number">11.3.2</span> Airlines</h3>
 <p>La table <code>airlines</code> contient des données sur les compagnies aériennes</p>
-<div class="sourceCode" id="cb662"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb662-1" title="1"><span class="kw">dim</span>(airlines)</a></code></pre></div>
+<div class="sourceCode" id="cb659"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb659-1" title="1"><span class="kw">dim</span>(airlines)</a></code></pre></div>
 <pre><code>## [1] 16  2</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -3432,7 +3432,7 @@ Mesa Airlines Inc. 
 <div id="airports" class="section level3">
 <h3><span class="header-section-number">11.3.3</span> Airports</h3>
 <p>La table <code>airports</code> contient des informations sur les aéroports</p>
-<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb664-1" title="1"><span class="kw">dim</span>(airports)</a></code></pre></div>
+<div class="sourceCode" id="cb661"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb661-1" title="1"><span class="kw">dim</span>(airports)</a></code></pre></div>
 <pre><code>## [1] 1458    8</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -3993,7 +3993,7 @@ America/Phoenix
 <div id="weather" class="section level3">
 <h3><span class="header-section-number">11.3.4</span> Weather</h3>
 <p>La table <code>weather</code> contient des informations sur les conditions météorologiques</p>
-<div class="sourceCode" id="cb666"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb666-1" title="1"><span class="kw">dim</span>(weather)</a></code></pre></div>
+<div class="sourceCode" id="cb663"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb663-1" title="1"><span class="kw">dim</span>(weather)</a></code></pre></div>
 <pre><code>## [1] 26115    15</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -4995,7 +4995,7 @@ EWR
 <div id="planes" class="section level3">
 <h3><span class="header-section-number">11.3.5</span> Planes</h3>
 <p>La table <code>planes</code> contient des informations sur les appareil</p>
-<div class="sourceCode" id="cb668"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb668-1" title="1"><span class="kw">dim</span>(planes)</a></code></pre></div>
+<div class="sourceCode" id="cb665"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb665-1" title="1"><span class="kw">dim</span>(planes)</a></code></pre></div>
 <pre><code>## [1] 3322    9</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -5634,8 +5634,8 @@ Le fichier est issu du site <a href="https://www.kaggle.com/lava18/google-play-s
 <li><code>Last.Updated</code> : Date de la dernière version</li>
 <li><code>Size_recode</code> : Taille de l’application (en Mo)</li>
 </ul>
-<div class="sourceCode" id="cb670"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb670-1" title="1">google &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/google.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb671-1" title="1"><span class="kw">dim</span>(google)</a></code></pre></div>
+<div class="sourceCode" id="cb667"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb667-1" title="1">google &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/google.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb668"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb668-1" title="1"><span class="kw">dim</span>(google)</a></code></pre></div>
 <pre><code>## [1] 8196   10</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
@@ -6336,9 +6336,9 @@ Le fichier est issu du site <a href="https://www.kaggle.com/rounakbanik/pokemon"
 <li><code>defense</code> : la puissance de défense du pokemon</li>
 <li><code>speed</code> : la vitesse du pokemon</li>
 </ul>
-<div class="sourceCode" id="cb673"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb673-1" title="1"><span class="kw">library</span>(readxl)</a>
-<a class="sourceLine" id="cb673-2" title="2">pokemon &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;./dataset/pokemon.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;pokemon&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb674"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb674-1" title="1"><span class="kw">dim</span>(pokemon)</a></code></pre></div>
+<div class="sourceCode" id="cb670"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb670-1" title="1"><span class="kw">library</span>(readxl)</a>
+<a class="sourceLine" id="cb670-2" title="2">pokemon &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;./dataset/pokemon.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;pokemon&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb671-1" title="1"><span class="kw">dim</span>(pokemon)</a></code></pre></div>
 <pre><code>## [1] 251  10</code></pre>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
@@ -7024,8 +7024,8 @@ NA
 <div id="star-wars" class="section level2">
 <h2><span class="header-section-number">11.6</span> Star Wars</h2>
 <p>Le dataset <code>starwars.csv</code> décrit les caractéristiques des personnages principaux de la saga.</p>
-<div class="sourceCode" id="cb676"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb676-1" title="1">starWars &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;./dataset/starwars.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb677"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb677-1" title="1"><span class="kw">dim</span>(starWars)</a></code></pre></div>
+<div class="sourceCode" id="cb673"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb673-1" title="1">starWars &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;./dataset/starwars.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb674"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb674-1" title="1"><span class="kw">dim</span>(starWars)</a></code></pre></div>
 <pre><code>## [1] 87 10</code></pre>
 <p>Voici un extrait du dataset :</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
