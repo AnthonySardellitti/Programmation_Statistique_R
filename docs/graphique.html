@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2020-04-24" />
+<meta name="date" content="2021-01-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,9 +54,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -65,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -202,6 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.5" data-path="manipulation-objet.html"><a href="manipulation-objet.html#trier-un-data-frame"><i class="fa fa-check"></i><b>5.3.5</b> Trier un data frame</a></li>
 <li class="chapter" data-level="5.3.6" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercice"><i class="fa fa-check"></i><b>5.3.6</b> Exercice</a></li>
 <li class="chapter" data-level="5.3.7" data-path="manipulation-objet.html"><a href="manipulation-objet.html#agréger-des-données"><i class="fa fa-check"></i><b>5.3.7</b> Agréger des données</a></li>
+<li class="chapter" data-level="5.3.8" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercice-1"><i class="fa fa-check"></i><b>5.3.8</b> Exercice</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="graphique.html"><a href="graphique.html"><i class="fa fa-check"></i><b>6</b> Représentation Graphique</a><ul>
@@ -274,21 +277,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.2" data-path="jointures.html"><a href="jointures.html#correction-9"><i class="fa fa-check"></i><b>10.3.2</b> Correction</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>11</b> Jeux de données utilisés</a><ul>
-<li class="chapter" data-level="11.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>11.1</b> Iris</a></li>
-<li class="chapter" data-level="11.2" data-path="all-dataset.html"><a href="all-dataset.html#histoire-de-vie-hdv2003"><i class="fa fa-check"></i><b>11.2</b> Histoire de vie (hdv2003)</a></li>
-<li class="chapter" data-level="11.3" data-path="all-dataset.html"><a href="all-dataset.html#nyc-flights-2013"><i class="fa fa-check"></i><b>11.3</b> NYC Flights 2013</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="all-dataset.html"><a href="all-dataset.html#flights"><i class="fa fa-check"></i><b>11.3.1</b> Flights</a></li>
-<li class="chapter" data-level="11.3.2" data-path="all-dataset.html"><a href="all-dataset.html#airlines"><i class="fa fa-check"></i><b>11.3.2</b> Airlines</a></li>
-<li class="chapter" data-level="11.3.3" data-path="all-dataset.html"><a href="all-dataset.html#airports"><i class="fa fa-check"></i><b>11.3.3</b> Airports</a></li>
-<li class="chapter" data-level="11.3.4" data-path="all-dataset.html"><a href="all-dataset.html#weather"><i class="fa fa-check"></i><b>11.3.4</b> Weather</a></li>
-<li class="chapter" data-level="11.3.5" data-path="all-dataset.html"><a href="all-dataset.html#planes"><i class="fa fa-check"></i><b>11.3.5</b> Planes</a></li>
+<li class="chapter" data-level="11" data-path="entrainement.html"><a href="entrainement.html"><i class="fa fa-check"></i><b>11</b> S’entrainer</a><ul>
+<li class="chapter" data-level="11.1" data-path="entrainement.html"><a href="entrainement.html#tp1"><i class="fa fa-check"></i><b>11.1</b> TP1</a></li>
+<li class="chapter" data-level="11.2" data-path="entrainement.html"><a href="entrainement.html#tp2"><i class="fa fa-check"></i><b>11.2</b> TP2</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>11.4</b> Google</a></li>
-<li class="chapter" data-level="11.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>11.5</b> Pokemon</a></li>
-<li class="chapter" data-level="11.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>11.6</b> Star Wars</a></li>
+<li class="chapter" data-level="12" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>12</b> Jeux de données utilisés</a><ul>
+<li class="chapter" data-level="12.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>12.1</b> Iris</a></li>
+<li class="chapter" data-level="12.2" data-path="all-dataset.html"><a href="all-dataset.html#histoire-de-vie-hdv2003"><i class="fa fa-check"></i><b>12.2</b> Histoire de vie (hdv2003)</a></li>
+<li class="chapter" data-level="12.3" data-path="all-dataset.html"><a href="all-dataset.html#nyc-flights-2013"><i class="fa fa-check"></i><b>12.3</b> NYC Flights 2013</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="all-dataset.html"><a href="all-dataset.html#flights"><i class="fa fa-check"></i><b>12.3.1</b> Flights</a></li>
+<li class="chapter" data-level="12.3.2" data-path="all-dataset.html"><a href="all-dataset.html#airlines"><i class="fa fa-check"></i><b>12.3.2</b> Airlines</a></li>
+<li class="chapter" data-level="12.3.3" data-path="all-dataset.html"><a href="all-dataset.html#airports"><i class="fa fa-check"></i><b>12.3.3</b> Airports</a></li>
+<li class="chapter" data-level="12.3.4" data-path="all-dataset.html"><a href="all-dataset.html#weather"><i class="fa fa-check"></i><b>12.3.4</b> Weather</a></li>
+<li class="chapter" data-level="12.3.5" data-path="all-dataset.html"><a href="all-dataset.html#planes"><i class="fa fa-check"></i><b>12.3.5</b> Planes</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>12</b> Bibliographie</a></li>
+<li class="chapter" data-level="12.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>12.4</b> Google</a></li>
+<li class="chapter" data-level="12.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>12.5</b> Pokemon</a></li>
+<li class="chapter" data-level="12.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>12.6</b> Star Wars</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>13</b> Bibliographie</a></li>
 </ul>
 
       </nav>
@@ -443,47 +450,47 @@ setosa
 <p>Le bouton <strong>Export</strong> permet d’exporter le graphique en tant qu’image ou pdf.</p>
 <p><img src="img/plot_save.png" width="50%" style="display: block; margin: auto;" /></p>
 <p>On peut aussi exporter un graphique avec la fonction <code>dev.print</code>.</p>
-<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb484-1" title="1"><span class="kw">dev.print</span>(<span class="dt">device =</span> png, <span class="dt">file =</span> <span class="st">&quot;export.png&quot;</span>, <span class="dt">width =</span> <span class="dv">600</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="graphique.html#cb481-1"></a><span class="kw">dev.print</span>(<span class="dt">device =</span> png, <span class="dt">file =</span> <span class="st">&quot;export.png&quot;</span>, <span class="dt">width =</span> <span class="dv">600</span>)</span></code></pre></div>
 <p>Il est possible de découper la fenêtre graphique pour en afficher plusieurs à la fois. Pour cela on utilise la fonction <code>par</code> avec l’argument <code>mfrow</code> en précisant le découpage de la fenêtre.</p>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb485-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co">#fenêtre sur une ligne et deux colonnes</span></a>
-<a class="sourceLine" id="cb485-2" title="2"><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length,iris<span class="op">$</span>Sepal.Width)</a>
-<a class="sourceLine" id="cb485-3" title="3"><span class="kw">plot</span>(iris<span class="op">$</span>Petal.Length,iris<span class="op">$</span>Petal.Width)</a></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="graphique.html#cb482-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co">#fenêtre sur une ligne et deux colonnes</span></span>
+<span id="cb482-2"><a href="graphique.html#cb482-2"></a><span class="kw">plot</span>(iris<span class="op">$</span>Sepal.Length,iris<span class="op">$</span>Sepal.Width)</span>
+<span id="cb482-3"><a href="graphique.html#cb482-3"></a><span class="kw">plot</span>(iris<span class="op">$</span>Petal.Length,iris<span class="op">$</span>Petal.Width)</span></code></pre></div>
 <p><img src="img/2plot.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>Pour réinitialiser le découpage de la fenêtre graphique, on redimensionne la fenêtre sur 1 x 1.</p>
-<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb486-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="graphique.html#cb483-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div>
 </div>
 <div id="les-fonctions-de-tracé-de-bas-niveau" class="section level2">
 <h2><span class="header-section-number">6.2</span> Les fonctions de tracé de bas niveau</h2>
 <p>Nous allons illustrer les fonctions graphiques du langage R à travers la représentation d’un nuage de points.
 Pour construire un nuage de points, on utilise la fonction <code>plot</code> en précisant les deux vecteurs numériques que l’on souhaite projeter.</p>
-<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb487-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width,</a>
-<a class="sourceLine" id="cb487-2" title="2">     <span class="dt">xlab =</span> <span class="st">&quot;Sepal Length&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Sepal Width&quot;</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-278-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="graphique.html#cb484-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width,</span>
+<span id="cb484-2"><a href="graphique.html#cb484-2"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Sepal Length&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Sepal Width&quot;</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-277-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Dans l’exemple ci-dessus, on précise les caractéristiques du graphique directement dans la fonction <code>plot</code>. Mais, il est également possible d’ajouter des éléments avec d’autres fonctions issues notamment du package <code>graphics</code> déjà chargé par défaut dans RStudio.</p>
-<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb488-1" title="1"><span class="co">#Ajouter des éléments</span></a>
-<a class="sourceLine" id="cb488-2" title="2"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </a>
-<a class="sourceLine" id="cb488-3" title="3">     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">9</span>),<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>),</a>
-<a class="sourceLine" id="cb488-4" title="4">     <span class="dt">xlab =</span> <span class="st">&quot;Sepal Length&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Sepal Width&quot;</span>)</a>
-<a class="sourceLine" id="cb488-5" title="5"></a>
-<a class="sourceLine" id="cb488-6" title="6"><span class="co">#Ajouter un titre</span></a>
-<a class="sourceLine" id="cb488-7" title="7"><span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Sepal Width and Sepal Length&quot;</span>)</a>
-<a class="sourceLine" id="cb488-8" title="8"></a>
-<a class="sourceLine" id="cb488-9" title="9"><span class="co">#Ajouter un sous titre</span></a>
-<a class="sourceLine" id="cb488-10" title="10"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;(Source : Iris)&quot;</span>,<span class="dt">side=</span><span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb488-11" title="11"></a>
-<a class="sourceLine" id="cb488-12" title="12"><span class="co">#Ajouter des lignes</span></a>
-<a class="sourceLine" id="cb488-13" title="13"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb488-14" title="14"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb488-15" title="15"></a>
-<a class="sourceLine" id="cb488-16" title="16"><span class="co">#Ajouter du texte</span></a>
-<a class="sourceLine" id="cb488-17" title="17"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">1.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 1&quot;</span>)</a>
-<a class="sourceLine" id="cb488-18" title="18"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 2&quot;</span>)</a>
-<a class="sourceLine" id="cb488-19" title="19"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 3&quot;</span>)</a>
-<a class="sourceLine" id="cb488-20" title="20"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="dv">2</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 4&quot;</span>)</a>
-<a class="sourceLine" id="cb488-21" title="21"></a>
-<a class="sourceLine" id="cb488-22" title="22"><span class="co">#Ajouter des points</span></a>
-<a class="sourceLine" id="cb488-23" title="23"><span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>),<span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">4.5</span>,<span class="dv">5</span>))</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-279-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="graphique.html#cb485-1"></a><span class="co">#Ajouter des éléments</span></span>
+<span id="cb485-2"><a href="graphique.html#cb485-2"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </span>
+<span id="cb485-3"><a href="graphique.html#cb485-3"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">9</span>),<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>),</span>
+<span id="cb485-4"><a href="graphique.html#cb485-4"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Sepal Length&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Sepal Width&quot;</span>)</span>
+<span id="cb485-5"><a href="graphique.html#cb485-5"></a></span>
+<span id="cb485-6"><a href="graphique.html#cb485-6"></a><span class="co">#Ajouter un titre</span></span>
+<span id="cb485-7"><a href="graphique.html#cb485-7"></a><span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Sepal Width and Sepal Length&quot;</span>)</span>
+<span id="cb485-8"><a href="graphique.html#cb485-8"></a></span>
+<span id="cb485-9"><a href="graphique.html#cb485-9"></a><span class="co">#Ajouter un sous titre</span></span>
+<span id="cb485-10"><a href="graphique.html#cb485-10"></a><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;(Source : Iris)&quot;</span>,<span class="dt">side=</span><span class="dv">4</span>)</span>
+<span id="cb485-11"><a href="graphique.html#cb485-11"></a></span>
+<span id="cb485-12"><a href="graphique.html#cb485-12"></a><span class="co">#Ajouter des lignes</span></span>
+<span id="cb485-13"><a href="graphique.html#cb485-13"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">3</span>)</span>
+<span id="cb485-14"><a href="graphique.html#cb485-14"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">6</span>)</span>
+<span id="cb485-15"><a href="graphique.html#cb485-15"></a></span>
+<span id="cb485-16"><a href="graphique.html#cb485-16"></a><span class="co">#Ajouter du texte</span></span>
+<span id="cb485-17"><a href="graphique.html#cb485-17"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">1.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 1&quot;</span>)</span>
+<span id="cb485-18"><a href="graphique.html#cb485-18"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 2&quot;</span>)</span>
+<span id="cb485-19"><a href="graphique.html#cb485-19"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 3&quot;</span>)</span>
+<span id="cb485-20"><a href="graphique.html#cb485-20"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="dv">2</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 4&quot;</span>)</span>
+<span id="cb485-21"><a href="graphique.html#cb485-21"></a></span>
+<span id="cb485-22"><a href="graphique.html#cb485-22"></a><span class="co">#Ajouter des points</span></span>
+<span id="cb485-23"><a href="graphique.html#cb485-23"></a><span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>),<span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">4.5</span>,<span class="dv">5</span>))</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-278-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Attention : Les fonctions des éléments graphiques ajoutent les éléments sur le graphique en cours de lecture dans la fenêtre graphique.</p>
 </div>
 <div id="personnaliser-des-éléments-graphiques" class="section level2">
@@ -491,108 +498,108 @@ Pour construire un nuage de points, on utilise la fonction <code>plot</code> en 
 <div id="mise-en-forme" class="section level3">
 <h3><span class="header-section-number">6.3.1</span> Mise en forme</h3>
 <p>On peut aussi personnaliser les différents éléments du graphique en utilisant les arguments de chaque fonction.</p>
-<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb489-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </a>
-<a class="sourceLine" id="cb489-2" title="2">     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">9</span>),<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>),</a>
-<a class="sourceLine" id="cb489-3" title="3">     <span class="dt">xlab =</span> <span class="st">&quot;Sepal Length&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</a>
-<a class="sourceLine" id="cb489-4" title="4">     <span class="dt">col =</span> iris<span class="op">$</span>Species, <span class="dt">pch =</span> <span class="dv">19</span> )</a>
-<a class="sourceLine" id="cb489-5" title="5"></a>
-<a class="sourceLine" id="cb489-6" title="6"><span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Sepal Width and Sepal Length&quot;</span>, </a>
-<a class="sourceLine" id="cb489-7" title="7">      <span class="dt">cex.main =</span> <span class="dv">2</span>,<span class="dt">font.main=</span><span class="dv">4</span>, <span class="dt">col.main=</span> <span class="st">&quot;red&quot;</span>)</a>
-<a class="sourceLine" id="cb489-8" title="8"></a>
-<a class="sourceLine" id="cb489-9" title="9"><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;(Source : Iris)&quot;</span>,<span class="dt">side=</span><span class="dv">4</span>,  <span class="dt">font=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb489-10" title="10"></a>
-<a class="sourceLine" id="cb489-11" title="11"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">3</span> , <span class="dt">lty =</span> <span class="dv">3</span> , <span class="dt">lwd =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb489-12" title="12"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">6</span> , <span class="dt">lty =</span> <span class="dv">3</span> , <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb489-13" title="13"></a>
-<a class="sourceLine" id="cb489-14" title="14"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">1.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 1&quot;</span>, <span class="dt">col =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb489-15" title="15"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 2&quot;</span>, <span class="dt">col =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb489-16" title="16"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 3&quot;</span>, <span class="dt">col =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb489-17" title="17"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="dv">2</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 4&quot;</span>, <span class="dt">col =</span> <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb489-18" title="18"></a>
-<a class="sourceLine" id="cb489-19" title="19"><span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>),<span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">4.5</span>,<span class="dv">5</span>), <span class="dt">pch =</span> <span class="dv">4</span> , <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>))</a>
-<a class="sourceLine" id="cb489-20" title="20"></a>
-<a class="sourceLine" id="cb489-21" title="21"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span><span class="kw">levels</span>(iris<span class="op">$</span>Species),</a>
-<a class="sourceLine" id="cb489-22" title="22">       <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.8</span>)</a>
-<a class="sourceLine" id="cb489-23" title="23"></a>
-<a class="sourceLine" id="cb489-24" title="24"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="fl">6.5</span>, <span class="dt">y=</span><span class="fl">1.5</span>, <span class="dt">legend=</span><span class="st">&quot;points </span><span class="ch">\n</span><span class="st"> supplémentaires&quot;</span>,</a>
-<a class="sourceLine" id="cb489-25" title="25">       <span class="dt">pch =</span> <span class="dv">4</span>, <span class="dt">cex=</span><span class="fl">0.8</span> , <span class="dt">box.lty=</span><span class="dv">0</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-280-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="graphique.html#cb486-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </span>
+<span id="cb486-2"><a href="graphique.html#cb486-2"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">9</span>),<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>),</span>
+<span id="cb486-3"><a href="graphique.html#cb486-3"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Sepal Length&quot;</span>,<span class="dt">ylab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
+<span id="cb486-4"><a href="graphique.html#cb486-4"></a>     <span class="dt">col =</span> iris<span class="op">$</span>Species, <span class="dt">pch =</span> <span class="dv">19</span> )</span>
+<span id="cb486-5"><a href="graphique.html#cb486-5"></a></span>
+<span id="cb486-6"><a href="graphique.html#cb486-6"></a><span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Sepal Width and Sepal Length&quot;</span>, </span>
+<span id="cb486-7"><a href="graphique.html#cb486-7"></a>      <span class="dt">cex.main =</span> <span class="dv">2</span>,<span class="dt">font.main=</span><span class="dv">4</span>, <span class="dt">col.main=</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb486-8"><a href="graphique.html#cb486-8"></a></span>
+<span id="cb486-9"><a href="graphique.html#cb486-9"></a><span class="kw">mtext</span>(<span class="dt">text =</span> <span class="st">&quot;(Source : Iris)&quot;</span>,<span class="dt">side=</span><span class="dv">4</span>,  <span class="dt">font=</span><span class="dv">2</span>)</span>
+<span id="cb486-10"><a href="graphique.html#cb486-10"></a></span>
+<span id="cb486-11"><a href="graphique.html#cb486-11"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">3</span> , <span class="dt">lty =</span> <span class="dv">3</span> , <span class="dt">lwd =</span> <span class="dv">4</span>)</span>
+<span id="cb486-12"><a href="graphique.html#cb486-12"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">6</span> , <span class="dt">lty =</span> <span class="dv">3</span> , <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb486-13"><a href="graphique.html#cb486-13"></a></span>
+<span id="cb486-14"><a href="graphique.html#cb486-14"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">1.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 1&quot;</span>, <span class="dt">col =</span> <span class="dv">3</span>)</span>
+<span id="cb486-15"><a href="graphique.html#cb486-15"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">5</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 2&quot;</span>, <span class="dt">col =</span> <span class="dv">2</span>)</span>
+<span id="cb486-16"><a href="graphique.html#cb486-16"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="fl">4.5</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 3&quot;</span>, <span class="dt">col =</span> <span class="dv">4</span>)</span>
+<span id="cb486-17"><a href="graphique.html#cb486-17"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">7</span>,<span class="dt">y =</span> <span class="dv">2</span>,<span class="dt">labels =</span> <span class="st">&quot;Groupe 4&quot;</span>, <span class="dt">col =</span> <span class="dv">5</span>)</span>
+<span id="cb486-18"><a href="graphique.html#cb486-18"></a></span>
+<span id="cb486-19"><a href="graphique.html#cb486-19"></a><span class="kw">points</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>),<span class="dt">y =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">4.5</span>,<span class="dv">5</span>), <span class="dt">pch =</span> <span class="dv">4</span> , <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>))</span>
+<span id="cb486-20"><a href="graphique.html#cb486-20"></a></span>
+<span id="cb486-21"><a href="graphique.html#cb486-21"></a><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span><span class="kw">levels</span>(iris<span class="op">$</span>Species),</span>
+<span id="cb486-22"><a href="graphique.html#cb486-22"></a>       <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.8</span>)</span>
+<span id="cb486-23"><a href="graphique.html#cb486-23"></a></span>
+<span id="cb486-24"><a href="graphique.html#cb486-24"></a><span class="kw">legend</span>(<span class="dt">x =</span> <span class="fl">6.5</span>, <span class="dt">y=</span><span class="fl">1.5</span>, <span class="dt">legend=</span><span class="st">&quot;points </span><span class="ch">\n</span><span class="st"> supplémentaires&quot;</span>,</span>
+<span id="cb486-25"><a href="graphique.html#cb486-25"></a>       <span class="dt">pch =</span> <span class="dv">4</span>, <span class="dt">cex=</span><span class="fl">0.8</span> , <span class="dt">box.lty=</span><span class="dv">0</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-279-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Par exemple l’argument <code>pch</code> définit la forme du point et l’argument <code>lty</code> la forme du trait. Voici une table de correspondance :</p>
 <p><img src="img/element.PNG" width="60%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="gestion-des-couleurs" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> Gestion des couleurs</h3>
 <p>Dans R, la gestion des couleurs est assez simple. Jusqu’à présent, pour construire les graphiques on se contentait de renseigner les arguments <code>col</code> des fonctions avec le nom d’une couleur comme <em>red</em>, <em>blue</em>, ou de préciser des numéros dans des vecteurs comme <em>c(1,2,3)</em>. Mais comment R fait-il pour interpréter cela ?</p>
-<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb490-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </a>
-<a class="sourceLine" id="cb490-2" title="2">    <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>))</a></code></pre></div>
-<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb491-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </a>
-<a class="sourceLine" id="cb491-2" title="2">    <span class="dt">col =</span> <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="graphique.html#cb487-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </span>
+<span id="cb487-2"><a href="graphique.html#cb487-2"></a>    <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="graphique.html#cb488-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </span>
+<span id="cb488-2"><a href="graphique.html#cb488-2"></a>    <span class="dt">col =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p>En réalité, il existe une palette par défaut dans R. Elle est composée de 8 couleurs. On peut les retrouver avec la fonction <code>palette()</code>.</p>
-<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb492-1" title="1"><span class="kw">palette</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="graphique.html#cb489-1"></a><span class="kw">palette</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;black&quot;   &quot;red&quot;     &quot;green3&quot;  &quot;blue&quot;    &quot;cyan&quot;    &quot;magenta&quot; &quot;yellow&quot; 
 ## [8] &quot;gray&quot;</code></pre>
 <p>Ainsi, on peut définir les couleurs que l’on souhaite dans cette palette en précisant le nom ou le numéro de la couleur. C’est pourquoi, il est possible de définir les couleurs de différentes catégories si le vecteur est défini en tant que <code>factor</code>.</p>
-<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb494-1" title="1"><span class="kw">class</span>(iris<span class="op">$</span>Species)</a></code></pre></div>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="graphique.html#cb491-1"></a><span class="kw">class</span>(iris<span class="op">$</span>Species)</span></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
-<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb496-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </a>
-<a class="sourceLine" id="cb496-2" title="2">    <span class="dt">col =</span> iris<span class="op">$</span>Species, <span class="dt">pch  =</span> <span class="dv">19</span>)</a>
-<a class="sourceLine" id="cb496-3" title="3"></a>
-<a class="sourceLine" id="cb496-4" title="4"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span><span class="kw">levels</span>(iris<span class="op">$</span>Species),</a>
-<a class="sourceLine" id="cb496-5" title="5">       <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.8</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-285-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="graphique.html#cb493-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </span>
+<span id="cb493-2"><a href="graphique.html#cb493-2"></a>    <span class="dt">col =</span> iris<span class="op">$</span>Species, <span class="dt">pch  =</span> <span class="dv">19</span>)</span>
+<span id="cb493-3"><a href="graphique.html#cb493-3"></a></span>
+<span id="cb493-4"><a href="graphique.html#cb493-4"></a><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span><span class="kw">levels</span>(iris<span class="op">$</span>Species),</span>
+<span id="cb493-5"><a href="graphique.html#cb493-5"></a>       <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.8</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-284-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Dans R, un vecteur de type <code>factor</code> est stocker au format numérique en mémoire ou chaque nombre représente l’indice du niveau associé à la catégorie.</p>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb497-1" title="1"><span class="kw">levels</span>(iris<span class="op">$</span>Species)</a></code></pre></div>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="graphique.html#cb494-1"></a><span class="kw">levels</span>(iris<span class="op">$</span>Species)</span></code></pre></div>
 <pre><code>## [1] &quot;setosa&quot;     &quot;versicolor&quot; &quot;virginica&quot;</code></pre>
 <p>L’espèce <em>setosa</em> prendra la valeur 1, <em>versicolor</em> la valeur 2 et <em>virignica</em> la valeur 3. Ces niveaux seront donc associés aux 3 premières couleurs de la palette par défaut.</p>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb499-1" title="1"><span class="kw">palette</span>()[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="graphique.html#cb496-1"></a><span class="kw">palette</span>()[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;black&quot;  &quot;red&quot;    &quot;green3&quot;</code></pre>
 <p>On aura donc black pour <em>setosa</em>, red pour <em>versicolor</em> et green3 pour <em>virginica</em>.
 Attention donc lorsqu’on souhaite représenter des points selon une variable qualitative.
 Dans l’exemple ci-dessous, on définit 3 couleurs sans tenir compte de l’espèce et nous n’obtenons pas du tout le même résultat.</p>
-<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb501-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </a>
-<a class="sourceLine" id="cb501-2" title="2">    <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">pch  =</span> <span class="dv">19</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-288-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="graphique.html#cb498-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </span>
+<span id="cb498-2"><a href="graphique.html#cb498-2"></a>    <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">pch  =</span> <span class="dv">19</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-287-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>En précisant uniquement 3 couleurs, l’argument <code>col</code> va en réalité prendre en entrée un vecteur de longueur 150 ou le trio de couleur sera répliqué 50 fois pour qu’à chaque fleur soit associée une couleur.</p>
-<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb502-1" title="1">trio_replique &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">50</span>)</a>
-<a class="sourceLine" id="cb502-2" title="2">trio_replique</a></code></pre></div>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="graphique.html#cb499-1"></a>trio_replique &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">50</span>)</span>
+<span id="cb499-2"><a href="graphique.html#cb499-2"></a>trio_replique</span></code></pre></div>
 <pre><code>##   [1] 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2
 ##  [36] 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1
 ##  [71] 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3
 ## [106] 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2
 ## [141] 3 1 2 3 1 2 3 1 2 3</code></pre>
 <p>On obtient le même graphique que ci-dessous et en l’occurrence les deux sont faux car les couleurs ne sont pas définies en fonction des espèces.</p>
-<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb504-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </a>
-<a class="sourceLine" id="cb504-2" title="2">    <span class="dt">col =</span> trio_replique, <span class="dt">pch  =</span> <span class="dv">19</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-290-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="graphique.html#cb501-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,<span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width, </span>
+<span id="cb501-2"><a href="graphique.html#cb501-2"></a>    <span class="dt">col =</span> trio_replique, <span class="dt">pch  =</span> <span class="dv">19</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-289-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>De plus, on constate que nous sommes limitées en nombre de couleurs. Dès lors que nous souhaitons représenter plus de 8 couleurs, nous faisons face au phénomène de réplication de R.</p>
-<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb505-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,  <span class="dt">cex=</span><span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb505-2" title="2"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">8.5</span>)</a>
-<a class="sourceLine" id="cb505-3" title="3"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">16.5</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-291-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="graphique.html#cb502-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,  <span class="dt">cex=</span><span class="dv">4</span>)</span>
+<span id="cb502-2"><a href="graphique.html#cb502-2"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">8.5</span>)</span>
+<span id="cb502-3"><a href="graphique.html#cb502-3"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">16.5</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-290-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>On peut alors utiliser la fonction <code>colors()</code> qui propose une palette de plus de 650 couleurs avec le même mécanisme que la palette par défaut.</p>
-<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb506-1" title="1"><span class="kw">head</span>(<span class="kw">colors</span>(), <span class="dt">n =</span> <span class="dv">20</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="graphique.html#cb503-1"></a><span class="kw">head</span>(<span class="kw">colors</span>(), <span class="dt">n =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;white&quot;         &quot;aliceblue&quot;     &quot;antiquewhite&quot;  &quot;antiquewhite1&quot;
 ##  [5] &quot;antiquewhite2&quot; &quot;antiquewhite3&quot; &quot;antiquewhite4&quot; &quot;aquamarine&quot;   
 ##  [9] &quot;aquamarine1&quot;   &quot;aquamarine2&quot;   &quot;aquamarine3&quot;   &quot;aquamarine4&quot;  
 ## [13] &quot;azure&quot;         &quot;azure1&quot;        &quot;azure2&quot;        &quot;azure3&quot;       
 ## [17] &quot;azure4&quot;        &quot;beige&quot;         &quot;bisque&quot;        &quot;bisque1&quot;</code></pre>
-<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb508-1" title="1"><span class="kw">length</span>(<span class="kw">colors</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="graphique.html#cb505-1"></a><span class="kw">length</span>(<span class="kw">colors</span>())</span></code></pre></div>
 <pre><code>## [1] 657</code></pre>
-<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb510-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> <span class="kw">c</span>(<span class="st">&quot;antiquewhite2&quot;</span>,<span class="st">&quot;aquamarine2&quot;</span>, <span class="st">&quot;azure2&quot;</span>), <span class="dt">cex =</span> <span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="graphique.html#cb507-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> <span class="kw">c</span>(<span class="st">&quot;antiquewhite2&quot;</span>,<span class="st">&quot;aquamarine2&quot;</span>, <span class="st">&quot;azure2&quot;</span>), <span class="dt">cex =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-292-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="graphique.html#cb508-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> <span class="kw">c</span>(<span class="st">&quot;antiquewhite2&quot;</span>,<span class="st">&quot;aquamarine2&quot;</span>, <span class="st">&quot;azure2&quot;</span>) , <span class="dt">cex =</span> <span class="dv">4</span>)</span></code></pre></div>
 <p><img src="index.html_files/figure-html/unnamed-chunk-293-1.png" width="768" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb511-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> <span class="kw">c</span>(<span class="st">&quot;antiquewhite2&quot;</span>,<span class="st">&quot;aquamarine2&quot;</span>, <span class="st">&quot;azure2&quot;</span>) , <span class="dt">cex =</span> <span class="dv">4</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-294-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Pour personnaliser les couleurs dans R, on utilise donc des vecteurs en appelant les couleurs par leur nom ou leur indice. Cependant, en mémoire les couleurs sont codées en héxadécimales. C’est avec ce format que nous allons pouvoir créer notre propre palette de couleurs. Pour cela, il suffit de construire un vecteur avec les valeurs en héxadécimales des couleurs qu’on souhaite. On peut également utiliser la fonction <code>rgb</code> et l’argument <code>alpha</code> pour gérer la transparence. Le site <a href="https://htmlcolorcodes.com/fr/" class="uri">https://htmlcolorcodes.com/fr/</a> propose toutes les couleurs qu’il est possible de définir.</p>
 <p><img src="img/palette.png" width="60%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb512-1" title="1">ma_palette &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="dt">vert =</span> <span class="st">&quot;#2FB846&quot;</span>, </a>
-<a class="sourceLine" id="cb512-2" title="2">                 <span class="dt">bleu =</span> <span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">4</span><span class="op">/</span><span class="dv">255</span>,<span class="dt">green =</span> <span class="dv">12</span><span class="op">/</span><span class="dv">255</span> ,<span class="dt">blue =</span> <span class="dv">250</span><span class="op">/</span><span class="dv">255</span> , <span class="dt">alpha =</span> <span class="fl">0.5</span>))</a>
-<a class="sourceLine" id="cb512-3" title="3">ma_palette</a></code></pre></div>
+<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="graphique.html#cb509-1"></a>ma_palette &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="dt">vert =</span> <span class="st">&quot;#2FB846&quot;</span>, </span>
+<span id="cb509-2"><a href="graphique.html#cb509-2"></a>                 <span class="dt">bleu =</span> <span class="kw">rgb</span>(<span class="dt">red =</span> <span class="dv">4</span><span class="op">/</span><span class="dv">255</span>,<span class="dt">green =</span> <span class="dv">12</span><span class="op">/</span><span class="dv">255</span> ,<span class="dt">blue =</span> <span class="dv">250</span><span class="op">/</span><span class="dv">255</span> , <span class="dt">alpha =</span> <span class="fl">0.5</span>))</span>
+<span id="cb509-3"><a href="graphique.html#cb509-3"></a>ma_palette</span></code></pre></div>
 <pre><code>##        vert        bleu 
 ##   &quot;#2FB846&quot; &quot;#040CFA80&quot;</code></pre>
-<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb514-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb514-2" title="2"><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> ma_palette , <span class="dt">cex =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb514-3" title="3"><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> ma_palette[<span class="kw">c</span>(<span class="st">&quot;vert&quot;</span>)] , <span class="dt">cex =</span> <span class="dv">4</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-297-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="graphique.html#cb511-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb511-2"><a href="graphique.html#cb511-2"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> ma_palette , <span class="dt">cex =</span> <span class="dv">4</span>)</span>
+<span id="cb511-3"><a href="graphique.html#cb511-3"></a><span class="kw">plot</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>),<span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">col=</span> ma_palette[<span class="kw">c</span>(<span class="st">&quot;vert&quot;</span>)] , <span class="dt">cex =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-296-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="type-de-graphique" class="section level2">
@@ -1297,54 +1304,54 @@ Everyone
 <div id="boxplot" class="section level3">
 <h3><span class="header-section-number">6.4.1</span> Boxplot</h3>
 <p>Les points représentent les outliers. L’argument <code>horizontal</code> permet de représenter le graphique à l’horizontal. D’autres arguments sont disponibles (cf : aide).</p>
-<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb515-1" title="1"><span class="kw">boxplot</span>(<span class="dt">x =</span> google<span class="op">$</span>Rating, <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>, </a>
-<a class="sourceLine" id="cb515-2" title="2">        <span class="dt">horizontal =</span> <span class="ot">TRUE</span>,<span class="dt">col =</span> ma_palette)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-299-1.png" width="1152" /></p>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="graphique.html#cb512-1"></a><span class="kw">boxplot</span>(<span class="dt">x =</span> google<span class="op">$</span>Rating, <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>, </span>
+<span id="cb512-2"><a href="graphique.html#cb512-2"></a>        <span class="dt">horizontal =</span> <span class="ot">TRUE</span>,<span class="dt">col =</span> ma_palette)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-298-1.png" width="1152" /></p>
 <p>Il est possible de construire un boxplot dans un cadre bivarié :</p>
-<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb516-1" title="1"><span class="kw">boxplot</span>(<span class="dt">formula =</span> google<span class="op">$</span>Rating <span class="op">~</span><span class="st"> </span>google<span class="op">$</span>Content.Rating,</a>
-<a class="sourceLine" id="cb516-2" title="2">        <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>,</a>
-<a class="sourceLine" id="cb516-3" title="3">        <span class="dt">col =</span> <span class="kw">c</span>(ma_palette, <span class="st">&quot;red&quot;</span>))</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-300-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="graphique.html#cb513-1"></a><span class="kw">boxplot</span>(<span class="dt">formula =</span> google<span class="op">$</span>Rating <span class="op">~</span><span class="st"> </span>google<span class="op">$</span>Content.Rating,</span>
+<span id="cb513-2"><a href="graphique.html#cb513-2"></a>        <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>,</span>
+<span id="cb513-3"><a href="graphique.html#cb513-3"></a>        <span class="dt">col =</span> <span class="kw">c</span>(ma_palette, <span class="st">&quot;red&quot;</span>))</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-299-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Ici on utilise les couleurs de palette différentes.</p>
 </div>
 <div id="histogramme" class="section level3">
 <h3><span class="header-section-number">6.4.2</span> Histogramme</h3>
 <p>L’argument <code>breaks</code> permet de définir le nombre de classe et <code>probability</code> d’afficher la densité plutôt que les effectifs ou fréquence. D’autres arguments sont disponibles (cf : aide).</p>
-<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb517-1" title="1"><span class="kw">hist</span>(<span class="dt">x =</span> google<span class="op">$</span>Rating, <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>,</a>
-<a class="sourceLine" id="cb517-2" title="2">     <span class="dt">col =</span> ma_palette[<span class="dv">2</span>] , <span class="dt">breaks =</span> <span class="dv">8</span>, <span class="dt">probability =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-301-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="graphique.html#cb514-1"></a><span class="kw">hist</span>(<span class="dt">x =</span> google<span class="op">$</span>Rating, <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>,</span>
+<span id="cb514-2"><a href="graphique.html#cb514-2"></a>     <span class="dt">col =</span> ma_palette[<span class="dv">2</span>] , <span class="dt">breaks =</span> <span class="dv">8</span>, <span class="dt">probability =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-300-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>La fonction <code>lines</code> permet d’ajouter une courbe sur un graphique existant. Ici on représente la courbe densité avec la fonction <code>density</code>.</p>
-<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb518-1" title="1"><span class="kw">hist</span>(<span class="dt">x =</span> google<span class="op">$</span>Rating, <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>,</a>
-<a class="sourceLine" id="cb518-2" title="2">     <span class="dt">col =</span> ma_palette[<span class="dv">2</span>] , <span class="dt">breaks =</span> <span class="dv">8</span>, <span class="dt">probability =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb518-3" title="3"><span class="kw">lines</span>(<span class="kw">density</span>(google<span class="op">$</span>Rating), <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> ma_palette[<span class="dv">1</span>], <span class="dt">lwd =</span> <span class="dv">4</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-302-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="graphique.html#cb515-1"></a><span class="kw">hist</span>(<span class="dt">x =</span> google<span class="op">$</span>Rating, <span class="dt">main =</span> <span class="st">&quot;Distribution des notes des utilisateurs&quot;</span>,</span>
+<span id="cb515-2"><a href="graphique.html#cb515-2"></a>     <span class="dt">col =</span> ma_palette[<span class="dv">2</span>] , <span class="dt">breaks =</span> <span class="dv">8</span>, <span class="dt">probability =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb515-3"><a href="graphique.html#cb515-3"></a><span class="kw">lines</span>(<span class="kw">density</span>(google<span class="op">$</span>Rating), <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> ma_palette[<span class="dv">1</span>], <span class="dt">lwd =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-301-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </div>
 <div id="diagramme-en-circulaire" class="section level3">
 <h3><span class="header-section-number">6.4.3</span> Diagramme en circulaire</h3>
 <p>L’argument <code>labels</code> permet de renseigner les étiquettes du graphique. Si on souhaite afficher les étiquettes en pourcentage, il faut calculer un tri à plat avec les pourcentages. D’autres arguments sont disponibles (cf : aide).</p>
-<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb519-1" title="1">tri_a_plat &lt;-<span class="st"> </span><span class="kw">table</span>(google<span class="op">$</span>Type)</a>
-<a class="sourceLine" id="cb519-2" title="2">tri_a_plat</a></code></pre></div>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="graphique.html#cb516-1"></a>tri_a_plat &lt;-<span class="st"> </span><span class="kw">table</span>(google<span class="op">$</span>Type)</span>
+<span id="cb516-2"><a href="graphique.html#cb516-2"></a>tri_a_plat</span></code></pre></div>
 <pre><code>## 
 ## Free Paid 
 ## 7592  604</code></pre>
-<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb521-1" title="1"><span class="kw">paste</span>(<span class="kw">rownames</span>(tri_a_plat),tri_a_plat)</a></code></pre></div>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="graphique.html#cb518-1"></a><span class="kw">paste</span>(<span class="kw">rownames</span>(tri_a_plat),tri_a_plat)</span></code></pre></div>
 <pre><code>## [1] &quot;Free 7592&quot; &quot;Paid 604&quot;</code></pre>
-<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb523-1" title="1"><span class="kw">pie</span>(<span class="dt">x =</span> tri_a_plat, <span class="dt">main =</span> <span class="st">&quot;Répartition du nombre d&#39;applications par type&quot;</span>,</a>
-<a class="sourceLine" id="cb523-2" title="2">    <span class="dt">col =</span> ma_palette, <span class="dt">labels =</span> <span class="kw">paste</span>(<span class="kw">rownames</span>(tri_a_plat),tri_a_plat))</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-303-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="graphique.html#cb520-1"></a><span class="kw">pie</span>(<span class="dt">x =</span> tri_a_plat, <span class="dt">main =</span> <span class="st">&quot;Répartition du nombre d&#39;applications par type&quot;</span>,</span>
+<span id="cb520-2"><a href="graphique.html#cb520-2"></a>    <span class="dt">col =</span> ma_palette, <span class="dt">labels =</span> <span class="kw">paste</span>(<span class="kw">rownames</span>(tri_a_plat),tri_a_plat))</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-302-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="diagramme-en-barre" class="section level3">
 <h3><span class="header-section-number">6.4.4</span> Diagramme en barre</h3>
 <p>Même principe pour le diagramme en barre, on doit calculer un tri à plat dans un premier temps. L’argument <code>horiz</code> permet de représenter le graphique à l’horizontal. D’autres arguments sont disponibles (cf : aide).</p>
-<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb524-1" title="1">tri_a_plat &lt;-<span class="st"> </span><span class="kw">table</span>(google<span class="op">$</span>Type)</a>
-<a class="sourceLine" id="cb524-2" title="2"></a>
-<a class="sourceLine" id="cb524-3" title="3"><span class="kw">barplot</span>(<span class="dt">height =</span> tri_a_plat, </a>
-<a class="sourceLine" id="cb524-4" title="4">        <span class="dt">main =</span> <span class="st">&quot;Répartition du nombre d&#39;applications par type&quot;</span>,</a>
-<a class="sourceLine" id="cb524-5" title="5">    <span class="dt">col =</span> <span class="kw">colors</span>()[<span class="kw">c</span>(<span class="dv">45</span>,<span class="dv">99</span>)], <span class="dt">horiz =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-304-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="graphique.html#cb521-1"></a>tri_a_plat &lt;-<span class="st"> </span><span class="kw">table</span>(google<span class="op">$</span>Type)</span>
+<span id="cb521-2"><a href="graphique.html#cb521-2"></a></span>
+<span id="cb521-3"><a href="graphique.html#cb521-3"></a><span class="kw">barplot</span>(<span class="dt">height =</span> tri_a_plat, </span>
+<span id="cb521-4"><a href="graphique.html#cb521-4"></a>        <span class="dt">main =</span> <span class="st">&quot;Répartition du nombre d&#39;applications par type&quot;</span>,</span>
+<span id="cb521-5"><a href="graphique.html#cb521-5"></a>    <span class="dt">col =</span> <span class="kw">colors</span>()[<span class="kw">c</span>(<span class="dv">45</span>,<span class="dv">99</span>)], <span class="dt">horiz =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-303-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Il est possible de construire un diagramme en barre dans un cadre bivarié. L’argument <code>beside</code> permet de préciser si on souhaite un diagramme empilé ou non. La fonction <code>prop.table</code> permet d’obtenir un tableau en pourcentage.</p>
-<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb525-1" title="1">tri_croise &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(google<span class="op">$</span>Content.Rating, google<span class="op">$</span>Type))</a>
-<a class="sourceLine" id="cb525-2" title="2">tri_croise</a></code></pre></div>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="graphique.html#cb522-1"></a>tri_croise &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(google<span class="op">$</span>Content.Rating, google<span class="op">$</span>Type))</span>
+<span id="cb522-2"><a href="graphique.html#cb522-2"></a>tri_croise</span></code></pre></div>
 <pre><code>##                  
 ##                           Free         Paid
 ##   Adults only 18+ 0.0003660322 0.0000000000
@@ -1353,32 +1360,32 @@ Everyone
 ##   Mature 17+      0.0417276720 0.0018301611
 ##   Teen            0.1057833089 0.0054904832
 ##   Unrated         0.0001220107 0.0000000000</code></pre>
-<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb527-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb527-2" title="2"><span class="kw">barplot</span>(<span class="dt">height =</span> tri_croise, <span class="dt">legend =</span> <span class="kw">rownames</span>(tri_croise))</a>
-<a class="sourceLine" id="cb527-3" title="3"><span class="kw">barplot</span>(<span class="dt">height =</span> tri_croise, <span class="dt">legend =</span> <span class="kw">rownames</span>(tri_croise) ,  <span class="dt">beside =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-305-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="graphique.html#cb524-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb524-2"><a href="graphique.html#cb524-2"></a><span class="kw">barplot</span>(<span class="dt">height =</span> tri_croise, <span class="dt">legend =</span> <span class="kw">rownames</span>(tri_croise))</span>
+<span id="cb524-3"><a href="graphique.html#cb524-3"></a><span class="kw">barplot</span>(<span class="dt">height =</span> tri_croise, <span class="dt">legend =</span> <span class="kw">rownames</span>(tri_croise) ,  <span class="dt">beside =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-304-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </div>
 <div id="nuage-de-points" class="section level3">
 <h3><span class="header-section-number">6.4.5</span> Nuage de points</h3>
 <p>Ici on représente un nuage de points avec la présentation par défaut.</p>
-<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb528-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> google<span class="op">$</span>Reviews, <span class="dt">y =</span> google<span class="op">$</span>Rating)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-306-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="graphique.html#cb525-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> google<span class="op">$</span>Reviews, <span class="dt">y =</span> google<span class="op">$</span>Rating)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-305-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>Puis le même en y ajoutant des éléments de personnalisation.</p>
-<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb529-1" title="1"><span class="kw">class</span>(google<span class="op">$</span>Content.Rating)</a></code></pre></div>
+<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="graphique.html#cb526-1"></a><span class="kw">class</span>(google<span class="op">$</span>Content.Rating)</span></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
-<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb531-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> google<span class="op">$</span>Reviews, <span class="dt">y =</span> google<span class="op">$</span>Rating, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>, </a>
-<a class="sourceLine" id="cb531-2" title="2">     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">3e+7</span>), <span class="dt">col =</span> google<span class="op">$</span>Content.Rating)</a>
-<a class="sourceLine" id="cb531-3" title="3"></a>
-<a class="sourceLine" id="cb531-4" title="4"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span><span class="kw">levels</span>(google<span class="op">$</span>Content.Rating),</a>
-<a class="sourceLine" id="cb531-5" title="5">      <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(<span class="kw">levels</span>(google<span class="op">$</span>Content.Rating)), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.8</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-307-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="graphique.html#cb528-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> google<span class="op">$</span>Reviews, <span class="dt">y =</span> google<span class="op">$</span>Rating, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>, </span>
+<span id="cb528-2"><a href="graphique.html#cb528-2"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">3e+7</span>), <span class="dt">col =</span> google<span class="op">$</span>Content.Rating)</span>
+<span id="cb528-3"><a href="graphique.html#cb528-3"></a></span>
+<span id="cb528-4"><a href="graphique.html#cb528-4"></a><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span><span class="kw">levels</span>(google<span class="op">$</span>Content.Rating),</span>
+<span id="cb528-5"><a href="graphique.html#cb528-5"></a>      <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(<span class="kw">levels</span>(google<span class="op">$</span>Content.Rating)), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="fl">0.8</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-306-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="exercice-2" class="section level2">
 <h2><span class="header-section-number">6.5</span> Exercice</h2>
 <div id="sujet-6" class="section level3">
 <h3><span class="header-section-number">6.5.1</span> Sujet</h3>
-<p>Dans ce TD, on utilise le fichier <code>pokemon.xlsx</code> décrit les statistiques des pokemon des deux premières générations.
+<p>Dans ce TD, on utilise le fichier <code>pokemon.xlsx</code> qui décrit les statistiques des pokemon des deux premières générations.
 Le fichier est issu du site <a href="https://www.kaggle.com/rounakbanik/pokemon">Kaggle</a>. Il a été adapté pour ce TP. Voici une description des données :</p>
 <ul>
 <li><code>pokedex_number</code> : numéro du pokemon</li>
@@ -2079,154 +2086,154 @@ NA
 <li><p>Affichez un résumé des données</p></li>
 <li><p>Construire un diagramme en barre du nombre de pokemon par <code>type</code> avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</p></li>
 </ol>
-<p><img src="index.html_files/figure-html/unnamed-chunk-313-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="index.html_files/figure-html/unnamed-chunk-312-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="6" style="list-style-type: lower-alpha">
 <li>Construire un diagramme circulaire présentant la répartition du nombre de pokemon légendaires ou non (<code>is_legendary</code>) avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<p><img src="index.html_files/figure-html/unnamed-chunk-314-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="index.html_files/figure-html/unnamed-chunk-313-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="7" style="list-style-type: lower-alpha">
 <li>Construire un diagramme empilé présentant la répartition en <strong>pourcentage</strong> du nombre de pokemon légendaires ou non pour chaque génération avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<p><img src="index.html_files/figure-html/unnamed-chunk-315-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="index.html_files/figure-html/unnamed-chunk-314-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="8" style="list-style-type: lower-alpha">
 <li>Construire un histogramme de la distribution de la vitesse (<code>speed</code>) des pokemon avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<p><img src="index.html_files/figure-html/unnamed-chunk-316-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="index.html_files/figure-html/unnamed-chunk-315-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol style="list-style-type: lower-roman">
 <li>Construire un nuage de points de la vitesse (<code>speed</code>) et du poids (<code>weight_kg</code>) des pokemon avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous. Puis, calculez le coefficient de corrélation entre ces deux variables avec la fonction <code>cor</code>.</li>
 </ol>
-<p><img src="index.html_files/figure-html/unnamed-chunk-317-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="index.html_files/figure-html/unnamed-chunk-316-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <pre><code>## [1] &quot;Le coefficient de corrélation est :&quot;</code></pre>
 <pre><code>## [1] 0.1525117</code></pre>
 <ol start="10" style="list-style-type: lower-alpha">
 <li>Construire un diagramme en boîte de la distribution de la statistique <code>speed</code> des pokemon avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<p><img src="index.html_files/figure-html/unnamed-chunk-319-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="index.html_files/figure-html/unnamed-chunk-318-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="11" style="list-style-type: lower-alpha">
 <li>Construire un diagramme en boîte de la distribution de la statistique <code>attack</code> des pokemon selon le <code>type</code> avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<p><img src="index.html_files/figure-html/unnamed-chunk-320-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="index.html_files/figure-html/unnamed-chunk-319-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </div>
 <div id="correction-6" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> Correction</h3>
 <ol style="list-style-type: lower-alpha">
 <li>Importez le jeu de données <code>pokemon.xlsx</code> à l’aide du package <code>readxl</code>.</li>
 </ol>
-<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb534-1" title="1"><span class="kw">library</span>(readxl)</a>
-<a class="sourceLine" id="cb534-2" title="2">pokemon &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;./dataset/pokemon.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;pokemon&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="graphique.html#cb531-1"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb531-2"><a href="graphique.html#cb531-2"></a>pokemon &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;./dataset/pokemon.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;pokemon&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Combien de lignes, colonnes sont présentes dans cette table ?</li>
 </ol>
-<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb535-1" title="1"><span class="kw">dim</span>(pokemon)</a></code></pre></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="graphique.html#cb532-1"></a><span class="kw">dim</span>(pokemon)</span></code></pre></div>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Affichez le nom des colonnes</li>
 </ol>
-<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb536-1" title="1"><span class="kw">colnames</span>(pokemon)</a></code></pre></div>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="graphique.html#cb533-1"></a><span class="kw">colnames</span>(pokemon)</span></code></pre></div>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Affichez un résumé des données</li>
 </ol>
-<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb537-1" title="1"><span class="kw">summary</span>(pokemon)</a></code></pre></div>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="graphique.html#cb534-1"></a><span class="kw">summary</span>(pokemon)</span></code></pre></div>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Construire un diagramme en barre du nombre de pokemon par <code>type</code> avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb538-1" title="1">count &lt;-<span class="st"> </span><span class="kw">table</span>(pokemon<span class="op">$</span>type)</a>
-<a class="sourceLine" id="cb538-2" title="2"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb538-3" title="3"><span class="kw">barplot</span>(count, <span class="dt">cex.names =</span> <span class="fl">0.4</span>)</a>
-<a class="sourceLine" id="cb538-4" title="4"><span class="kw">barplot</span>(<span class="kw">sort</span>(count, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), </a>
-<a class="sourceLine" id="cb538-5" title="5">        <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="dt">las =</span> <span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb538-6" title="6">        <span class="dt">xlab =</span> <span class="st">&quot;Nombre de pokemon&quot;</span>,</a>
-<a class="sourceLine" id="cb538-7" title="7">        <span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>, <span class="dt">col.main =</span> <span class="st">&quot;blue&quot;</span>,</a>
-<a class="sourceLine" id="cb538-8" title="8">        <span class="dt">main =</span> <span class="st">&quot;Nombre de pokemon </span><span class="ch">\n</span><span class="st"> par type&quot;</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-325-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="graphique.html#cb535-1"></a>count &lt;-<span class="st"> </span><span class="kw">table</span>(pokemon<span class="op">$</span>type)</span>
+<span id="cb535-2"><a href="graphique.html#cb535-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb535-3"><a href="graphique.html#cb535-3"></a><span class="kw">barplot</span>(count, <span class="dt">cex.names =</span> <span class="fl">0.4</span>)</span>
+<span id="cb535-4"><a href="graphique.html#cb535-4"></a><span class="kw">barplot</span>(<span class="kw">sort</span>(count, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), </span>
+<span id="cb535-5"><a href="graphique.html#cb535-5"></a>        <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="dt">las =</span> <span class="dv">2</span>, </span>
+<span id="cb535-6"><a href="graphique.html#cb535-6"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Nombre de pokemon&quot;</span>,</span>
+<span id="cb535-7"><a href="graphique.html#cb535-7"></a>        <span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>, <span class="dt">col.main =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb535-8"><a href="graphique.html#cb535-8"></a>        <span class="dt">main =</span> <span class="st">&quot;Nombre de pokemon </span><span class="ch">\n</span><span class="st"> par type&quot;</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-324-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="6" style="list-style-type: lower-alpha">
 <li>Construire un diagramme circulaire présentant la répartition du nombre de pokemon légendaires ou non (<code>is_legendary</code>) avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb539-1" title="1">count &lt;-<span class="st"> </span><span class="kw">table</span>(pokemon<span class="op">$</span>is_legendary)</a>
-<a class="sourceLine" id="cb539-2" title="2"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb539-3" title="3"><span class="kw">pie</span>(count)</a>
-<a class="sourceLine" id="cb539-4" title="4"><span class="kw">pie</span>(count, <span class="dt">main =</span> <span class="st">&quot;Répartition pokemon </span><span class="ch">\n</span><span class="st"> légendaire ou non&quot;</span>,</a>
-<a class="sourceLine" id="cb539-5" title="5">    <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;blue&quot;</span>), </a>
-<a class="sourceLine" id="cb539-6" title="6">    <span class="dt">col.main =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">labels =</span></a>
-<a class="sourceLine" id="cb539-7" title="7">      <span class="kw">paste</span>(<span class="kw">rownames</span>(count),count))</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-326-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="graphique.html#cb536-1"></a>count &lt;-<span class="st"> </span><span class="kw">table</span>(pokemon<span class="op">$</span>is_legendary)</span>
+<span id="cb536-2"><a href="graphique.html#cb536-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb536-3"><a href="graphique.html#cb536-3"></a><span class="kw">pie</span>(count)</span>
+<span id="cb536-4"><a href="graphique.html#cb536-4"></a><span class="kw">pie</span>(count, <span class="dt">main =</span> <span class="st">&quot;Répartition pokemon </span><span class="ch">\n</span><span class="st"> légendaire ou non&quot;</span>,</span>
+<span id="cb536-5"><a href="graphique.html#cb536-5"></a>    <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;blue&quot;</span>), </span>
+<span id="cb536-6"><a href="graphique.html#cb536-6"></a>    <span class="dt">col.main =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">labels =</span></span>
+<span id="cb536-7"><a href="graphique.html#cb536-7"></a>      <span class="kw">paste</span>(<span class="kw">rownames</span>(count),count))</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-325-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="7" style="list-style-type: lower-alpha">
 <li>Construire un diagramme empilé présentant la répartition en <strong>pourcentage</strong> du nombre de pokemon légendaires ou non pour chaque génération avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb540-1" title="1">count &lt;-<span class="st"> </span><span class="kw">table</span>(pokemon<span class="op">$</span>is_legendary, pokemon<span class="op">$</span>generation)</a>
-<a class="sourceLine" id="cb540-2" title="2">count_freq &lt;-<span class="st"> </span><span class="kw">prop.table</span>(count,<span class="dt">margin =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb540-3" title="3"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb540-4" title="4"><span class="kw">barplot</span>(count_freq, <span class="dt">legend =</span> <span class="kw">rownames</span>(count_freq))</a>
-<a class="sourceLine" id="cb540-5" title="5"></a>
-<a class="sourceLine" id="cb540-6" title="6"><span class="kw">barplot</span>(count_freq, <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">xlab =</span> <span class="st">&quot;Nombre de pokemon&quot;</span>,</a>
-<a class="sourceLine" id="cb540-7" title="7">        <span class="dt">main =</span> <span class="st">&quot;Nb pokemon par génération si légendaire&quot;</span>, </a>
-<a class="sourceLine" id="cb540-8" title="8">        <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;blue&quot;</span>), </a>
-<a class="sourceLine" id="cb540-9" title="9">        <span class="dt">legend =</span> <span class="kw">rownames</span>(count_freq), <span class="dt">beside =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-327-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="graphique.html#cb537-1"></a>count &lt;-<span class="st"> </span><span class="kw">table</span>(pokemon<span class="op">$</span>is_legendary, pokemon<span class="op">$</span>generation)</span>
+<span id="cb537-2"><a href="graphique.html#cb537-2"></a>count_freq &lt;-<span class="st"> </span><span class="kw">prop.table</span>(count,<span class="dt">margin =</span> <span class="dv">2</span>)</span>
+<span id="cb537-3"><a href="graphique.html#cb537-3"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb537-4"><a href="graphique.html#cb537-4"></a><span class="kw">barplot</span>(count_freq, <span class="dt">legend =</span> <span class="kw">rownames</span>(count_freq))</span>
+<span id="cb537-5"><a href="graphique.html#cb537-5"></a></span>
+<span id="cb537-6"><a href="graphique.html#cb537-6"></a><span class="kw">barplot</span>(count_freq, <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">xlab =</span> <span class="st">&quot;Nombre de pokemon&quot;</span>,</span>
+<span id="cb537-7"><a href="graphique.html#cb537-7"></a>        <span class="dt">main =</span> <span class="st">&quot;Nb pokemon par génération si légendaire&quot;</span>, </span>
+<span id="cb537-8"><a href="graphique.html#cb537-8"></a>        <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;blue&quot;</span>), </span>
+<span id="cb537-9"><a href="graphique.html#cb537-9"></a>        <span class="dt">legend =</span> <span class="kw">rownames</span>(count_freq), <span class="dt">beside =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-326-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="8" style="list-style-type: lower-alpha">
 <li>Construire un histogramme de la distribution de la vitesse (<code>speed</code>) des pokemon avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb541-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb541-2" title="2"><span class="kw">hist</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed)</a>
-<a class="sourceLine" id="cb541-3" title="3"></a>
-<a class="sourceLine" id="cb541-4" title="4"><span class="kw">hist</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">breaks =</span> <span class="dv">20</span>, </a>
-<a class="sourceLine" id="cb541-5" title="5">     <span class="dt">probability =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb541-6" title="6">     <span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Vitesse&quot;</span>,</a>
-<a class="sourceLine" id="cb541-7" title="7">     <span class="dt">main =</span> <span class="st">&quot;Histo. de la vitesse des pokemon&quot;</span>,</a>
-<a class="sourceLine" id="cb541-8" title="8">     <span class="dt">col.main =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-328-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="graphique.html#cb538-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb538-2"><a href="graphique.html#cb538-2"></a><span class="kw">hist</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed)</span>
+<span id="cb538-3"><a href="graphique.html#cb538-3"></a></span>
+<span id="cb538-4"><a href="graphique.html#cb538-4"></a><span class="kw">hist</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">breaks =</span> <span class="dv">20</span>, </span>
+<span id="cb538-5"><a href="graphique.html#cb538-5"></a>     <span class="dt">probability =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb538-6"><a href="graphique.html#cb538-6"></a>     <span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Vitesse&quot;</span>,</span>
+<span id="cb538-7"><a href="graphique.html#cb538-7"></a>     <span class="dt">main =</span> <span class="st">&quot;Histo. de la vitesse des pokemon&quot;</span>,</span>
+<span id="cb538-8"><a href="graphique.html#cb538-8"></a>     <span class="dt">col.main =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-327-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol style="list-style-type: lower-roman">
 <li>Construire un nuage de points de la vitesse (<code>speed</code>) et du poids (<code>weight_kg</code>) des pokemon avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous. Puis, calculez le coefficient de corrélation entre ces deux variables avec la fonction <code>cor</code>.</li>
 </ol>
-<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb542-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb542-2" title="2"><span class="kw">plot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">y =</span> pokemon<span class="op">$</span>weight_kg)</a>
-<a class="sourceLine" id="cb542-3" title="3"></a>
-<a class="sourceLine" id="cb542-4" title="4"><span class="kw">plot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">y =</span> pokemon<span class="op">$</span>weight_kg, </a>
-<a class="sourceLine" id="cb542-5" title="5">     <span class="dt">col =</span> <span class="kw">as.factor</span>(pokemon<span class="op">$</span>is_legendary))</a>
-<a class="sourceLine" id="cb542-6" title="6"></a>
-<a class="sourceLine" id="cb542-7" title="7"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;topright&quot;</span>, </a>
-<a class="sourceLine" id="cb542-8" title="8">       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Legendaire : Oui&quot;</span>, <span class="st">&quot;Legendaire : Non&quot;</span>), </a>
-<a class="sourceLine" id="cb542-9" title="9">       <span class="dt">col=</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">cex=</span><span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb542-10" title="10"></a>
-<a class="sourceLine" id="cb542-11" title="11"><span class="co">#On récupère les statistiques de Mewtwo</span></a>
-<a class="sourceLine" id="cb542-12" title="12">Mewtwo &lt;-<span class="st"> </span>pokemon[pokemon<span class="op">$</span>nom <span class="op">==</span><span class="st"> &quot;Mewtwo&quot;</span>,</a>
-<a class="sourceLine" id="cb542-13" title="13">                      <span class="kw">c</span>(<span class="st">&quot;speed&quot;</span>, <span class="st">&quot;weight_kg&quot;</span>)]</a>
-<a class="sourceLine" id="cb542-14" title="14"></a>
-<a class="sourceLine" id="cb542-15" title="15"><span class="co">#On les affiche avec la fonction text</span></a>
-<a class="sourceLine" id="cb542-16" title="16"><span class="kw">text</span>(<span class="dt">x =</span> Mewtwo[<span class="dv">1</span>], <span class="dt">y =</span> Mewtwo[<span class="dv">2</span>]<span class="op">+</span><span class="dv">40</span>,</a>
-<a class="sourceLine" id="cb542-17" title="17">     <span class="dt">labels =</span> <span class="st">&quot;Mewtwo&quot;</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-329-1.png" width="1152" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb543-1" title="1"><span class="co">#argument use pour gérer les NA (voir aide)</span></a>
-<a class="sourceLine" id="cb543-2" title="2"><span class="kw">cor</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">y =</span> pokemon<span class="op">$</span>weight_kg, </a>
-<a class="sourceLine" id="cb543-3" title="3">    <span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="graphique.html#cb539-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb539-2"><a href="graphique.html#cb539-2"></a><span class="kw">plot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">y =</span> pokemon<span class="op">$</span>weight_kg)</span>
+<span id="cb539-3"><a href="graphique.html#cb539-3"></a></span>
+<span id="cb539-4"><a href="graphique.html#cb539-4"></a><span class="kw">plot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">y =</span> pokemon<span class="op">$</span>weight_kg, </span>
+<span id="cb539-5"><a href="graphique.html#cb539-5"></a>     <span class="dt">col =</span> <span class="kw">as.factor</span>(pokemon<span class="op">$</span>is_legendary))</span>
+<span id="cb539-6"><a href="graphique.html#cb539-6"></a></span>
+<span id="cb539-7"><a href="graphique.html#cb539-7"></a><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;topright&quot;</span>, </span>
+<span id="cb539-8"><a href="graphique.html#cb539-8"></a>       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Legendaire : Oui&quot;</span>, <span class="st">&quot;Legendaire : Non&quot;</span>), </span>
+<span id="cb539-9"><a href="graphique.html#cb539-9"></a>       <span class="dt">col=</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">cex=</span><span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">1</span>)</span>
+<span id="cb539-10"><a href="graphique.html#cb539-10"></a></span>
+<span id="cb539-11"><a href="graphique.html#cb539-11"></a><span class="co">#On récupère les statistiques de Mewtwo</span></span>
+<span id="cb539-12"><a href="graphique.html#cb539-12"></a>Mewtwo &lt;-<span class="st"> </span>pokemon[pokemon<span class="op">$</span>nom <span class="op">==</span><span class="st"> &quot;Mewtwo&quot;</span>,</span>
+<span id="cb539-13"><a href="graphique.html#cb539-13"></a>                      <span class="kw">c</span>(<span class="st">&quot;speed&quot;</span>, <span class="st">&quot;weight_kg&quot;</span>)]</span>
+<span id="cb539-14"><a href="graphique.html#cb539-14"></a></span>
+<span id="cb539-15"><a href="graphique.html#cb539-15"></a><span class="co">#On les affiche avec la fonction text</span></span>
+<span id="cb539-16"><a href="graphique.html#cb539-16"></a><span class="kw">text</span>(<span class="dt">x =</span> Mewtwo[<span class="dv">1</span>], <span class="dt">y =</span> Mewtwo[<span class="dv">2</span>]<span class="op">+</span><span class="dv">40</span>,</span>
+<span id="cb539-17"><a href="graphique.html#cb539-17"></a>     <span class="dt">labels =</span> <span class="st">&quot;Mewtwo&quot;</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-328-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb540-1"><a href="graphique.html#cb540-1"></a><span class="co">#argument use pour gérer les NA (voir aide)</span></span>
+<span id="cb540-2"><a href="graphique.html#cb540-2"></a><span class="kw">cor</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">y =</span> pokemon<span class="op">$</span>weight_kg, </span>
+<span id="cb540-3"><a href="graphique.html#cb540-3"></a>    <span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1525117</code></pre>
 <ol start="10" style="list-style-type: lower-alpha">
 <li>Construire un diagramme en boîte de la distribution de la statistique <code>speed</code> des pokemon avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb545-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb545-2" title="2"><span class="kw">boxplot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">main =</span> <span class="st">&quot;Boxplot Speed&quot;</span>)</a>
-<a class="sourceLine" id="cb545-3" title="3"></a>
-<a class="sourceLine" id="cb545-4" title="4"><span class="kw">boxplot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">main =</span> <span class="st">&quot;Boxplot Speed&quot;</span>,</a>
-<a class="sourceLine" id="cb545-5" title="5">        <span class="dt">range =</span> <span class="dv">0</span>, <span class="dt">xlab =</span> <span class="st">&quot;Speed&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>)</a>
-<a class="sourceLine" id="cb545-6" title="6"></a>
-<a class="sourceLine" id="cb545-7" title="7"><span class="kw">points</span>(<span class="kw">mean</span>(pokemon<span class="op">$</span>speed,<span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb545-8" title="8">       <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb545-9" title="9"></a>
-<a class="sourceLine" id="cb545-10" title="10"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span> <span class="st">&quot;Moyenne&quot;</span>,</a>
-<a class="sourceLine" id="cb545-11" title="11">       <span class="dt">col=</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="dv">1</span>)</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-331-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="graphique.html#cb542-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb542-2"><a href="graphique.html#cb542-2"></a><span class="kw">boxplot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">main =</span> <span class="st">&quot;Boxplot Speed&quot;</span>)</span>
+<span id="cb542-3"><a href="graphique.html#cb542-3"></a></span>
+<span id="cb542-4"><a href="graphique.html#cb542-4"></a><span class="kw">boxplot</span>(<span class="dt">x =</span> pokemon<span class="op">$</span>speed, <span class="dt">main =</span> <span class="st">&quot;Boxplot Speed&quot;</span>,</span>
+<span id="cb542-5"><a href="graphique.html#cb542-5"></a>        <span class="dt">range =</span> <span class="dv">0</span>, <span class="dt">xlab =</span> <span class="st">&quot;Speed&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;yellow&quot;</span>)</span>
+<span id="cb542-6"><a href="graphique.html#cb542-6"></a></span>
+<span id="cb542-7"><a href="graphique.html#cb542-7"></a><span class="kw">points</span>(<span class="kw">mean</span>(pokemon<span class="op">$</span>speed,<span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb542-8"><a href="graphique.html#cb542-8"></a>       <span class="dt">cex =</span> <span class="dv">2</span>, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb542-9"><a href="graphique.html#cb542-9"></a></span>
+<span id="cb542-10"><a href="graphique.html#cb542-10"></a><span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span> <span class="st">&quot;Moyenne&quot;</span>,</span>
+<span id="cb542-11"><a href="graphique.html#cb542-11"></a>       <span class="dt">col=</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-330-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <ol start="11" style="list-style-type: lower-alpha">
 <li>Construire un diagramme en boîte de la distribution de la statistique <code>attack</code> des pokemon selon le <code>type</code> avec les paramètres par défaut puis essayez de le personnaliser comme ci-dessous.</li>
 </ol>
-<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb546-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb546-2" title="2"><span class="kw">boxplot</span>(<span class="dt">formula =</span> attack <span class="op">~</span><span class="st"> </span>type,</a>
-<a class="sourceLine" id="cb546-3" title="3">        <span class="dt">data =</span> pokemon, </a>
-<a class="sourceLine" id="cb546-4" title="4">        <span class="dt">main =</span> <span class="st">&quot;Boxplot Attack vs Type&quot;</span>)</a>
-<a class="sourceLine" id="cb546-5" title="5"></a>
-<a class="sourceLine" id="cb546-6" title="6"><span class="kw">boxplot</span>(<span class="dt">formula =</span> attack <span class="op">~</span><span class="st"> </span>type,</a>
-<a class="sourceLine" id="cb546-7" title="7">        <span class="dt">data =</span> pokemon, </a>
-<a class="sourceLine" id="cb546-8" title="8">        <span class="dt">main =</span> <span class="st">&quot;Boxplot Attack vs Type&quot;</span>, </a>
-<a class="sourceLine" id="cb546-9" title="9">        <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="kw">colors</span>())</a></code></pre></div>
-<p><img src="index.html_files/figure-html/unnamed-chunk-332-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="graphique.html#cb543-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb543-2"><a href="graphique.html#cb543-2"></a><span class="kw">boxplot</span>(<span class="dt">formula =</span> attack <span class="op">~</span><span class="st"> </span>type,</span>
+<span id="cb543-3"><a href="graphique.html#cb543-3"></a>        <span class="dt">data =</span> pokemon, </span>
+<span id="cb543-4"><a href="graphique.html#cb543-4"></a>        <span class="dt">main =</span> <span class="st">&quot;Boxplot Attack vs Type&quot;</span>)</span>
+<span id="cb543-5"><a href="graphique.html#cb543-5"></a></span>
+<span id="cb543-6"><a href="graphique.html#cb543-6"></a><span class="kw">boxplot</span>(<span class="dt">formula =</span> attack <span class="op">~</span><span class="st"> </span>type,</span>
+<span id="cb543-7"><a href="graphique.html#cb543-7"></a>        <span class="dt">data =</span> pokemon, </span>
+<span id="cb543-8"><a href="graphique.html#cb543-8"></a>        <span class="dt">main =</span> <span class="st">&quot;Boxplot Attack vs Type&quot;</span>, </span>
+<span id="cb543-9"><a href="graphique.html#cb543-9"></a>        <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="kw">colors</span>())</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-331-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="aller-plus-loin" class="section level2">

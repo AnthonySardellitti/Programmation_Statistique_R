@@ -368,7 +368,7 @@ legend(x = "bottomright", legend=levels(google$Content.Rating),
 
 ### Sujet
 
-Dans ce TD, on utilise  le fichier `pokemon.xlsx` décrit les statistiques des pokemon des deux premières générations.
+Dans ce TD, on utilise  le fichier `pokemon.xlsx` qui décrit les statistiques des pokemon des deux premières générations.
 Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/rounakbanik/pokemon). Il a été adapté pour ce TP. Voici une description des données :
 
 - `pokedex_number` : numéro du pokemon

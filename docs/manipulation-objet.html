@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2020-04-24" />
+<meta name="date" content="2021-01-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,9 +54,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -65,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -202,6 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.5" data-path="manipulation-objet.html"><a href="manipulation-objet.html#trier-un-data-frame"><i class="fa fa-check"></i><b>5.3.5</b> Trier un data frame</a></li>
 <li class="chapter" data-level="5.3.6" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercice"><i class="fa fa-check"></i><b>5.3.6</b> Exercice</a></li>
 <li class="chapter" data-level="5.3.7" data-path="manipulation-objet.html"><a href="manipulation-objet.html#agréger-des-données"><i class="fa fa-check"></i><b>5.3.7</b> Agréger des données</a></li>
+<li class="chapter" data-level="5.3.8" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercice-1"><i class="fa fa-check"></i><b>5.3.8</b> Exercice</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="graphique.html"><a href="graphique.html"><i class="fa fa-check"></i><b>6</b> Représentation Graphique</a><ul>
@@ -274,21 +277,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.2" data-path="jointures.html"><a href="jointures.html#correction-9"><i class="fa fa-check"></i><b>10.3.2</b> Correction</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>11</b> Jeux de données utilisés</a><ul>
-<li class="chapter" data-level="11.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>11.1</b> Iris</a></li>
-<li class="chapter" data-level="11.2" data-path="all-dataset.html"><a href="all-dataset.html#histoire-de-vie-hdv2003"><i class="fa fa-check"></i><b>11.2</b> Histoire de vie (hdv2003)</a></li>
-<li class="chapter" data-level="11.3" data-path="all-dataset.html"><a href="all-dataset.html#nyc-flights-2013"><i class="fa fa-check"></i><b>11.3</b> NYC Flights 2013</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="all-dataset.html"><a href="all-dataset.html#flights"><i class="fa fa-check"></i><b>11.3.1</b> Flights</a></li>
-<li class="chapter" data-level="11.3.2" data-path="all-dataset.html"><a href="all-dataset.html#airlines"><i class="fa fa-check"></i><b>11.3.2</b> Airlines</a></li>
-<li class="chapter" data-level="11.3.3" data-path="all-dataset.html"><a href="all-dataset.html#airports"><i class="fa fa-check"></i><b>11.3.3</b> Airports</a></li>
-<li class="chapter" data-level="11.3.4" data-path="all-dataset.html"><a href="all-dataset.html#weather"><i class="fa fa-check"></i><b>11.3.4</b> Weather</a></li>
-<li class="chapter" data-level="11.3.5" data-path="all-dataset.html"><a href="all-dataset.html#planes"><i class="fa fa-check"></i><b>11.3.5</b> Planes</a></li>
+<li class="chapter" data-level="11" data-path="entrainement.html"><a href="entrainement.html"><i class="fa fa-check"></i><b>11</b> S’entrainer</a><ul>
+<li class="chapter" data-level="11.1" data-path="entrainement.html"><a href="entrainement.html#tp1"><i class="fa fa-check"></i><b>11.1</b> TP1</a></li>
+<li class="chapter" data-level="11.2" data-path="entrainement.html"><a href="entrainement.html#tp2"><i class="fa fa-check"></i><b>11.2</b> TP2</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>11.4</b> Google</a></li>
-<li class="chapter" data-level="11.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>11.5</b> Pokemon</a></li>
-<li class="chapter" data-level="11.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>11.6</b> Star Wars</a></li>
+<li class="chapter" data-level="12" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>12</b> Jeux de données utilisés</a><ul>
+<li class="chapter" data-level="12.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>12.1</b> Iris</a></li>
+<li class="chapter" data-level="12.2" data-path="all-dataset.html"><a href="all-dataset.html#histoire-de-vie-hdv2003"><i class="fa fa-check"></i><b>12.2</b> Histoire de vie (hdv2003)</a></li>
+<li class="chapter" data-level="12.3" data-path="all-dataset.html"><a href="all-dataset.html#nyc-flights-2013"><i class="fa fa-check"></i><b>12.3</b> NYC Flights 2013</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="all-dataset.html"><a href="all-dataset.html#flights"><i class="fa fa-check"></i><b>12.3.1</b> Flights</a></li>
+<li class="chapter" data-level="12.3.2" data-path="all-dataset.html"><a href="all-dataset.html#airlines"><i class="fa fa-check"></i><b>12.3.2</b> Airlines</a></li>
+<li class="chapter" data-level="12.3.3" data-path="all-dataset.html"><a href="all-dataset.html#airports"><i class="fa fa-check"></i><b>12.3.3</b> Airports</a></li>
+<li class="chapter" data-level="12.3.4" data-path="all-dataset.html"><a href="all-dataset.html#weather"><i class="fa fa-check"></i><b>12.3.4</b> Weather</a></li>
+<li class="chapter" data-level="12.3.5" data-path="all-dataset.html"><a href="all-dataset.html#planes"><i class="fa fa-check"></i><b>12.3.5</b> Planes</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>12</b> Bibliographie</a></li>
+<li class="chapter" data-level="12.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>12.4</b> Google</a></li>
+<li class="chapter" data-level="12.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>12.5</b> Pokemon</a></li>
+<li class="chapter" data-level="12.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>12.6</b> Star Wars</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>13</b> Bibliographie</a></li>
 </ul>
 
       </nav>
@@ -312,10 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.1</span> Liste</h2>
 <p>Un vecteur, est une liste d’élément de même type. À l’inverse, une liste est une collection d’objets de différentes classes.
 La fonction <code>list</code> permet de créer une liste.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb363-1" title="1">ma_liste &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb363-2" title="2">                <span class="st">&quot;Hello world&quot;</span>,</a>
-<a class="sourceLine" id="cb363-3" title="3">                <span class="kw">c</span>(<span class="st">&quot;Pierre&quot;</span>,<span class="st">&quot;Paul&quot;</span>,<span class="st">&quot;Jacques&quot;</span>))</a>
-<a class="sourceLine" id="cb363-4" title="4">ma_liste</a></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="manipulation-objet.html#cb362-1"></a>ma_liste &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">2</span>),</span>
+<span id="cb362-2"><a href="manipulation-objet.html#cb362-2"></a>                <span class="st">&quot;Hello world&quot;</span>,</span>
+<span id="cb362-3"><a href="manipulation-objet.html#cb362-3"></a>                <span class="kw">c</span>(<span class="st">&quot;Pierre&quot;</span>,<span class="st">&quot;Paul&quot;</span>,<span class="st">&quot;Jacques&quot;</span>))</span>
+<span id="cb362-4"><a href="manipulation-objet.html#cb362-4"></a>ma_liste</span></code></pre></div>
 <pre><code>## [[1]]
 ##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    3    5    7    9
@@ -327,21 +334,21 @@ La fonction <code>list</code> permet de créer une liste.</p>
 ## [[3]]
 ## [1] &quot;Pierre&quot;  &quot;Paul&quot;    &quot;Jacques&quot;</code></pre>
 <p>Pour accéder à un objet d’une liste, on utilise des doubles crochets : par exemple [[ 1 ]] pour le premier objet d’une liste.</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb365-1" title="1">ma_liste[[<span class="dv">1</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="manipulation-objet.html#cb364-1"></a>ma_liste[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    3    5    7    9
 ## [2,]    2    4    6    8   10</code></pre>
 <p>On peut accéder aux objets d’une liste avec le <code>$</code>lorsque les objets ont des noms. Les noms peuvent être définis lors de la création de la liste ou avec la fonction <code>names</code>.</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb367-1" title="1">ma_liste &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">obj1 =</span> <span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb367-2" title="2">                <span class="dt">obj2 =</span> <span class="st">&quot;Hello world&quot;</span>,</a>
-<a class="sourceLine" id="cb367-3" title="3">                <span class="dt">obj3 =</span> <span class="kw">c</span>(<span class="st">&quot;Pierre&quot;</span>,<span class="st">&quot;Paul&quot;</span>,<span class="st">&quot;Jacques&quot;</span>))</a>
-<a class="sourceLine" id="cb367-4" title="4"></a>
-<a class="sourceLine" id="cb367-5" title="5">ma_liste<span class="op">$</span>obj1</a></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="manipulation-objet.html#cb366-1"></a>ma_liste &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">obj1 =</span> <span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">2</span>),</span>
+<span id="cb366-2"><a href="manipulation-objet.html#cb366-2"></a>                <span class="dt">obj2 =</span> <span class="st">&quot;Hello world&quot;</span>,</span>
+<span id="cb366-3"><a href="manipulation-objet.html#cb366-3"></a>                <span class="dt">obj3 =</span> <span class="kw">c</span>(<span class="st">&quot;Pierre&quot;</span>,<span class="st">&quot;Paul&quot;</span>,<span class="st">&quot;Jacques&quot;</span>))</span>
+<span id="cb366-4"><a href="manipulation-objet.html#cb366-4"></a></span>
+<span id="cb366-5"><a href="manipulation-objet.html#cb366-5"></a>ma_liste<span class="op">$</span>obj1</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    3    5    7    9
 ## [2,]    2    4    6    8   10</code></pre>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" title="1"><span class="kw">names</span>(ma_liste) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;matrice&quot;</span>, <span class="st">&quot;element&quot;</span>, <span class="st">&quot;vecteur&quot;</span>)</a>
-<a class="sourceLine" id="cb369-2" title="2">ma_liste</a></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="manipulation-objet.html#cb368-1"></a><span class="kw">names</span>(ma_liste) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;matrice&quot;</span>, <span class="st">&quot;element&quot;</span>, <span class="st">&quot;vecteur&quot;</span>)</span>
+<span id="cb368-2"><a href="manipulation-objet.html#cb368-2"></a>ma_liste</span></code></pre></div>
 <pre><code>## $matrice
 ##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    3    5    7    9
@@ -353,19 +360,19 @@ La fonction <code>list</code> permet de créer une liste.</p>
 ## $vecteur
 ## [1] &quot;Pierre&quot;  &quot;Paul&quot;    &quot;Jacques&quot;</code></pre>
 <p>Comme pour les vecteurs, la fonction `length’ retourne la longueur d’une liste.</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb371-1" title="1"><span class="kw">length</span>(ma_liste)</a></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="manipulation-objet.html#cb370-1"></a><span class="kw">length</span>(ma_liste)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Pour supprimer un objet d’une liste, on lui affecte la valeur <code>NULL</code></p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb373-1" title="1">ma_liste<span class="op">$</span>matrice &lt;-<span class="st"> </span><span class="ot">NULL</span></a>
-<a class="sourceLine" id="cb373-2" title="2">ma_liste</a></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="manipulation-objet.html#cb372-1"></a>ma_liste<span class="op">$</span>matrice &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb372-2"><a href="manipulation-objet.html#cb372-2"></a>ma_liste</span></code></pre></div>
 <pre><code>## $element
 ## [1] &quot;Hello world&quot;
 ## 
 ## $vecteur
 ## [1] &quot;Pierre&quot;  &quot;Paul&quot;    &quot;Jacques&quot;</code></pre>
 <p>Pour ajouter un objet à une liste, on affecte un objet à au nom du nouvel objet de la liste qui n’existe pas.</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" title="1">ma_liste<span class="op">$</span>matrice2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb375-2" title="2">ma_liste</a></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="manipulation-objet.html#cb374-1"></a>ma_liste<span class="op">$</span>matrice2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb374-2"><a href="manipulation-objet.html#cb374-2"></a>ma_liste</span></code></pre></div>
 <pre><code>## $element
 ## [1] &quot;Hello world&quot;
 ## 
@@ -380,59 +387,59 @@ La fonction <code>list</code> permet de créer une liste.</p>
 <div id="matrice" class="section level2">
 <h2><span class="header-section-number">5.2</span> Matrice</h2>
 <p>On sait que qu’on peut accéder à un élément particulier d’un vecteur en faisant suivre le nom du vecteur de crochets contenant le numéro de l’élément désiré. Par exemple :</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb377-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">9</span>)</a>
-<a class="sourceLine" id="cb377-2" title="2">a[<span class="dv">2</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="manipulation-objet.html#cb376-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">9</span>)</span>
+<span id="cb376-2"><a href="manipulation-objet.html#cb376-2"></a>a[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <p>Cette opération, qui utilise l’opérateur <code>[]</code>, permet donc la sélection d’éléments d’un vecteur.</p>
 <p>Dans un objet à deux dimensions comme les matrices,</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb379-1" title="1">a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb379-2" title="2">            <span class="dt">dimnames =</span>  <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>,<span class="st">&quot;ligne2&quot;</span>,<span class="st">&quot;ligne3&quot;</span>),</a>
-<a class="sourceLine" id="cb379-3" title="3">                            <span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col3&quot;</span>)))</a>
-<a class="sourceLine" id="cb379-4" title="4"><span class="kw">class</span>(a)</a></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="manipulation-objet.html#cb378-1"></a>a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>,</span>
+<span id="cb378-2"><a href="manipulation-objet.html#cb378-2"></a>            <span class="dt">dimnames =</span>  <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>,<span class="st">&quot;ligne2&quot;</span>,<span class="st">&quot;ligne3&quot;</span>),</span>
+<span id="cb378-3"><a href="manipulation-objet.html#cb378-3"></a>                            <span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col3&quot;</span>)))</span>
+<span id="cb378-4"><a href="manipulation-objet.html#cb378-4"></a><span class="kw">class</span>(a)</span></code></pre></div>
 <pre><code>## [1] &quot;matrix&quot;</code></pre>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb381-1" title="1">a</a></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="manipulation-objet.html#cb380-1"></a>a</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    4    7
 ## ligne2    2    5    8
 ## ligne3    3    6    9</code></pre>
 <p>on utilise la même syntaxe sauf qu’on précise les index lignes et colonnes entre <code>[]</code> séparés par une virgule.</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb383-1" title="1"><span class="co">#accéder à l&#39;élément de la 2ème ligne et 3ème colonne</span></a>
-<a class="sourceLine" id="cb383-2" title="2">a[ <span class="dv">2</span> , <span class="dv">3</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="manipulation-objet.html#cb382-1"></a><span class="co">#accéder à l&#39;élément de la 2ème ligne et 3ème colonne</span></span>
+<span id="cb382-2"><a href="manipulation-objet.html#cb382-2"></a>a[ <span class="dv">2</span> , <span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb385-1" title="1"><span class="co">#accéder à la deuxième ligne</span></a>
-<a class="sourceLine" id="cb385-2" title="2">a[ <span class="dv">2</span> , ]</a></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="manipulation-objet.html#cb384-1"></a><span class="co">#accéder à la deuxième ligne</span></span>
+<span id="cb384-2"><a href="manipulation-objet.html#cb384-2"></a>a[ <span class="dv">2</span> , ]</span></code></pre></div>
 <pre><code>## col1 col2 col3 
 ##    2    5    8</code></pre>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb387-1" title="1"><span class="co">#accéder à la troisième colonne</span></a>
-<a class="sourceLine" id="cb387-2" title="2">a[ , <span class="dv">3</span> ]</a></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="manipulation-objet.html#cb386-1"></a><span class="co">#accéder à la troisième colonne</span></span>
+<span id="cb386-2"><a href="manipulation-objet.html#cb386-2"></a>a[ , <span class="dv">3</span> ]</span></code></pre></div>
 <pre><code>## ligne1 ligne2 ligne3 
 ##      7      8      9</code></pre>
 <p>On peut également effectuer une indexation multiple sur les matrices si on souhaite sélectionner plusieurs lignes et colonnes.</p>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb389-1" title="1">a[ , <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="manipulation-objet.html#cb388-1"></a>a[ , <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code></pre></div>
 <pre><code>##        col1 col3
 ## ligne1    1    7
 ## ligne2    2    8
 ## ligne3    3    9</code></pre>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb391-1" title="1">a[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) , ]</a></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="manipulation-objet.html#cb390-1"></a>a[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) , ]</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne2    2    5    8
 ## ligne3    3    6    9</code></pre>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb393-1" title="1">a[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) , <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="manipulation-objet.html#cb392-1"></a>a[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) , <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>) ]</span></code></pre></div>
 <pre><code>##        col1 col3
 ## ligne2    2    8
 ## ligne3    3    9</code></pre>
 <p><strong>Attention</strong> : Lorsqu’on effectue une indexation multiple, le résultat renvoyé est dans l’ordre des index précisés dans le vecteur. Nous aborderons de nouveau cette notion lors des tris.</p>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb395-1" title="1">a[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>) , <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="manipulation-objet.html#cb394-1"></a>a[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>) , <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>) ]</span></code></pre></div>
 <pre><code>##        col2 col3 col1
 ## ligne3    6    9    3
 ## ligne2    5    8    2</code></pre>
 <p>On peut également effectuer une indexation <em>contraire</em> sur les matrices en précisant toutes les lignes / colonnes que l’on ne veut pas sélectionner. Pour cela, on utilise le ‘-’ devant l’indexation :</p>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb397-1" title="1">a[ , <span class="dv">-2</span> ]</a></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="manipulation-objet.html#cb396-1"></a>a[ , <span class="dv">-2</span> ]</span></code></pre></div>
 <pre><code>##        col1 col3
 ## ligne1    1    7
 ## ligne2    2    8
 ## ligne3    3    9</code></pre>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb399-1" title="1">a[<span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) , ]</a></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="manipulation-objet.html#cb398-1"></a>a[<span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) , ]</span></code></pre></div>
 <pre><code>## col1 col2 col3 
 ##    1    4    7</code></pre>
 <p><strong>Attention</strong> : dans une matrice, tous les éléments sont de même type <code>numeric</code>, <code>character</code> ou <code>logique</code>. C’est pourquoi, on travaille avec une autre classe d’objet pour les jeux de données. La classe <code>data.frame</code>.</p>
@@ -443,21 +450,21 @@ La fonction <code>list</code> permet de créer une liste.</p>
 <div id="indexations-simples" class="section level3">
 <h3><span class="header-section-number">5.3.1</span> Indexations simples</h3>
 <p>Un des plus de la classe <code>data.frame</code> c’est la possibilité d’indexer les lignes et les colonnes avec leur nom.</p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb401-1" title="1">a</a></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="manipulation-objet.html#cb400-1"></a>a</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    4    7
 ## ligne2    2    5    8
 ## ligne3    3    6    9</code></pre>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb403-1" title="1"><span class="kw">class</span>(a)</a></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="manipulation-objet.html#cb402-1"></a><span class="kw">class</span>(a)</span></code></pre></div>
 <pre><code>## [1] &quot;matrix&quot;</code></pre>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb405-1" title="1">a<span class="op">$</span>col1</a></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="manipulation-objet.html#cb404-1"></a>a<span class="op">$</span>col1</span></code></pre></div>
 <pre><code>## Error in a$col1: $ operator is invalid for atomic vectors</code></pre>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb407-1" title="1">b &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="dt">x =</span> a)</a>
-<a class="sourceLine" id="cb407-2" title="2"><span class="kw">class</span>(b)</a></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="manipulation-objet.html#cb406-1"></a>b &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="dt">x =</span> a)</span>
+<span id="cb406-2"><a href="manipulation-objet.html#cb406-2"></a><span class="kw">class</span>(b)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb409-1" title="1">b<span class="op">$</span>col1</a></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="manipulation-objet.html#cb408-1"></a>b<span class="op">$</span>col1</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb411-1" title="1">b[ <span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col1&quot;</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="manipulation-objet.html#cb410-1"></a>b[ <span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col1&quot;</span>)]</span></code></pre></div>
 <pre><code>##        col2 col1
 ## ligne1    4    1</code></pre>
 </div>
@@ -465,45 +472,45 @@ La fonction <code>list</code> permet de créer une liste.</p>
 <h3><span class="header-section-number">5.3.2</span> Indexations avec des booléens</h3>
 <p>Dans le langage R, il est possible d’effectuer des indexations sur des objets avec des booléens <code>TRUE</code> / <code>FALSE</code>.</p>
 <p>Dans l’exemple ci-dessous, je vais indexer le vecteur avec un vecteur logique de même taille</p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb413-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb413-2" title="2"></a>
-<a class="sourceLine" id="cb413-3" title="3"><span class="co">#afficher le 2ème et 4ème éléments</span></a>
-<a class="sourceLine" id="cb413-4" title="4">a[<span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="manipulation-objet.html#cb412-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">7</span>)</span>
+<span id="cb412-2"><a href="manipulation-objet.html#cb412-2"></a></span>
+<span id="cb412-3"><a href="manipulation-objet.html#cb412-3"></a><span class="co">#afficher le 2ème et 4ème éléments</span></span>
+<span id="cb412-4"><a href="manipulation-objet.html#cb412-4"></a>a[<span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>)]</span></code></pre></div>
 <pre><code>## [1] 2 9</code></pre>
 <p>Dans un data frame, on peut utiliser ce procédé pour sélectionner certaines lignes et colonnes :</p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb415-1" title="1">b</a></code></pre></div>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="manipulation-objet.html#cb414-1"></a>b</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    4    7
 ## ligne2    2    5    8
 ## ligne3    3    6    9</code></pre>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb417-1" title="1"><span class="co">#accéder à la 2ème ligne</span></a>
-<a class="sourceLine" id="cb417-2" title="2">b [ <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>),  ]</a></code></pre></div>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="manipulation-objet.html#cb416-1"></a><span class="co">#accéder à la 2ème ligne</span></span>
+<span id="cb416-2"><a href="manipulation-objet.html#cb416-2"></a>b [ <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>),  ]</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne2    2    5    8</code></pre>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb419-1" title="1"><span class="co">#accéder à la 3eme colonne</span></a>
-<a class="sourceLine" id="cb419-2" title="2">b [ , <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="manipulation-objet.html#cb418-1"></a><span class="co">#accéder à la 3eme colonne</span></span>
+<span id="cb418-2"><a href="manipulation-objet.html#cb418-2"></a>b [ , <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>) ]</span></code></pre></div>
 <pre><code>## [1] 7 8 9</code></pre>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb421-1" title="1"><span class="co">#accéder à l&#39;élément de la 2ème ligne et 3ème colonne</span></a>
-<a class="sourceLine" id="cb421-2" title="2">b [ <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>), <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="manipulation-objet.html#cb420-1"></a><span class="co">#accéder à l&#39;élément de la 2ème ligne et 3ème colonne</span></span>
+<span id="cb420-2"><a href="manipulation-objet.html#cb420-2"></a>b [ <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>), <span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>) ]</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p>Ainsi, avec des vecteurs logiques, il est possible d’indexer des <code>data.frame</code>. C’est ce mécanisme qui permet d’effectuer des filtres.</p>
 </div>
 <div id="filtre-et-sélection-dans-un-data-frame" class="section level3">
 <h3><span class="header-section-number">5.3.3</span> Filtre et sélection dans un data frame</h3>
 <p>Pour filtrer un <code>data.frame</code>, il suffit d’insérer un ou plusieurs tests logiques dans l’indexation de l’objet. Pour rappel, les tests logiques retournent toujours des valeurs logiques <code>TRUE</code> / <code>FALSE</code>.</p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb423-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb423-2" title="2">a <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="manipulation-objet.html#cb422-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">6</span>)</span>
+<span id="cb422-2"><a href="manipulation-objet.html#cb422-2"></a>a <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb425-1" title="1">b</a></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="manipulation-objet.html#cb424-1"></a>b</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    4    7
 ## ligne2    2    5    8
 ## ligne3    3    6    9</code></pre>
-<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb427-1" title="1">b[ b<span class="op">$</span>col1 <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> , ]</a></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="manipulation-objet.html#cb426-1"></a>b[ b<span class="op">$</span>col1 <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> , ]</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne2    2    5    8
 ## ligne3    3    6    9</code></pre>
-<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb429-1" title="1">b[ (b<span class="op">$</span>col1 <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">&amp;</span><span class="st"> </span>(b<span class="op">$</span>col2 <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span>) , ]</a></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="manipulation-objet.html#cb428-1"></a>b[ (b<span class="op">$</span>col1 <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">&amp;</span><span class="st"> </span>(b<span class="op">$</span>col2 <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span>) , ]</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne2    2    5    8</code></pre>
 </div>
@@ -512,11 +519,11 @@ La fonction <code>list</code> permet de créer une liste.</p>
 <div id="sujet-3" class="section level4">
 <h4><span class="header-section-number">5.3.4.1</span> Sujet</h4>
 <p>Pour illustrer ces notions, on utilise la base de données correspondant aux informations de tous les vols au départ d’un des trois aéroports de New-York en 2013. La base de données est répartie en 5 tables et disponible à partir du package <em>nycflights13</em>.</p>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb431-1" title="1"><span class="co">#on charge le package</span></a>
-<a class="sourceLine" id="cb431-2" title="2"><span class="kw">library</span>(nycflights13)</a>
-<a class="sourceLine" id="cb431-3" title="3"></a>
-<a class="sourceLine" id="cb431-4" title="4"><span class="co">#on affiche les objets disponibles du package</span></a>
-<a class="sourceLine" id="cb431-5" title="5"><span class="kw">ls</span>(<span class="st">&quot;package:nycflights13&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="manipulation-objet.html#cb430-1"></a><span class="co">#on charge le package</span></span>
+<span id="cb430-2"><a href="manipulation-objet.html#cb430-2"></a><span class="kw">library</span>(nycflights13)</span>
+<span id="cb430-3"><a href="manipulation-objet.html#cb430-3"></a></span>
+<span id="cb430-4"><a href="manipulation-objet.html#cb430-4"></a><span class="co">#on affiche les objets disponibles du package</span></span>
+<span id="cb430-5"><a href="manipulation-objet.html#cb430-5"></a><span class="kw">ls</span>(<span class="st">&quot;package:nycflights13&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;airlines&quot; &quot;airports&quot; &quot;flights&quot;  &quot;planes&quot;   &quot;weather&quot;</code></pre>
 <p>Nous allons utiliser la table <code>flights</code> qui présente 336 776 vols sur 19 variables
 Voici une description de cette table :</p>
@@ -545,19 +552,18 @@ Voici une description de cette table :</p>
 <li><p>Affichez un résumé des données</p></li>
 </ol>
 <p><strong>Exercice 2</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Sélectionnez uniquement les colonnes <code>year</code>, <code>month</code>, <code>day</code>.</p></li>
+<li><p>Sélectionnez uniquement les colonnes 13 à 19.</p></li>
+<li><p>Sélectionnez toutes colonnes sauf <code>dep_delay</code> et <code>arr_delay</code>.</p></li>
+</ol>
+<p><strong>Exercice 3</strong></p>
 <p>Pour répondre aux questions, utilisez des tests logiques <strong>sans</strong> passer par la fonction <code>subset</code>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Filtrez la table en sélectionnant les vols du mois de janvier.</p></li>
 <li><p>Filtrez la table en sélectionnant les vols en provenance de <code>LGA</code> et <code>JFK</code>.</p></li>
 <li><p>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retards à l’arrivée.</p></li>
 <li><p>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retard à l’arrivée du mois de janvier.</p></li>
-<li><p>Filtrez la table en sélectionnant les vols avec du retard au départ ou l’arrivée</p></li>
-</ol>
-<p><strong>Exercice 3</strong></p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Sélectionnez uniquement les colonnes <code>year</code>, <code>month</code>, <code>day</code>.</p></li>
-<li><p>Sélectionnez uniquement les colonnes 13 à 19.</p></li>
-<li><p>Sélectionnez toutes colonnes sauf <code>dep_delay</code> et <code>arr_delay</code>.</p></li>
 </ol>
 </div>
 <div id="correction-3" class="section level4">
@@ -566,127 +572,125 @@ Voici une description de cette table :</p>
 <ol style="list-style-type: lower-alpha">
 <li>Installez, puis chargez le package <em>nycflights13</em></li>
 </ol>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb433-1" title="1"><span class="kw">library</span>(nycflights13)</a></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="manipulation-objet.html#cb432-1"></a><span class="kw">library</span>(nycflights13)</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Combien de lignes, colonnes sont présentes dans cette table ?</li>
 </ol>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb434-1" title="1"><span class="kw">dim</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="manipulation-objet.html#cb433-1"></a><span class="kw">dim</span>(<span class="dt">x =</span> flights)</span></code></pre></div>
 <pre><code>## [1] 336776     19</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Affichez le nom des colonnes</li>
 </ol>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb436-1" title="1"><span class="kw">colnames</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="manipulation-objet.html#cb435-1"></a><span class="kw">colnames</span>(<span class="dt">x =</span> flights)</span></code></pre></div>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Affichez un résumé des données</li>
 </ol>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb437-1" title="1"><span class="kw">summary</span>(<span class="dt">object =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="manipulation-objet.html#cb436-1"></a><span class="kw">summary</span>(<span class="dt">object =</span> flights)</span></code></pre></div>
 <p><strong>Exercice 2</strong></p>
-<p>Pour répondre aux questions, utilisez des tests logiques <strong>sans</strong> passer par la fonction <code>subset</code>.</p>
-<ol style="list-style-type: lower-alpha">
-<li>Filtrez la table en sélectionnant les vols du mois de janvier.</li>
-</ol>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb438-1" title="1">requeteA &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span> , ]</a>
-<a class="sourceLine" id="cb438-2" title="2"><span class="kw">dim</span>(requeteA)</a></code></pre></div>
-<pre><code>## [1] 27004    19</code></pre>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Filtrez la table en sélectionnant les vols en provenance de <code>LGA</code> et <code>JFK</code>.</li>
-</ol>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb440-1" title="1">requeteB &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>origin <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;JFK&quot;</span>,<span class="st">&quot;LGA&quot;</span>) , ]</a>
-<a class="sourceLine" id="cb440-2" title="2"><span class="kw">dim</span>(requeteB)</a></code></pre></div>
-<pre><code>## [1] 215941     19</code></pre>
-<ol start="3" style="list-style-type: lower-alpha">
-<li>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retards à l’arrivée.</li>
-</ol>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb442-1" title="1">requeteC &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) , ]</a>
-<a class="sourceLine" id="cb442-2" title="2"><span class="kw">dim</span>(requeteC)</a></code></pre></div>
-<pre><code>## [1] 48249    19</code></pre>
-<ol start="4" style="list-style-type: lower-alpha">
-<li>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retard à l’arrivée du mois de janvier.</li>
-</ol>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb444-1" title="1">requeteD &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">&amp;</span></a>
-<a class="sourceLine" id="cb444-2" title="2"><span class="st">                       </span>(flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) , ]</a>
-<a class="sourceLine" id="cb444-3" title="3"><span class="kw">dim</span>(requeteD)</a></code></pre></div>
-<pre><code>## [1] 4016   19</code></pre>
-<ol start="5" style="list-style-type: lower-alpha">
-<li>Filtrez la table en sélectionnant les vols avec du retard au départ ou l’arrivée</li>
-</ol>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb446-1" title="1">requeteE &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">|</span><span class="st"> </span>(flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) , ]</a>
-<a class="sourceLine" id="cb446-2" title="2"><span class="kw">dim</span>(requeteE)</a></code></pre></div>
-<pre><code>## [1] 177876     19</code></pre>
-<p><strong>Exercice 3</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li>Sélectionnez uniquement les colonnes <code>year</code>, <code>month</code>, <code>day</code>.</li>
 </ol>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb448-1" title="1">requeteA &lt;-<span class="st"> </span>flights[ , <span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;day&quot;</span>) ]</a>
-<a class="sourceLine" id="cb448-2" title="2"><span class="kw">dim</span>(requeteA)</a></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="manipulation-objet.html#cb437-1"></a>requeteA &lt;-<span class="st"> </span>flights[ , <span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;day&quot;</span>) ]</span>
+<span id="cb437-2"><a href="manipulation-objet.html#cb437-2"></a><span class="kw">dim</span>(requeteA)</span></code></pre></div>
 <pre><code>## [1] 336776      3</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Sélectionnez uniquement les colonnes 13 à 19.</li>
 </ol>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb450-1" title="1">requeteB &lt;-<span class="st"> </span>flights[ , <span class="dv">13</span><span class="op">:</span><span class="dv">19</span> ]</a>
-<a class="sourceLine" id="cb450-2" title="2"><span class="kw">dim</span>(requeteB)</a></code></pre></div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="manipulation-objet.html#cb439-1"></a>requeteB &lt;-<span class="st"> </span>flights[ , <span class="dv">13</span><span class="op">:</span><span class="dv">19</span> ]</span>
+<span id="cb439-2"><a href="manipulation-objet.html#cb439-2"></a><span class="kw">dim</span>(requeteB)</span></code></pre></div>
 <pre><code>## [1] 336776      7</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Sélectionnez toutes colonnes sauf <code>dep_delay</code> et <code>arr_delay</code>.</li>
 </ol>
 <p>On utilise un test logique sur le nom des colonnes</p>
-<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb452-1" title="1"><span class="kw">colnames</span>(flights)</a></code></pre></div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="manipulation-objet.html#cb441-1"></a><span class="kw">colnames</span>(flights)</span></code></pre></div>
 <pre><code>##  [1] &quot;year&quot;           &quot;month&quot;          &quot;day&quot;            &quot;dep_time&quot;      
 ##  [5] &quot;sched_dep_time&quot; &quot;dep_delay&quot;      &quot;arr_time&quot;       &quot;sched_arr_time&quot;
 ##  [9] &quot;arr_delay&quot;      &quot;carrier&quot;        &quot;flight&quot;         &quot;tailnum&quot;       
 ## [13] &quot;origin&quot;         &quot;dest&quot;           &quot;air_time&quot;       &quot;distance&quot;      
 ## [17] &quot;hour&quot;           &quot;minute&quot;         &quot;time_hour&quot;</code></pre>
-<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb454-1" title="1"><span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="manipulation-objet.html#cb443-1"></a><span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>)</span></code></pre></div>
 <pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE
 ## [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb456-1" title="1">requeteC &lt;-<span class="st"> </span>flights[ , <span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>) ]</a>
-<a class="sourceLine" id="cb456-2" title="2"><span class="kw">dim</span>(requeteC)</a></code></pre></div>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="manipulation-objet.html#cb445-1"></a>requeteC &lt;-<span class="st"> </span>flights[ , <span class="kw">colnames</span>(flights) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;dep_delay&#39;</span>,<span class="st">&#39;arr_delay&#39;</span>) ]</span>
+<span id="cb445-2"><a href="manipulation-objet.html#cb445-2"></a><span class="kw">dim</span>(requeteC)</span></code></pre></div>
 <pre><code>## [1] 336776      2</code></pre>
+<p><strong>Exercice 3</strong></p>
+<p>Pour répondre aux questions, utilisez des tests logiques <strong>sans</strong> passer par la fonction <code>subset</code>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Filtrez la table en sélectionnant les vols du mois de janvier.</li>
+</ol>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="manipulation-objet.html#cb447-1"></a>requeteA &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span> , ]</span>
+<span id="cb447-2"><a href="manipulation-objet.html#cb447-2"></a><span class="kw">dim</span>(requeteA)</span></code></pre></div>
+<pre><code>## [1] 27004    19</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Filtrez la table en sélectionnant les vols en provenance de <code>LGA</code> et <code>JFK</code>.</li>
+</ol>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="manipulation-objet.html#cb449-1"></a>requeteB &lt;-<span class="st"> </span>flights[ flights<span class="op">$</span>origin <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;JFK&quot;</span>,<span class="st">&quot;LGA&quot;</span>) , ]</span>
+<span id="cb449-2"><a href="manipulation-objet.html#cb449-2"></a><span class="kw">dim</span>(requeteB)</span></code></pre></div>
+<pre><code>## [1] 215941     19</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retards à l’arrivée.</li>
+</ol>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="manipulation-objet.html#cb451-1"></a>requeteC &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span><span class="st"> </span></span>
+<span id="cb451-2"><a href="manipulation-objet.html#cb451-2"></a><span class="st">                       </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">&amp;</span></span>
+<span id="cb451-3"><a href="manipulation-objet.html#cb451-3"></a><span class="st">                       </span>(<span class="op">!</span><span class="kw">is.na</span>(flights<span class="op">$</span>arr_delay)), ]</span>
+<span id="cb451-4"><a href="manipulation-objet.html#cb451-4"></a><span class="kw">dim</span>(requeteC)</span></code></pre></div>
+<pre><code>## [1] 38819    19</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Filtrez la table en sélectionnant les vols avec 10 à 30 min de retard à l’arrivée du mois de janvier.</li>
+</ol>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="manipulation-objet.html#cb453-1"></a>requeteD &lt;-<span class="st"> </span>flights[ (flights<span class="op">$</span>arr_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">&amp;</span></span>
+<span id="cb453-2"><a href="manipulation-objet.html#cb453-2"></a><span class="st">                       </span>(flights<span class="op">$</span>arr_delay <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">&amp;</span></span>
+<span id="cb453-3"><a href="manipulation-objet.html#cb453-3"></a><span class="st">                       </span>(<span class="op">!</span><span class="kw">is.na</span>(flights<span class="op">$</span>arr_delay)) <span class="op">&amp;</span></span>
+<span id="cb453-4"><a href="manipulation-objet.html#cb453-4"></a><span class="st">                       </span>(flights<span class="op">$</span>month <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)  , ]</span>
+<span id="cb453-5"><a href="manipulation-objet.html#cb453-5"></a><span class="kw">dim</span>(requeteD)</span></code></pre></div>
+<pre><code>## [1] 3410   19</code></pre>
 </div>
 </div>
 <div id="trier-un-data-frame" class="section level3">
 <h3><span class="header-section-number">5.3.5</span> Trier un data frame</h3>
 <p>On sait que la fonction <code>sort</code> permet de trier un vecteur.</p>
-<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb458-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb458-2" title="2"><span class="kw">sort</span>(<span class="dt">x =</span> a, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="manipulation-objet.html#cb455-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb455-2"><a href="manipulation-objet.html#cb455-2"></a><span class="kw">sort</span>(<span class="dt">x =</span> a, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 9 6 4 1</code></pre>
 <p>La fonction <code>order</code> permet de trier un vecteur à partir des rangs.</p>
-<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb460-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb460-2" title="2"><span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="manipulation-objet.html#cb457-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb457-2"><a href="manipulation-objet.html#cb457-2"></a><span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 2 4 3 1</code></pre>
 <p>On utilise ensuite le vecteur avec les rangs pour trier le vecteur</p>
-<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb462-1" title="1">a[ <span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="manipulation-objet.html#cb459-1"></a>a[ <span class="kw">order</span>(a,<span class="dt">decreasing =</span> <span class="ot">TRUE</span>) ]</span></code></pre></div>
 <pre><code>## [1] 9 6 4 1</code></pre>
 <p>Pour trier un data frame ou une matrice, on utilise le même procédé avec la fonction <code>order</code>.</p>
-<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb464-1" title="1">a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb464-2" title="2">            <span class="dt">dimnames =</span>  <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>,<span class="st">&quot;ligne2&quot;</span>,<span class="st">&quot;ligne3&quot;</span>),</a>
-<a class="sourceLine" id="cb464-3" title="3">                            <span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col3&quot;</span>)))</a>
-<a class="sourceLine" id="cb464-4" title="4">a</a></code></pre></div>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="manipulation-objet.html#cb461-1"></a>a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>,</span>
+<span id="cb461-2"><a href="manipulation-objet.html#cb461-2"></a>            <span class="dt">dimnames =</span>  <span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;ligne1&quot;</span>,<span class="st">&quot;ligne2&quot;</span>,<span class="st">&quot;ligne3&quot;</span>),</span>
+<span id="cb461-3"><a href="manipulation-objet.html#cb461-3"></a>                            <span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col3&quot;</span>)))</span>
+<span id="cb461-4"><a href="manipulation-objet.html#cb461-4"></a>a</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    0    2
 ## ligne2    4    7    5
 ## ligne3    4    9    6</code></pre>
 <p>Ici, on souhaiter trier la matrice selon la deuxième colonne avec un tri décroissant. Seule, la fonction <code>order</code> renvoie les rangs dans lesquels il faudrait trier le tableau.</p>
-<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb466-1" title="1"><span class="kw">order</span>(a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="manipulation-objet.html#cb463-1"></a><span class="kw">order</span>(a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 3 2 1</code></pre>
 <p>Il faut utiliser ce vecteur de rang dans l’indexation de la matrice pour la trier.</p>
-<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb468-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>( a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span> )</a>
-<a class="sourceLine" id="cb468-2" title="2">a[ rang , ]</a></code></pre></div>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="manipulation-objet.html#cb465-1"></a>rang &lt;-<span class="st"> </span><span class="kw">order</span>( a[,<span class="dv">2</span>],<span class="dt">decreasing =</span> <span class="ot">TRUE</span> )</span>
+<span id="cb465-2"><a href="manipulation-objet.html#cb465-2"></a>a[ rang , ]</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne3    4    9    6
 ## ligne2    4    7    5
 ## ligne1    1    0    2</code></pre>
 <p>On peut aussi utiliser le ‘-’ devant le vecteur à trier pour effectuer un tri décroissant.</p>
-<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb470-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>( <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</a>
-<a class="sourceLine" id="cb470-2" title="2">a[ rang , ]</a></code></pre></div>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="manipulation-objet.html#cb467-1"></a>rang &lt;-<span class="st"> </span><span class="kw">order</span>( <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</span>
+<span id="cb467-2"><a href="manipulation-objet.html#cb467-2"></a>a[ rang , ]</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne3    4    9    6
 ## ligne2    4    7    5
 ## ligne1    1    0    2</code></pre>
 <p>C’est cette syntaxe qu’on retrouve pour réaliser des tris successifs, on utilise toujours la fonction <code>order</code> avec chaque vecteur comme argument.
 On souhaite trier la première colonne par ordre croissant puis la deuxième colonne par ordre décroissant :</p>
-<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb472-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(a[,<span class="dv">1</span>] , <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</a>
-<a class="sourceLine" id="cb472-2" title="2">a[ rang , ]</a></code></pre></div>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="manipulation-objet.html#cb469-1"></a>rang &lt;-<span class="st"> </span><span class="kw">order</span>(a[,<span class="dv">1</span>] , <span class="op">-</span><span class="st"> </span>a[,<span class="dv">2</span>] )</span>
+<span id="cb469-2"><a href="manipulation-objet.html#cb469-2"></a>a[ rang , ]</span></code></pre></div>
 <pre><code>##        col1 col2 col3
 ## ligne1    1    0    2
 ## ligne3    4    9    6
@@ -714,10 +718,10 @@ On souhaite trier la première colonne par ordre croissant puis la deuxième col
 <ol style="list-style-type: lower-alpha">
 <li>Trier la table selon le mois du vol</li>
 </ol>
-<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb474-1" title="1"><span class="co">#On charge la librairie knitr pour utiliser la fonction kable pour les tableaux en sortie</span></a>
-<a class="sourceLine" id="cb474-2" title="2"><span class="kw">library</span>(knitr)</a></code></pre></div>
-<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb475-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>month)</a>
-<a class="sourceLine" id="cb475-2" title="2">requeteA &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;month&quot;</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="manipulation-objet.html#cb471-1"></a><span class="co">#On charge la librairie knitr pour utiliser la fonction kable pour les tableaux en sortie</span></span>
+<span id="cb471-2"><a href="manipulation-objet.html#cb471-2"></a><span class="kw">library</span>(knitr)</span></code></pre></div>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="manipulation-objet.html#cb472-1"></a>rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>month)</span>
+<span id="cb472-2"><a href="manipulation-objet.html#cb472-2"></a>requeteA &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;month&quot;</span>) ]</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -793,8 +797,8 @@ N668DN
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Trier la table selon les vols avec le plus de retard à l’arrivée</li>
 </ol>
-<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb476-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(<span class="op">-</span>flights<span class="op">$</span>arr_delay)</a>
-<a class="sourceLine" id="cb476-2" title="2">requeteB &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="manipulation-objet.html#cb473-1"></a>rang &lt;-<span class="st"> </span><span class="kw">order</span>(<span class="op">-</span>flights<span class="op">$</span>arr_delay)</span>
+<span id="cb473-2"><a href="manipulation-objet.html#cb473-2"></a>requeteB &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>) ]</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -887,8 +891,8 @@ N665MQ
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Trier la table par vols de provenance, puis de destination</li>
 </ol>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb477-1" title="1">rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>origin, flights<span class="op">$</span>dest)</a>
-<a class="sourceLine" id="cb477-2" title="2">requeteC &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;origin&quot;</span>, <span class="st">&quot;dest&quot;</span>) ]</a></code></pre></div>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="manipulation-objet.html#cb474-1"></a>rang &lt;-<span class="st"> </span><span class="kw">order</span>(flights<span class="op">$</span>origin, flights<span class="op">$</span>dest)</span>
+<span id="cb474-2"><a href="manipulation-objet.html#cb474-2"></a>requeteC &lt;-<span class="st"> </span>flights[ rang , <span class="kw">c</span>(<span class="st">&quot;flight&quot;</span>, <span class="st">&quot;tailnum&quot;</span>, <span class="st">&quot;origin&quot;</span>, <span class="st">&quot;dest&quot;</span>) ]</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1004,7 +1008,7 @@ ALB
 Pour cela on utilise la fonction <code>aggregate</code>.
 Il faut préciser dans la fonction le champ avec lequel on souhaite grouper les données, puis la fonction d’agrégation à utiliser.</p>
 <p>Ici, on calcule le retard moyen au départ pour chaque aéroport d’origine :</p>
-<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb478-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="manipulation-objet.html#cb475-1"></a>agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1045,8 +1049,8 @@ LGA
 </table>
 <p>On peut également grouper les données selon plusieurs champs qu’on renseigne avec le ‘+’ dans l’argument <code>formula.</code>
 Ici on calcule le retard moyen au départ pour chaque aéroport d’origine et chaque mois :</p>
-<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb479-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin <span class="op">+</span><span class="st"> </span>month, </a>
-<a class="sourceLine" id="cb479-2" title="2">                         <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="manipulation-objet.html#cb476-1"></a>agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin <span class="op">+</span><span class="st"> </span>month, </span>
+<span id="cb476-2"><a href="manipulation-objet.html#cb476-2"></a>                         <span class="dt">data =</span> flights , <span class="dt">FUN =</span> mean)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1131,9 +1135,9 @@ LGA
 </tbody>
 </table>
 <p>Le raccourci ‘<strong>.</strong>’ dans l’argument <code>formula</code> permet d’agréger toutes les colonnes en fonction ‘<strong>~</strong>’ d’une ou plusieurs.</p>
-<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb480-1" title="1">agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </a>
-<a class="sourceLine" id="cb480-2" title="2">                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>,<span class="st">&quot;arr_delay&quot;</span>,<span class="st">&quot;distance&quot;</span>)],</a>
-<a class="sourceLine" id="cb480-3" title="3">                         <span class="dt">FUN =</span> mean)</a></code></pre></div>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="manipulation-objet.html#cb477-1"></a>agregation &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </span>
+<span id="cb477-2"><a href="manipulation-objet.html#cb477-2"></a>                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>,<span class="st">&quot;arr_delay&quot;</span>,<span class="st">&quot;distance&quot;</span>)],</span>
+<span id="cb477-3"><a href="manipulation-objet.html#cb477-3"></a>                         <span class="dt">FUN =</span> mean)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1196,10 +1200,11 @@ LGA
 </tr>
 </tbody>
 </table>
-<div id="exercice-1" class="section level4">
-<h4><span class="header-section-number">5.3.7.1</span> Exercice</h4>
-<div id="sujet-5" class="section level5">
-<h5><span class="header-section-number">5.3.7.1.1</span> Sujet</h5>
+</div>
+<div id="exercice-1" class="section level3">
+<h3><span class="header-section-number">5.3.8</span> Exercice</h3>
+<div id="sujet-5" class="section level4">
+<h4><span class="header-section-number">5.3.8.1</span> Sujet</h4>
 <p><strong>Exercice 1</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Calculez le retard maximum au départ de chaque aéroport</p></li>
@@ -1207,12 +1212,12 @@ LGA
 <li><p>Calculez le nombre de vols par aéroport d’origine</p></li>
 </ol>
 </div>
-<div id="correction-5" class="section level5">
-<h5><span class="header-section-number">5.3.7.1.2</span> Correction</h5>
+<div id="correction-5" class="section level4">
+<h4><span class="header-section-number">5.3.8.2</span> Correction</h4>
 <ol style="list-style-type: lower-alpha">
 <li>Calculez le retard maximum au départ de chaque aéroport</li>
 </ol>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb481-1" title="1">agregationA &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights, <span class="dt">FUN =</span> max)</a></code></pre></div>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="manipulation-objet.html#cb478-1"></a>agregationA &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> dep_delay <span class="op">~</span><span class="st"> </span>origin, <span class="dt">data =</span> flights, <span class="dt">FUN =</span> max)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1254,9 +1259,9 @@ LGA
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Calculez l’écart-type sur les retards au départ et l’arrivée pour chaque aéroport d’origine</li>
 </ol>
-<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb482-1" title="1">agregationB &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </a>
-<a class="sourceLine" id="cb482-2" title="2">                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>)],</a>
-<a class="sourceLine" id="cb482-3" title="3">                         <span class="dt">FUN =</span> sd)</a></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="manipulation-objet.html#cb479-1"></a>agregationB &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> . <span class="op">~</span><span class="st"> </span>origin, </span>
+<span id="cb479-2"><a href="manipulation-objet.html#cb479-2"></a>                         <span class="dt">data =</span> flights[ , <span class="kw">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;dep_delay&quot;</span>, <span class="st">&quot;arr_delay&quot;</span>)],</span>
+<span id="cb479-3"><a href="manipulation-objet.html#cb479-3"></a>                         <span class="dt">FUN =</span> sd)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1310,9 +1315,9 @@ LGA
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Calculez le nombre de vols par aéroport d’origine</li>
 </ol>
-<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb483-1" title="1">agregationC &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> tailnum <span class="op">~</span><span class="st"> </span>origin, </a>
-<a class="sourceLine" id="cb483-2" title="2">                         <span class="dt">data =</span> flights,</a>
-<a class="sourceLine" id="cb483-3" title="3">                         <span class="dt">FUN =</span> length)</a></code></pre></div>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="manipulation-objet.html#cb480-1"></a>agregationC &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> tailnum <span class="op">~</span><span class="st"> </span>origin, </span>
+<span id="cb480-2"><a href="manipulation-objet.html#cb480-2"></a>                         <span class="dt">data =</span> flights,</span>
+<span id="cb480-3"><a href="manipulation-objet.html#cb480-3"></a>                         <span class="dt">FUN =</span> length)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1352,7 +1357,6 @@ LGA
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>

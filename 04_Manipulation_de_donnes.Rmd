@@ -263,6 +263,14 @@ d. Affichez un résumé des données
 
 **Exercice 2**
 
+a. Sélectionnez uniquement les colonnes `year`, `month`, `day`.
+
+b. Sélectionnez uniquement les colonnes 13 à 19.
+
+c. Sélectionnez toutes colonnes sauf `dep_delay` et `arr_delay`.
+
+**Exercice 3**
+
 Pour répondre aux questions, utilisez des tests logiques **sans** passer par la fonction `subset`.
 
 a. Filtrez la table en sélectionnant les vols du mois de janvier.
@@ -272,17 +280,6 @@ b. Filtrez la table en sélectionnant les vols en provenance de `LGA` et `JFK`.
 c. Filtrez la table en sélectionnant les vols avec 10 à 30 min de retards à l'arrivée.
 
 d. Filtrez la table en sélectionnant les vols avec 10 à 30 min de retard à l'arrivée du mois de janvier.
-
-e. Filtrez la table en sélectionnant les vols avec du retard au départ ou l'arrivée
-
-**Exercice 3**
-
-a. Sélectionnez uniquement les colonnes `year`, `month`, `day`.
-
-b. Sélectionnez uniquement les colonnes 13 à 19.
-
-c. Sélectionnez toutes colonnes sauf `dep_delay` et `arr_delay`.
-
 
 #### Correction
 
@@ -314,46 +311,6 @@ summary(object = flights)
 
 **Exercice 2**
 
-Pour répondre aux questions, utilisez des tests logiques **sans** passer par la fonction `subset`.
-
-a. Filtrez la table en sélectionnant les vols du mois de janvier.
-
-```{r}
-requeteA <- flights[ flights$month == 1 , ]
-dim(requeteA)
-```
-
-b. Filtrez la table en sélectionnant les vols en provenance de `LGA` et `JFK`.
-
-```{r}
-requeteB <- flights[ flights$origin %in% c("JFK","LGA") , ]
-dim(requeteB)
-```
-
-c. Filtrez la table en sélectionnant les vols avec 10 à 30 min de retards à l'arrivée.
-
-```{r}
-requeteC <- flights[ (flights$arr_delay > 10) & (flights$arr_delay < 30) , ]
-dim(requeteC)
-```
-
-d. Filtrez la table en sélectionnant les vols avec 10 à 30 min de retard à l'arrivée du mois de janvier.
-
-```{r}
-requeteD <- flights[ (flights$arr_delay > 10) & (flights$arr_delay < 30) &
-                       (flights$month == 1) , ]
-dim(requeteD)
-```
-
-e. Filtrez la table en sélectionnant les vols avec du retard au départ ou l'arrivée
-
-```{r}
-requeteE <- flights[ (flights$dep_delay > 0) | (flights$arr_delay > 0) , ]
-dim(requeteE)
-```
-
-**Exercice 3**
-
 a. Sélectionnez uniquement les colonnes `year`, `month`, `day`.
 
 ```{r}
@@ -384,6 +341,44 @@ colnames(flights) %in% c('dep_delay','arr_delay')
 requeteC <- flights[ , colnames(flights) %in% c('dep_delay','arr_delay') ]
 dim(requeteC)
 ```
+
+**Exercice 3**
+
+Pour répondre aux questions, utilisez des tests logiques **sans** passer par la fonction `subset`.
+
+a. Filtrez la table en sélectionnant les vols du mois de janvier.
+
+```{r}
+requeteA <- flights[ flights$month == 1 , ]
+dim(requeteA)
+```
+
+b. Filtrez la table en sélectionnant les vols en provenance de `LGA` et `JFK`.
+
+```{r}
+requeteB <- flights[ flights$origin %in% c("JFK","LGA") , ]
+dim(requeteB)
+```
+
+c. Filtrez la table en sélectionnant les vols avec 10 à 30 min de retards à l'arrivée.
+
+```{r}
+requeteC <- flights[ (flights$arr_delay > 10) & 
+                       (flights$arr_delay < 30) &
+                       (!is.na(flights$arr_delay)), ]
+dim(requeteC)
+```
+
+d. Filtrez la table en sélectionnant les vols avec 10 à 30 min de retard à l'arrivée du mois de janvier.
+
+```{r}
+requeteD <- flights[ (flights$arr_delay > 10) &
+                       (flights$arr_delay < 30) &
+                       (!is.na(flights$arr_delay)) &
+                       (flights$month == 1)  , ]
+dim(requeteD)
+```
+
 
 ### Trier un data frame
 
@@ -550,9 +545,9 @@ kable(head(agregation))
 ```
 
 
-#### Exercice
+### Exercice
 
-##### Sujet
+#### Sujet
 
 **Exercice 1**
 
@@ -562,7 +557,7 @@ b. Calculez l'écart-type sur les retards au départ et l'arrivée pour chaque a
 
 c. Calculez le nombre de vols par aéroport d'origine
 
-##### Correction
+#### Correction
 
 a. Calculez le retard maximum au départ de chaque aéroport
 

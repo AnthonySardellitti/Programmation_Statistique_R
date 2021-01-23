@@ -1,0 +1,168 @@
+# S'entrainer {#entrainement}
+
+## TP1
+
+Ce TP reprend les notions évoquées dans les chapitres 2 et 3.
+On utilise  le dataset `mtcars` qui décrit les statistiques de voitures.
+Le dataset est présent dans le package *datasets* automatiquement installé sur R. Voici une description des données :
+
+-	mpg	: Miles/(US) gallon
+-	cyl	: Number of cylinders
+-	disp :	Displacement (cu.in.)
+-	hp :	Gross horsepower
+-	drat :	Rear axle ratio
+-	wt :	Weight (1000 lbs)
+-	qsec :	1/4 mile time
+-	vs :	Engine (0 = V-shaped, 1 = straight)
+-	am :	Transmission (0 = automatic, 1 = manual)
+-	gear :	Number of forward gears
+-	carb :	Number of carburetors
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(readxl)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+taille <- 12
+df <- mtcars
+kable(head(df,n = 10), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+<br>
+
+**Exercice 1 : Préparer son environnement de travail**
+
+a. Dupliquer le dataset dans un nouvel objet appelé `df`.
+b. Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?
+c. Affichez le nom des colonnes
+d. Affichez le type des colonnes avec la fonction adaptée.
+e. On souhaite analyser les variables `cyl`, `vs`, `am`, `gear` et `carb` en tant que variables qualitatives. Modifier le type de ces variables pour les transformer en type factor.
+f. Combien de niveaux (*levels*) sont présents dans ces variables ?
+g. Affichez un résumé des données avec la fonction adaptée.
+
+**Exercice 2 : Statistiques descriptives**
+
+a. Déterminer la moyenne de la variable `mpg`
+b. Déterminer le maximum la variable `wt`.
+c. Déterminer la médiane de la variable `hp`.
+d. Déterminer les quartiles de la variable `qsec`.
+e. Déterminer les déciles de la variable `qsec`.
+f. Déterminer la variance et l'écart-type de la variable `qsec`.
+g. Déterminer un tri à plat pour compter les effectifs des modalités de chaque variables *factor*.
+
+**Exercice 3 : Quelques graphiques**
+
+a. Contruire un histogramme de la distribution de la variable `qsec`.
+b. Constuire une boîte à moustache de la distribution de la variable `qsec`.
+c. Construire un diagramme en barre de répartition de la variable `carb`.
+d. Construire un diagramme circulaire de la répartition de la variable `vs`.
+
+**Exercice 4 : Création de nouvelles colonnes**
+
+a. La colonne `mpg` correspond au nombre de miles parcouru en 1 gallon (US). Cette mesure correspond en quelques sortes à la mesure de consommation de litres aux 100 km utilisée en France. Créer une colonne supplémentaire appelée `litres_au_100km` qui correspond à la conversion de la variable `mpg`(Miles/(US) gallon) en nombre de litres aux 100 kilomètres. Aidez-vous du guide des conversion disponible sur ce [lien](https://anglais-pratique.fr/index.php/rubriques/divers/101-mpg-l-100km).
+b. Construire une nouvelle colonne appelée `qsec_cut` qui est un découpage de la variable `qsec_cut` en 3 groupes.
+c. Construire une nouvelle colonne appelée `litres100km_group` pour distinguer deux groupes de voiture : celles qui consomment plus que la moyenne et celles qui consomment moins.
+
+## TP2
+
+Ce TP reprend les notions évoquées dans les chapitres 2 à 5.
+On utilise  le fichier `pokemon.xlsx` qui décrit les statistiques des pokemon des deux premières générations.
+Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/rounakbanik/pokemon). Il a été adapté pour ce TP. Voici une description des données :
+
+- `pokedex_number` : numéro du pokemon
+- `nom` : nom du pokemon
+- `generation` : le numéro de génération dont est issu le pokemon
+- `is_legendary` : Oui / Non si le pokemon est légendaire
+- `type` : le type du pokemon
+- `weight_kg` : le poids du pokemon en kg
+- `height_m` : la taille du pokemon en mètre
+- `attack` : la puissance d'attaque du pokemon
+- `defense` : la puissance de défense du pokemon
+- `speed` : la vitesse du pokemon
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(readxl)
+pokemon <- read_excel(path = "./dataset/pokemon.xlsx", sheet = "pokemon")
+kable(head(pokemon,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+<br>
+
+**Exercice 1 : Importer les données**
+
+a. Importez le jeu de données `pokemon.xlsx` à l'aide du package `readxl`.
+b. Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?
+c. Affichez le nom des colonnes.
+d. Affichez le type des colonnes avec la fonction adaptée.
+e. On souhaite analyser les variables `generation`, `is_legendary`, et `type` en tant que variables qualitatives. Modifier le type de ces variables pour les transformer en type factor.
+f. Combien de niveaux (*levels*) sont présents dans ces variables ?
+g. Affichez un résumé des données avec la fonction adaptée.
+
+
+**Exercice 2 : Statistiques descriptives**
+
+a. Déterminer la moyenne de la variable `weight_kg`.
+b. Déterminer la médiane de la variable `weight_kg`.
+d. Déterminer les quartiles de la variable `height_m`.
+e. Déterminer les déciles de la variable `height_m`.
+f. Déterminer la variance et l'écart-type de la variable `weight_kg`.
+g. Déterminer un tri à plat pour compter les effectifs des modalités de chaque variable *factor* en triant chaque sortie par ordre décroissant.
+
+**Exercice 3 : Tris et Selections**
+
+Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :
+
+```{r}
+#Selectionnez les deux premières colonnes du data frame
+requete_0 <- pokemon[,1:2]
+dim(requete_0)
+```
+
+a. Sélectionnez la colonne `nom` et `is_legendary`.
+b. Sélectionnez les 50 premières lignes et les deux premières colonnes.
+c. Sélectionnez les 10 premières lignes et toutes les colonnes.
+d. Sélectionnez toutes les colonnes sauf la dernière.
+e. Sélectionnez les colonnes 2,8,9 et 10.
+f. Sélectionnez les lignes 20 à 30 et 80 à 100.
+g. Triez le dataset  par ordre alphabétique et afficher le `nom` du pokemon en première position.
+h. Triez le dataset  par `weight_kg` en ordre **décroissant**, et afficher le `nom`du pokemon en première position.
+i. Triez le dataset  par `attack` en ordre **décroissant** puis par `speed` en ordre **croissant**, et afficher le `nom` des 10 premiers pokemons.
+
+
+**Exercice 4 : Tris et Filtres**
+
+Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Pour faciliter la lecture, sélectionnez la colonne `nom`et les colonnes concernées par le filtre. Exemple :
+
+```{r}
+#Selectionnez les pokemons de type feu
+requete_0 <- pokemon[ pokemon$type == "fire", c("nom","type")]
+dim(requete_0)
+```
+a. Filtrez sur les pokemons qui ont 150 ou plus d'`attack` puis trier le résultat par ordre décroissant d'`attack`. 
+b. Filtrez sur les pokemons de `type` *dragon*,*ghost*,*psychic* et *dark*
+c. Filtrez sur les pokemons de `type` *fire* avec plus de 100 d'`attack`, puis trier le résultat par ordre décroissant d'`attack`. 
+d. Filtrez sur les pokemons qui ont entre 100 et 150 de `speed`. Les trier par `speed`décroissant.
+e. Filtrez sur les pokemons pesant plus de 250 kg et affichez le résultat pour vérifier.
+f. Filtrez sur les pokémons qui ont des valeurs manquantes sur la variable `height_m`.
+g. Filtrez sur les pokemons qui ont des valeurs renseignées à la fois pour la variable `weight_kg` **et** la variable `height`.
+
+
+**Exercice 5 : Agregations**
+
+Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :
+
+```{r}
+#Calculez la vitesse moyenne par generation
+requete_0 <- aggregate(formula = speed ~ generation, data = pokemon , FUN = mean)
+dim(requete_0)
+```
+
+```{r, echo=FALSE}
+kable(requete_0)
+```
+
+a. Calculez l'`attack` moyenne en fonction de la variable `type`, puis filtrez sur les 3 types avec les moyennes les plus élevées.
+b. Calculez le nombre de pokemon par `type` , puis triez par ordre décroissant ces effectifs.
+c. Calculez la médiane de `weight_kg` par `type`.
+d. Calculez le nombre de pokemon par `type` et `generation`
+e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `defense` et `speed`) en fonction de chaque `type`.

@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2020-04-24" />
+<meta name="date" content="2021-01-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,9 +54,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -65,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -202,6 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.5" data-path="manipulation-objet.html"><a href="manipulation-objet.html#trier-un-data-frame"><i class="fa fa-check"></i><b>5.3.5</b> Trier un data frame</a></li>
 <li class="chapter" data-level="5.3.6" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercice"><i class="fa fa-check"></i><b>5.3.6</b> Exercice</a></li>
 <li class="chapter" data-level="5.3.7" data-path="manipulation-objet.html"><a href="manipulation-objet.html#agréger-des-données"><i class="fa fa-check"></i><b>5.3.7</b> Agréger des données</a></li>
+<li class="chapter" data-level="5.3.8" data-path="manipulation-objet.html"><a href="manipulation-objet.html#exercice-1"><i class="fa fa-check"></i><b>5.3.8</b> Exercice</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="graphique.html"><a href="graphique.html"><i class="fa fa-check"></i><b>6</b> Représentation Graphique</a><ul>
@@ -274,21 +277,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.2" data-path="jointures.html"><a href="jointures.html#correction-9"><i class="fa fa-check"></i><b>10.3.2</b> Correction</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>11</b> Jeux de données utilisés</a><ul>
-<li class="chapter" data-level="11.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>11.1</b> Iris</a></li>
-<li class="chapter" data-level="11.2" data-path="all-dataset.html"><a href="all-dataset.html#histoire-de-vie-hdv2003"><i class="fa fa-check"></i><b>11.2</b> Histoire de vie (hdv2003)</a></li>
-<li class="chapter" data-level="11.3" data-path="all-dataset.html"><a href="all-dataset.html#nyc-flights-2013"><i class="fa fa-check"></i><b>11.3</b> NYC Flights 2013</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="all-dataset.html"><a href="all-dataset.html#flights"><i class="fa fa-check"></i><b>11.3.1</b> Flights</a></li>
-<li class="chapter" data-level="11.3.2" data-path="all-dataset.html"><a href="all-dataset.html#airlines"><i class="fa fa-check"></i><b>11.3.2</b> Airlines</a></li>
-<li class="chapter" data-level="11.3.3" data-path="all-dataset.html"><a href="all-dataset.html#airports"><i class="fa fa-check"></i><b>11.3.3</b> Airports</a></li>
-<li class="chapter" data-level="11.3.4" data-path="all-dataset.html"><a href="all-dataset.html#weather"><i class="fa fa-check"></i><b>11.3.4</b> Weather</a></li>
-<li class="chapter" data-level="11.3.5" data-path="all-dataset.html"><a href="all-dataset.html#planes"><i class="fa fa-check"></i><b>11.3.5</b> Planes</a></li>
+<li class="chapter" data-level="11" data-path="entrainement.html"><a href="entrainement.html"><i class="fa fa-check"></i><b>11</b> S’entrainer</a><ul>
+<li class="chapter" data-level="11.1" data-path="entrainement.html"><a href="entrainement.html#tp1"><i class="fa fa-check"></i><b>11.1</b> TP1</a></li>
+<li class="chapter" data-level="11.2" data-path="entrainement.html"><a href="entrainement.html#tp2"><i class="fa fa-check"></i><b>11.2</b> TP2</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>11.4</b> Google</a></li>
-<li class="chapter" data-level="11.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>11.5</b> Pokemon</a></li>
-<li class="chapter" data-level="11.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>11.6</b> Star Wars</a></li>
+<li class="chapter" data-level="12" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>12</b> Jeux de données utilisés</a><ul>
+<li class="chapter" data-level="12.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>12.1</b> Iris</a></li>
+<li class="chapter" data-level="12.2" data-path="all-dataset.html"><a href="all-dataset.html#histoire-de-vie-hdv2003"><i class="fa fa-check"></i><b>12.2</b> Histoire de vie (hdv2003)</a></li>
+<li class="chapter" data-level="12.3" data-path="all-dataset.html"><a href="all-dataset.html#nyc-flights-2013"><i class="fa fa-check"></i><b>12.3</b> NYC Flights 2013</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="all-dataset.html"><a href="all-dataset.html#flights"><i class="fa fa-check"></i><b>12.3.1</b> Flights</a></li>
+<li class="chapter" data-level="12.3.2" data-path="all-dataset.html"><a href="all-dataset.html#airlines"><i class="fa fa-check"></i><b>12.3.2</b> Airlines</a></li>
+<li class="chapter" data-level="12.3.3" data-path="all-dataset.html"><a href="all-dataset.html#airports"><i class="fa fa-check"></i><b>12.3.3</b> Airports</a></li>
+<li class="chapter" data-level="12.3.4" data-path="all-dataset.html"><a href="all-dataset.html#weather"><i class="fa fa-check"></i><b>12.3.4</b> Weather</a></li>
+<li class="chapter" data-level="12.3.5" data-path="all-dataset.html"><a href="all-dataset.html#planes"><i class="fa fa-check"></i><b>12.3.5</b> Planes</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>12</b> Bibliographie</a></li>
+<li class="chapter" data-level="12.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>12.4</b> Google</a></li>
+<li class="chapter" data-level="12.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>12.5</b> Pokemon</a></li>
+<li class="chapter" data-level="12.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>12.6</b> Star Wars</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>13</b> Bibliographie</a></li>
 </ul>
 
       </nav>
@@ -314,9 +321,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>R n’est pas prévu pour la saisie de données, mais il bénéficie de nombreuses fonctions et packages permettant l’import de données depuis un grand nombre de formats. Seuls les plus courants seront abordés ici.</p>
 <p><br></p>
 <p>Si votre fichier CSV suit un format CSV standard (c’est le cas s’il a été exporté depuis LibreOffice par exemple), avec des champs séparés par des virgules, vous pouvez utiliser la fonction <code>read.csv</code> en lui passant en argument le chemin et le nom du fichier. Cette fonction est issue du package <em>utils</em> chargé par défaut à chaque ouverture d’une session RStudio.</p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb315-1" title="1">dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="first-import.html#cb314-1"></a>dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv&quot;</span>)</span></code></pre></div>
 <p>Il existe plusieurs variantes à la fonction <code>read.csv</code>, la différence réside dans les arguments par défaut. Voir l’aide pour plus d’information :</p>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb316-1" title="1"><span class="kw">help</span>(<span class="st">&quot;read.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="first-import.html#cb315-1"></a><span class="kw">help</span>(<span class="st">&quot;read.csv&quot;</span>)</span></code></pre></div>
 <p>Dans le package <em>utils</em>, chaque fonction dispose de plusieurs arguments, parmi lesquels :</p>
 <ul>
 <li><code>file</code> indique le chemin d’accès au fichier</li>
@@ -329,10 +336,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><br></p>
 <p>Il peut arriver, notamment sous Windows, que l’encodage des caractères accentués ne soit pas correct au moment de l’importation. On peut alors spécifier manuellement l’encodage avec cet argument</p>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" title="1">dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb317-2" title="2">              <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>,</a>
-<a class="sourceLine" id="cb317-3" title="3">              <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">na.strings =</span> <span class="kw">c</span>(<span class="ot">NA</span>,<span class="st">&quot;NULL&quot;</span>,<span class="st">&quot;None&quot;</span>),</a>
-<a class="sourceLine" id="cb317-4" title="4">              <span class="dt">encoding =</span> <span class="st">&quot;Latin-1&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="first-import.html#cb316-1"></a>dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv&quot;</span>,</span>
+<span id="cb316-2"><a href="first-import.html#cb316-2"></a>              <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb316-3"><a href="first-import.html#cb316-3"></a>              <span class="dt">row.names =</span> <span class="dv">1</span>, <span class="dt">na.strings =</span> <span class="kw">c</span>(<span class="ot">NA</span>,<span class="st">&quot;NULL&quot;</span>,<span class="st">&quot;None&quot;</span>),</span>
+<span id="cb316-4"><a href="first-import.html#cb316-4"></a>              <span class="dt">encoding =</span> <span class="st">&quot;Latin-1&quot;</span>)</span></code></pre></div>
 </div>
 <div id="interface-interactive-dimport-de-fichiers" class="section level2">
 <h2><span class="header-section-number">4.2</span> Interface interactive d’import de fichiers</h2>
@@ -359,15 +366,15 @@ Cette manière de faire permet “d’automatiser” l’importation des donnée
 <h2><span class="header-section-number">4.3</span> Modifier le répertoire actif</h2>
 <!-- Etant dans un R Project, les fonctions getwd() et setwd() ne fonctionnent pas. Ainsi pour illustrer les exemples, j'utilise quelques pirouettes -->
 <p>La fonction <code>getwd()</code> permet d’afficher le répertoire actif. En général, le chemin proposé est similaire à celui ci :</p>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb318-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb319-1" title="1"><span class="st">&quot;C:/Users/anthony.sardellitti/Documents&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="first-import.html#cb317-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="first-import.html#cb318-1"></a><span class="st">&quot;C:/Users/anthony.sardellitti/Documents&quot;</span></span></code></pre></div>
 <pre><code>## [1] &quot;C:/Users/anthony.sardellitti/Documents&quot;</code></pre>
 <p>Il est possible de modifier ce chemin. Cela permet notamment d’éviter de saisir le chemin complet d’un fichier de données à l’importation :</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb321-1" title="1">dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="first-import.html#cb320-1"></a>dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset/Titanic.csv&quot;</span>)</span></code></pre></div>
 <p>Pour modifier le répertoire courant, on utilise la fonction <code>setwd()</code>tel que :</p>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb322-1" title="1"><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="first-import.html#cb321-1"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset&quot;</span>)</span></code></pre></div>
 <p>On observe que le chemin a été modifié :</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="first-import.html#cb322-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R/dataset&quot;</code></pre>
 <p>On peut également faire la même opération en cliquant sur <strong>Session</strong>, puis <strong>Set Working Directory</strong> et <strong>Choose Directory</strong>.</p>
 <p>
@@ -378,25 +385,25 @@ Cette manière de faire permet “d’automatiser” l’importation des donnée
 <img src="img/setwd_files.png" />
 </p>
 <p>On peut donc importer les fichiers présents dans ce répertoire sans préciser leur chemin.</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" title="1">dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Titanic.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="first-import.html#cb324-1"></a>dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Titanic.csv&quot;</span>)</span></code></pre></div>
 <p>Dans la suite de ce livre, le répertoire actif sera :</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb326-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="first-import.html#cb325-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;C:/Users/anthony.sardellitti/Programmation_Statistique_R&quot;</code></pre>
 <p>
 <img src="img/setwd_files_2.png" />
 </p>
 <p>Cela modifiera quelques peu la définition des chemins des fichiers que nous importerons tels que :</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" title="1">dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/Titanic.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="first-import.html#cb327-1"></a>dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/Titanic.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="import-depuis-un-fichier-excel" class="section level2">
 <h2><span class="header-section-number">4.4</span> Import depuis un fichier Excel</h2>
 <p>L’extension <code>readxl</code>, qui fait également partie du <em>tidyverse</em>, permet d’importer des données directement depuis un fichier au format <code>xls</code>ou <code>xlsx</code>.</p>
 <p>Elle ne fait pas partie du “coeur” du <em>tidyverse</em>, il faut donc la charger explicitement avec :</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" title="1"><span class="kw">library</span>(readxl)</a></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="first-import.html#cb328-1"></a><span class="kw">library</span>(readxl)</span></code></pre></div>
 <p>On peut alors utiliser la fonction <code>read_excel</code> en lui spécifiant le nom du fichier :</p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" title="1">dataset &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path  =</span> <span class="st">&quot;./dataset/Titanic.xlsx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="first-import.html#cb329-1"></a>dataset &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path  =</span> <span class="st">&quot;./dataset/Titanic.xlsx&quot;</span>)</span></code></pre></div>
 <p>Il est possible de spécifier la feuille et la plage de cellules que l’on souhaite importer avec les arguments <code>sheet</code> et <code>range</code> :</p>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" title="1">d &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path  =</span> <span class="st">&quot;./dataset/Titanic.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;Feuil1&quot;</span>, <span class="dt">range =</span> <span class="st">&quot;A1:G1314&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="first-import.html#cb330-1"></a>d &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="dt">path  =</span> <span class="st">&quot;./dataset/Titanic.xlsx&quot;</span>, <span class="dt">sheet =</span> <span class="st">&quot;Feuil1&quot;</span>, <span class="dt">range =</span> <span class="st">&quot;A1:G1314&quot;</span>)</span></code></pre></div>
 <p>Comme pour l’import de fichiers texte, une interface interactive d’import de fichiers Excel est disponible dans RStudio dans l’onglet <em>Environment</em>. Pour y accéder, cliquez sur <em>Import Dataset</em> puis <em>From Excel…</em>.</p>
 <p>
 <img src="img/import_excel.png" title="fig:" alt="Dialogue d’importation d’un fichier Excel" />
@@ -421,9 +428,9 @@ Cette manière de faire permet “d’automatiser” l’importation des donnée
 <h3><span class="header-section-number">4.5.2</span> Sauvegarder des objets</h3>
 <p>Une autre manière de sauvegarder des données est de les enregistrer au format <code>RData</code>. Ce format propre à R est compact, rapide, et permet d’enregistrer plusieurs objets R, quel que soit leur type, dans un même fichier.</p>
 <p>Pour enregistrer des objets, il suffit d’utiliser la fonction <code>save</code> et de lui fournir la liste des objets à sauvegarder et le nom du fichier :</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb332-1" title="1"><span class="kw">save</span>(<span class="dt">... =</span> d, <span class="dt">file =</span> <span class="st">&quot;fichier.RData&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="first-import.html#cb331-1"></a><span class="kw">save</span>(<span class="dt">... =</span> d, <span class="dt">file =</span> <span class="st">&quot;fichier.RData&quot;</span>)</span></code></pre></div>
 <p>Pour charger des objets préalablement enregistrés, utiliser <code>load</code> :</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" title="1"><span class="kw">load</span>(<span class="dt">file =</span> <span class="st">&quot;fichier.RData&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="first-import.html#cb332-1"></a><span class="kw">load</span>(<span class="dt">file =</span> <span class="st">&quot;fichier.RData&quot;</span>)</span></code></pre></div>
 <p>Les objets <code>d</code>devrait alors apparaître dans votre environnement.</p>
 <p><strong>Attention</strong>, quand on utilise <code>load</code>, les objets chargés sont importés directement dans l’environnement en cours avec leur nom d’origine. Si d’autres objets du même nom existaient déjà, ils sont écrasés sans avertissement.</p>
 </div>
@@ -1726,21 +1733,21 @@ PBI
 <ol style="list-style-type: lower-alpha">
 <li>Importez le jeu de données <code>fligths.csv</code>. Attention, en réalité ce jeu de données est issu du package <em>nycflights13</em></li>
 </ol>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb334-1" title="1">flights &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/flights.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="first-import.html#cb333-1"></a>flights &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./dataset/flights.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Combien de lignes, colonnes sont présentes dans cette table ?</li>
 </ol>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" title="1"><span class="kw">dim</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="first-import.html#cb334-1"></a><span class="kw">dim</span>(<span class="dt">x =</span> flights)</span></code></pre></div>
 <pre><code>## [1] 336776     19</code></pre>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb337-1" title="1"><span class="co">#ou</span></a>
-<a class="sourceLine" id="cb337-2" title="2"></a>
-<a class="sourceLine" id="cb337-3" title="3"><span class="kw">ncol</span>(<span class="dt">x =</span> flights) ; <span class="kw">nrow</span>(<span class="dt">x =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="first-import.html#cb336-1"></a><span class="co">#ou</span></span>
+<span id="cb336-2"><a href="first-import.html#cb336-2"></a></span>
+<span id="cb336-3"><a href="first-import.html#cb336-3"></a><span class="kw">ncol</span>(<span class="dt">x =</span> flights) ; <span class="kw">nrow</span>(<span class="dt">x =</span> flights)</span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
 <pre><code>## [1] 336776</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Affichez le nom des colonnes</li>
 </ol>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb340-1" title="1"><span class="kw">colnames</span>(<span class="dt">x =</span> flights) <span class="co">#fonctionne aussi avec names(flights)</span></a></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="first-import.html#cb339-1"></a><span class="kw">colnames</span>(<span class="dt">x =</span> flights) <span class="co">#fonctionne aussi avec names(flights)</span></span></code></pre></div>
 <pre><code>##  [1] &quot;year&quot;           &quot;month&quot;          &quot;day&quot;            &quot;dep_time&quot;      
 ##  [5] &quot;sched_dep_time&quot; &quot;dep_delay&quot;      &quot;arr_time&quot;       &quot;sched_arr_time&quot;
 ##  [9] &quot;arr_delay&quot;      &quot;carrier&quot;        &quot;flight&quot;         &quot;tailnum&quot;       
@@ -1749,79 +1756,79 @@ PBI
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Affichez les 10 premières lignes dans une vue</li>
 </ol>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb342-1" title="1"><span class="kw">View</span>(<span class="kw">head</span>(<span class="dt">x =</span> flights, <span class="dt">n =</span> <span class="dv">10</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="first-import.html#cb341-1"></a><span class="kw">View</span>(<span class="kw">head</span>(<span class="dt">x =</span> flights, <span class="dt">n =</span> <span class="dv">10</span>))</span></code></pre></div>
 <p><strong>Exercice 2</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li>Affichez un résumé des données</li>
 </ol>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" title="1"><span class="kw">summary</span>(<span class="dt">object =</span> flights)</a></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="first-import.html#cb342-1"></a><span class="kw">summary</span>(<span class="dt">object =</span> flights)</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Affichez le type des colonnes</li>
 </ol>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb344-1" title="1"><span class="kw">str</span>(flights)</a></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="first-import.html#cb343-1"></a><span class="kw">str</span>(flights)</span></code></pre></div>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Transformer la variable <code>flight</code>en caractère</li>
 </ol>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb345-1" title="1">flights<span class="op">$</span>flight &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="dt">x =</span> flights<span class="op">$</span>flight)</a>
-<a class="sourceLine" id="cb345-2" title="2"><span class="kw">class</span>(<span class="dt">x =</span> flights<span class="op">$</span>flight )</a></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="first-import.html#cb344-1"></a>flights<span class="op">$</span>flight &lt;-<span class="st"> </span><span class="kw">as.character</span>(<span class="dt">x =</span> flights<span class="op">$</span>flight)</span>
+<span id="cb344-2"><a href="first-import.html#cb344-2"></a><span class="kw">class</span>(<span class="dt">x =</span> flights<span class="op">$</span>flight )</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Affichez les quartiles de la distribution de la variable <code>arr_delay</code></li>
 </ol>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" title="1"><span class="co">#Attention aux valeurs manquantes</span></a>
-<a class="sourceLine" id="cb347-2" title="2"><span class="kw">quantile</span>(<span class="dt">x =</span> flights<span class="op">$</span>arr_delay, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="first-import.html#cb346-1"></a><span class="co">#Attention aux valeurs manquantes</span></span>
+<span id="cb346-2"><a href="first-import.html#cb346-2"></a><span class="kw">quantile</span>(<span class="dt">x =</span> flights<span class="op">$</span>arr_delay, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>##   0%  25%  50%  75% 100% 
 ##  -86  -17   -5   14 1272</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Affichez les déciles de la distribution de la variable <code>distance</code></li>
 </ol>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb349-1" title="1"><span class="kw">quantile</span>(<span class="dt">x =</span> flights<span class="op">$</span>distance, <span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="first-import.html#cb348-1"></a><span class="kw">quantile</span>(<span class="dt">x =</span> flights<span class="op">$</span>distance, <span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.1</span>))</span></code></pre></div>
 <pre><code>##   0%  10%  20%  30%  40%  50%  60%  70%  80%  90% 100% 
 ##   17  214  427  544  733  872 1023 1096 1598 2446 4983</code></pre>
 <p><strong>Exercice 3</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li>Quel est l’aéroport avec le plus de départ en 2013 ?</li>
 </ol>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb351-1" title="1"><span class="kw">table</span>(<span class="dt">x =</span> flights<span class="op">$</span>origin)</a></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="first-import.html#cb350-1"></a><span class="kw">table</span>(<span class="dt">x =</span> flights<span class="op">$</span>origin)</span></code></pre></div>
 <pre><code>## x
 ##    EWR    JFK    LGA 
 ## 120835 111279 104662</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Avec la fonction <code>unique</code>, affichez le nombre de destinations différentes</li>
 </ol>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb353-1" title="1"><span class="kw">length</span>(<span class="dt">x =</span> <span class="kw">unique</span>(<span class="dt">x =</span> flights<span class="op">$</span>dest))</a></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="first-import.html#cb352-1"></a><span class="kw">length</span>(<span class="dt">x =</span> <span class="kw">unique</span>(<span class="dt">x =</span> flights<span class="op">$</span>dest))</span></code></pre></div>
 <pre><code>## [1] 105</code></pre>
 <p>Si la variable <code>dest</code> est de type <code>factor</code>, on peut simplement compter le nombre de <code>levels</code></p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb355-1" title="1"><span class="kw">is.factor</span>(flights<span class="op">$</span>dest) </a></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="first-import.html#cb354-1"></a><span class="kw">is.factor</span>(flights<span class="op">$</span>dest) </span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb357-1" title="1"><span class="kw">length</span>(<span class="kw">levels</span>(flights<span class="op">$</span>dest))</a></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="first-import.html#cb356-1"></a><span class="kw">length</span>(<span class="kw">levels</span>(flights<span class="op">$</span>dest))</span></code></pre></div>
 <pre><code>## [1] 105</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Proposez une représentation graphique adaptée pour la variable <code>arr_delay</code></li>
 </ol>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb359-1" title="1"><span class="kw">boxplot</span>(<span class="dt">x =</span> flights<span class="op">$</span>arr_delay, <span class="dt">horizontal =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb359-2" title="2">        <span class="dt">main =</span> <span class="st">&quot;Répartition des retards (en minutes)&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="first-import.html#cb358-1"></a><span class="kw">boxplot</span>(<span class="dt">x =</span> flights<span class="op">$</span>arr_delay, <span class="dt">horizontal =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb358-2"><a href="first-import.html#cb358-2"></a>        <span class="dt">main =</span> <span class="st">&quot;Répartition des retards (en minutes)&quot;</span>)</span></code></pre></div>
 <p><img src="index.html_files/figure-html/unnamed-chunk-194-1.png" width="1152" /></p>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Proposez une représentation graphique adaptée pour la variable <code>origin</code></li>
 </ol>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb360-1" title="1">count &lt;-<span class="st"> </span><span class="kw">table</span>(flights<span class="op">$</span>origin)</a>
-<a class="sourceLine" id="cb360-2" title="2"><span class="kw">pie</span>(<span class="dt">x =</span> count, <span class="dt">main =</span> <span class="st">&quot;Répartition des vols depuis l&#39;aéroport de départ&quot;</span>,</a>
-<a class="sourceLine" id="cb360-3" title="3">    <span class="dt">labels =</span> <span class="kw">paste</span>(<span class="kw">row.names</span>(count),<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>,count),<span class="dt">col =</span> <span class="kw">colors</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="first-import.html#cb359-1"></a>count &lt;-<span class="st"> </span><span class="kw">table</span>(flights<span class="op">$</span>origin)</span>
+<span id="cb359-2"><a href="first-import.html#cb359-2"></a><span class="kw">pie</span>(<span class="dt">x =</span> count, <span class="dt">main =</span> <span class="st">&quot;Répartition des vols depuis l&#39;aéroport de départ&quot;</span>,</span>
+<span id="cb359-3"><a href="first-import.html#cb359-3"></a>    <span class="dt">labels =</span> <span class="kw">paste</span>(<span class="kw">row.names</span>(count),<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>,count),<span class="dt">col =</span> <span class="kw">colors</span>())</span></code></pre></div>
 <p><img src="index.html_files/figure-html/unnamed-chunk-195-1.png" width="1152" /></p>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Proposez une représentation graphique adaptée pour la variable <code>dest</code></li>
 </ol>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb361-1" title="1">count &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="dt">x =</span> <span class="kw">table</span>(flights<span class="op">$</span>dest),<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb361-2" title="2"><span class="kw">barplot</span>(<span class="dt">height =</span> count, <span class="dt">main =</span> <span class="st">&quot;Nombre de vols pour chaque destination&quot;</span>,</a>
-<a class="sourceLine" id="cb361-3" title="3">        <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">cex.names =</span> <span class="fl">0.4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="first-import.html#cb360-1"></a>count &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="dt">x =</span> <span class="kw">table</span>(flights<span class="op">$</span>dest),<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb360-2"><a href="first-import.html#cb360-2"></a><span class="kw">barplot</span>(<span class="dt">height =</span> count, <span class="dt">main =</span> <span class="st">&quot;Nombre de vols pour chaque destination&quot;</span>,</span>
+<span id="cb360-3"><a href="first-import.html#cb360-3"></a>        <span class="dt">las =</span> <span class="dv">2</span>, <span class="dt">cex.names =</span> <span class="fl">0.4</span>)</span></code></pre></div>
 <p><img src="index.html_files/figure-html/unnamed-chunk-196-1.png" width="1152" /></p>
 <ol start="6" style="list-style-type: lower-alpha">
 <li>Même question, mais en affichant uniquement un top 10</li>
 </ol>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb362-1" title="1">count &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="dt">x =</span> <span class="kw">table</span>(flights<span class="op">$</span>dest),<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
-<a class="sourceLine" id="cb362-2" title="2"><span class="kw">barplot</span>(<span class="dt">height =</span> count, <span class="dt">main =</span> <span class="st">&quot;Nombre de vols pour chaque destination </span><span class="ch">\n</span><span class="st"> TOP 10&quot;</span>,</a>
-<a class="sourceLine" id="cb362-3" title="3">        <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20000</span>), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="first-import.html#cb361-1"></a>count &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="dt">x =</span> <span class="kw">table</span>(flights<span class="op">$</span>dest),<span class="dt">decreasing =</span> <span class="ot">TRUE</span>)[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</span>
+<span id="cb361-2"><a href="first-import.html#cb361-2"></a><span class="kw">barplot</span>(<span class="dt">height =</span> count, <span class="dt">main =</span> <span class="st">&quot;Nombre de vols pour chaque destination </span><span class="ch">\n</span><span class="st"> TOP 10&quot;</span>,</span>
+<span id="cb361-3"><a href="first-import.html#cb361-3"></a>        <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20000</span>), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="index.html_files/figure-html/unnamed-chunk-197-1.png" width="1152" /></p>
 
 </div>
@@ -1830,7 +1837,7 @@ PBI
 <div class="footnotes">
 <hr />
 <ol start="7">
-<li id="fn7"><p><code>feather</code> est un format compatible avec Python, R et Julia. Pour plus d’informations, voir <a href="https://github.com/wesm/feather" class="uri">https://github.com/wesm/feather</a><a href="first-import.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p><code>feather</code> est un format compatible avec Python, R et Julia. Pour plus d’informations, voir <a href="https://github.com/wesm/feather" class="uri">https://github.com/wesm/feather</a><a href="first-import.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
