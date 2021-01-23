@@ -1,6 +1,5 @@
 # Représentation Graphique {#graphique}
 
-
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #packages nécessaires pour les sorties
 library(knitr)
@@ -315,7 +314,7 @@ L'argument `labels` permet de renseigner les étiquettes du graphique. Si on sou
 tri_a_plat <- table(google$Type)
 tri_a_plat
 paste(rownames(tri_a_plat),tri_a_plat)
-pie(x = tri_a_plat, main = "Répartition du nombre d'applications par type",
+pie(x = tri_a_plat, main = "Repartition du nombre d'applications par type",
     col = ma_palette, labels = paste(rownames(tri_a_plat),tri_a_plat))
 ```
 
@@ -329,7 +328,7 @@ Même principe pour le diagramme en barre, on doit calculer un tri à plat dans 
 tri_a_plat <- table(google$Type)
 
 barplot(height = tri_a_plat, 
-        main = "Répartition du nombre d'applications par type",
+        main = "Repartition du nombre d'applications par type",
     col = colors()[c(45,99)], horiz = TRUE)
 ```
 
@@ -433,7 +432,7 @@ f. Construire un diagramme circulaire présentant la répartition du nombre de p
 count <- table(pokemon$is_legendary)
 par(mfrow = c(1,2))
 pie(count)
-pie(count, main = "Répartition pokemon \n légendaire ou non",
+pie(count, main = "Repartition pokemon \n legendaire ou non",
     col = c("yellow","blue"), 
     col.main = "blue", labels =
       paste(rownames(count),count))
@@ -448,7 +447,7 @@ par(mfrow = c(1,2))
 barplot(count_freq, legend = rownames(count_freq))
 
 barplot(count_freq, las = 2, xlab = "Nombre de pokemon",
-        main = "Nb pokemon par génération si légendaire", 
+        main = "Nb pokemon par generation si legendaire", 
         col = c("yellow","blue"), 
         legend = rownames(count_freq), beside = TRUE)
 ```
@@ -572,7 +571,7 @@ f. Construire un diagramme circulaire présentant la répartition du nombre de p
 count <- table(pokemon$is_legendary)
 par(mfrow = c(1,2))
 pie(count)
-pie(count, main = "Répartition pokemon \n légendaire ou non",
+pie(count, main = "Repartition pokemon \n legendaire ou non",
     col = c("yellow","blue"), 
     col.main = "blue", labels =
       paste(rownames(count),count))
@@ -587,7 +586,7 @@ par(mfrow = c(1,2))
 barplot(count_freq, legend = rownames(count_freq))
 
 barplot(count_freq, las = 2, xlab = "Nombre de pokemon",
-        main = "Nb pokemon par génération si légendaire", 
+        main = "Nb pokemon par generation si legendaire", 
         col = c("yellow","blue"), 
         legend = rownames(count_freq), beside = TRUE)
 ```
