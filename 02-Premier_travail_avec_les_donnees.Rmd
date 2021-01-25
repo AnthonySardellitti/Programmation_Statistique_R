@@ -277,7 +277,7 @@ On peut les calculer avec la fonction `quantile` :
 
 ```{r}
 ## Premier quartile
-quantile(x = d$age, probs =  = 0.25)
+quantile(x = d$age, probs = 0.25)
 ```
 
 ```{r}
