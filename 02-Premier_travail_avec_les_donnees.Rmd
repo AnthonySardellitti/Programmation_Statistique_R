@@ -277,12 +277,12 @@ On peut les calculer avec la fonction `quantile` :
 
 ```{r}
 ## Premier quartile
-quantile(x = d$age, prob = 0.25)
+quantile(x = d$age, probs =  = 0.25)
 ```
 
 ```{r}
 ## Troisième quartile
-quantile(x = d$age, prob = 0.75)
+quantile(x = d$age, probs = 0.75)
 ```
 
 L'argument `quantile` prend deux arguments principaux : le vecteur dont on veut calculer le quantile, et un argument `prob` qui indique quel quantile on souhaite obtenir. `prob` prend une valeur entre 0 et 1 : 0.5 est la médiane, 0.25 le premier quartile, 0.1 le premier décile, etc.
