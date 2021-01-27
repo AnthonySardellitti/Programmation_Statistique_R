@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2021-01-23" />
+<meta name="date" content="2021-01-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -789,8 +789,8 @@ Merc 280
 <p><strong>Exercice 4 : Création de nouvelles colonnes</strong></p>
 <ol style="list-style-type: lower-alpha">
 <li>La colonne <code>mpg</code> correspond au nombre de miles parcouru en 1 gallon (US). Cette mesure correspond en quelques sortes à la mesure de consommation de litres aux 100 km utilisée en France. Créer une colonne supplémentaire appelée <code>litres_au_100km</code> qui correspond à la conversion de la variable <code>mpg</code>(Miles/(US) gallon) en nombre de litres aux 100 kilomètres. Aidez-vous du guide des conversion disponible sur ce <a href="https://anglais-pratique.fr/index.php/rubriques/divers/101-mpg-l-100km">lien</a>.</li>
-<li>Construire une nouvelle colonne appelée <code>qsec_cut</code> qui est un découpage de la variable <code>qsec_cut</code> en 3 groupes.</li>
-<li>Construire une nouvelle colonne appelée <code>litres100km_group</code> pour distinguer deux groupes de voiture : celles qui consomment plus que la moyenne et celles qui consomment moins.</li>
+<li>Construire une nouvelle colonne appelée <code>qsec_cut</code> qui est un découpage de la variable <code>qsec</code> en 3 groupes (pas de restriction sur le nombre de classe).</li>
+<li>Construire une nouvelle colonne appelée <code>litres100km_group</code> pour distinguer deux groupes de voiture : celles qui consomment plus que la moyenne et celles qui consomment moins que la moyenne.</li>
 </ol>
 </div>
 <div id="tp2" class="section level2">
@@ -1512,9 +1512,9 @@ NA
 </ol>
 <p><strong>Exercice 3 : Tris et Selections</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="entrainement.html#cb646-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
-<span id="cb646-2"><a href="entrainement.html#cb646-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
-<span id="cb646-3"><a href="entrainement.html#cb646-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="entrainement.html#cb1-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
+<span id="cb1-2"><a href="entrainement.html#cb1-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb1-3"><a href="entrainement.html#cb1-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 251   2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Sélectionnez la colonne <code>nom</code> et <code>is_legendary</code>.</li>
@@ -1523,15 +1523,15 @@ NA
 <li>Sélectionnez toutes les colonnes sauf la dernière.</li>
 <li>Sélectionnez les colonnes 2,8,9 et 10.</li>
 <li>Sélectionnez les lignes 20 à 30 et 80 à 100.</li>
-<li>Triez le dataset par ordre alphabétique et afficher le <code>nom</code> du pokemon en première position.</li>
-<li>Triez le dataset par <code>weight_kg</code> en ordre <strong>décroissant</strong>, et afficher le <code>nom</code>du pokemon en première position.</li>
-<li>Triez le dataset par <code>attack</code> en ordre <strong>décroissant</strong> puis par <code>speed</code> en ordre <strong>croissant</strong>, et afficher le <code>nom</code> des 10 premiers pokemons.</li>
+<li>Triez le dataset par ordre alphabétique et afficher le <code>nom</code> du pokemon dela première ligne.</li>
+<li>Triez le dataset par <code>weight_kg</code> en ordre <strong>décroissant</strong>, et afficher le <code>nom</code>du pokemon de la première ligne</li>
+<li>Triez le dataset par <code>attack</code> en ordre <strong>décroissant</strong> puis par <code>speed</code> en ordre <strong>croissant</strong>, et afficher le <code>nom</code> des pokemons des 10 premières lignes.</li>
 </ol>
 <p><strong>Exercice 4 : Tris et Filtres</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Pour faciliter la lecture, sélectionnez la colonne <code>nom</code>et les colonnes concernées par le filtre. Exemple :</p>
-<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="entrainement.html#cb648-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
-<span id="cb648-2"><a href="entrainement.html#cb648-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
-<span id="cb648-3"><a href="entrainement.html#cb648-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="entrainement.html#cb3-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
+<span id="cb3-2"><a href="entrainement.html#cb3-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
+<span id="cb3-3"><a href="entrainement.html#cb3-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 20  2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Filtrez sur les pokemons qui ont 150 ou plus d’<code>attack</code> puis trier le résultat par ordre décroissant d’<code>attack</code>.</li>
@@ -1544,9 +1544,9 @@ NA
 </ol>
 <p><strong>Exercice 5 : Agregations</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb650"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb650-1"><a href="entrainement.html#cb650-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
-<span id="cb650-2"><a href="entrainement.html#cb650-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
-<span id="cb650-3"><a href="entrainement.html#cb650-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="entrainement.html#cb5-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
+<span id="cb5-2"><a href="entrainement.html#cb5-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
+<span id="cb5-3"><a href="entrainement.html#cb5-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 2 2</code></pre>
 <table>
 <thead>

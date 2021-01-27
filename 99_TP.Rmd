@@ -60,8 +60,8 @@ d. Construire un diagramme circulaire de la répartition de la variable `vs`.
 **Exercice 4 : Création de nouvelles colonnes**
 
 a. La colonne `mpg` correspond au nombre de miles parcouru en 1 gallon (US). Cette mesure correspond en quelques sortes à la mesure de consommation de litres aux 100 km utilisée en France. Créer une colonne supplémentaire appelée `litres_au_100km` qui correspond à la conversion de la variable `mpg`(Miles/(US) gallon) en nombre de litres aux 100 kilomètres. Aidez-vous du guide des conversion disponible sur ce [lien](https://anglais-pratique.fr/index.php/rubriques/divers/101-mpg-l-100km).
-b. Construire une nouvelle colonne appelée `qsec_cut` qui est un découpage de la variable `qsec_cut` en 3 groupes.
-c. Construire une nouvelle colonne appelée `litres100km_group` pour distinguer deux groupes de voiture : celles qui consomment plus que la moyenne et celles qui consomment moins.
+b. Construire une nouvelle colonne appelée `qsec_cut` qui est un découpage de la variable `qsec` en 3 groupes (pas de restriction sur le nombre de classe).
+c. Construire une nouvelle colonne appelée `litres100km_group` pour distinguer deux groupes de voiture : celles qui consomment plus que la moyenne et celles qui consomment moins que la moyenne.
 
 ## TP2
 
@@ -124,9 +124,9 @@ c. Sélectionnez les 10 premières lignes et toutes les colonnes.
 d. Sélectionnez toutes les colonnes sauf la dernière.
 e. Sélectionnez les colonnes 2,8,9 et 10.
 f. Sélectionnez les lignes 20 à 30 et 80 à 100.
-g. Triez le dataset  par ordre alphabétique et afficher le `nom` du pokemon en première position.
-h. Triez le dataset  par `weight_kg` en ordre **décroissant**, et afficher le `nom`du pokemon en première position.
-i. Triez le dataset  par `attack` en ordre **décroissant** puis par `speed` en ordre **croissant**, et afficher le `nom` des 10 premiers pokemons.
+g. Triez le dataset  par ordre alphabétique et afficher le `nom` du pokemon dela première ligne.
+h. Triez le dataset  par `weight_kg` en ordre **décroissant**, et afficher le `nom`du pokemon de la première ligne
+i. Triez le dataset  par `attack` en ordre **décroissant** puis par `speed` en ordre **croissant**, et afficher le `nom` des pokemons des 10 premières lignes.
 
 
 **Exercice 4 : Tris et Filtres**
