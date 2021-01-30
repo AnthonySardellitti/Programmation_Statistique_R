@@ -972,3 +972,13 @@ pmax(maths, anglais, sport)
 ```
 
 `pmin` et `pmax` renvoient les minimum et maximum "parallèles" des trois vecteurs passés en argument. Ainsi, `pmin` renvoie pour chaque élève la note minimale dans les trois matières, et `pmax` la note maximale.
+
+
+## Testez vos connaissances !
+
+<p>
+![Quiz](./img/kahoot.png)
+</p>
+
+Testez vos connaissance sur ce chapitre avec avec ce quiz (10 min) en [cliquant ici](https://kahoot.it/challenge/09144488?challenge-id=93264293-c5c0-4eb8-8381-2ba18c649ca3_1611969582606).
+
