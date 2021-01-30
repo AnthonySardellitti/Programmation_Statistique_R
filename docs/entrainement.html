@@ -266,11 +266,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8.4" data-path="dplyr.html"><a href="dplyr.html#la-fonction-case_when"><i class="fa fa-check"></i><b>9.8.4</b> La fonction <code>case_when</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="chaines.html"><a href="chaines.html"><i class="fa fa-check"></i><b>10</b> Manipuler du texte</a><ul>
+<li class="chapter" data-level="10" data-path="chaines.html"><a href="chaines.html"><i class="fa fa-check"></i><b>10</b> Manipuler le texte et les dates</a><ul>
 <li class="chapter" data-level="10.1" data-path="chaines.html"><a href="chaines.html#manipulation-des-chaînes-de-caractères"><i class="fa fa-check"></i><b>10.1</b> Manipulation des chaînes de caractères</a><ul>
 <li class="chapter" data-level="10.1.1" data-path="chaines.html"><a href="chaines.html#concaténer-des-chaînes"><i class="fa fa-check"></i><b>10.1.1</b> Concaténer des chaînes</a></li>
+<li class="chapter" data-level="10.1.2" data-path="chaines.html"><a href="chaines.html#majuscule-et-minuscule"><i class="fa fa-check"></i><b>10.1.2</b> Majuscule et minuscule</a></li>
+<li class="chapter" data-level="10.1.3" data-path="chaines.html"><a href="chaines.html#longueur-dune-chaîne"><i class="fa fa-check"></i><b>10.1.3</b> Longueur d’une chaîne</a></li>
+<li class="chapter" data-level="10.1.4" data-path="chaines.html"><a href="chaines.html#extraction-de-sous-chaînes"><i class="fa fa-check"></i><b>10.1.4</b> Extraction de sous-chaînes</a></li>
+<li class="chapter" data-level="10.1.5" data-path="chaines.html"><a href="chaines.html#remplacement-de-chaînes"><i class="fa fa-check"></i><b>10.1.5</b> Remplacement de chaînes</a></li>
+<li class="chapter" data-level="10.1.6" data-path="chaines.html"><a href="chaines.html#décomposition-dune-chaîne"><i class="fa fa-check"></i><b>10.1.6</b> Décomposition d’une chaîne</a></li>
+<li class="chapter" data-level="10.1.7" data-path="chaines.html"><a href="chaines.html#recherche-de-sous-chaîne"><i class="fa fa-check"></i><b>10.1.7</b> Recherche de sous-chaîne</a></li>
+<li class="chapter" data-level="10.1.8" data-path="chaines.html"><a href="chaines.html#aller-plus-loin-1"><i class="fa fa-check"></i><b>10.1.8</b> Aller plus loin</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="chaines.html"><a href="chaines.html#manipulation-des-dates"><i class="fa fa-check"></i><b>10.2</b> Manipulation des dates</a></li>
+<li class="chapter" data-level="10.2" data-path="chaines.html"><a href="chaines.html#manipulation-des-dates"><i class="fa fa-check"></i><b>10.2</b> Manipulation des dates</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="chaines.html"><a href="chaines.html#les-dates"><i class="fa fa-check"></i><b>10.2.1</b> Les dates</a></li>
+<li class="chapter" data-level="10.2.2" data-path="chaines.html"><a href="chaines.html#lhorloge"><i class="fa fa-check"></i><b>10.2.2</b> L’horloge</a></li>
+<li class="chapter" data-level="10.2.3" data-path="chaines.html"><a href="chaines.html#calcul-sur-les-dates"><i class="fa fa-check"></i><b>10.2.3</b> Calcul sur les dates</a></li>
+<li class="chapter" data-level="10.2.4" data-path="chaines.html"><a href="chaines.html#aller-plus-loin-2"><i class="fa fa-check"></i><b>10.2.4</b> Aller plus loin</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="jointures.html"><a href="jointures.html"><i class="fa fa-check"></i><b>11</b> Jointures</a><ul>
 <li class="chapter" data-level="11.1" data-path="jointures.html"><a href="jointures.html#principe-1"><i class="fa fa-check"></i><b>11.1</b> Principe</a></li>
@@ -1520,9 +1532,9 @@ NA
 </ol>
 <p><strong>Exercice 3 : Tris et Selections</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="entrainement.html#cb1-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
-<span id="cb1-2"><a href="entrainement.html#cb1-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
-<span id="cb1-3"><a href="entrainement.html#cb1-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb699"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb699-1"><a href="entrainement.html#cb699-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
+<span id="cb699-2"><a href="entrainement.html#cb699-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb699-3"><a href="entrainement.html#cb699-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 251   2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Sélectionnez la colonne <code>nom</code> et <code>is_legendary</code>.</li>
@@ -1537,9 +1549,9 @@ NA
 </ol>
 <p><strong>Exercice 4 : Tris et Filtres</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Pour faciliter la lecture, sélectionnez la colonne <code>nom</code>et les colonnes concernées par le filtre. Exemple :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="entrainement.html#cb3-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
-<span id="cb3-2"><a href="entrainement.html#cb3-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
-<span id="cb3-3"><a href="entrainement.html#cb3-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb701"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb701-1"><a href="entrainement.html#cb701-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
+<span id="cb701-2"><a href="entrainement.html#cb701-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
+<span id="cb701-3"><a href="entrainement.html#cb701-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 20  2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Filtrez sur les pokemons qui ont 150 ou plus d’<code>attack</code> puis trier le résultat par ordre décroissant d’<code>attack</code>.</li>
@@ -1552,9 +1564,9 @@ NA
 </ol>
 <p><strong>Exercice 5 : Agregations</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="entrainement.html#cb5-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
-<span id="cb5-2"><a href="entrainement.html#cb5-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
-<span id="cb5-3"><a href="entrainement.html#cb5-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb703"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb703-1"><a href="entrainement.html#cb703-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
+<span id="cb703-2"><a href="entrainement.html#cb703-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
+<span id="cb703-3"><a href="entrainement.html#cb703-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 2 2</code></pre>
 <table>
 <thead>
