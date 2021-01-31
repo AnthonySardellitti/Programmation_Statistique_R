@@ -14,17 +14,17 @@ Ce TP reprend les notions évoquées dans les chapitres 2 et 3.
 On utilise  le dataset `mtcars` qui décrit les statistiques de voitures.
 Le dataset est présent dans le package *datasets* automatiquement installé sur R. Voici une description des données :
 
--	mpg	: Miles/(US) gallon
--	cyl	: Number of cylinders
--	disp :	Displacement (cu.in.)
--	hp :	Gross horsepower
--	drat :	Rear axle ratio
--	wt :	Weight (1000 lbs)
--	qsec :	1/4 mile time
--	vs :	Engine (0 = V-shaped, 1 = straight)
--	am :	Transmission (0 = automatic, 1 = manual)
--	gear :	Number of forward gears
--	carb :	Number of carburetors
+-	`mpg`	: Miles/(US) gallon
+-	`cyl`	: Number of cylinders
+-	`disp` :	Displacement (cu.in.)
+-	`hp` :	Gross horsepower
+-	`drat` :	Rear axle ratio
+-	`wt` :	Weight (1000 lbs)
+-	`qsec` :	1/4 mile time
+-	`vs` :	Engine (0 = V-shaped, 1 = straight)
+-	`am` :	Transmission (0 = automatic, 1 = manual)
+-	`gear` :	Number of forward gears
+-	`carb` :	Number of carburetors
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 df <- mtcars
@@ -209,28 +209,34 @@ kable(head(AmongUs,n = 20), "html") %>% kable_styling("striped", font_size = tai
 
 **Exercice 1 : Créer le jeu de données**
 
-a. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Il est recommandé d'utiliser une boucle. 
+a. Télécharger le fichier compréssé `AmongUs.7z` et dézipé le. La fonction `list.files()` devrait vous aider à extraire l'ensemble des noms de fichiers présents dans un répertoire (voir exemple ci-dessous).
 
-b. Modifier votre boucle afin d'ajouter une colonne dans le data frame final qui renseigne le numéro d'utilisateur disponible dans le nom de chaque fichier csv.
+```{r}
+list.files(path = "./dataset/", pattern="*.csv", full.names=FALSE)
+```
 
-c. Stocker le data frame final dans un objet appelé *AmongUs*.
+b. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Utilisez une boucle qui parcourt chaque fichier csv utilisateur. 
 
-d. Supprimer la colonne `Rank.Change` qui est inutile.
+c. Modifier votre boucle afin d'ajouter une colonne dans le data frame final qui renseigne le numéro d'utilisateur disponible dans le nom de chaque fichier csv.
 
-e. Construire une fonction appelé `manage_na()` qui prend en entrée un vecteur `x` correspondant aux données et un vecteur `string_to_na` correspondant à la liste des chaînes de caractères qu'on souhaite transformer en `NA`. La fonction retournera le vecteur modifié.
+d. Stocker le data frame final dans un objet appelé *AmongUs*.
 
-f. Construire une boucle qui parcourt toutes les colonnes du data frame *AmongUs* et qui remplace les champs avec des `-` et `N/A` par des valeurs manquantes `NA`. Utilisez la fonction `manage_na()` créée précédemment.
+e. Supprimer la colonne `Rank.Change` qui est inutile.
+
+f. Construire une fonction appelé `manage_na()` qui prend en entrée un vecteur `x` correspondant aux données et un vecteur `string_to_na` correspondant à la liste des chaînes de caractères qu'on souhaite transformer en `NA`. La fonction retournera le vecteur modifié.
+
+g. Construire une boucle qui parcourt toutes les colonnes du data frame *AmongUs* et qui remplace les champs avec des `-` et `N/A` par des valeurs manquantes `NA`. Utilisez la fonction `manage_na()` créée précédemment.
 
 
 **Exercice 2 : Manipuler le texte et les dates**
 
 a. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Date` avec la date de la partie au format *yyyy-mm-dd*. Vérifiez que la colonne est bien en type *Date*.
 
-b. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Heure` avec **l'heure uniquement** de la partie. Attention au format *am* et *pm*.
+b. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Heure` avec **l'heure uniquement** de la partie. Attention au format *am* et *pm*. Veillez à ce que le type de cette colonne soit `numeric`.
 
 c. À partir de la colonne `Game Length`, construire une colonne appelée `Game.Length.sec` correspondant à la durée de la partie en secondes
 
-d. À partir de la colonne `Time.to.complete.all.tasks`, construire une colonne appelée `Complete.all.tasks.sec` correspondant au temps pour compléter toutes les tâches en secondes.
+d. À partir de la colonne `Time.to.complete.all.tasks`, construire une colonne appelée `Complete.all.tasks.sec` correspondant à la durée en secondes pour compléter toutes les tâches.
 
 e. À partir de la colonne `Region.Game.Code` construire une colonne appelée `Region` correspondant au nom du continent uniquement. Veillez à ce que cette nouvelle colonne soit en type `factor`.
 
@@ -269,5 +275,8 @@ h. Construire **un graphique adapté** permettant de visualiser pour chaque part
 
 i. Construire **un graphique adapté** permettant de visualiser la distribution du temps des parties selon la `Region`.
 
-j. Constuire **un graphique adapté** permettant de visualiser les variations de taux de succès des imposteurs selon les régions serveurs.
+j. Construire **un graphique adapté** permettant de visualiser l'évolution du nombre de parties jouées selon l'heure de la journée.
 
+k. Constuire **un graphique adapté** permettant de visualiser les variations de taux de succès des imposteurs selon les régions serveurs.
+
+l. Constuire **un graphique adapté** permettant de visualiser les taux de succès  des 5 meilleurs utilisateurs.
