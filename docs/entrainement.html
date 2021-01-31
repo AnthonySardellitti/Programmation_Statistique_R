@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2021-01-30" />
+<meta name="date" content="2021-01-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -300,6 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="entrainement.html"><a href="entrainement.html"><i class="fa fa-check"></i><b>12</b> S’entrainer</a><ul>
 <li class="chapter" data-level="12.1" data-path="entrainement.html"><a href="entrainement.html#tp1"><i class="fa fa-check"></i><b>12.1</b> TP1</a></li>
 <li class="chapter" data-level="12.2" data-path="entrainement.html"><a href="entrainement.html#tp2"><i class="fa fa-check"></i><b>12.2</b> TP2</a></li>
+<li class="chapter" data-level="12.3" data-path="entrainement.html"><a href="entrainement.html#tp3"><i class="fa fa-check"></i><b>12.3</b> TP3</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>13</b> Jeux de données utilisés</a><ul>
 <li class="chapter" data-level="13.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>13.1</b> Iris</a></li>
@@ -815,6 +816,9 @@ Merc 280
 </div>
 <div id="tp2" class="section level2">
 <h2><span class="header-section-number">12.2</span> TP2</h2>
+<p>
+<img src="img/pokemon.jpg" title="fig:" alt="Pokemo*" />
+</p>
 <p>Ce TP reprend les notions évoquées dans les chapitres 2 à 5.
 On utilise le fichier <code>pokemon.xlsx</code> qui décrit les statistiques des pokemon des deux premières générations.
 Le fichier est issu du site <a href="https://www.kaggle.com/rounakbanik/pokemon">Kaggle</a>. Il a été adapté pour ce TP. Voici une description des données :</p>
@@ -1532,9 +1536,9 @@ NA
 </ol>
 <p><strong>Exercice 3 : Tris et Selections</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb699"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb699-1"><a href="entrainement.html#cb699-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
-<span id="cb699-2"><a href="entrainement.html#cb699-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
-<span id="cb699-3"><a href="entrainement.html#cb699-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="entrainement.html#cb1-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
+<span id="cb1-2"><a href="entrainement.html#cb1-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb1-3"><a href="entrainement.html#cb1-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 251   2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Sélectionnez la colonne <code>nom</code> et <code>is_legendary</code>.</li>
@@ -1549,9 +1553,9 @@ NA
 </ol>
 <p><strong>Exercice 4 : Tris et Filtres</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Pour faciliter la lecture, sélectionnez la colonne <code>nom</code>et les colonnes concernées par le filtre. Exemple :</p>
-<div class="sourceCode" id="cb701"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb701-1"><a href="entrainement.html#cb701-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
-<span id="cb701-2"><a href="entrainement.html#cb701-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
-<span id="cb701-3"><a href="entrainement.html#cb701-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="entrainement.html#cb3-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
+<span id="cb3-2"><a href="entrainement.html#cb3-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
+<span id="cb3-3"><a href="entrainement.html#cb3-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 20  2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Filtrez sur les pokemons qui ont 150 ou plus d’<code>attack</code> puis trier le résultat par ordre décroissant d’<code>attack</code>.</li>
@@ -1564,9 +1568,9 @@ NA
 </ol>
 <p><strong>Exercice 5 : Agregations</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb703"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb703-1"><a href="entrainement.html#cb703-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
-<span id="cb703-2"><a href="entrainement.html#cb703-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
-<span id="cb703-3"><a href="entrainement.html#cb703-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="entrainement.html#cb5-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
+<span id="cb5-2"><a href="entrainement.html#cb5-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
+<span id="cb5-3"><a href="entrainement.html#cb5-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 2 2</code></pre>
 <table>
 <thead>
@@ -1604,6 +1608,973 @@ speed
 <li>Calculez la médiane de <code>weight_kg</code> par <code>type</code>.</li>
 <li>Calculez le nombre de pokemon par <code>type</code> et <code>generation</code></li>
 <li>Calculez la moyenne de chaque critère (<code>weight_kg</code>, <code>height_m</code>, <code>attack</code>, <code>defense</code> et <code>speed</code>) en fonction de chaque <code>type</code>.</li>
+</ol>
+</div>
+<div id="tp3" class="section level2">
+<h2><span class="header-section-number">12.3</span> TP3</h2>
+<p>
+<img src="img/amongus.jpg" title="fig:" alt="Among us*" />
+</p>
+<p>Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
+On utilise les fichiers décrivant les statistiques des parties jouées sur le jeu <em>Among us</em>. Il y a un fichier par joueur nommé <em>UserX.csv</em>.
+Les fichiers sont issues du site <a href="https://www.kaggle.com/ruchi798/among-us-dataset">Kaggle</a>.
+Les fichiers ont tous la même structure avec :</p>
+<ul>
+<li><code>Game.Completed.Date</code> : Date de la partie</li>
+<li><code>Team</code> : l’équipe attribuée</li>
+<li><code>Outcome</code> : résultat de la partie</li>
+<li><code>Task.Completed</code> : le nombre de tâches effectuées</li>
+<li><code>All.Tasks.Completed</code> : si toutes les tâches ont été effectuées</li>
+<li><code>Murdered</code> : si le joueur a été tué</li>
+<li><code>Imposter.Kills</code> : le nombre de joueurs tués par l’imposteur</li>
+<li><code>Game.Length</code> : durée de la partie</li>
+<li><code>Ejected</code> : si le joueur a été éliminé par les autres au cours de la partie</li>
+<li><code>Sabotages.Fixed</code> : nombre de sabotages réparés</li>
+<li><code>Time.to.complete.all.tasks</code> : temps pour compléter les toutes les tâches</li>
+<li><code>Rank.Change</code> : Non renseigné</li>
+<li><code>Region.Game.Code</code> : la région du serveur de jeu</li>
+</ul>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Game.Completed.Date
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Team
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Outcome
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Task.Completed
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+All.Tasks.Completed
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Murdered
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Imposter.Kills
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Game.Length
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Ejected
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Sabotages.Fixed
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Time.to.complete.all.tasks
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Rank.Change
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Region.Game.Code
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+12/13/2020 at 1:26:56 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+07m 04s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+NA / WYMSBF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/13/2020 at 1:17:42 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+16m 21s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+09m 48s
+</td>
+<td style="text-align:left;">
+–
+</td>
+<td style="text-align:left;">
+NA / WYMSBF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/13/2020 at 12:57:47 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+11m 33s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+NA / WYMSBF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/13/2020 at 12:41:55 am EST
+</td>
+<td style="text-align:left;">
+Imposter
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+08m 05s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+N/A
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
++++
+</td>
+<td style="text-align:left;">
+Europe / QIRTNF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/13/2020 at 12:30:37 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+05m 10s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+Europe / QIRTNF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/13/2020 at 12:24:20 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+16m 22s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+12m 16s
+</td>
+<td style="text-align:left;">
+–
+</td>
+<td style="text-align:left;">
+Europe / QIRTNF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/13/2020 at 12:00:39 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+21m 41s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+18m 38s
+</td>
+<td style="text-align:left;">
+–
+</td>
+<td style="text-align:left;">
+Europe / MTKPVF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 4:15:08 pm EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+18m 43s
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+07m 48s
+</td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+Europe / BFRJCF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 3:49:33 pm EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+13m 15s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+13m 15s
+</td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+Europe / BFRJCF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 3:30:36 pm EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+12m 43s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+12m 43s
+</td>
+<td style="text-align:left;">
+–
+</td>
+<td style="text-align:left;">
+Europe / BFRJCF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 3:10:58 pm EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+11m 00s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+Europe / BFRJCF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 2:53:28 pm EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+17m 43s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+11m 59s
+</td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+Europe / BFRJCF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 2:20:38 pm EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+13m 46s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+—
+</td>
+<td style="text-align:left;">
+Europe / ONSJWQ
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 2:04:26 pm EST
+</td>
+<td style="text-align:left;">
+Imposter
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+15m 52s
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+N/A
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+Europe / ONSJWQ
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 1:46:30 pm EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+18m 54s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+11m 09s
+</td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+Europe / ONSJWQ
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 2:09:32 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+08m 00s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+01m 41s
+</td>
+<td style="text-align:left;">
+–
+</td>
+<td style="text-align:left;">
+NA / EYNONF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 2:00:26 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+18m 06s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+09m 34s
+</td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+NA / EYNONF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 1:26:11 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+12m 58s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+09m 03s
+</td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+NA / EYNONF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 1:03:05 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Win
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+14m 57s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+14m 50s
+</td>
+<td style="text-align:left;">
+++
+</td>
+<td style="text-align:left;">
+NA / EYNONF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/11/2020 at 12:45:34 am EST
+</td>
+<td style="text-align:left;">
+Crewmate
+</td>
+<td style="text-align:left;">
+Loss
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+11m 03s
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+10m 34s
+</td>
+<td style="text-align:left;">
+–
+</td>
+<td style="text-align:left;">
+NA / EYNONF
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Exercice 1 : Créer le jeu de données</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Compiler l’ensemble des fichiers <em>UserX.csv</em> présents dans le fichier zip dans un seul et même data frame. Il est recommandé d’utiliser une boucle.</p></li>
+<li><p>Modifier votre boucle afin d’ajouter une colonne dans le data frame final qui renseigne le numéro d’utilisateur disponible dans le nom de chaque fichier csv.</p></li>
+<li><p>Stocker le data frame final dans un objet appelé <em>AmongUs</em>.</p></li>
+<li><p>Supprimer la colonne <code>Rank.Change</code> qui est inutile.</p></li>
+<li><p>Construire une fonction appelé <code>manage_na()</code> qui prend en entrée un vecteur <code>x</code> correspondant aux données et un vecteur <code>string_to_na</code> correspondant à la liste des chaînes de caractères qu’on souhaite transformer en <code>NA</code>. La fonction retournera le vecteur modifié.</p></li>
+<li><p>Construire une boucle qui parcourt toutes les colonnes du data frame <em>AmongUs</em> et qui remplace les champs avec des <code>-</code> et <code>N/A</code> par des valeurs manquantes <code>NA</code>. Utilisez la fonction <code>manage_na()</code> créée précédemment.</p></li>
+</ol>
+<p><strong>Exercice 2 : Manipuler le texte et les dates</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Date</code> avec la date de la partie au format <em>yyyy-mm-dd</em>. Vérifiez que la colonne est bien en type <em>Date</em>.</p></li>
+<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Heure</code> avec <strong>l’heure uniquement</strong> de la partie. Attention au format <em>am</em> et <em>pm</em>.</p></li>
+<li><p>À partir de la colonne <code>Game Length</code>, construire une colonne appelée <code>Game.Length.sec</code> correspondant à la durée de la partie en secondes</p></li>
+<li><p>À partir de la colonne <code>Time.to.complete.all.tasks</code>, construire une colonne appelée <code>Complete.all.tasks.sec</code> correspondant au temps pour compléter toutes les tâches en secondes.</p></li>
+<li><p>À partir de la colonne <code>Region.Game.Code</code> construire une colonne appelée <code>Region</code> correspondant au nom du continent uniquement. Veillez à ce que cette nouvelle colonne soit en type <code>factor</code>.</p></li>
+</ol>
+<p><strong>Exercice 3 : Type des variables</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?</p></li>
+<li><p>Affichez un résumé des données avec la fonction adaptée. On remarque que les colonnes <code>Game.Completed.Date</code>, <code>Game.Length</code>, <code>Time.to.complete.all.tasks</code> et <code>Region.Game.Code</code> sont en <code>factor</code>.</p></li>
+<li><p>Construire une boucle qui parcourt les 4 colonnes citées dans la question précédente pour les convertir en type <code>character</code> l’une après l’autre.</p></li>
+<li><p>Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.</p></li>
+<li><p>Les autres variables qualitatives doivent être en <code>factor</code>. Si ce n’est pas le cas, contruire une boucle qui les convertit en <code>factor</code> les unes après les autres.</p></li>
+</ol>
+<p><strong>Exercice 4 : Analyses statistiques </strong></p>
+<p>La plupart des questions de cet exercice demandent un peu de réflexion. <br>
+📢 Ne partez pas à l’abordage, les solutions peuvent se coder en plusieurs étapes (<em>tris</em>,<em>filtre</em>, <em>agregation</em>, <em>etc.</em>).</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Quelle est la durée moyenne d’une partie ?</p></li>
+<li><p>Combien y-a-t-il de régions serveurs différentes ?.</p></li>
+<li><p>Combien de tâche maximum un Crewmate peut-il réaliser ?</p></li>
+<li><p>Quel est le taux de parties remportées par les imposteurs ?</p></li>
+<li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser la répartition du nombre de parties jouées selon la<code>Region</code>.</p></li>
+<li><p>Constuire <strong>un graphique adapté</strong> permettant de visualiser la répartition des joueurs qui termine ou pas leur tâches selon s’ils se font tuer ou pas.</p></li>
+<li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser la distribution du nombre de tâches complétées par les joueurs.</p></li>
+<li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser pour chaque partie jouée, la durée de la partie et le temps pour compléter toutes les tâches.</p></li>
+<li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser la distribution du temps des parties selon la <code>Region</code>.</p></li>
+<li><p>Constuire <strong>un graphique adapté</strong> permettant de visualiser les variations de taux de succès des imposteurs selon les régions serveurs.</p></li>
 </ol>
 
 </div>
