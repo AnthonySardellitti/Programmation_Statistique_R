@@ -258,6 +258,8 @@ b. Afficher un résumé des données avec la fonction adaptée. On remarque que 
 c. Construire une boucle qui parcourt les 4 colonnes citées dans la question précédente pour les convertir en type `character` les unes après l'autre.
 
 d. On remarque aussi que certaines colonnes numériques sont en type `factor`. C'est sans doute le cas pour les variables `Task.Completed` et `Sabotages.Fixed`. Par défaut R les a interprété comme `factor` car au départ les valeurs textuelles `-` et `N/A` ne permettent pas d'utiliser le type `numeric`. Ces valeurs ont été remplacées par des `NA` dans les questions précédentes. Convertisser ces deux colonnes en `numeric`. 
+
+<br>
 📢 Attention, lorsqu'on convertit un vecteur de type `factor` en type `numeric`, il est recommandé de passer d'abord par le type `character` (voir exemple ci-dessous).
 
 Ce qu'il ne faut pas faire ⛔
