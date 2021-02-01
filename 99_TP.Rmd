@@ -218,7 +218,9 @@ list.files(path = "./dataset/", pattern="*.csv", full.names=FALSE)
 b. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. La fonction `rbind()` devrait vous aider à compiler les différents csv dans un seul data frame (voir l'exemple ci-dessous).
 
 ```{r}
-df <- mtcars
+df <- data.frame()
+dim(df)
+df <- rbind(df, mtcars)
 dim(df)
 df <- rbind(df, mtcars)
 dim(df)
@@ -237,27 +239,44 @@ g. Construire une boucle qui parcourt toutes les colonnes du data frame *AmongUs
 
 **Exercice 2 : Manipuler le texte et les dates**
 
-a. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Date` avec la date de la partie au format *yyyy-mm-dd*. Vérifier que la colonne est bien en type *Date*.
+a. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Date` avec la date de la partie au format *yyyy-mm-dd*. Veiller à ce que le type de cette colonne soit *Date*.
 
-b. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Heure` avec **l'heure uniquement** de la partie. Attention au format *am* et *pm*. Veillez à ce que le type de cette colonne soit `numeric`.
+b. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Heure` avec **l'heure uniquement** de la partie. Attention au format *am* et *pm*. Veiller à ce que le type de cette colonne soit `numeric`.
 
-c. À partir de la colonne `Game Length`, construire une colonne appelée `Game.Length.sec` correspondant à la durée de la partie en secondes.
+c. À partir de la colonne `Game Length`, construire une colonne appelée `Game.Length.sec` correspondant à la durée de la partie en secondes. Veiller à ce que le type de cette colonne soit `numeric`.
 
-d. À partir de la colonne `Time.to.complete.all.tasks`, construire une colonne appelée `Complete.all.tasks.sec` correspondant à la durée en secondes pour compléter toutes les tâches.
+d. À partir de la colonne `Time.to.complete.all.tasks`, construire une colonne appelée `Complete.all.tasks.sec` correspondant à la durée en secondes pour compléter toutes les tâches. Veiller à ce que le type de cette colonne soit `numeric`.
 
 e. À partir de la colonne `Region.Game.Code` construire une colonne appelée `Region` correspondant au nom du continent uniquement. Veillez à ce que cette nouvelle colonne soit en type `factor`.
 
 **Exercice 3 : Type des variables**
 
-a. Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?
+a. Combien de lignes, colonnes sont présentes dans ce dataset (Utiliser la fonction adaptée) ?
 
-b. Affichez un résumé des données avec la fonction adaptée. On remarque que les colonnes `Game.Completed.Date`, `Game.Length`, `Time.to.complete.all.tasks` et `Region.Game.Code` sont en `factor`.
+b. Afficher un résumé des données avec la fonction adaptée. On remarque que les colonnes `Game.Completed.Date`, `Game.Length`, `Time.to.complete.all.tasks` et `Region.Game.Code` sont en `factor`.
 
-c. Construire une boucle qui parcourt les 4 colonnes citées dans la question précédente pour les convertir en type `character` l'une après l'autre.
+c. Construire une boucle qui parcourt les 4 colonnes citées dans la question précédente pour les convertir en type `character` les unes après l'autre.
 
-d. Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.
+d. On remarque aussi que certaines colonnes numériques sont en type `factor`. C'est sans doute le cas pour les variables `Task.Completed` et `Sabotages.Fixed`. Par défaut R les a interprété comme `factor` car au départ les valeurs textuelles `-` et `N/A` ne permettent pas d'utiliser le type `numeric`. Ces valeurs ont été remplacées par des `NA` dans les questions précédentes. Convertisser ces deux colonnes en `numeric`. 
+📢 Attention, lorsqu'on convertit un vecteur de type `factor` en type `numeric`, il est recommandé de passer d'abord par le type `character` (voir exemple ci-dessous).
+
+Ce qu'il ne faut pas faire ⛔
+```{r}
+x <- factor(c(7,7,8,7,9,6,6))
+levels(x)
+x <- as.numeric(x)
+x
+```
+Ce qu'il faut faire ✅
+```{r}
+x <- factor(c(7,7,8,7,9,6,6))
+levels(x)
+x <- as.numeric(as.character(x))
+x
+```
+e. Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.
  
-e. Les autres variables qualitatives doivent être en `factor`. Si ce n'est pas le cas, construire une boucle qui les convertit en `factor` les unes après les autres.
+f. Les autres variables qualitatives doivent être en `factor`. Si ce n'est pas le cas, construire une boucle qui les convertit en `factor` les unes après les autres.
  
 **Exercice 4 : Analyses statistiques **
 

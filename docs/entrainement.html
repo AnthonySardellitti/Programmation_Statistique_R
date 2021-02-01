@@ -2546,11 +2546,14 @@ NA / EYNONF
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Compiler l’ensemble des fichiers <em>UserX.csv</em> présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. La fonction <code>rbind()</code> devrait vous aider à compiler les différents csv dans un seul data frame (voir l’exemple ci-dessous).</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="entrainement.html#cb9-1"></a>df &lt;-<span class="st"> </span>mtcars</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="entrainement.html#cb9-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>()</span>
 <span id="cb9-2"><a href="entrainement.html#cb9-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
-<pre><code>## [1] 32 11</code></pre>
+<pre><code>## [1] 0 0</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="entrainement.html#cb11-1"></a>df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, mtcars)</span>
 <span id="cb11-2"><a href="entrainement.html#cb11-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
+<pre><code>## [1] 32 11</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="entrainement.html#cb13-1"></a>df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, mtcars)</span>
+<span id="cb13-2"><a href="entrainement.html#cb13-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
 <pre><code>## [1] 64 11</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li><p>Modifier votre boucle afin d’ajouter une colonne dans le data frame final qui renseigne le numéro d’utilisateur disponible dans le nom de chaque fichier csv.</p></li>
@@ -2561,17 +2564,35 @@ NA / EYNONF
 </ol>
 <p><strong>Exercice 2 : Manipuler le texte et les dates</strong></p>
 <ol style="list-style-type: lower-alpha">
-<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Date</code> avec la date de la partie au format <em>yyyy-mm-dd</em>. Vérifier que la colonne est bien en type <em>Date</em>.</p></li>
-<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Heure</code> avec <strong>l’heure uniquement</strong> de la partie. Attention au format <em>am</em> et <em>pm</em>. Veillez à ce que le type de cette colonne soit <code>numeric</code>.</p></li>
-<li><p>À partir de la colonne <code>Game Length</code>, construire une colonne appelée <code>Game.Length.sec</code> correspondant à la durée de la partie en secondes.</p></li>
-<li><p>À partir de la colonne <code>Time.to.complete.all.tasks</code>, construire une colonne appelée <code>Complete.all.tasks.sec</code> correspondant à la durée en secondes pour compléter toutes les tâches.</p></li>
+<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Date</code> avec la date de la partie au format <em>yyyy-mm-dd</em>. Veiller à ce que le type de cette colonne soit <em>Date</em>.</p></li>
+<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Heure</code> avec <strong>l’heure uniquement</strong> de la partie. Attention au format <em>am</em> et <em>pm</em>. Veiller à ce que le type de cette colonne soit <code>numeric</code>.</p></li>
+<li><p>À partir de la colonne <code>Game Length</code>, construire une colonne appelée <code>Game.Length.sec</code> correspondant à la durée de la partie en secondes. Veiller à ce que le type de cette colonne soit <code>numeric</code>.</p></li>
+<li><p>À partir de la colonne <code>Time.to.complete.all.tasks</code>, construire une colonne appelée <code>Complete.all.tasks.sec</code> correspondant à la durée en secondes pour compléter toutes les tâches. Veiller à ce que le type de cette colonne soit <code>numeric</code>.</p></li>
 <li><p>À partir de la colonne <code>Region.Game.Code</code> construire une colonne appelée <code>Region</code> correspondant au nom du continent uniquement. Veillez à ce que cette nouvelle colonne soit en type <code>factor</code>.</p></li>
 </ol>
 <p><strong>Exercice 3 : Type des variables</strong></p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?</p></li>
-<li><p>Affichez un résumé des données avec la fonction adaptée. On remarque que les colonnes <code>Game.Completed.Date</code>, <code>Game.Length</code>, <code>Time.to.complete.all.tasks</code> et <code>Region.Game.Code</code> sont en <code>factor</code>.</p></li>
-<li><p>Construire une boucle qui parcourt les 4 colonnes citées dans la question précédente pour les convertir en type <code>character</code> l’une après l’autre.</p></li>
+<li><p>Combien de lignes, colonnes sont présentes dans ce dataset (Utiliser la fonction adaptée) ?</p></li>
+<li><p>Afficher un résumé des données avec la fonction adaptée. On remarque que les colonnes <code>Game.Completed.Date</code>, <code>Game.Length</code>, <code>Time.to.complete.all.tasks</code> et <code>Region.Game.Code</code> sont en <code>factor</code>.</p></li>
+<li><p>Construire une boucle qui parcourt les 4 colonnes citées dans la question précédente pour les convertir en type <code>character</code> les unes après l’autre.</p></li>
+<li><p>On remarque aussi que certaines colonnes numériques sont en type <code>factor</code>. C’est sans doute le cas pour les variables <code>Task.Completed</code> et <code>Sabotages.Fixed</code>. Par défaut R les a interprété comme <code>factor</code> car au départ les valeurs textuelles <code>-</code> et <code>N/A</code> ne permettent pas d’utiliser le type <code>numeric</code>. Ces valeurs ont été remplacées par des <code>NA</code> dans les questions précédentes. Convertisser ces deux colonnes en <code>numeric</code>.
+📢 Attention, lorsqu’on convertit un vecteur de type <code>factor</code> en type <code>numeric</code>, il est recommandé de passer d’abord par le type <code>character</code> (voir exemple ci-dessous).</p></li>
+</ol>
+<p>Ce qu’il ne faut pas faire ⛔</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="entrainement.html#cb15-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb15-2"><a href="entrainement.html#cb15-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
+<pre><code>## [1] &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="entrainement.html#cb17-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)</span>
+<span id="cb17-2"><a href="entrainement.html#cb17-2"></a>x</span></code></pre></div>
+<pre><code>## [1] 2 2 3 2 4 1 1</code></pre>
+<p>Ce qu’il faut faire ✅</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="entrainement.html#cb19-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb19-2"><a href="entrainement.html#cb19-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
+<pre><code>## [1] &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="entrainement.html#cb21-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(x))</span>
+<span id="cb21-2"><a href="entrainement.html#cb21-2"></a>x</span></code></pre></div>
+<pre><code>## [1] 7 7 8 7 9 6 6</code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
 <li><p>Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.</p></li>
 <li><p>Les autres variables qualitatives doivent être en <code>factor</code>. Si ce n’est pas le cas, construire une boucle qui les convertit en <code>factor</code> les unes après les autres.</p></li>
 </ol>
