@@ -182,8 +182,8 @@ e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `d
 </p>
 
 Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
-On utilise  les fichiers décrivant les statistiques des parties jouées sur le jeu *Among us*. Il y a un fichier par joueur nommé *UserX.csv*.
-Les fichiers sont issues du site [Kaggle](https://www.kaggle.com/ruchi798/among-us-dataset).
+On utilise le fichier compréssé `AmongUs.7z` où l'ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu *Among us*. Il y a un fichier par joueur nommé *UserX.csv*.
+Les données sont issues du site [Kaggle](https://www.kaggle.com/ruchi798/among-us-dataset).
 Les fichiers ont tous la même structure avec :
 
 - `Game.Completed.Date` : Date de la partie
@@ -209,13 +209,13 @@ kable(head(AmongUs,n = 20), "html") %>% kable_styling("striped", font_size = tai
 
 **Exercice 1 : Créer le jeu de données**
 
-a. Télécharger le fichier compréssé `AmongUs.7z` et dézipé le. La fonction `list.files()` devrait vous aider à extraire l'ensemble des noms de fichiers présents dans un répertoire (voir exemple ci-dessous).
+a. Télécharger le fichier compréssé `AmongUs.7z` et le déziper. La fonction `list.files()` devrait vous aider à extraire l'ensemble des noms de fichiers présents dans un répertoire (voir exemple ci-dessous).
 
 ```{r}
 list.files(path = "./dataset/", pattern="*.csv", full.names=FALSE)
 ```
 
-b. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Utilisez une boucle qui parcourt chaque fichier csv utilisateur. 
+b. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. 
 
 c. Modifier votre boucle afin d'ajouter une colonne dans le data frame final qui renseigne le numéro d'utilisateur disponible dans le nom de chaque fichier csv.
 
@@ -223,18 +223,18 @@ d. Stocker le data frame final dans un objet appelé *AmongUs*.
 
 e. Supprimer la colonne `Rank.Change` qui est inutile.
 
-f. Construire une fonction appelé `manage_na()` qui prend en entrée un vecteur `x` correspondant aux données et un vecteur `string_to_na` correspondant à la liste des chaînes de caractères qu'on souhaite transformer en `NA`. La fonction retournera le vecteur modifié.
+f. Construire une fonction appelée `manage_na()` qui prend en entrée un vecteur `x` correspondant aux données et un vecteur `string_to_na` correspondant à la liste des chaînes de caractères qu'on souhaite transformer en `NA`. La fonction retournera le vecteur modifié.
 
 g. Construire une boucle qui parcourt toutes les colonnes du data frame *AmongUs* et qui remplace les champs avec des `-` et `N/A` par des valeurs manquantes `NA`. Utilisez la fonction `manage_na()` créée précédemment.
 
 
 **Exercice 2 : Manipuler le texte et les dates**
 
-a. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Date` avec la date de la partie au format *yyyy-mm-dd*. Vérifiez que la colonne est bien en type *Date*.
+a. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Date` avec la date de la partie au format *yyyy-mm-dd*. Vérifier que la colonne est bien en type *Date*.
 
 b. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Heure` avec **l'heure uniquement** de la partie. Attention au format *am* et *pm*. Veillez à ce que le type de cette colonne soit `numeric`.
 
-c. À partir de la colonne `Game Length`, construire une colonne appelée `Game.Length.sec` correspondant à la durée de la partie en secondes
+c. À partir de la colonne `Game Length`, construire une colonne appelée `Game.Length.sec` correspondant à la durée de la partie en secondes.
 
 d. À partir de la colonne `Time.to.complete.all.tasks`, construire une colonne appelée `Complete.all.tasks.sec` correspondant à la durée en secondes pour compléter toutes les tâches.
 
@@ -277,6 +277,6 @@ i. Construire **un graphique adapté** permettant de visualiser la distribution 
 
 j. Construire **un graphique adapté** permettant de visualiser l'évolution du nombre de parties jouées selon l'heure de la journée.
 
-k. Constuire **un graphique adapté** permettant de visualiser les variations de taux de succès des imposteurs selon les régions serveurs.
+k. Constuire **un graphique adapté** permettant de visualiser les variations du taux de succès des imposteurs selon les régions serveurs.
 
 l. Constuire **un graphique adapté** permettant de visualiser les taux de succès  des 5 meilleurs utilisateurs.
