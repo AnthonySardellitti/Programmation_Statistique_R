@@ -1616,7 +1616,7 @@ speed
 <img src="img/amongus.jpg" title="fig:" alt="Among us*" />
 </p>
 <p>Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
-On utilise le fichier compréssé <code>AmongUs.7z</code> où l’ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu <em>Among us</em>. Il y a un fichier par joueur nommé <em>UserX.csv</em>.
+On utilise le fichier compressé <code>AmongUs.7z</code> où l’ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu <em>Among us</em>. Il y a un fichier par joueur nommé <em>UserX.csv</em>.
 Les données sont issues du site <a href="https://www.kaggle.com/ruchi798/among-us-dataset">Kaggle</a>.
 Les fichiers ont tous la même structure avec :</p>
 <ul>
@@ -2538,13 +2538,21 @@ NA / EYNONF
 </ul>
 <p><strong>Exercice 1 : Créer le jeu de données</strong></p>
 <ol style="list-style-type: lower-alpha">
-<li>Télécharger le fichier compréssé <code>AmongUs.7z</code> et le déziper. La fonction <code>list.files()</code> devrait vous aider à extraire l’ensemble des noms de fichiers présents dans un répertoire (voir exemple ci-dessous).</li>
+<li>Télécharger le fichier compressé <code>AmongUs.7z</code> et le déziper. La fonction <code>list.files()</code> devrait vous aider à extraire l’ensemble des noms de fichiers présents dans un répertoire (voir l’exemple ci-dessous).</li>
 </ol>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="entrainement.html#cb7-1"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;./dataset/&quot;</span>, <span class="dt">pattern=</span><span class="st">&quot;*.csv&quot;</span>, <span class="dt">full.names=</span><span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AmongUs.csv&quot;  &quot;flights.csv&quot;  &quot;google.csv&quot;   &quot;planes.csv&quot;  
 ## [5] &quot;starwars.csv&quot; &quot;Titanic.csv&quot;</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
-<li><p>Compiler l’ensemble des fichiers <em>UserX.csv</em> présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur.</p></li>
+<li>Compiler l’ensemble des fichiers <em>UserX.csv</em> présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. La fonction <code>rbind()</code> devrait vous aider à compiler les différents csv dans un seul data frame (voir l’exemple ci-dessous).</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="entrainement.html#cb9-1"></a>df &lt;-<span class="st"> </span>mtcars</span>
+<span id="cb9-2"><a href="entrainement.html#cb9-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
+<pre><code>## [1] 32 11</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="entrainement.html#cb11-1"></a>df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, mtcars)</span>
+<span id="cb11-2"><a href="entrainement.html#cb11-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
+<pre><code>## [1] 64 11</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
 <li><p>Modifier votre boucle afin d’ajouter une colonne dans le data frame final qui renseigne le numéro d’utilisateur disponible dans le nom de chaque fichier csv.</p></li>
 <li><p>Stocker le data frame final dans un objet appelé <em>AmongUs</em>.</p></li>
 <li><p>Supprimer la colonne <code>Rank.Change</code> qui est inutile.</p></li>
@@ -2565,24 +2573,24 @@ NA / EYNONF
 <li><p>Affichez un résumé des données avec la fonction adaptée. On remarque que les colonnes <code>Game.Completed.Date</code>, <code>Game.Length</code>, <code>Time.to.complete.all.tasks</code> et <code>Region.Game.Code</code> sont en <code>factor</code>.</p></li>
 <li><p>Construire une boucle qui parcourt les 4 colonnes citées dans la question précédente pour les convertir en type <code>character</code> l’une après l’autre.</p></li>
 <li><p>Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.</p></li>
-<li><p>Les autres variables qualitatives doivent être en <code>factor</code>. Si ce n’est pas le cas, contruire une boucle qui les convertit en <code>factor</code> les unes après les autres.</p></li>
+<li><p>Les autres variables qualitatives doivent être en <code>factor</code>. Si ce n’est pas le cas, construire une boucle qui les convertit en <code>factor</code> les unes après les autres.</p></li>
 </ol>
 <p><strong>Exercice 4 : Analyses statistiques </strong></p>
 <p>La plupart des questions de cet exercice demandent un peu de réflexion. <br>
-📢 Ne partez pas à l’abordage, les solutions peuvent se coder en plusieurs étapes (<em>tris</em>,<em>filtre</em>, <em>agregation</em>, <em>etc.</em>).</p>
+📢 Ne partez pas à l’abordage, les solutions peuvent se coder en plusieurs étapes (<em>tris</em>,<em>filtres</em>, <em>agregations</em>, <em>etc.</em>).</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Quelle est la durée moyenne d’une partie ?</p></li>
 <li><p>Combien y-a-t-il de régions serveurs différentes ?.</p></li>
 <li><p>Combien de tâche maximum un Crewmate peut-il réaliser ?</p></li>
 <li><p>Quel est le taux de parties remportées par les imposteurs ?</p></li>
 <li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser la répartition du nombre de parties jouées selon la<code>Region</code>.</p></li>
-<li><p>Constuire <strong>un graphique adapté</strong> permettant de visualiser la répartition des joueurs qui termine ou pas leur tâches selon s’ils se font tuer ou pas.</p></li>
+<li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser la répartition des joueurs qui termine ou pas leurs tâches selon s’ils se font tuer ou pas.</p></li>
 <li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser la distribution du nombre de tâches complétées par les joueurs.</p></li>
 <li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser pour chaque partie jouée, la durée de la partie et le temps pour compléter toutes les tâches.</p></li>
 <li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser la distribution du temps des parties selon la <code>Region</code>.</p></li>
 <li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser l’évolution du nombre de parties jouées selon l’heure de la journée.</p></li>
-<li><p>Constuire <strong>un graphique adapté</strong> permettant de visualiser les variations du taux de succès des imposteurs selon les régions serveurs.</p></li>
-<li><p>Constuire <strong>un graphique adapté</strong> permettant de visualiser les taux de succès des 5 meilleurs utilisateurs.</p></li>
+<li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser les variations du taux de succès des imposteurs selon les régions serveurs.</p></li>
+<li><p>Construire <strong>un graphique adapté</strong> permettant de visualiser les taux de succès des 5 meilleurs utilisateurs.</p></li>
 </ol>
 
 </div>

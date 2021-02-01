@@ -182,7 +182,7 @@ e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `d
 </p>
 
 Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
-On utilise le fichier compréssé `AmongUs.7z` où l'ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu *Among us*. Il y a un fichier par joueur nommé *UserX.csv*.
+On utilise le fichier compressé `AmongUs.7z` où l'ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu *Among us*. Il y a un fichier par joueur nommé *UserX.csv*.
 Les données sont issues du site [Kaggle](https://www.kaggle.com/ruchi798/among-us-dataset).
 Les fichiers ont tous la même structure avec :
 
@@ -209,13 +209,20 @@ kable(head(AmongUs,n = 20), "html") %>% kable_styling("striped", font_size = tai
 
 **Exercice 1 : Créer le jeu de données**
 
-a. Télécharger le fichier compréssé `AmongUs.7z` et le déziper. La fonction `list.files()` devrait vous aider à extraire l'ensemble des noms de fichiers présents dans un répertoire (voir exemple ci-dessous).
+a. Télécharger le fichier compressé `AmongUs.7z` et le déziper. La fonction `list.files()` devrait vous aider à extraire l'ensemble des noms de fichiers présents dans un répertoire (voir l'exemple ci-dessous).
 
 ```{r}
 list.files(path = "./dataset/", pattern="*.csv", full.names=FALSE)
 ```
 
-b. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. 
+b. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. La fonction `rbind()` devrait vous aider à compiler les différents csv dans un seul data frame (voir l'exemple ci-dessous).
+
+```{r}
+df <- mtcars
+dim(df)
+df <- rbind(df, mtcars)
+dim(df)
+```
 
 c. Modifier votre boucle afin d'ajouter une colonne dans le data frame final qui renseigne le numéro d'utilisateur disponible dans le nom de chaque fichier csv.
 
@@ -250,12 +257,12 @@ c. Construire une boucle qui parcourt les 4 colonnes citées dans la question pr
 
 d. Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.
  
-e. Les autres variables qualitatives doivent être en `factor`. Si ce n'est pas le cas, contruire une boucle qui les convertit en `factor` les unes après les autres.
+e. Les autres variables qualitatives doivent être en `factor`. Si ce n'est pas le cas, construire une boucle qui les convertit en `factor` les unes après les autres.
  
 **Exercice 4 : Analyses statistiques **
 
 La plupart des questions de cet exercice demandent un peu de réflexion. <br>
-📢 Ne partez pas à l'abordage, les solutions peuvent se coder en plusieurs étapes (*tris*,*filtre*, *agregation*, *etc.*).
+📢 Ne partez pas à l'abordage, les solutions peuvent se coder en plusieurs étapes (*tris*,*filtres*, *agregations*, *etc.*).
 
 a. Quelle est la durée moyenne d'une partie ? 
 
@@ -267,7 +274,7 @@ d. Quel est le taux de parties remportées par les imposteurs ?
 
 e. Construire **un graphique adapté** permettant de visualiser la répartition du nombre de parties jouées selon la`Region`.
 
-f. Constuire **un graphique adapté** permettant de visualiser la répartition des joueurs qui termine ou pas leur tâches selon s'ils se font tuer ou pas.
+f. Construire **un graphique adapté** permettant de visualiser la répartition des joueurs qui termine ou pas leurs tâches selon s'ils se font tuer ou pas.
 
 g. Construire **un graphique adapté** permettant de visualiser la distribution du nombre de tâches complétées par les joueurs.
 
@@ -277,6 +284,6 @@ i. Construire **un graphique adapté** permettant de visualiser la distribution 
 
 j. Construire **un graphique adapté** permettant de visualiser l'évolution du nombre de parties jouées selon l'heure de la journée.
 
-k. Constuire **un graphique adapté** permettant de visualiser les variations du taux de succès des imposteurs selon les régions serveurs.
+k. Construire **un graphique adapté** permettant de visualiser les variations du taux de succès des imposteurs selon les régions serveurs.
 
-l. Constuire **un graphique adapté** permettant de visualiser les taux de succès  des 5 meilleurs utilisateurs.
+l. Construire **un graphique adapté** permettant de visualiser les taux de succès  des 5 meilleurs utilisateurs.
