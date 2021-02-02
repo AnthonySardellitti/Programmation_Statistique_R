@@ -75,7 +75,7 @@ c. Construire une nouvelle colonne appelée `litres100km_group` pour distinguer 
 
 Ce TP reprend les notions évoquées dans les chapitres 2 à 5.
 On utilise  le fichier `pokemon.xlsx` qui décrit les statistiques des pokemon des deux premières générations.
-Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/rounakbanik/pokemon). Il a été adapté pour ce TP. Voici une description des données :
+Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/rounakbanik/pokemon). Il a été adapté pour ce TP. Pour réaliser ce TP, télécharger le fichier en [cliquant ici](https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset).Voici une description des données :
 
 - `pokedex_number` : numéro du pokemon
 - `nom` : nom du pokemon
@@ -183,8 +183,8 @@ e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `d
 
 Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
 On utilise le fichier compressé `AmongUs.7z` où l'ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu *Among us*. Il y a un fichier par joueur nommé *UserX.csv*.
-Les données sont issues du site [Kaggle](https://www.kaggle.com/ruchi798/among-us-dataset).
-Les fichiers ont tous la même structure avec :
+Les données sont issues du site [Kaggle](https://www.kaggle.com/ruchi798/among-us-dataset). Pour réaliser ce TP, télécharger le fichier en [cliquant ici](https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset).
+Les fichiers csv ont tous la même structure avec :
 
 - `Game.Completed.Date` : Date de la partie
 - `Team` : l'équipe attribuée
