@@ -329,15 +329,15 @@ Les arguments de `hist` permettent également de modifier la présentation du gr
 
 ```{r, fig.width= 12, fig.height=4}
 hist(x = d$age, col = "skyblue",
-     main = "Répartition des âges des enquêtés",
-     xlab = "Âge",
+     main = "Répartition des ages des enquêtés",
+     xlab = "age",
      ylab = "Effectif")
 ```
 
 La fonction `hist` fait partie des fonctions graphique de base de R. Elle est souvent associée au graphique boîtes à moustaches (*boxplot*) qui permet de résumer la distribution d'une variable quantitative à travers les quartiles notamment.
 
 ```{r, fig.width= 4, fig.height=4}
-boxplot(x = d$age, main = "Distribution de l'âge")
+boxplot(x = d$age, main = "Distribution de l'age")
 ```
 
 ### Analyser une variable qualitative
