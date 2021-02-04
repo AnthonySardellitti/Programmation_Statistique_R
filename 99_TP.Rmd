@@ -70,7 +70,7 @@ c. Construire une nouvelle colonne appelée `litres100km_group` pour distinguer 
 
 
 <p>
-![Pokemo*](./img/pokemon.jpg)
+![Pokemon](./img/pokemon.jpg)
 </p>
 
 Ce TP reprend les notions évoquées dans les chapitres 2 à 5.
@@ -149,7 +149,7 @@ dim(requete_0)
 a. Filtrez sur les pokemons qui ont 150 ou plus d'`attack` puis trier le résultat par ordre décroissant d'`attack`. 
 b. Filtrez sur les pokemons de `type` *dragon*,*ghost*,*psychic* et *dark*
 c. Filtrez sur les pokemons de `type` *fire* avec plus de 100 d'`attack`, puis trier le résultat par ordre décroissant d'`attack`. 
-d. Filtrez sur les pokemons qui ont entre 100 et 150 de `speed`. Les trier par `speed`décroissant.
+d. Filtrez sur les pokemons qui ont entre 100 et 150 de `speed`. Les trier par `speed` décroissant.
 e. Filtrez sur les pokemons pesant plus de 250 kg et affichez le résultat pour vérifier.
 f. Filtrez sur les pokémons qui ont des valeurs manquantes sur la variable `height_m`.
 g. Filtrez sur les pokemons qui ont des valeurs renseignées à la fois pour la variable `weight_kg` **et** la variable `height`.
@@ -178,7 +178,7 @@ e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `d
 ## TP3
 
 <p>
-![Among us*](./img/amongus.jpg)
+![Among us](./img/amongus.jpg)
 </p>
 
 Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
