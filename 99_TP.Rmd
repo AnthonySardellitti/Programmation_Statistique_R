@@ -1,6 +1,6 @@
 # S'entrainer {#entrainement}
 
-## TP1
+## TP1 (difficulté : 🏆)
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(readxl)
@@ -66,7 +66,7 @@ a. La colonne `mpg` correspond au nombre de miles parcouru en 1 gallon (US). Cet
 b. Construire une nouvelle colonne appelée `qsec_cut` qui est un découpage de la variable `qsec` en 3 groupes (pas de restriction sur le nombre de classe).
 c. Construire une nouvelle colonne appelée `litres100km_group` pour distinguer deux groupes de voiture : celles qui consomment plus que la moyenne et celles qui consomment moins que la moyenne.
 
-## TP2
+## TP2 (difficulté : 🏆🏆)
 
 
 <p>
@@ -175,7 +175,7 @@ c. Calculez la médiane de `weight_kg` par `type`.
 d. Calculez le nombre de pokemon par `type` et `generation`
 e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `defense` et `speed`) en fonction de chaque `type`.
 
-## TP3
+## TP3 (difficulté : 🏆🏆🏆)
 
 <p>
 ![Among us](./img/amongus.jpg)
@@ -348,3 +348,12 @@ j. Construire **un graphique adapté** permettant de visualiser l'évolution du 
 k. Construire **un graphique adapté** permettant de visualiser les variations du taux de succès des imposteurs selon les régions serveurs.
 
 l. Construire **un graphique adapté** permettant de visualiser les taux de succès  des 5 meilleurs utilisateurs.
+
+
+## TP4 - EXAMEN (difficulté : 🏆🏆)
+
+Désolé ! pas encore en ligne 🎁
+
+## TP5 - Chercher l'erreur (difficulté : 🏆🏆)
+
+En cours de préparation 💤
