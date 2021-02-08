@@ -182,7 +182,7 @@ e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `d
 </p>
 
 Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
-On utilise le fichier compressé `AmongUs.7z` où l'ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu *Among us*. Il y a un fichier par joueur nommé *UserX.csv*.
+On utilise le fichier compressé `AmongUs.7z` où l'ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu *Among Us*. Il y a un fichier par joueur nommé *UserX.csv*.
 Les données sont issues du site [Kaggle](https://www.kaggle.com/ruchi798/among-us-dataset). Pour réaliser ce TP, télécharger le fichier en [cliquant ici](https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset).
 Les fichiers csv ont tous la même structure avec :
 
@@ -212,13 +212,12 @@ kable(head(AmongUs,n = 20), "html") %>% kable_styling("striped", font_size = tai
 a. Télécharger le fichier compressé `AmongUs.7z` et le déziper. La fonction `list.files()` devrait vous aider à extraire l'ensemble des noms de fichiers présents dans un répertoire (voir l'exemple ci-dessous).
 
 ```{r}
-list.files(path = "./dataset/", pattern="*.csv", full.names=FALSE)
+list.files(path = "dataset/", pattern="*.csv", full.names=FALSE)
 ```
 
 b. Compiler l'ensemble des fichiers *UserX.csv* présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. La fonction `rbind()` devrait vous aider à compiler les différents csv dans un seul data frame (voir l'exemple ci-dessous). 
 <br> 
-📢 Attention, pour le bon déroulement du TP, intégrer l'argument `stringsAsFactors = FALSE` dans votre fonction d'importation. Cet argument permet de ne pas typer par défaut les variables `character` en `factor` lors de l'importation.
-
+📢 Attention, pour le bon déroulement du TP, intégrer l'argument `stringsAsFactors = FALSE` dans votre fonction `read.csv()`. Cet argument permet de ne pas typer par défaut les variables `character` en `factor` lors de l'importation.
 
 ```{r}
 df <- data.frame()
@@ -230,19 +229,40 @@ dim(df)
 ```
 
 c. Modifier votre boucle afin d'ajouter une colonne dans le data frame final qui renseigne le numéro d'utilisateur disponible dans le nom de chaque fichier csv.
+<br>
+💡 indice : Il est plus simple d'ajouter une colonne avec le nom du fichier juste avant la fonction `rbind()`.
 
 d. Stocker le data frame final dans un objet appelé *AmongUs*.
 
 e. Supprimer la colonne `Rank.Change` qui est inutile.
 
-f. Construire une fonction appelée `manage_na()` qui prend en entrée un vecteur `x` correspondant aux données et un vecteur `string_to_na` correspondant à la liste des chaînes de caractères qu'on souhaite transformer en `NA`. La fonction retournera le vecteur modifié.
+f. On observe des valeurs manquantes dans le dataset à travers les champs `-` et `N/A`, on souhaite remplacer ces valeurs textuelles par la véritable valeur `NA` permettant d'indiquer à R que la valeur est manquante. Construire une fonction appelée `manage_na()` qui prend en entrée :
+
+* un vecteur `x` correspondra à une colonne d'un dataset.
+* un vecteur `string_to_na` correspondant à la liste des chaînes de caractères qu'on souhaite transformer en `NA`.
+
+La fonction retournera le vecteur modifié.
+<br>
+💡 indice : voici ci-dessous la tête que doit avoir votre fonction :
+
+```{r, eval=FALSE}
+manage_na <- function(x, string_to_na) {
+  
+  ...
+  ...
+  ...
+  
+  return(x_modif)
+}
+```
+
 
 g. Construire une boucle qui parcourt toutes les colonnes du data frame *AmongUs* et qui remplace les champs avec des `-` et `N/A` par des valeurs manquantes `NA`. Utilisez la fonction `manage_na()` créée précédemment.
 
 
 **Exercice 2 : Manipuler le texte et les dates**
 
-a. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Date` avec la date de la partie au format *yyyy-mm-dd*. Veiller à ce que le type de cette colonne soit *Date*.
+a. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Date` avec la date de la partie au format *yyyy-mm-dd* uniquement. Veiller à ce que le type de cette colonne soit *Date*.
 
 b. À partir de la colonne `Game.Completed.Date`, construire une colonne appelée `Heure` avec **l'heure uniquement** de la partie. Attention au format *am* et *pm*. 
 
@@ -258,11 +278,7 @@ a. Combien de lignes, colonnes sont présentes dans ce dataset (Utiliser la fonc
 
 b. Afficher un résumé des données avec la fonction adaptée. 
 
-c. On souhaite que le type de chaque colonne corresponde au tableau ci-dessous. Construire 3 boucles:
-
-* une boucle qui convertit en type `numeric` les colonnes concernées par le tableau les unes après les autres.
-* une boucle qui convertit en type `character` les colonnes concernées par le tableau les unes après les autres.
-* une boucle qui convertit en type `factor` les colonnes concernées les unes après les autres.
+c. Veiller à ce que les types de chaque colonne du dataset correspondent aux types ci-dessous. Sinon, convertir les variables dans leur type approprié.
 
 Variable | Type souhaité
 ------------ | ------------

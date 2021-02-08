@@ -463,7 +463,7 @@ c. Trier la table par vols de provenance, puis de destination
 
 a. Trier la table selon le mois du vol
 
-```{r, warning=FALSE}
+```{r, echo = FALSE,warning=FALSE}
 #On charge la librairie knitr pour utiliser la fonction kable pour les tableaux en sortie
 library(knitr)
 ```

@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2021-02-04" />
+<meta name="date" content="2021-02-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -315,6 +315,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.4" data-path="all-dataset.html"><a href="all-dataset.html#google"><i class="fa fa-check"></i><b>13.4</b> Google 📱</a></li>
 <li class="chapter" data-level="13.5" data-path="all-dataset.html"><a href="all-dataset.html#pokemon"><i class="fa fa-check"></i><b>13.5</b> Pokemon 🐾</a></li>
 <li class="chapter" data-level="13.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>13.6</b> Star Wars 🎬</a></li>
+<li class="chapter" data-level="13.7" data-path="all-dataset.html"><a href="all-dataset.html#amongus"><i class="fa fa-check"></i><b>13.7</b> AmongUs 🔦</a></li>
+<li class="chapter" data-level="13.8" data-path="all-dataset.html"><a href="all-dataset.html#nba"><i class="fa fa-check"></i><b>13.8</b> NBA 🏀</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>14</b> Bibliographie</a></li>
 </ul>
@@ -1616,7 +1618,7 @@ speed
 <img src="img/amongus.jpg" title="fig:" alt="Among us" />
 </p>
 <p>Ce TP reprend les notions évoquées dans les chapitres 6,7 et 10.
-On utilise le fichier compressé <code>AmongUs.7z</code> où l’ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu <em>Among us</em>. Il y a un fichier par joueur nommé <em>UserX.csv</em>.
+On utilise le fichier compressé <code>AmongUs.7z</code> où l’ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu <em>Among Us</em>. Il y a un fichier par joueur nommé <em>UserX.csv</em>.
 Les données sont issues du site <a href="https://www.kaggle.com/ruchi798/among-us-dataset">Kaggle</a>. Pour réaliser ce TP, télécharger le fichier en <a href="https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset">cliquant ici</a>.
 Les fichiers csv ont tous la même structure avec :</p>
 <ul>
@@ -2540,13 +2542,13 @@ NA / EYNONF
 <ol style="list-style-type: lower-alpha">
 <li>Télécharger le fichier compressé <code>AmongUs.7z</code> et le déziper. La fonction <code>list.files()</code> devrait vous aider à extraire l’ensemble des noms de fichiers présents dans un répertoire (voir l’exemple ci-dessous).</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="entrainement.html#cb7-1"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;./dataset/&quot;</span>, <span class="dt">pattern=</span><span class="st">&quot;*.csv&quot;</span>, <span class="dt">full.names=</span><span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;AmongUs.csv&quot;  &quot;flights.csv&quot;  &quot;google.csv&quot;   &quot;planes.csv&quot;  
-## [5] &quot;starwars.csv&quot; &quot;Titanic.csv&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="entrainement.html#cb7-1"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;dataset/&quot;</span>, <span class="dt">pattern=</span><span class="st">&quot;*.csv&quot;</span>, <span class="dt">full.names=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;AmongUs.csv&quot;    &quot;characters.csv&quot; &quot;flights.csv&quot;    &quot;google.csv&quot;    
+## [5] &quot;NBA.csv&quot;        &quot;planes.csv&quot;     &quot;starwars.csv&quot;   &quot;Titanic.csv&quot;</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Compiler l’ensemble des fichiers <em>UserX.csv</em> présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. La fonction <code>rbind()</code> devrait vous aider à compiler les différents csv dans un seul data frame (voir l’exemple ci-dessous).
 <br>
-📢 Attention, pour le bon déroulement du TP, intégrer l’argument <code>stringsAsFactors = FALSE</code> dans votre fonction d’importation. Cet argument permet de ne pas typer par défaut les variables <code>character</code> en <code>factor</code> lors de l’importation.</li>
+📢 Attention, pour le bon déroulement du TP, intégrer l’argument <code>stringsAsFactors = FALSE</code> dans votre fonction <code>read.csv()</code>. Cet argument permet de ne pas typer par défaut les variables <code>character</code> en <code>factor</code> lors de l’importation.</li>
 </ol>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="entrainement.html#cb9-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>()</span>
 <span id="cb9-2"><a href="entrainement.html#cb9-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
@@ -2558,15 +2560,34 @@ NA / EYNONF
 <span id="cb13-2"><a href="entrainement.html#cb13-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
 <pre><code>## [1] 64 11</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
-<li><p>Modifier votre boucle afin d’ajouter une colonne dans le data frame final qui renseigne le numéro d’utilisateur disponible dans le nom de chaque fichier csv.</p></li>
+<li><p>Modifier votre boucle afin d’ajouter une colonne dans le data frame final qui renseigne le numéro d’utilisateur disponible dans le nom de chaque fichier csv.
+<br>
+💡 indice : Il est plus simple d’ajouter une colonne avec le nom du fichier juste avant la fonction <code>rbind()</code>.</p></li>
 <li><p>Stocker le data frame final dans un objet appelé <em>AmongUs</em>.</p></li>
 <li><p>Supprimer la colonne <code>Rank.Change</code> qui est inutile.</p></li>
-<li><p>Construire une fonction appelée <code>manage_na()</code> qui prend en entrée un vecteur <code>x</code> correspondant aux données et un vecteur <code>string_to_na</code> correspondant à la liste des chaînes de caractères qu’on souhaite transformer en <code>NA</code>. La fonction retournera le vecteur modifié.</p></li>
-<li><p>Construire une boucle qui parcourt toutes les colonnes du data frame <em>AmongUs</em> et qui remplace les champs avec des <code>-</code> et <code>N/A</code> par des valeurs manquantes <code>NA</code>. Utilisez la fonction <code>manage_na()</code> créée précédemment.</p></li>
+<li><p>On observe des valeurs manquantes dans le dataset à travers les champs <code>-</code> et <code>N/A</code>, on souhaite remplacer ces valeurs textuelles par la véritable valeur <code>NA</code> permettant d’indiquer à R que la valeur est manquante. Construire une fonction appelée <code>manage_na()</code> qui prend en entrée :</p></li>
+</ol>
+<ul>
+<li>un vecteur <code>x</code> correspondra à une colonne d’un dataset.</li>
+<li>un vecteur <code>string_to_na</code> correspondant à la liste des chaînes de caractères qu’on souhaite transformer en <code>NA</code>.</li>
+</ul>
+<p>La fonction retournera le vecteur modifié.
+<br>
+💡 indice : voici ci-dessous la tête que doit avoir votre fonction :</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="entrainement.html#cb15-1"></a>manage_na &lt;-<span class="st"> </span><span class="cf">function</span>(x, string_to_na) {</span>
+<span id="cb15-2"><a href="entrainement.html#cb15-2"></a>  </span>
+<span id="cb15-3"><a href="entrainement.html#cb15-3"></a>  ...</span>
+<span id="cb15-4"><a href="entrainement.html#cb15-4"></a>  ...</span>
+<span id="cb15-5"><a href="entrainement.html#cb15-5"></a>  ...</span>
+<span id="cb15-6"><a href="entrainement.html#cb15-6"></a>  </span>
+<span id="cb15-7"><a href="entrainement.html#cb15-7"></a>  <span class="kw">return</span>(x_modif)</span>
+<span id="cb15-8"><a href="entrainement.html#cb15-8"></a>}</span></code></pre></div>
+<ol start="7" style="list-style-type: lower-alpha">
+<li>Construire une boucle qui parcourt toutes les colonnes du data frame <em>AmongUs</em> et qui remplace les champs avec des <code>-</code> et <code>N/A</code> par des valeurs manquantes <code>NA</code>. Utilisez la fonction <code>manage_na()</code> créée précédemment.</li>
 </ol>
 <p><strong>Exercice 2 : Manipuler le texte et les dates</strong></p>
 <ol style="list-style-type: lower-alpha">
-<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Date</code> avec la date de la partie au format <em>yyyy-mm-dd</em>. Veiller à ce que le type de cette colonne soit <em>Date</em>.</p></li>
+<li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Date</code> avec la date de la partie au format <em>yyyy-mm-dd</em> uniquement. Veiller à ce que le type de cette colonne soit <em>Date</em>.</p></li>
 <li><p>À partir de la colonne <code>Game.Completed.Date</code>, construire une colonne appelée <code>Heure</code> avec <strong>l’heure uniquement</strong> de la partie. Attention au format <em>am</em> et <em>pm</em>.</p></li>
 <li><p>À partir de la colonne <code>Game Length</code>, construire une colonne appelée <code>Game.Length.sec</code> correspondant à la durée de la partie en secondes.</p></li>
 <li><p>À partir de la colonne <code>Time.to.complete.all.tasks</code>, construire une colonne appelée <code>Complete.all.tasks.sec</code> correspondant à la durée en secondes pour compléter toutes les tâches.</p></li>
@@ -2576,13 +2597,8 @@ NA / EYNONF
 <ol style="list-style-type: lower-alpha">
 <li><p>Combien de lignes, colonnes sont présentes dans ce dataset (Utiliser la fonction adaptée) ?</p></li>
 <li><p>Afficher un résumé des données avec la fonction adaptée.</p></li>
-<li><p>On souhaite que le type de chaque colonne corresponde au tableau ci-dessous. Construire 3 boucles:</p></li>
+<li><p>Veiller à ce que les types de chaque colonne du dataset correspondent aux types ci-dessous. Sinon, convertir les variables dans leur type approprié.</p></li>
 </ol>
-<ul>
-<li>une boucle qui convertit en type <code>numeric</code> les colonnes concernées par le tableau les unes après les autres.</li>
-<li>une boucle qui convertit en type <code>character</code> les colonnes concernées par le tableau les unes après les autres.</li>
-<li>une boucle qui convertit en type <code>factor</code> les colonnes concernées les unes après les autres.</li>
-</ul>
 <table>
 <thead>
 <tr class="header">
@@ -2664,18 +2680,18 @@ NA / EYNONF
 <p><br>
 📢 Attention, lorsqu’on convertit un vecteur de type <code>factor</code> en type <code>numeric</code>, il est recommandé de passer d’abord par le type <code>character</code> (voir exemple ci-dessous). Ce ne sera peu être pas utile pour ce TP, mais c’est bien de le savoir !</p>
 <p>Ce qu’il ne faut pas faire ⛔</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="entrainement.html#cb15-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb15-2"><a href="entrainement.html#cb15-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="entrainement.html#cb16-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb16-2"><a href="entrainement.html#cb16-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot;</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="entrainement.html#cb17-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)</span>
-<span id="cb17-2"><a href="entrainement.html#cb17-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="entrainement.html#cb18-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)</span>
+<span id="cb18-2"><a href="entrainement.html#cb18-2"></a>x</span></code></pre></div>
 <pre><code>## [1] 2 2 3 2 4 1 1</code></pre>
 <p>Ce qu’il faut faire ✅</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="entrainement.html#cb19-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb19-2"><a href="entrainement.html#cb19-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="entrainement.html#cb20-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb20-2"><a href="entrainement.html#cb20-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot;</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="entrainement.html#cb21-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(x))</span>
-<span id="cb21-2"><a href="entrainement.html#cb21-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="entrainement.html#cb22-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(x))</span>
+<span id="cb22-2"><a href="entrainement.html#cb22-2"></a>x</span></code></pre></div>
 <pre><code>## [1] 7 7 8 7 9 6 6</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.</li>

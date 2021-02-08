@@ -239,3 +239,69 @@ Voici un extrait du dataset :
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 kable(head(starWars,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
 ```
+
+## AmongUs 🔦
+
+On utilise le fichier compressé `AmongUs.7z` où l'ensemble des fichiers décrivent les statistiques des parties jouées sur le jeu *Among Us*. Il y a un fichier par joueur nommé *UserX.csv*.
+Les données sont issues du site [Kaggle](https://www.kaggle.com/ruchi798/among-us-dataset). Vous pouvez les télécharger facilement en [cliquant ici](https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset).
+Les fichiers csv ont tous la même structure avec :
+
+- `Game.Completed.Date` : Date de la partie
+- `Team` : l'équipe attribuée
+- `Outcome` : résultat de la partie
+- `Task.Completed` : le nombre de tâches effectuées
+- `All.Tasks.Completed` : si toutes les tâches ont été effectuées
+- `Murdered` : si le joueur a été tué
+- `Imposter.Kills` : le nombre de joueurs tués par l'imposteur
+- `Game.Length` : durée de la partie
+- `Ejected` : si le joueur a été éliminé par les autres au cours de la partie
+- `Sabotages.Fixed` : nombre de sabotages réparés
+- `Time.to.complete.all.tasks` : temps pour compléter les toutes les tâches
+- `Rank.Change`  : Non renseigné
+- `Region.Game.Code` : la région du serveur de jeu
+
+```{r}
+AmongUs <-read.csv("./dataset/AmongUs.csv")
+```
+
+
+```{r}
+dim(AmongUs)
+```
+
+Voici un extrait du dataset :
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(AmongUs,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+
+## NBA 🏀
+
+Ce jeu de données`NBA.csv` décrit les tirs effectués au cours de la saison 2014-2015 de NBA. Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/dansbecker/nba-shot-logs). Il a été adapté et modifié pour ce cours. Les données sont accessibles en [cliquant ici](https://github.com/AnthonySardellitti/datascience-r/tree/master/datasets).
+
+Voici la présentation du jeu de données :
+
+- `GAME_ID` : ID du match
+- `LOCATION` : Lieu du match (*Home* / *Away*)
+- `GAME_RESULT` : Résultat du match (*Won* / *Lost*)
+- `PERIOD` : Numéro de quart-temps et prolongations éventuelles
+- `SHOT_CLOCK` :  Durée de la possession de l'équipe au moment du tir
+- `DRIBBLES` : Nombre de dribbles avant le tir
+- `TOUCH_TIME` : Durée de la possession du joueur avant le tir
+- `SHOT_DIST` : Distance de tir en *foot* (*1 foot = 0,30 mètre*)
+- `PTS_TYPE` : Tentative à 2 ou 3 points (les lancers francs à 1 point ne sont pas répertoriés)
+- `SHOT_RESULT` : Résultat du tir (*made* / *missed*)
+- `CLOSE_DEF_DIST` : Distance entre le tireur et le défenseur le plus proche en *foot* (*1 foot = 0,30 mètre*)
+- `SHOOTER` : Nom du tireur
+
+```{r, echo =FALSE, warning=FALSE, message=FALSE}
+NBA <- read.csv("./dataset/NBA.csv")
+```
+
+```{r}
+dim(NBA)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(NBA,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
