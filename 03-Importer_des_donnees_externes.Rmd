@@ -405,3 +405,12 @@ count <- sort(x = table(flights$dest),decreasing = TRUE)[1:10]
 barplot(height = count, main = "Nombre de vols pour chaque destination \n TOP 10",
         ylim = c(0,20000), col = "blue")
 ```
+
+
+## Testez vos connaissances !
+
+<p>
+![Quiz](./img/kahoot.png)
+</p>
+
+Testez vos connaissances sur ce chapitre avec ce quiz (10 min) en [cliquant ici](https://kahoot.it/challenge/02030066?challenge-id=93264293-c5c0-4eb8-8381-2ba18c649ca3_1613030090019).
