@@ -294,7 +294,7 @@ Voici la présentation du jeu de données :
 - `CLOSE_DEF_DIST` : Distance entre le tireur et le défenseur le plus proche en *foot* (*1 foot = 0,30 mètre*)
 - `SHOOTER` : Nom du tireur
 
-```{r, echo =FALSE, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 NBA <- read.csv("./dataset/NBA.csv")
 ```
 

@@ -350,10 +350,116 @@ k. Construire **un graphique adapté** permettant de visualiser les variations d
 l. Construire **un graphique adapté** permettant de visualiser les taux de succès  des 5 meilleurs utilisateurs.
 
 
-## TP4 - EXAMEN (difficulté : 🏆🏆)
+## TP4 - Récap (difficulté : 🏆🏆)
 
-Désolé ! pas encore en ligne 🎁
+<p>
+![NBA](./img/nba.jpg)
+</p>
+
+Ce TP reprend les notions évoquées dans les chapitres 2 à 7.
+On utilise  le fichier `NBA.csv` qui décrit les tirs effectués au cours de la saison 2014-2015 de NBA. Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/dansbecker/nba-shot-logs). Il a été adapté et modifié pour ce cours. Les données sont accessibles en [cliquant ici](https://github.com/AnthonySardellitti/datascience-r/tree/master/datasets).
+
+Voici la présentation du jeu de données :
+
+- `GAME_ID` : ID du match
+- `LOCATION` : Lieu du match (*Home* / *Away*)
+- `GAME_RESULT` : Résultat du match (*Won* / *Lost*)
+- `PERIOD` : Numéro de quart-temps et prolongations éventuelles
+- `SHOT_CLOCK` :  Durée de la possession de l'équipe au moment du tir
+- `DRIBBLES` : Nombre de dribbles avant le tir
+- `TOUCH_TIME` : Durée de la possession du joueur avant le tir
+- `SHOT_DIST` : Distance de tir en *foot* (*1 foot = 0,30 mètre*)
+- `PTS_TYPE` : Tentative à 2 ou 3 points (les lancers francs à 1 point ne sont pas répertoriés)
+- `SHOT_RESULT` : Résultat du tir (*made* / *missed*)
+- `CLOSE_DEF_DIST` : Distance entre le tireur et le défenseur le plus proche en *foot* (*1 foot = 0,30 mètre*)
+- `SHOOTER` : Nom du tireur
+
+```{r, echo =FALSE, warning=FALSE, message=FALSE}
+NBA <- read.csv("./dataset/NBA.csv")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(NBA,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+<br>
+**Exercice 1 : Importer les données**
+
+a. Importer le jeu de données `NBA.csv`.
+b. Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?
+c. Afficher le nom des colonnes.
+d. Afficher le type des colonnes avec la fonction adaptée.
+e. On souhaite analyser les variables `PERIOD`, `PTS_TYPE`, et `SHOOTER` en tant que variables qualitatives. Modifier le type de ces variables pour les transformer en type factor.
+f. Combien de niveaux (*levels*) sont présents dans ces variables ?
+g. Afficher un résumé des données avec la fonction adaptée.
+
+**Exercice 2 : Statistiques descriptives**
+
+a. Calculer l'écart-type de la variable présentant la distance de tir (`SHOT_DIST`).
+b. Calculer l'écart-type de la variable présentant la durée de la possession de l'équipe au moment du tir (`SHOT_CLOCK`).
+c. Calculer la répartition du nombre de tirs manqués et réussis (`SHOT_RESULT`).
+d. Calculer les **quartiles** de la variable présentant le nombre de dribbles avant un tir (`DRIBBLES`).
+e. Calculer les **déciles** de la variable présentant la distance entre le tireur et le défenseur le plus proche (`CLOSE_DEF_DIST`).
+f. Combien de matchs se sont déroulés lors de cette saison de basket ?
+g. Combien y-a-t-il de `SHOOTER` différents ?
+
+**Exercice 3 : Modifier le jeu de données**
+
+a. Créer une variable `SHOT_DIST_METRE` qui affiche la variable `SHOT_DIST` convertit en mètre (*1 foot = 0,30 mètre*).
+b. Créer une variable `PTS_MARQUES` qui prend la valeur 0, 2 ou 3 en fonction de l'issue du tir.
+c. Supprimer la variable `GAME_RESULT` car elle est inutile.
+
+**Exercice 4 : Interroger les données**
+
+Attention, certaines questions peuvent nécessiter plusieurs étapes.  Penser à vérifier vos requêtes avec la fonction `dim()` ou `View()`.Pour chaque question, affecter le résultat ddans un objet comme dans l'exemple ci-dessous.
+
+```{r}
+#Selectionnez les deux premières colonnes du data frame
+requete_0 <- NBA[, c(1,2)]
+```
+
+a. On souhaite extraire uniquement la colonne `SHOOTER` , `SHOT_RESULT` et `PTS_TYPE` dans cet ordre.
+b. On souhaite extraire uniquement les 50 premières lignes.
+c. On souhaite extraire toutes les colonnes sauf la première.
+d. On souhaite extraire uniquement les 100 **tirs tentés** avec les `SHOT_DIST` les plus loin.
+e. On souhaite extraire uniquement les 100 **tirs réussis** avec les `SHOT_DIST` les plus loin.
+f. On souhaite extraire uniquement les tirs réussis à 3 points de *kobe bryant*.
+g. On souhaite construire un data frame avec les 5 `SHOOTER` qui ont inscrit le plus de points.
+
+**Bonus**
+
+On souhaite construire un programme permettant de parcourir l'ensemble des colonnes du data frame :
+
+* Si la colonne est `numeric`,on souhaite construire un *boxplot*.
+* Si la colonne est `factor`, on souhaite construire un *barplot*.
+* Sinon, on ne fait rien.
+
+- Pensez à ajouter un titre sur les graphiques afin de savoir à quelle variable on a à faire.
+- Dans une boucle,lorsqu'on souhaite affcher un graphique ou une sortie dans la console, il faut utiliser la fonction `print()`.
 
 ## TP5 - Chercher l'erreur (difficulté : 🏆🏆)
 
-En cours de préparation 💤
+<p>
+![NBA](./img/mistake.jpg)
+</p>
+
+Ce TP reprend les notions évoquées dans les chapitres 2 à 7. Dans ce TP, vous incarnez un data analyst travaillant dans le service statistiques de la NBA. Un de vos collègues est parti en vacances vendredi dernier et a envoyer à votre manager quelques statistiques sur les tirs effectués au cours de la saison 2014-2015. <br>
+Le problème c'est que le script est bourré de fautes ! Rien ne fonctionne, à tous les coups, votre collègue était pressé de partir en vacance. Votre manager fait donc appel à vous pour corriger les erreurs de ce script. Attention, votre manager aimerait également comprendre ce que vous programmer dans votre script alors n'oubliez pas de commenter chaque ligne de code pour qu'il la comprenne. Le fichier de données (*NBA.csv*) et le script de votre collègue (*nba_stats.R*) sont disponibles en [cliquant ici](https://github.com/AnthonySardellitti/datascience-r/tree/master/datasets).
+<br>
+🎯 Votre manager a déjà passé beaucoup de temps pour comprendre ce script et aimerait que votre correction garde la même philosophie que le script de votre collègue, cela signifie qu'il ne faut pas écrire d'autres commandes R et simplement faire en sorte que celles déjà présentes fonctionnent.
+
+
+<p>
+![script1](./img/mistakes_1.PNG)
+</p>
+
+<p>
+![script2](./img/mistakes_2.PNG)
+</p>
+
+<p>
+![script3](./img/mistakes_3.PNG)
+</p>
+
+<p>
+![script4](./img/mistakes_4.PNG)
+</p>
