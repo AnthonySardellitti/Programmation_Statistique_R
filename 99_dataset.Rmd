@@ -277,7 +277,7 @@ kable(head(AmongUs,n = 20), "html") %>% kable_styling("striped", font_size = tai
 
 ## NBA 🏀
 
-Ce jeu de données`NBA.csv` décrit les tirs effectués au cours de la saison 2014-2015 de NBA. Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/dansbecker/nba-shot-logs). Il a été adapté et modifié pour ce cours. Les données sont accessibles en [cliquant ici](https://github.com/AnthonySardellitti/datascience-r/tree/master/datasets).
+Ce jeu de données`NBA.csv` décrit les tirs effectués au cours de la saison 2014-2015 de NBA. Le fichier est issu du site [ Kaggle ](https://www.kaggle.com/dansbecker/nba-shot-logs). Il a été adapté et modifié pour ce cours. Les données sont accessibles en [cliquant ici](https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset).
 
 Voici la présentation du jeu de données :
 
