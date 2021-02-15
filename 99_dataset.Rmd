@@ -305,3 +305,33 @@ dim(NBA)
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 kable(head(NBA,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
 ```
+
+
+## Students 🎓
+
+Le dataset `students_results.csv` décrit les notes d'étudiants sur différentes épreuves.
+
+Voici la présentation du jeu de données :
+
+- `ID_etudiant` : Le matricule des étudiants
+- `Genre` : Le genre des étudiants
+- `Groupe.TP` : Le groupe de travaux pratiques
+- `Groupe.TD` : Le groupe de travaux dirigés
+-  `QUIZ#` : Le score du quiz numéro #
+- `TP#` : La note au TP numéro #
+
+
+```{r, warning=FALSE, message=FALSE}
+df <- read.csv(file = "dataset/students_results.csv",
+                               sep = ";", dec = ",")
+```
+
+
+```{r}
+dim(df)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+kable(head(df,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```

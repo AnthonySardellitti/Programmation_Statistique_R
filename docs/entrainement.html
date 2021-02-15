@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2021-02-14" />
+<meta name="date" content="2021-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -305,6 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3" data-path="entrainement.html"><a href="entrainement.html#tp3-difficulté"><i class="fa fa-check"></i><b>12.3</b> TP3 (difficulté : 🏆🏆🏆)</a></li>
 <li class="chapter" data-level="12.4" data-path="entrainement.html"><a href="entrainement.html#tp4---récap-difficulté"><i class="fa fa-check"></i><b>12.4</b> TP4 - Récap (difficulté : 🏆🏆)</a></li>
 <li class="chapter" data-level="12.5" data-path="entrainement.html"><a href="entrainement.html#tp5---chercher-lerreur-difficulté"><i class="fa fa-check"></i><b>12.5</b> TP5 - Chercher l’erreur (difficulté : 🏆🏆)</a></li>
+<li class="chapter" data-level="12.6" data-path="entrainement.html"><a href="entrainement.html#tp6---analyses-statistiques-difficulté"><i class="fa fa-check"></i><b>12.6</b> TP6 - Analyses statistiques (difficulté : 🏆🏆)</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>13</b> Jeux de données utilisés</a><ul>
 <li class="chapter" data-level="13.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>13.1</b> Iris 🌺</a></li>
@@ -321,6 +322,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>13.6</b> Star Wars 🎬</a></li>
 <li class="chapter" data-level="13.7" data-path="all-dataset.html"><a href="all-dataset.html#amongus"><i class="fa fa-check"></i><b>13.7</b> AmongUs 🔦</a></li>
 <li class="chapter" data-level="13.8" data-path="all-dataset.html"><a href="all-dataset.html#nba"><i class="fa fa-check"></i><b>13.8</b> NBA 🏀</a></li>
+<li class="chapter" data-level="13.9" data-path="all-dataset.html"><a href="all-dataset.html#students"><i class="fa fa-check"></i><b>13.9</b> Students 🎓</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>14</b> Bibliographie</a></li>
 </ul>
@@ -1542,9 +1544,9 @@ NA
 </ol>
 <p><strong>Exercice 3 : Tris et Selections</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb698"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb698-1"><a href="entrainement.html#cb698-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
-<span id="cb698-2"><a href="entrainement.html#cb698-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
-<span id="cb698-3"><a href="entrainement.html#cb698-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="entrainement.html#cb1-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
+<span id="cb1-2"><a href="entrainement.html#cb1-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb1-3"><a href="entrainement.html#cb1-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 251   2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Sélectionnez la colonne <code>nom</code> et <code>is_legendary</code>.</li>
@@ -1559,9 +1561,9 @@ NA
 </ol>
 <p><strong>Exercice 4 : Tris et Filtres</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Pour faciliter la lecture, sélectionnez la colonne <code>nom</code>et les colonnes concernées par le filtre. Exemple :</p>
-<div class="sourceCode" id="cb700"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb700-1"><a href="entrainement.html#cb700-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
-<span id="cb700-2"><a href="entrainement.html#cb700-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
-<span id="cb700-3"><a href="entrainement.html#cb700-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="entrainement.html#cb3-1"></a><span class="co">#Selectionnez les pokemons de type feu</span></span>
+<span id="cb3-2"><a href="entrainement.html#cb3-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>pokemon[ pokemon<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;fire&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;nom&quot;</span>,<span class="st">&quot;type&quot;</span>)]</span>
+<span id="cb3-3"><a href="entrainement.html#cb3-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 20  2</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Filtrez sur les pokemons qui ont 150 ou plus d’<code>attack</code> puis trier le résultat par ordre décroissant d’<code>attack</code>.</li>
@@ -1574,9 +1576,9 @@ NA
 </ol>
 <p><strong>Exercice 5 : Agregations</strong></p>
 <p>Pour chaque question suivante, affectez le résultat de la requête dans un objet puis calculez sa dimension. Exemple :</p>
-<div class="sourceCode" id="cb702"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb702-1"><a href="entrainement.html#cb702-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
-<span id="cb702-2"><a href="entrainement.html#cb702-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
-<span id="cb702-3"><a href="entrainement.html#cb702-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="entrainement.html#cb5-1"></a><span class="co">#Calculez la vitesse moyenne par generation</span></span>
+<span id="cb5-2"><a href="entrainement.html#cb5-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">formula =</span> speed <span class="op">~</span><span class="st"> </span>generation, <span class="dt">data =</span> pokemon , <span class="dt">FUN =</span> mean)</span>
+<span id="cb5-3"><a href="entrainement.html#cb5-3"></a><span class="kw">dim</span>(requete_<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 2 2</code></pre>
 <table>
 <thead>
@@ -2546,22 +2548,23 @@ NA / EYNONF
 <ol style="list-style-type: lower-alpha">
 <li>Télécharger le fichier compressé <code>AmongUs.7z</code> et le déziper. La fonction <code>list.files()</code> devrait vous aider à extraire l’ensemble des noms de fichiers présents dans un répertoire (voir l’exemple ci-dessous).</li>
 </ol>
-<div class="sourceCode" id="cb704"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb704-1"><a href="entrainement.html#cb704-1"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;dataset/&quot;</span>, <span class="dt">pattern=</span><span class="st">&quot;*.csv&quot;</span>, <span class="dt">full.names=</span><span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;AmongUs.csv&quot;    &quot;characters.csv&quot; &quot;flights.csv&quot;    &quot;google.csv&quot;    
-## [5] &quot;NBA.csv&quot;        &quot;planes.csv&quot;     &quot;starwars.csv&quot;   &quot;Titanic.csv&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="entrainement.html#cb7-1"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;dataset/&quot;</span>, <span class="dt">pattern=</span><span class="st">&quot;*.csv&quot;</span>, <span class="dt">full.names=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;AmongUs.csv&quot;          &quot;characters.csv&quot;       &quot;flights.csv&quot;         
+## [4] &quot;google.csv&quot;           &quot;NBA.csv&quot;              &quot;planes.csv&quot;          
+## [7] &quot;starwars.csv&quot;         &quot;students_results.csv&quot; &quot;Titanic.csv&quot;</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Compiler l’ensemble des fichiers <em>UserX.csv</em> présents dans le fichier zip dans un seul et même data frame. Utiliser une boucle qui parcourt chaque fichier csv utilisateur. La fonction <code>rbind()</code> devrait vous aider à compiler les différents csv dans un seul data frame (voir l’exemple ci-dessous).
 <br>
 📢 Attention, pour le bon déroulement du TP, intégrer l’argument <code>stringsAsFactors = FALSE</code> dans votre fonction <code>read.csv()</code>. Cet argument permet de ne pas typer par défaut les variables <code>character</code> en <code>factor</code> lors de l’importation.</li>
 </ol>
-<div class="sourceCode" id="cb706"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb706-1"><a href="entrainement.html#cb706-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>()</span>
-<span id="cb706-2"><a href="entrainement.html#cb706-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="entrainement.html#cb9-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>()</span>
+<span id="cb9-2"><a href="entrainement.html#cb9-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
 <pre><code>## [1] 0 0</code></pre>
-<div class="sourceCode" id="cb708"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb708-1"><a href="entrainement.html#cb708-1"></a>df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, mtcars)</span>
-<span id="cb708-2"><a href="entrainement.html#cb708-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="entrainement.html#cb11-1"></a>df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, mtcars)</span>
+<span id="cb11-2"><a href="entrainement.html#cb11-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
 <pre><code>## [1] 32 11</code></pre>
-<div class="sourceCode" id="cb710"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb710-1"><a href="entrainement.html#cb710-1"></a>df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, mtcars)</span>
-<span id="cb710-2"><a href="entrainement.html#cb710-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="entrainement.html#cb13-1"></a>df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, mtcars)</span>
+<span id="cb13-2"><a href="entrainement.html#cb13-2"></a><span class="kw">dim</span>(df)</span></code></pre></div>
 <pre><code>## [1] 64 11</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li><p>Modifier votre boucle afin d’ajouter une colonne dans le data frame final qui renseigne le numéro d’utilisateur disponible dans le nom de chaque fichier csv.
@@ -2578,14 +2581,14 @@ NA / EYNONF
 <p>La fonction retournera le vecteur modifié.
 <br>
 💡 indice : voici ci-dessous la tête que doit avoir votre fonction :</p>
-<div class="sourceCode" id="cb712"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb712-1"><a href="entrainement.html#cb712-1"></a>manage_na &lt;-<span class="st"> </span><span class="cf">function</span>(x, string_to_na) {</span>
-<span id="cb712-2"><a href="entrainement.html#cb712-2"></a>  </span>
-<span id="cb712-3"><a href="entrainement.html#cb712-3"></a>  ...</span>
-<span id="cb712-4"><a href="entrainement.html#cb712-4"></a>  ...</span>
-<span id="cb712-5"><a href="entrainement.html#cb712-5"></a>  ...</span>
-<span id="cb712-6"><a href="entrainement.html#cb712-6"></a>  </span>
-<span id="cb712-7"><a href="entrainement.html#cb712-7"></a>  <span class="kw">return</span>(x_modif)</span>
-<span id="cb712-8"><a href="entrainement.html#cb712-8"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="entrainement.html#cb15-1"></a>manage_na &lt;-<span class="st"> </span><span class="cf">function</span>(x, string_to_na) {</span>
+<span id="cb15-2"><a href="entrainement.html#cb15-2"></a>  </span>
+<span id="cb15-3"><a href="entrainement.html#cb15-3"></a>  ...</span>
+<span id="cb15-4"><a href="entrainement.html#cb15-4"></a>  ...</span>
+<span id="cb15-5"><a href="entrainement.html#cb15-5"></a>  ...</span>
+<span id="cb15-6"><a href="entrainement.html#cb15-6"></a>  </span>
+<span id="cb15-7"><a href="entrainement.html#cb15-7"></a>  <span class="kw">return</span>(x_modif)</span>
+<span id="cb15-8"><a href="entrainement.html#cb15-8"></a>}</span></code></pre></div>
 <ol start="7" style="list-style-type: lower-alpha">
 <li>Construire une boucle qui parcourt toutes les colonnes du data frame <em>AmongUs</em> et qui remplace les champs avec des <code>-</code> et <code>N/A</code> par des valeurs manquantes <code>NA</code>. Utilisez la fonction <code>manage_na()</code> créée précédemment.</li>
 </ol>
@@ -2684,18 +2687,18 @@ NA / EYNONF
 <p><br>
 📢 Attention, lorsqu’on convertit un vecteur de type <code>factor</code> en type <code>numeric</code>, il est recommandé de passer d’abord par le type <code>character</code> (voir exemple ci-dessous). Ce ne sera peu être pas utile pour ce TP, mais c’est bien de le savoir !</p>
 <p>Ce qu’il ne faut pas faire ⛔</p>
-<div class="sourceCode" id="cb713"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb713-1"><a href="entrainement.html#cb713-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb713-2"><a href="entrainement.html#cb713-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="entrainement.html#cb16-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb16-2"><a href="entrainement.html#cb16-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot;</code></pre>
-<div class="sourceCode" id="cb715"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb715-1"><a href="entrainement.html#cb715-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)</span>
-<span id="cb715-2"><a href="entrainement.html#cb715-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="entrainement.html#cb18-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x)</span>
+<span id="cb18-2"><a href="entrainement.html#cb18-2"></a>x</span></code></pre></div>
 <pre><code>## [1] 2 2 3 2 4 1 1</code></pre>
 <p>Ce qu’il faut faire ✅</p>
-<div class="sourceCode" id="cb717"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb717-1"><a href="entrainement.html#cb717-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb717-2"><a href="entrainement.html#cb717-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="entrainement.html#cb20-1"></a>x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb20-2"><a href="entrainement.html#cb20-2"></a><span class="kw">levels</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot;</code></pre>
-<div class="sourceCode" id="cb719"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb719-1"><a href="entrainement.html#cb719-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(x))</span>
-<span id="cb719-2"><a href="entrainement.html#cb719-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="entrainement.html#cb22-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(x))</span>
+<span id="cb22-2"><a href="entrainement.html#cb22-2"></a>x</span></code></pre></div>
 <pre><code>## [1] 7 7 8 7 9 6 6</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Vérifier si cela a fonctionné en affichant le type de chaque variable du data frame.</li>
@@ -3575,8 +3578,8 @@ brian roberts
 </ol>
 <p><strong>Exercice 4 : Interroger les données</strong></p>
 <p>Attention, certaines questions peuvent nécessiter plusieurs étapes. Penser à vérifier vos requêtes avec la fonction <code>dim()</code> ou <code>View()</code>.Pour chaque question, affecter le résultat ddans un objet comme dans l’exemple ci-dessous.</p>
-<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="entrainement.html#cb721-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
-<span id="cb721-2"><a href="entrainement.html#cb721-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>NBA[, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="entrainement.html#cb24-1"></a><span class="co">#Selectionnez les deux premières colonnes du data frame</span></span>
+<span id="cb24-2"><a href="entrainement.html#cb24-2"></a>requete_<span class="dv">0</span> &lt;-<span class="st"> </span>NBA[, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li>On souhaite extraire uniquement la colonne <code>SHOOTER</code> , <code>SHOT_RESULT</code> et <code>PTS_TYPE</code> dans cet ordre.</li>
 <li>On souhaite extraire uniquement les 50 premières lignes.</li>
@@ -3599,9 +3602,9 @@ brian roberts
 <div id="tp5---chercher-lerreur-difficulté" class="section level2">
 <h2><span class="header-section-number">12.5</span> TP5 - Chercher l’erreur (difficulté : 🏆🏆)</h2>
 <p>
-<img src="img/mistake.jpg" title="fig:" alt="NBA" />
+<img src="img/mistake.jpg" title="fig:" alt="mistake" />
 </p>
-<p>Ce TP reprend les notions évoquées dans les chapitres 2 à 7. Dans ce TP, vous incarnez un data analyst travaillant dans le service statistiques de la NBA. Un de vos collègues est parti en vacances vendredi dernier et a envoyer à votre manager quelques statistiques sur les tirs effectués au cours de la saison 2014-2015. <br>
+<p>Ce TP reprend les notions évoquées dans les chapitres 2 à 7. Dans ce TP, vous incarnez un data analyst travaillant dans le service statistique de la NBA. Un de vos collègues est parti en vacances vendredi dernier et a envoyer à votre manager quelques statistiques sur les tirs effectués au cours de la saison 2014-2015. <br>
 Le problème c’est que le script est bourré de fautes ! Rien ne fonctionne, à tous les coups, votre collègue était pressé de partir en vacance. Votre manager fait donc appel à vous pour corriger les erreurs de ce script. Attention, votre manager aimerait également comprendre ce que vous programmez dans votre script alors n’oubliez pas de commenter chaque ligne de code pour qu’il la comprenne. Le fichier de données (<em>NBA.csv</em>) et le script de votre collègue (<em>nba_stats.R</em>) sont disponibles en <a href="https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset">cliquant ici</a>.
 <br>
 🎯 Votre manager a déjà passé beaucoup de temps pour comprendre ce script et aimerait que votre correction garde la même philosophie que le script de votre collègue, cela signifie qu’il ne faut pas écrire d’autres commandes R et simplement faire en sorte que celles déjà présentes fonctionnent.</p>
@@ -3617,6 +3620,731 @@ Le problème c’est que le script est bourré de fautes ! Rien ne fonctionne, �
 <p>
 <img src="img/mistakes_4.PNG" title="fig:" alt="script4" />
 </p>
+</div>
+<div id="tp6---analyses-statistiques-difficulté" class="section level2">
+<h2><span class="header-section-number">12.6</span> TP6 - Analyses statistiques (difficulté : 🏆🏆)</h2>
+<p>
+<img src="img/students.jpg" title="fig:" alt="Students" />
+</p>
+<p>Ce TP reprend les notions évoquées dans les chapitres 2 à 5.
+On utilise le fichier <code>students_results.csv</code> qui décrit les notes d’étudiants sur différentes épreuves.
+Pour réaliser ce TP, télécharger le fichier en <a href="https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset">cliquant ici</a>. Voici une description des données :</p>
+<ul>
+<li><code>ID_etudiant</code> : Le matricule des étudiants</li>
+<li><code>Genre</code> : Le genre des étudiants</li>
+<li><code>Groupe.TP</code> : Le groupe de travaux pratiques</li>
+<li><code>Groupe.TD</code> : Le groupe de travaux dirigés</li>
+<li><code>QUIZ#</code> : Le score du quiz numéro #</li>
+<li><code>TP#</code> : La note au TP numéro #</li>
+</ul>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+ID_etudiant
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Genre
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Groupe.TP
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Groupe.TD
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+QUIZ1
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+QUIZ2
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+TP1
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+TP2
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+TP4
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+42247
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+39774
+</td>
+<td style="text-align:right;">
+25587
+</td>
+<td style="text-align:right;">
+0.8095238
+</td>
+<td style="text-align:right;">
+0.6470588
+</td>
+<td style="text-align:right;">
+14.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+84675
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+27029
+</td>
+<td style="text-align:right;">
+16083
+</td>
+<td style="text-align:right;">
+0.9523810
+</td>
+<td style="text-align:right;">
+0.6470588
+</td>
+<td style="text-align:right;">
+14.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+93817
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+24839
+</td>
+<td style="text-align:right;">
+20601
+</td>
+<td style="text-align:right;">
+0.9523810
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+13.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22886
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+33835
+</td>
+<td style="text-align:right;">
+22853
+</td>
+<td style="text-align:right;">
+0.7619048
+</td>
+<td style="text-align:right;">
+0.7794118
+</td>
+<td style="text-align:right;">
+13.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+49060
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+31817
+</td>
+<td style="text-align:right;">
+21322
+</td>
+<td style="text-align:right;">
+0.8095238
+</td>
+<td style="text-align:right;">
+0.8823529
+</td>
+<td style="text-align:right;">
+16.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+66756
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+48147
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+30572
+</td>
+<td style="text-align:right;">
+18889
+</td>
+<td style="text-align:right;">
+0.9523810
+</td>
+<td style="text-align:right;">
+0.6470588
+</td>
+<td style="text-align:right;">
+15.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+86478
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+26072
+</td>
+<td style="text-align:right;">
+16057
+</td>
+<td style="text-align:right;">
+0.8095238
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+7.25
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9082
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+32028
+</td>
+<td style="text-align:right;">
+25880
+</td>
+<td style="text-align:right;">
+0.8095238
+</td>
+<td style="text-align:right;">
+0.6470588
+</td>
+<td style="text-align:right;">
+13.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2851
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+32945
+</td>
+<td style="text-align:right;">
+25293
+</td>
+<td style="text-align:right;">
+0.8095238
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+11.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+94187
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2060
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+31588
+</td>
+<td style="text-align:right;">
+17365
+</td>
+<td style="text-align:right;">
+0.7619048
+</td>
+<td style="text-align:right;">
+0.7794118
+</td>
+<td style="text-align:right;">
+12.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+79464
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+34180
+</td>
+<td style="text-align:right;">
+32996
+</td>
+<td style="text-align:right;">
+0.8809524
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+7.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+42086
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+36817
+</td>
+<td style="text-align:right;">
+21302
+</td>
+<td style="text-align:right;">
+0.9523810
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+19.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4921
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+27838
+</td>
+<td style="text-align:right;">
+20305
+</td>
+<td style="text-align:right;">
+0.9523810
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+13.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+23653
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+33856
+</td>
+<td style="text-align:right;">
+18854
+</td>
+<td style="text-align:right;">
+0.9047619
+</td>
+<td style="text-align:right;">
+0.9117647
+</td>
+<td style="text-align:right;">
+16.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+26956
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+33375
+</td>
+<td style="text-align:right;">
+18970
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+19.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10702
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+34778
+</td>
+<td style="text-align:right;">
+15677
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+13.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+36265
+</td>
+<td style="text-align:right;">
+22377
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+17.50
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3179
+</td>
+<td style="text-align:left;">
+H
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+32809
+</td>
+<td style="text-align:right;">
+23123
+</td>
+<td style="text-align:right;">
+0.9047619
+</td>
+<td style="text-align:right;">
+0.9117647
+</td>
+<td style="text-align:right;">
+18.50
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><strong>Exercice 1 : Importer les données</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>Importer le jeu de données <code>students_results.csv</code>.</li>
+<li>Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?</li>
+<li>Afficher le nom des colonnes.</li>
+<li>Afficher le type des colonnes avec la fonction adaptée.</li>
+<li>Afficher un résumé des données avec la fonction adaptée.</li>
+<li>On souhaite analyser les variables <code>Groupe.TP</code> et <code>Groupe.TD</code> en tant que variables qualitatives. Modifier le type de ces variables pour les transformer en type factor.</li>
+</ol>
+<p><strong>Exercice 2 : Statistiques descriptives</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Ajouter une colonne appelée <code>TOTAL_QUIZ</code> qui correspond à la somme des notes des quiz.</p></li>
+<li><p>Déterminer la moyenne du score total des quiz. Proposez un graphique adapté pour visualiser la distribution de tous les scores totaux des étudiants</p></li>
+<li><p>Déterminer les déciles des notes du TP4. Proposez un autre graphique pour visualiser la distribution des notes des étudiants au TP4.</p></li>
+<li><p>Déterminer le nombre d’étudiants par groupe de TP. Proposez un graphique adapté pour visualiser cette répartition par groupe.</p></li>
+<li><p>Déterminer le nombre d’étudiants par genre. Proposez un autre graphique pour visualiser cette répartition par genre.</p></li>
+</ol>
+<p><strong>Exercice 3 : Qui sont les meilleurs ?</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>Proposer un graphique adapté pour visualiser la distribution du score total aux quiz par genre.</li>
+<li>Calculer la moyenne du score total aux quiz par genre</li>
+<li>Proposer un graphique adapté pour visualiser la distribution du score total aux quiz par groupe de TP.</li>
+<li>Calculer la moyenne du score total aux quiz par groupe de TP.</li>
+<li>On souhaite visualiser avec un graphique adapté le score total aux quiz uniquement des 5 meilleurs étudiants.</li>
+<li>On souhaite conserver les lignes uniquement des 3 meilleur(e)s étudiant(e)s du groupe de TP 1.</li>
+</ol>
+<p><strong>Exercice 4 : Allez plus loin </strong></p>
+<p>Dans cet exercice, nous allons aller plus loin sur des notions qu’on peut retrouver en analyses statistiques comme des corrélations et des régressions linéaires. On va déterminer quelle variable est la plus corrélée avec la note du TP4 qui a été réalisé en condition d’examen. Puis nous modéliserons cette relation.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Y-a-t-il une corrélation entre la note au TP4 et le score total aux quiz ? Pour cela, utiliser la fonction <code>cor()</code>. Voici un exemple d’utilisation avec le dataset <code>iris</code> ci-dessous:</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="entrainement.html#cb25-1"></a><span class="kw">help</span>(<span class="st">&quot;cor&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="entrainement.html#cb26-1"></a><span class="kw">cor</span>(<span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length, <span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width)</span></code></pre></div>
+<pre><code>## [1] -0.1175698</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>On peut aussi utiliser la fonction <code>cor()</code> où l’argument <code>x</code> est un data frame avec uniquement les variables quantitatives qu’on souhaite analyser. Cela permet d’obtenir ce qu’on appelle une matrice de corrélation. Voici ci-dessous un exemple d’utilisation avec le dataset <code>iris</code>. Construire la matrice de corrélation des scores aux quiz et des notes des TP.</li>
+</ol>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="entrainement.html#cb28-1"></a><span class="co">#On construit la matrice de corrélation sur le dataset iris en excluant la colonne 5 qui est qualitative</span></span>
+<span id="cb28-2"><a href="entrainement.html#cb28-2"></a><span class="kw">cor</span>(iris[ , <span class="dv">-5</span>])</span></code></pre></div>
+<pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
+## Sepal.Length    1.0000000  -0.1175698    0.8717538   0.8179411
+## Sepal.Width    -0.1175698   1.0000000   -0.4284401  -0.3661259
+## Petal.Length    0.8717538  -0.4284401    1.0000000   0.9628654
+## Petal.Width     0.8179411  -0.3661259    0.9628654   1.0000000</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><p>La fonction <code>corrplot()</code> du package <code>corrplot</code> du même nom permet de visualiser une matrice de corrélation. Ce graphique s’appelle aussi un <em>corrélogramme</em>. Construire un <em>corrplot</em> de la matrice de corrélation calculée précédemment. Consulter cette <a href="http://www.sthda.com/french/wiki/visualiser-une-matrice-de-correlation-par-un-correlogramme">page</a> pour plus d’information. En le personnalisant, on peut obtenir le corrélogramme ci-dessous :
+<img src="index.html_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p></li>
+<li><p>Quelle est la variable la plus corrélée avec la note au TP4 ?</p></li>
+<li><p>Pour illustrer cette corrélation, construire un nuage de points des notes du TP4 en fonction de la variable la plus corrélée comme ci-dessous :</p></li>
+</ol>
+<p><img src="index.html_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>On observe une relation linéaire entre ces deux variables. On va calculer la droite qui permet de modéliser cette relation On parle alors de droite de régression. Cette méthode permet d’établir une relation mathématique entre une variable explicative <span class="math inline">\(x\)</span> et une variable à expliquer <span class="math inline">\(y\)</span> telles que <span class="math inline">\(y = ax + b\)</span> où :</li>
+</ol>
+<ul>
+<li><span class="math inline">\(a\)</span> est le coefficient directeur aussi appelé <em>la pente</em>.</li>
+<li><span class="math inline">\(b\)</span> est la constante où la valeur de l’ordonnée <span class="math inline">\(y\)</span> lorsque l’abscisse <span class="math inline">\(x\)</span> vaut 0.</li>
+</ul>
+Voici un exemple :
+<p>
+<img src="img/linear_reg.png" title="fig:" alt="lm" />
+</p>
+<p>Calculer ces deux indicateurs sachant que :</p>
+<ul>
+<li><p><span class="math inline">\(a = \frac{s_{xy}}{s^2_x}\)</span> où <span class="math inline">\(s_{xy}\)</span> est la covariance entre <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> et <span class="math inline">\(s^2_x\)</span> est la variance de la variable explicative. On peut la calculer avec la fonction <code>cov()</code>.</p></li>
+<li><p><span class="math inline">\(b=\bar{y}-a\bar{x}\)</span> où <span class="math inline">\(\bar{x}\)</span> et <span class="math inline">\(\bar{y}\)</span> correspondent respectivement à la moyenne de la variable explicative et la variable à expliquer.</p></li>
+</ul>
+<p>📢 Il est recommandé de calculer ces indicateurs sur un tableau filtré avec uniquement les lignes ne présentant pas de valeurs manquantes sur la variable explicative et la note au TP4.</p>
+<pre><code>## [1] &quot;Le coefficient directeur a vaut 14.2&quot;</code></pre>
+<pre><code>## [1] &quot;La constante b vaut 2.79&quot;</code></pre>
+<ol start="7" style="list-style-type: lower-alpha">
+<li>Après avoir calculé <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span>, Tracer la droite de régression sur le nuage de points avec la fonction <code>abline()</code>.</li>
+</ol>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="entrainement.html#cb32-1"></a><span class="kw">help</span>(<span class="st">&quot;abline&quot;</span>)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<ol start="8" style="list-style-type: lower-alpha">
+<li>En réalité, pour éviter tous ces calculs, on peut directement utiliser la fonction <code>lm()</code> qui gère déjà les valeurs manquantes.</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="entrainement.html#cb33-1"></a><span class="kw">help</span>(<span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="entrainement.html#cb34-1"></a>modele &lt;-<span class="st"> </span><span class="kw">lm</span>(TP4 <span class="op">~</span><span class="st"> </span>TP2, <span class="dt">data =</span> df)</span>
+<span id="cb34-2"><a href="entrainement.html#cb34-2"></a>modele<span class="op">$</span>coefficients</span></code></pre></div>
+<pre><code>## (Intercept)         TP2 
+##    2.789817   14.203363</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="entrainement.html#cb36-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> df<span class="op">$</span>TP2, <span class="dt">y =</span> df<span class="op">$</span>TP4,</span>
+<span id="cb36-2"><a href="entrainement.html#cb36-2"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20</span>),</span>
+<span id="cb36-3"><a href="entrainement.html#cb36-3"></a>     <span class="dt">xlab =</span> <span class="st">&quot;TP2&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;TP4&quot;</span>,</span>
+<span id="cb36-4"><a href="entrainement.html#cb36-4"></a>     <span class="dt">main =</span> <span class="st">&quot;Note du TP4 en fonction de la variable x&quot;</span>)</span>
+<span id="cb36-5"><a href="entrainement.html#cb36-5"></a></span>
+<span id="cb36-6"><a href="entrainement.html#cb36-6"></a><span class="kw">abline</span>(modele)</span></code></pre></div>
+<p><img src="index.html_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -3676,6 +4404,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

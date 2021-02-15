@@ -439,10 +439,10 @@ On souhaite construire un programme permettant de parcourir l'ensemble des colon
 ## TP5 - Chercher l'erreur (difficulté : 🏆🏆)
 
 <p>
-![NBA](./img/mistake.jpg)
+![mistake](./img/mistake.jpg)
 </p>
 
-Ce TP reprend les notions évoquées dans les chapitres 2 à 7. Dans ce TP, vous incarnez un data analyst travaillant dans le service statistiques de la NBA. Un de vos collègues est parti en vacances vendredi dernier et a envoyer à votre manager quelques statistiques sur les tirs effectués au cours de la saison 2014-2015. <br>
+Ce TP reprend les notions évoquées dans les chapitres 2 à 7. Dans ce TP, vous incarnez un data analyst travaillant dans le service statistique de la NBA. Un de vos collègues est parti en vacances vendredi dernier et a envoyer à votre manager quelques statistiques sur les tirs effectués au cours de la saison 2014-2015. <br>
 Le problème c'est que le script est bourré de fautes ! Rien ne fonctionne, à tous les coups, votre collègue était pressé de partir en vacance. Votre manager fait donc appel à vous pour corriger les erreurs de ce script. Attention, votre manager aimerait également comprendre ce que vous programmez dans votre script alors n'oubliez pas de commenter chaque ligne de code pour qu'il la comprenne. Le fichier de données (*NBA.csv*) et le script de votre collègue (*nba_stats.R*) sont disponibles en [cliquant ici](https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset).
 <br>
 🎯 Votre manager a déjà passé beaucoup de temps pour comprendre ce script et aimerait que votre correction garde la même philosophie que le script de votre collègue, cela signifie qu'il ne faut pas écrire d'autres commandes R et simplement faire en sorte que celles déjà présentes fonctionnent.
@@ -463,3 +463,188 @@ Le problème c'est que le script est bourré de fautes ! Rien ne fonctionne, à 
 <p>
 ![script4](./img/mistakes_4.PNG)
 </p>
+
+
+## TP6 - Analyses statistiques (difficulté : 🏆🏆)
+
+<p>
+![Students](./img/students.jpg)
+</p>
+
+Ce TP reprend les notions évoquées dans les chapitres 2 à 5.
+On utilise le fichier `students_results.csv` qui décrit les notes d'étudiants sur différentes épreuves.
+Pour réaliser ce TP, télécharger le fichier en [cliquant ici](https://github.com/AnthonySardellitti/programmation-r/tree/master/dataset). Voici une description des données :
+
+
+- `ID_etudiant` : Le matricule des étudiants
+- `Genre` : Le genre des étudiants
+- `Groupe.TP` : Le groupe de travaux pratiques
+- `Groupe.TD` : Le groupe de travaux dirigés
+-  `QUIZ#` : Le score du quiz numéro #
+- `TP#` : La note au TP numéro #
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+df <- read.csv(file = "dataset/students_results.csv",
+                               sep = ";", dec = ",")
+kable(head(df,n = 20), "html") %>% kable_styling("striped", font_size = taille) %>% scroll_box(width = "100%", height = "400px")
+```
+<br>
+
+**Exercice 1 : Importer les données**
+
+a. Importer le jeu de données `students_results.csv`.
+b. Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?
+c. Afficher le nom des colonnes.
+d. Afficher le type des colonnes avec la fonction adaptée.
+e. Afficher un résumé des données avec la fonction adaptée.
+f. On souhaite analyser les variables `Groupe.TP` et `Groupe.TD` en tant que variables qualitatives. Modifier le type de ces variables pour les transformer en type factor.
+
+**Exercice 2 : Statistiques descriptives**
+
+a. Ajouter une colonne appelée `TOTAL_QUIZ` qui correspond à la somme des notes des quiz.
+```{r, echo=FALSE}
+df$TOTAL_QUIZ <- df$QUIZ1 + df$QUIZ2
+```
+b. Déterminer la moyenne du score total des quiz. Proposez un graphique adapté pour visualiser la distribution de tous les scores totaux des étudiants
+c. Déterminer les déciles des notes du TP4. Proposez un autre graphique pour visualiser la distribution des notes des étudiants au TP4.
+d. Déterminer le nombre d'étudiants par groupe de TP. Proposez un graphique adapté pour visualiser cette répartition par groupe.
+e. Déterminer le nombre d'étudiants par genre. Proposez un autre graphique pour visualiser cette répartition par genre.
+
+**Exercice 3 : Qui sont les meilleurs ?**
+
+a. Proposer un graphique adapté pour visualiser la distribution du score total aux quiz par genre.
+b. Calculer la moyenne du score total aux quiz par genre
+c. Proposer un graphique adapté pour visualiser la distribution du score total aux quiz par groupe de TP.
+d. Calculer la moyenne du score total aux quiz par groupe de TP.
+e. On souhaite visualiser avec un graphique adapté le score total aux quiz uniquement des 5 meilleurs étudiants.
+f. On souhaite conserver les lignes uniquement des 3 meilleur(e)s étudiant(e)s du groupe de TP 1.
+
+
+**Exercice 4 : Allez plus loin **
+
+
+Dans cet exercice, nous allons aller plus loin sur des notions qu'on peut retrouver en analyses statistiques comme des corrélations et des régressions linéaires. On va déterminer quelle variable est la plus corrélée avec la note du TP4 qui a été réalisé en condition d'examen. Puis nous modéliserons cette relation.
+
+
+a. Y-a-t-il une corrélation entre la note au TP4 et le score total aux quiz ? Pour cela, utiliser la fonction `cor()`. Voici un exemple d'utilisation avec le dataset `iris` ci-dessous:
+
+```{r, eval=FALSE,warning=FALSE, message=FALSE}
+help("cor")
+```
+
+```{r, warning=FALSE, message=FALSE}
+cor(x = iris$Sepal.Length, y = iris$Sepal.Width)
+```
+
+b. On peut aussi utiliser la fonction `cor()` où l'argument `x` est un data frame avec uniquement les variables quantitatives qu'on souhaite analyser. Cela permet d'obtenir ce qu'on appelle une matrice de corrélation. Voici ci-dessous un exemple d'utilisation avec le dataset `iris`.  Construire la matrice de corrélation des scores aux quiz et des notes des TP. 
+
+```{r}
+#On construit la matrice de corrélation sur le dataset iris en excluant la colonne 5 qui est qualitative
+cor(iris[ , -5])
+```
+```{r, echo=FALSE}
+cor_matrix <- cor(df[ , 5:10], use = "complete.obs")
+```
+
+c. La fonction `corrplot()` du package `corrplot` du même nom permet de visualiser une matrice de corrélation. Ce graphique s'appelle aussi un *corrélogramme*. Construire un *corrplot* de la matrice de corrélation calculée précédemment. Consulter cette [page](http://www.sthda.com/french/wiki/visualiser-une-matrice-de-correlation-par-un-correlogramme) pour plus d'information. En le personnalisant, on peut obtenir le corrélogramme ci-dessous :
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(corrplot)
+corrplot(cor_matrix, type="upper", tl.srt=45, 
+         addCoef.col = "black", diag = FALSE)
+```
+
+
+d. Quelle est la variable la plus corrélée avec la note au TP4 ?
+
+e. Pour illustrer cette corrélation, construire un nuage de points des notes du TP4 en fonction de la variable la plus corrélée comme ci-dessous :
+
+```{r, echo=FALSE}
+plot(x = df$TP2, y = df$TP4,
+     pch = 19, cex = 1.5,
+     xlim = c(0,1), ylim = c(0,20),
+     col = rgb(0,0,1,alpha = 0.25),
+     xlab = "x", ylab = "TP4",
+     main = "Note du TP4 en fonction de la variable x")
+```
+
+
+f. On observe une relation linéaire entre ces deux variables. On va calculer la droite qui permet de modéliser cette relation On parle alors de droite de régression. Cette méthode permet d'établir une relation mathématique entre une variable explicative $x$ et une variable à expliquer $y$ telles que $y = ax + b$  où :
+
+* $a$ est le coefficient directeur aussi appelé *la pente*.
+* $b$ est la constante où la valeur de l'ordonnée $y$ lorsque l'abscisse $x$ vaut 0.
+
+Voici un exemple :
+<p>
+![lm](./img/linear_reg.png)
+</p>
+
+
+Calculer ces deux indicateurs sachant que :
+
+* $a = \frac{s_{xy}}{s^2_x}$ où $s_{xy}$ est la covariance entre $x$ et $y$ et $s^2_x$ est la variance de la variable explicative. On peut la calculer avec la fonction `cov()`.
+
+* $b=\bar{y}-a\bar{x}$ où $\bar{x}$ et $\bar{y}$ correspondent respectivement à la moyenne de la variable explicative et la variable à expliquer.
+
+📢 Il est recommandé de calculer ces indicateurs sur un tableau filtré avec uniquement les lignes ne présentant pas de valeurs manquantes sur la variable explicative et la note au TP4.
+
+```{r,echo=FALSE}
+dfnotNA <- na.exclude(df[, c("TP2","TP4")])
+a = cov(x = dfnotNA$TP4, 
+        y = dfnotNA$TP2)/var(dfnotNA$TP2)
+
+#on arrondie
+a <- round(a,2)
+
+x <- mean(dfnotNA$TP2)
+y <- mean(dfnotNA$TP4)
+
+b <- y - a*x
+
+#on arrondie
+b <- round(b,2)
+print(paste("Le coefficient directeur a vaut" , a))
+print(paste("La constante b vaut" , b))
+```
+g. Après avoir calculé $a$ et $b$, Tracer la droite de régression sur le nuage de points avec la fonction `abline()`.
+
+```{r, eval=FALSE,warning=FALSE, message=FALSE}
+help("abline")
+```
+
+```{r, echo=FALSE}
+plot(x = df$TP2, y = df$TP4,
+     pch = 19, cex = 1.5,
+     xlim = c(0,1), ylim = c(0,20),
+     col = rgb(0,0,1,alpha = 0.25),
+     xlab = "x", ylab = "TP4",
+     main = "Note du TP4 en fonction de la variable x")
+
+abline(a = b,b = a, lwd = 3, col = "red")
+legend("topleft", legend = paste("y = ",a,"x +",b),
+       col = "red", lty = 1, lwd = 2)
+```
+
+
+h. En réalité, pour éviter tous ces calculs, on peut directement utiliser la fonction `lm()` qui gère déjà les valeurs manquantes.
+
+```{r, eval=FALSE,warning=FALSE, message=FALSE}
+help("lm")
+```
+
+```{r}
+modele <- lm(TP4 ~ TP2, data = df)
+modele$coefficients
+```
+
+```{r}
+plot(x = df$TP2, y = df$TP4,
+     xlim = c(0,1), ylim = c(0,20),
+     xlab = "TP2", ylab = "TP4",
+     main = "Note du TP4 en fonction de la variable x")
+
+abline(modele)
+```
+
+
+
