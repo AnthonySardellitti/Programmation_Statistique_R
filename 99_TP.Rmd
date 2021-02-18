@@ -641,7 +641,7 @@ modele$coefficients
 plot(x = df$TP2, y = df$TP4,
      xlim = c(0,1), ylim = c(0,20),
      xlab = "TP2", ylab = "TP4",
-     main = "Note du TP4 en fonction de la variable x")
+     main = "Note du TP4 en fonction de la note du TP2")
 
 abline(modele)
 ```

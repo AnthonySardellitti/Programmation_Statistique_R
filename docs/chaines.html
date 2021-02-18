@@ -24,7 +24,7 @@
 <meta name="author" content="Anthony SARDELLITTI" />
 
 
-<meta name="date" content="2021-02-14" />
+<meta name="date" content="2021-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,7 +50,6 @@
 
 
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -305,6 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3" data-path="entrainement.html"><a href="entrainement.html#tp3-difficulté"><i class="fa fa-check"></i><b>12.3</b> TP3 (difficulté : 🏆🏆🏆)</a></li>
 <li class="chapter" data-level="12.4" data-path="entrainement.html"><a href="entrainement.html#tp4---récap-difficulté"><i class="fa fa-check"></i><b>12.4</b> TP4 - Récap (difficulté : 🏆🏆)</a></li>
 <li class="chapter" data-level="12.5" data-path="entrainement.html"><a href="entrainement.html#tp5---chercher-lerreur-difficulté"><i class="fa fa-check"></i><b>12.5</b> TP5 - Chercher l’erreur (difficulté : 🏆🏆)</a></li>
+<li class="chapter" data-level="12.6" data-path="entrainement.html"><a href="entrainement.html#tp6---analyses-statistiques-difficulté"><i class="fa fa-check"></i><b>12.6</b> TP6 - Analyses statistiques (difficulté : 🏆🏆)</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="all-dataset.html"><a href="all-dataset.html"><i class="fa fa-check"></i><b>13</b> Jeux de données utilisés</a><ul>
 <li class="chapter" data-level="13.1" data-path="all-dataset.html"><a href="all-dataset.html#iris"><i class="fa fa-check"></i><b>13.1</b> Iris 🌺</a></li>
@@ -321,6 +321,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.6" data-path="all-dataset.html"><a href="all-dataset.html#star-wars"><i class="fa fa-check"></i><b>13.6</b> Star Wars 🎬</a></li>
 <li class="chapter" data-level="13.7" data-path="all-dataset.html"><a href="all-dataset.html#amongus"><i class="fa fa-check"></i><b>13.7</b> AmongUs 🔦</a></li>
 <li class="chapter" data-level="13.8" data-path="all-dataset.html"><a href="all-dataset.html#nba"><i class="fa fa-check"></i><b>13.8</b> NBA 🏀</a></li>
+<li class="chapter" data-level="13.9" data-path="all-dataset.html"><a href="all-dataset.html#students"><i class="fa fa-check"></i><b>13.9</b> Students 🎓</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="biblio.html"><a href="biblio.html"><i class="fa fa-check"></i><b>14</b> Bibliographie</a></li>
 </ul>
@@ -346,17 +347,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.1</span> Manipulation des chaînes de caractères</h2>
 <p>La manipulation des chaines de caractères est essentielle dans le traitement des données. On peut trouver des données textuelles sur réseaux sociaux par exemple. La plupart du temps, ces données sont brutes et il faut donc manipuler le texte pour en extraire les informations importantes.</p>
 <p>Pour manipuler des chaines de caractères, il faut bien entendu que les données soit de type caractère. On peut vérifier cela avec la fonction <code>class()</code> et <code>as.character()</code> si une conversion est nécessaire.</p>
-<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb620-1"><a href="chaines.html#cb620-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Luca&quot;</span>,<span class="st">&quot;Ambra&quot;</span>,<span class="st">&quot;Francesco&quot;</span>)</span>
-<span id="cb620-2"><a href="chaines.html#cb620-2"></a><span class="kw">class</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="chaines.html#cb1-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Luca&quot;</span>,<span class="st">&quot;Ambra&quot;</span>,<span class="st">&quot;Francesco&quot;</span>)</span>
+<span id="cb1-2"><a href="chaines.html#cb1-2"></a><span class="kw">class</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <div id="concaténer-des-chaînes" class="section level3">
 <h3><span class="header-section-number">10.1.1</span> Concaténer des chaînes</h3>
 <p>La fonction <code>paste()</code> permet de concaténer des chaînes de caractères.</p>
-<div class="sourceCode" id="cb622"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb622-1"><a href="chaines.html#cb622-1"></a><span class="kw">paste</span>(<span class="kw">c</span>(<span class="st">&quot;Hello&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;Luca&quot;</span>,<span class="st">&quot;Ambra&quot;</span>,<span class="st">&quot;Francesco&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="chaines.html#cb3-1"></a><span class="kw">paste</span>(<span class="kw">c</span>(<span class="st">&quot;Hello&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;Luca&quot;</span>,<span class="st">&quot;Ambra&quot;</span>,<span class="st">&quot;Francesco&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello_Luca&quot;      &quot;Hello_Ambra&quot;     &quot;Hello_Francesco&quot;</code></pre>
 <p>Ici, on profite du phénomène de réplication de R pour éviter de répéter le premier vecteur.</p>
 <p>On peut aussi utiliser la fonction <code>cat()</code> qui à le même rôle que la fonction <code>print()</code>.</p>
-<div class="sourceCode" id="cb624"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb624-1"><a href="chaines.html#cb624-1"></a><span class="kw">cat</span>(<span class="st">&quot;Bonjour&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> ,<span class="st">&quot;Une nouvelle ligne&quot;</span>,<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> ,<span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>,  <span class="st">&quot;une tabulation&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, <span class="st">&quot;une expression entre guillemets&quot;</span>,<span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="chaines.html#cb5-1"></a><span class="kw">cat</span>(<span class="st">&quot;Bonjour&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> ,<span class="st">&quot;Une nouvelle ligne&quot;</span>,<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span> ,<span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>,  <span class="st">&quot;une tabulation&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, <span class="st">&quot;une expression entre guillemets&quot;</span>,<span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Bonjour 
 ##  Une nouvelle ligne 
 ##       une tabulation 
@@ -366,41 +367,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="majuscule-et-minuscule" class="section level3">
 <h3><span class="header-section-number">10.1.2</span> Majuscule et minuscule</h3>
 <p>Les fonctions <code>toupper()</code> et <code>toloweer()</code> permettent de modifier la casse. Rappelons que le langage R en est sensible tout comme la plupart des langages de programmation.</p>
-<div class="sourceCode" id="cb626"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb626-1"><a href="chaines.html#cb626-1"></a><span class="kw">toupper</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="chaines.html#cb7-1"></a><span class="kw">toupper</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;LUCA&quot;      &quot;AMBRA&quot;     &quot;FRANCESCO&quot;</code></pre>
-<div class="sourceCode" id="cb628"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb628-1"><a href="chaines.html#cb628-1"></a><span class="kw">tolower</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="chaines.html#cb9-1"></a><span class="kw">tolower</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;luca&quot;      &quot;ambra&quot;     &quot;francesco&quot;</code></pre>
 </div>
 <div id="longueur-dune-chaîne" class="section level3">
 <h3><span class="header-section-number">10.1.3</span> Longueur d’une chaîne</h3>
 <p>On peut utiliser la fonction <code>nchar()</code> pour compter la longueur d’une chaîne. Attention, l’espace est considéré comme un caractère.</p>
-<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="chaines.html#cb630-1"></a><span class="kw">nchar</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="chaines.html#cb11-1"></a><span class="kw">nchar</span>(x)</span></code></pre></div>
 <pre><code>## [1] 4 5 9</code></pre>
 </div>
 <div id="extraction-de-sous-chaînes" class="section level3">
 <h3><span class="header-section-number">10.1.4</span> Extraction de sous-chaînes</h3>
 <p>La fonction <code>substr()</code> permet d’extraire certains élèments d’une chaîne de caractère à partir de leur position.</p>
-<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="chaines.html#cb632-1"></a><span class="kw">substr</span>(x,<span class="dt">start =</span> <span class="dv">1</span>,<span class="dt">stop =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="chaines.html#cb13-1"></a><span class="kw">substr</span>(x,<span class="dt">start =</span> <span class="dv">1</span>,<span class="dt">stop =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Luc&quot; &quot;Amb&quot; &quot;Fra&quot;</code></pre>
 <p>Pour extraire la fin d’une chaîne de catactère, il est recommandé d’utiliser le package <em>stringr</em> avec la fonction <code>str_sub()</code>.</p>
-<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="chaines.html#cb634-1"></a><span class="kw">library</span>(stringr)</span>
-<span id="cb634-2"><a href="chaines.html#cb634-2"></a><span class="kw">str_sub</span>(<span class="dt">string =</span> x,<span class="dt">start =</span> <span class="dv">-3</span>,<span class="dt">end =</span> <span class="dv">-1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chaines.html#cb15-1"></a><span class="kw">library</span>(stringr)</span>
+<span id="cb15-2"><a href="chaines.html#cb15-2"></a><span class="kw">str_sub</span>(<span class="dt">string =</span> x,<span class="dt">start =</span> <span class="dv">-3</span>,<span class="dt">end =</span> <span class="dv">-1</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;uca&quot; &quot;bra&quot; &quot;sco&quot;</code></pre>
 </div>
 <div id="remplacement-de-chaînes" class="section level3">
 <h3><span class="header-section-number">10.1.5</span> Remplacement de chaînes</h3>
 <p>La fonction <code>gsub()</code> permet de remplacer un motif recherché par une autre chaîne de caractère.</p>
-<div class="sourceCode" id="cb636"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb636-1"><a href="chaines.html#cb636-1"></a>x &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="kw">c</span>(<span class="st">&quot;Hello&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;Luca&quot;</span>,<span class="st">&quot;Ambra&quot;</span>,<span class="st">&quot;Francesco&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</span>
-<span id="cb636-2"><a href="chaines.html#cb636-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="chaines.html#cb17-1"></a>x &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="kw">c</span>(<span class="st">&quot;Hello&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;Luca&quot;</span>,<span class="st">&quot;Ambra&quot;</span>,<span class="st">&quot;Francesco&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</span>
+<span id="cb17-2"><a href="chaines.html#cb17-2"></a>x</span></code></pre></div>
 <pre><code>## [1] &quot;Hello_Luca&quot;      &quot;Hello_Ambra&quot;     &quot;Hello_Francesco&quot;</code></pre>
-<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb638-1"><a href="chaines.html#cb638-1"></a>x &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="dt">pattern =</span> <span class="st">&quot;_&quot;</span>,<span class="dt">replacement =</span> <span class="st">&quot; &quot;</span>,x)</span>
-<span id="cb638-2"><a href="chaines.html#cb638-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="chaines.html#cb19-1"></a>x &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="dt">pattern =</span> <span class="st">&quot;_&quot;</span>,<span class="dt">replacement =</span> <span class="st">&quot; &quot;</span>,x)</span>
+<span id="cb19-2"><a href="chaines.html#cb19-2"></a>x</span></code></pre></div>
 <pre><code>## [1] &quot;Hello Luca&quot;      &quot;Hello Ambra&quot;     &quot;Hello Francesco&quot;</code></pre>
 </div>
 <div id="décomposition-dune-chaîne" class="section level3">
 <h3><span class="header-section-number">10.1.6</span> Décomposition d’une chaîne</h3>
 <p>On utilise la fonction <code>strsplit()</code> pour décomposer une chaîne de caractère selon un motif. Le résultat renvoyé est une liste.</p>
-<div class="sourceCode" id="cb640"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb640-1"><a href="chaines.html#cb640-1"></a><span class="kw">strsplit</span>(x,<span class="dt">split =</span> <span class="st">&quot; &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chaines.html#cb21-1"></a><span class="kw">strsplit</span>(x,<span class="dt">split =</span> <span class="st">&quot; &quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Hello&quot; &quot;Luca&quot; 
 ## 
@@ -413,22 +414,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="recherche-de-sous-chaîne" class="section level3">
 <h3><span class="header-section-number">10.1.7</span> Recherche de sous-chaîne</h3>
 <p>La fonction <code>grep()</code> permet de rechercher les élèments d’un vecteur composé du motif.</p>
-<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb642-1"><a href="chaines.html#cb642-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="chaines.html#cb23-1"></a>x</span></code></pre></div>
 <pre><code>## [1] &quot;Hello Luca&quot;      &quot;Hello Ambra&quot;     &quot;Hello Francesco&quot;</code></pre>
-<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb644-1"><a href="chaines.html#cb644-1"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;Am&quot;</span>, x)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="chaines.html#cb25-1"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;Am&quot;</span>, x)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
+<p>La fonction <code>grepl()</code> plus utile, permet de renvoyer <code>TRUE</code> ou <code>FALSE</code> si le motif est présent dans la chaîne.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="chaines.html#cb27-1"></a>x</span></code></pre></div>
+<pre><code>## [1] &quot;Hello Luca&quot;      &quot;Hello Ambra&quot;     &quot;Hello Francesco&quot;</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="chaines.html#cb29-1"></a><span class="kw">grepl</span>(<span class="dt">pattern =</span> <span class="st">&quot;Am&quot;</span>, x)</span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE</code></pre>
 </div>
 <div id="aller-plus-loin-1" class="section level3">
 <h3><span class="header-section-number">10.1.8</span> Aller plus loin</h3>
 <p>Les fonctions que propose le package <em>base</em> permettent de couvrir l’essentiel des méthodes de traitement de texte. Néanmoins, le package <em>stringr</em> de la suite <em>tidyverse</em> propose des fonctionnalités bien plus avancées. Julien Barnier en propose une immersion dans son tutoriel (<a href="https://juba.github.io/tidyverse/11-stringr.html">vers le tutoriel</a>).</p>
 <p>Il est possible d’utiliser des expressions régulières lorsqu’on utilise des fonctions de traitements de texte. Ricco Rakotomalala en propose d’ailleurs une esquisse dans son <a href="https://eric.univ-lyon2.fr/~ricco/cours/slides/TM.E%20-%20expressions%20regulieres.pdf">tutoriel</a>.</p>
 <p>Voici un petit exemple de vérification d’adresse mail à partir d’une expression régulière :</p>
-<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="chaines.html#cb646-1"></a>emails &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;steve_aoki@gmail.com&quot;</span>,</span>
-<span id="cb646-2"><a href="chaines.html#cb646-2"></a>            <span class="st">&quot;@jdoreofficiel&quot;</span>,</span>
-<span id="cb646-3"><a href="chaines.html#cb646-3"></a>            <span class="st">&quot;castex_jean@gouv.fr&quot;</span>)</span>
-<span id="cb646-4"><a href="chaines.html#cb646-4"></a></span>
-<span id="cb646-5"><a href="chaines.html#cb646-5"></a>regex &lt;-<span class="st"> &quot;^[[:alnum:].-_]+@[[:alnum:].-]+$&quot;</span></span>
-<span id="cb646-6"><a href="chaines.html#cb646-6"></a>stringr<span class="op">::</span><span class="kw">str_match</span>(emails, regex)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="chaines.html#cb31-1"></a>emails &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;steve_aoki@gmail.com&quot;</span>,</span>
+<span id="cb31-2"><a href="chaines.html#cb31-2"></a>            <span class="st">&quot;@jdoreofficiel&quot;</span>,</span>
+<span id="cb31-3"><a href="chaines.html#cb31-3"></a>            <span class="st">&quot;castex_jean@gouv.fr&quot;</span>)</span>
+<span id="cb31-4"><a href="chaines.html#cb31-4"></a></span>
+<span id="cb31-5"><a href="chaines.html#cb31-5"></a>regex &lt;-<span class="st"> &quot;^[[:alnum:].-_]+@[[:alnum:].-]+$&quot;</span></span>
+<span id="cb31-6"><a href="chaines.html#cb31-6"></a>stringr<span class="op">::</span><span class="kw">str_match</span>(emails, regex)</span></code></pre></div>
 <pre><code>##      [,1]                  
 ## [1,] &quot;steve_aoki@gmail.com&quot;
 ## [2,] NA                    
@@ -441,18 +447,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">10.2.1</span> Les dates</h3>
 <p>Les dates sont stockées comme le nombre de jours depuis 1970-01-01, avec des valeurs négatives pour les dates antérieures. Par défaut, R reconnait le format date si la chaîne de caractère est sous la forme <em>yyyy-mm-dd</em>.
 Néanmoins, lorsque ce n’est pas le cas on utilsie la fonction <code>as.Date()</code> qui convertit une chaîne de caractères en date.</p>
-<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="chaines.html#cb648-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2018-07-15&quot;</span>)</span>
-<span id="cb648-2"><a href="chaines.html#cb648-2"></a><span class="kw">class</span>(d)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="chaines.html#cb33-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2018-07-15&quot;</span>)</span>
+<span id="cb33-2"><a href="chaines.html#cb33-2"></a><span class="kw">class</span>(d)</span></code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
-<div class="sourceCode" id="cb650"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb650-1"><a href="chaines.html#cb650-1"></a><span class="kw">unclass</span>(d)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="chaines.html#cb35-1"></a><span class="kw">unclass</span>(d)</span></code></pre></div>
 <pre><code>## [1] 17727</code></pre>
 <p>Dans l’exemple ci-dessus, cela fonctionne très bien car la chaîne de caractère correspond parfaitement au format interpréter par défaut de R.
 Lorsque ce n’est pas le cas, il faut indiquer à R comment interpréter la chaîne de caractère en tant que date. On utilise la table de référence présente dans l’aide en executant la commande <code>help(strptime)</code>.</p>
-<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb652-1"><a href="chaines.html#cb652-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2018 15 07&quot;</span>, <span class="dt">format =</span> (<span class="st">&quot;%Y %d %m&quot;</span>))</span>
-<span id="cb652-2"><a href="chaines.html#cb652-2"></a>d</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="chaines.html#cb37-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2018 15 07&quot;</span>, <span class="dt">format =</span> (<span class="st">&quot;%Y %d %m&quot;</span>))</span>
+<span id="cb37-2"><a href="chaines.html#cb37-2"></a>d</span></code></pre></div>
 <pre><code>## [1] &quot;2018-07-15&quot;</code></pre>
-<div class="sourceCode" id="cb654"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb654-1"><a href="chaines.html#cb654-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;15 Juillet, 2018&quot;</span>, <span class="dt">format =</span> (<span class="st">&quot;%d %B, %Y&quot;</span>))</span>
-<span id="cb654-2"><a href="chaines.html#cb654-2"></a>d</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="chaines.html#cb39-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;15 Juillet, 2018&quot;</span>, <span class="dt">format =</span> (<span class="st">&quot;%d %B, %Y&quot;</span>))</span>
+<span id="cb39-2"><a href="chaines.html#cb39-2"></a>d</span></code></pre></div>
 <pre><code>## [1] &quot;2018-07-15&quot;</code></pre>
 <p>Voici un tableau récapitulatif :</p>
 <p>
@@ -463,44 +469,44 @@ Lorsque ce n’est pas le cas, il faut indiquer à R comment interpréter la cha
 <div id="lhorloge" class="section level3">
 <h3><span class="header-section-number">10.2.2</span> L’horloge</h3>
 <p>Le classe <code>POSIXct</code> est une des classes date pouvant gérer la date et l’horloge. Cette classe stocke les dates en secondes depuis 1970-01-01 01:00:00</p>
-<div class="sourceCode" id="cb656"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb656-1"><a href="chaines.html#cb656-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2018-07-15 19:00:00&quot;</span>)</span>
-<span id="cb656-2"><a href="chaines.html#cb656-2"></a><span class="kw">unclass</span>(d)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="chaines.html#cb41-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2018-07-15 19:00:00&quot;</span>)</span>
+<span id="cb41-2"><a href="chaines.html#cb41-2"></a><span class="kw">unclass</span>(d)</span></code></pre></div>
 <pre><code>## [1] 1531674000
 ## attr(,&quot;tzone&quot;)
 ## [1] &quot;&quot;</code></pre>
-<div class="sourceCode" id="cb658"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb658-1"><a href="chaines.html#cb658-1"></a><span class="kw">unclass</span>(<span class="kw">as.POSIXct</span>(<span class="st">&quot;1970-01-01 01:00:00&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="chaines.html#cb43-1"></a><span class="kw">unclass</span>(<span class="kw">as.POSIXct</span>(<span class="st">&quot;1970-01-01 01:00:00&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] 0
 ## attr(,&quot;tzone&quot;)
 ## [1] &quot;&quot;</code></pre>
 <p>La classe <code>POSIXlt</code> stocke la date et l’horloge sous forme de liste dont les éléments correspondent. Attention, ici l’année de référence semble être l’année 1900.</p>
-<div class="sourceCode" id="cb660"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb660-1"><a href="chaines.html#cb660-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXlt</span>(<span class="st">&quot;2018-07-15 19:00:00&quot;</span>)</span>
-<span id="cb660-2"><a href="chaines.html#cb660-2"></a><span class="kw">unlist</span>(<span class="kw">unclass</span>(d))</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="chaines.html#cb45-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXlt</span>(<span class="st">&quot;2018-07-15 19:00:00&quot;</span>)</span>
+<span id="cb45-2"><a href="chaines.html#cb45-2"></a><span class="kw">unlist</span>(<span class="kw">unclass</span>(d))</span></code></pre></div>
 <pre><code>##    sec    min   hour   mday    mon   year   wday   yday  isdst   zone 
 ##    &quot;0&quot;    &quot;0&quot;   &quot;19&quot;   &quot;15&quot;    &quot;6&quot;  &quot;118&quot;    &quot;0&quot;  &quot;195&quot;    &quot;1&quot; &quot;CEST&quot; 
 ## gmtoff 
 ##     NA</code></pre>
-<div class="sourceCode" id="cb662"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb662-1"><a href="chaines.html#cb662-1"></a>d<span class="op">$</span>hour</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="chaines.html#cb47-1"></a>d<span class="op">$</span>hour</span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
-<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="chaines.html#cb664-1"></a>d<span class="op">$</span>year</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="chaines.html#cb49-1"></a>d<span class="op">$</span>year</span></code></pre></div>
 <pre><code>## [1] 118</code></pre>
 <p>Dans le cas où la chaîne de caractère ne respectère pas le format par défaut. On utilise le même procédé que pour la classe <code>date</code>.</p>
-<div class="sourceCode" id="cb666"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb666-1"><a href="chaines.html#cb666-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2018 15 07 190000&quot;</span>, <span class="dt">format =</span> (<span class="st">&quot;%Y %d %m %H%M%S&quot;</span>))</span>
-<span id="cb666-2"><a href="chaines.html#cb666-2"></a>d</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="chaines.html#cb51-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2018 15 07 190000&quot;</span>, <span class="dt">format =</span> (<span class="st">&quot;%Y %d %m %H%M%S&quot;</span>))</span>
+<span id="cb51-2"><a href="chaines.html#cb51-2"></a>d</span></code></pre></div>
 <pre><code>## [1] &quot;2018-07-15 19:00:00 CEST&quot;</code></pre>
-<div class="sourceCode" id="cb668"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb668-1"><a href="chaines.html#cb668-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXlt</span>(<span class="st">&quot;15 Juillet, 2018 à 19h00 et 00s&quot;</span>,</span>
-<span id="cb668-2"><a href="chaines.html#cb668-2"></a>         <span class="dt">format =</span> (<span class="st">&quot;%d %B, %Y à %Hh%M et %Ss&quot;</span>))</span>
-<span id="cb668-3"><a href="chaines.html#cb668-3"></a>d</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="chaines.html#cb53-1"></a>d &lt;-<span class="st"> </span><span class="kw">as.POSIXlt</span>(<span class="st">&quot;15 Juillet, 2018 à 19h00 et 00s&quot;</span>,</span>
+<span id="cb53-2"><a href="chaines.html#cb53-2"></a>         <span class="dt">format =</span> (<span class="st">&quot;%d %B, %Y à %Hh%M et %Ss&quot;</span>))</span>
+<span id="cb53-3"><a href="chaines.html#cb53-3"></a>d</span></code></pre></div>
 <pre><code>## [1] &quot;2018-07-15 19:00:00 CEST&quot;</code></pre>
 </div>
 <div id="calcul-sur-les-dates" class="section level3">
 <h3><span class="header-section-number">10.2.3</span> Calcul sur les dates</h3>
 <p>La fonction difftime() permet de calculer une différence entre deux dates. On peut s’en servir par exemple pour calculer un temps d’execution d’un programme.</p>
-<div class="sourceCode" id="cb670"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb670-1"><a href="chaines.html#cb670-1"></a><span class="kw">help</span>(difftime)</span></code></pre></div>
-<div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb671-1"><a href="chaines.html#cb671-1"></a>debut &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</span>
-<span id="cb671-2"><a href="chaines.html#cb671-2"></a><span class="kw">Sys.sleep</span>(<span class="dv">5</span>)</span>
-<span id="cb671-3"><a href="chaines.html#cb671-3"></a>fin &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</span>
-<span id="cb671-4"><a href="chaines.html#cb671-4"></a><span class="kw">difftime</span>(<span class="dt">time1 =</span> fin, <span class="dt">time2 =</span> debut,<span class="dt">units =</span> <span class="st">&quot;secs&quot;</span>)</span></code></pre></div>
-<pre><code>## Time difference of 5.062203 secs</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="chaines.html#cb55-1"></a><span class="kw">help</span>(difftime)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="chaines.html#cb56-1"></a>debut &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</span>
+<span id="cb56-2"><a href="chaines.html#cb56-2"></a><span class="kw">Sys.sleep</span>(<span class="dv">5</span>)</span>
+<span id="cb56-3"><a href="chaines.html#cb56-3"></a>fin &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</span>
+<span id="cb56-4"><a href="chaines.html#cb56-4"></a><span class="kw">difftime</span>(<span class="dt">time1 =</span> fin, <span class="dt">time2 =</span> debut,<span class="dt">units =</span> <span class="st">&quot;secs&quot;</span>)</span></code></pre></div>
+<pre><code>## Time difference of 5.008551 secs</code></pre>
 </div>
 <div id="aller-plus-loin-2" class="section level3">
 <h3><span class="header-section-number">10.2.4</span> Aller plus loin</h3>

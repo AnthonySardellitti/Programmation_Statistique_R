@@ -83,7 +83,12 @@ La fonction `grep()` permet de rechercher les élèments d'un vecteur composé d
 x
 grep(pattern = "Am", x)
 ```
+La fonction `grepl()` plus utile, permet de renvoyer `TRUE` ou `FALSE` si le motif est présent dans la chaîne.
 
+```{r}
+x
+grepl(pattern = "Am", x)
+```
 ### Aller plus loin
 
 Les fonctions que propose le package *base* permettent de couvrir l'essentiel des méthodes de traitement de texte. Néanmoins, le package *stringr* de la suite *tidyverse* propose des fonctionnalités bien plus avancées. Julien Barnier en propose une immersion dans son tutoriel ([vers le tutoriel](https://juba.github.io/tidyverse/11-stringr.html)).
