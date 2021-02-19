@@ -1,6 +1,8 @@
 # S'entrainer {#entrainement}
 
-## TP1 (difficulté : 🏆)
+## TP1
+
+**Difficulté 🏆**
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(readxl)
@@ -66,8 +68,9 @@ a. La colonne `mpg` correspond au nombre de miles parcouru en 1 gallon (US). Cet
 b. Construire une nouvelle colonne appelée `qsec_cut` qui est un découpage de la variable `qsec` en 3 groupes (pas de restriction sur le nombre de classe).
 c. Construire une nouvelle colonne appelée `litres100km_group` pour distinguer deux groupes de voiture : celles qui consomment plus que la moyenne et celles qui consomment moins que la moyenne.
 
-## TP2 (difficulté : 🏆🏆)
+## TP2
 
+**Difficulté 🏆🏆**
 
 <p>
 ![Pokemon](./img/pokemon.jpg)
@@ -175,7 +178,9 @@ c. Calculez la médiane de `weight_kg` par `type`.
 d. Calculez le nombre de pokemon par `type` et `generation`
 e. Calculez la moyenne de chaque critère (`weight_kg`, `height_m`, `attack`, `defense` et `speed`) en fonction de chaque `type`.
 
-## TP3 (difficulté : 🏆🏆🏆)
+## TP3
+
+**Difficulté 🏆🏆🏆**
 
 <p>
 ![Among us](./img/amongus.jpg)
@@ -350,7 +355,9 @@ k. Construire **un graphique adapté** permettant de visualiser les variations d
 l. Construire **un graphique adapté** permettant de visualiser les taux de succès  des 5 meilleurs utilisateurs.
 
 
-## TP4 - Récap (difficulté : 🏆🏆)
+## TP4 - Récap
+
+**Difficulté 🏆🏆**
 
 <p>
 ![NBA](./img/nba.jpg)
@@ -384,7 +391,7 @@ kable(head(NBA,n = 20), "html") %>% kable_styling("striped", font_size = taille)
 <br>
 **Exercice 1 : Importer les données**
 
-a. Importer le jeu de données `NBA.csv`.
+a. Importer le jeu de données `NBA.csv` avec la fonction `read.csv()`.
 b. Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?
 c. Afficher le nom des colonnes.
 d. Afficher le type des colonnes avec la fonction adaptée.
@@ -436,7 +443,9 @@ On souhaite construire un programme permettant de parcourir l'ensemble des colon
 - Pensez à ajouter un titre sur les graphiques afin de savoir à quelle variable on a à faire.
 - Dans une boucle,lorsqu'on souhaite affcher un graphique ou une sortie dans la console, il faut utiliser la fonction `print()`.
 
-## TP5 - Chercher l'erreur (difficulté : 🏆🏆)
+## TP5 - Chercher l'erreur
+
+**Difficulté 🏆🏆**
 
 <p>
 ![mistake](./img/mistake.jpg)
@@ -465,7 +474,9 @@ Le problème c'est que le script est bourré de fautes ! Rien ne fonctionne, à 
 </p>
 
 
-## TP6 - Analyses statistiques (difficulté : 🏆🏆)
+## TP6 - Analyses statistiques
+
+**Difficulté 🏆🏆**
 
 <p>
 ![Students](./img/students.jpg)
@@ -493,7 +504,7 @@ kable(head(df,n = 20), "html") %>% kable_styling("striped", font_size = taille) 
 
 **Exercice 1 : Importer les données**
 
-a. Importer le jeu de données `students_results.csv`.
+a. Importer le jeu de données `students_results.csv` avec la fonction `read.csv()`.
 b. Combien de lignes, colonnes sont présentes dans ce dataset (utilisez les fonctions adaptées) ?
 c. Afficher le nom des colonnes.
 d. Afficher le type des colonnes avec la fonction adaptée.
